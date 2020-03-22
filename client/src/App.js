@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <div className="flex justify-between py-4 px-8 bg-white border-b-2 shadow-lg">
+        <div className="flex justify-between py-4 px-12 max-w-screen bg-white border-b-2 shadow-lg mx-auto">
           <div>
             <img className="w-40" src={logo} />
           </div>
@@ -31,7 +31,7 @@ function App() {
 
         {/* Hero section */}
         {/* hero left */}
-        <div className="flex items-stretch w-4/5  mt-12 mx-auto items-end">
+        <div className="flex items-stretch w-4/5 mt-12 mx-auto items-end">
           <div className="flex-1 pb-12 mr-4">
             <h1 className="text-5xl font-bold text-red-700 leading-tight mb-6">
               Fighting isolation with Books, DVDs, and Games
@@ -53,8 +53,7 @@ function App() {
         </div>
 
         {/* Input section */}
-
-        <div className="flex w-full bg-gray-200 pb-32 pt-12">
+        <div className="flex w-full bg-gray-300 pb-32 pt-12">
           <form action="" className="flex items-end mx-auto">
             <div className="px-4">
               <label
@@ -154,7 +153,7 @@ function App() {
           </div>
 
           {/* mission section */}
-          <div className="py-12 bg-gray-300">
+          <div className="py-20 bg-gray-300">
             <div className="max-w-screen-lg mx-auto text-4xl font-bold text-gray-700 mb-2 px-12">
               <span className="text-gray-500 text-xl font-semibold block">
                 Who are we and why we do it
@@ -168,24 +167,40 @@ function App() {
 
 
           {/* CTA */}
-          <div className="flex items-center mx-auto px-12 py-8 bg-red-700 ">
-            <div className="flex-1 text-4xl font-semibold tracking-wide text-white mb-2 px-12">
-              <span className="text-xl font-semibold block">
-                Who are we and why we do it
-              </span>
-                Placeholder for CTA
+          <div className="py-12 bg-red-700 ">
+            <div className="flex items-center max-w-screen-lg mx-auto px-12 ">
+              <div className="flex-1 text-3xl font-semibold tracking-wide text-white mb-2">
+                  Placeholder for CTA
+              </div>
+              <button className="text-lg font-semibold py-4 px-20 rounded-full text-white border-2 border-white">
+                Get in touch
+              </button>
+
             </div>
-            <div>
-            <button className="block text-lg font-semibold py-4 px-20 rounded-full text-white border-2 border-white ">
-              Get in touch
-            </button>
+
+          </div>
+
+          <div className="bg-gray-800 py-20 pt-12">
+            <div className="flex justify-around max-w-screen-xl mx-auto">
+              <div className="flex-1 text-sm text-gray-500 my-2">
+                Footer Link 1
+              </div>
+              <div className="flex-1 text-sm text-gray-500 my-2">
+                Footer Link 1
+              </div>
+              <div className="flex-1 text-sm text-gray-500 my-2">
+                Footer Link 1
+              </div>
+              <div className="flex-1 text-sm text-gray-500 my-2">
+                Footer Link 1
+              </div>
             </div>
           </div>
 
-
-
-
         </div>
+
+
+
       </div>
     </div>
   );
