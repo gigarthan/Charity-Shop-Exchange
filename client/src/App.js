@@ -4,6 +4,9 @@ import logo from "./logo@2x.png";
 import balloon from "./balloon@2x.png";
 import hero from "./hero_01_girl.png";
 import boxes from "./boxes.png";
+import wish from "./wish@2x.png";
+import deliver from "./deliver@2x.png";
+import enjoy from "./enjoy@2x.png";
 
 function App() {
   return (
@@ -98,22 +101,59 @@ function App() {
 
       {/* HOW IT WORKS SECTION */}
         <div className="pt-12">
-          <div className="mx-auto text-3xl font-bold text-gray-700 text-center mb-12">
+          <div className="mx-auto text-4xl font-bold text-gray-700 text-center mb-2">
           How it works
           </div>
-          <div className="flex mx-auto justify-around w-4/5">
-            <div className="flex-1 rounded-lg border border-2 border-red-600 py-4 px-3"> 
-            <div className="self-center">
-              icon 1
-            </div>
-            <div className="text-2xl font-bold text-gray-700">
-              Header
-            </div>
-            <p>
-              Paragraph
-            </p>
+          <div className="text-center text-2xl font-normal text-gray-500 mb-20">
+            Your weekly subscription buys books & DVDs from local charity shops
+          </div>
 
+
+          <div className="mx-auto justify-around w-4/5">
+            <div className="flex items-stretch py-4 px-3 mb-12"> 
+              <div className="w-3/4">
+              <img className="w-full mr-32" src={wish} />
+              </div>
+              <div className="ml-8 flex-initial">
+                <div className="text-xl font-semibold text-gray-500">
+                  Step 1
+                </div>
+                <div className="text-3xl font-bold text-gray-700 leading-snug">
+                  Start by telling us the things you like to read and watch
+                </div>
+              </div>
             </div>
+
+            <div className="flex py-4 px-3 mb-12"> 
+              <div className="flex-1">
+                <div className="text-xl font-semibold text-gray-500">
+                  Step 2
+                </div>
+                <div className="text-3xl font-bold text-gray-700 leading-snug">
+                We buy the items from your local charity shops and drop the box at your door. 
+                </div>
+              </div>
+              <div className="w-1/2">
+              <img className="w-64 ml-32" src={deliver} />
+              </div>
+            </div>
+
+            <div className="flex py-4 px-3 mb-12"> 
+              <div className="w-1/2">
+              <img className="w-full mr-16" src={enjoy} />
+              </div>
+              <div className="flex-1">
+                <div className="text-xl font-semibold text-gray-500">
+                  Step 3
+                </div>
+                <p className="text-3xl font-bold text-gray-700 leading-snug">
+                Enjoy your favorites books, CDs, DVDs, and games without leaving the house.
+                </p>
+              </div>
+            </div>
+
+            
+
           </div>
         </div>
 
