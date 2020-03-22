@@ -52,16 +52,15 @@ function App() {
           </div>
         </div>
 
-      {/* Input section */}
-      
+        {/* Input section */}
 
         <div className="flex w-full bg-gray-200 pb-32 pt-12">
-          <form
-            action=""
-            className="flex items-end mx-auto"
-          >
+          <form action="" className="flex items-end mx-auto">
             <div className="px-4">
-              <label htmlFor="email" className="text-base text-gray-600 block font-semibold pb-2">
+              <label
+                htmlFor="email"
+                className="text-base text-gray-600 block font-semibold pb-2"
+              >
                 Select your region
               </label>
               <input
@@ -99,20 +98,19 @@ function App() {
           </form>
         </div>
 
-      {/* HOW IT WORKS SECTION */}
+        {/* HOW IT WORKS SECTION */}
         <div className="pt-12">
           <div className="mx-auto text-4xl font-bold text-gray-700 text-center mb-2">
-          How it works
+            How it works
           </div>
           <div className="text-center text-2xl font-normal text-gray-500 mb-20">
             Your weekly subscription buys books & DVDs from local charity shops
           </div>
 
-
           <div className="mx-auto justify-around w-4/5">
-            <div className="flex items-stretch py-4 px-3 mb-12"> 
+            <div className="flex items-stretch py-4 px-3 mb-12">
               <div className="w-3/4">
-              <img className="w-full mr-32" src={wish} />
+                <img className="w-full mr-32" src={wish} />
               </div>
               <div className="ml-8 flex-initial">
                 <div className="text-xl font-semibold text-gray-500">
@@ -124,42 +122,70 @@ function App() {
               </div>
             </div>
 
-            <div className="flex py-4 px-3 mb-12"> 
+            <div className="flex py-4 px-3 mb-12">
               <div className="flex-1">
                 <div className="text-xl font-semibold text-gray-500">
                   Step 2
                 </div>
                 <div className="text-3xl font-bold text-gray-700 leading-snug">
-                We buy the items from your local charity shops and drop the box at your door. 
+                  We buy the items from your local charity shops and drop the
+                  box at your door.
                 </div>
               </div>
               <div className="w-1/2">
-              <img className="w-64 ml-32" src={deliver} />
+                <img className="w-64 ml-32" src={deliver} />
               </div>
             </div>
 
-            <div className="flex py-4 px-3 mb-12"> 
+            <div className="flex py-4 px-3 mb-12">
               <div className="w-1/2">
-              <img className="w-full mr-16" src={enjoy} />
+                <img className="w-full mr-16" src={enjoy} />
               </div>
               <div className="flex-1">
                 <div className="text-xl font-semibold text-gray-500">
                   Step 3
                 </div>
-                <p className="text-3xl font-bold text-gray-700 leading-snug">
-                Enjoy your favorites books, CDs, DVDs, and games without leaving the house.
-                </p>
+                <div className="text-3xl font-bold text-gray-700 leading-snug">
+                  Enjoy your favorites books, CDs, DVDs, and games without
+                  leaving the house.
+                </div>
               </div>
             </div>
-
-            
-
           </div>
+
+          {/* mission section */}
+          <div className="py-12 bg-gray-300">
+            <div className="max-w-screen-lg mx-auto text-4xl font-bold text-gray-700 mb-2 px-12">
+              <span className="text-gray-500 text-xl font-semibold block">
+                Who are we and why we do it
+              </span>
+                Placeholder for Our Mission
+                <span className="block text-lg font-normal mt-8 text-gray-700">
+                Probabo, inquit, modo dixi, constituto, ut alterum aspernandum sentiamus alii autem, quibus ego cum a se esse appetendum, alterum esse admonere interesse enim ipsam per se esse albam, dulce mel quorum nihil molestiae consequatur, vel illum, qui dolorem aspernari ut ita ruant itaque earum motus.
+                </span>
+            </div>
+          </div>
+
+
+          {/* CTA */}
+          <div className="flex items-center mx-auto px-12 py-8 bg-red-700 ">
+            <div className="flex-1 text-4xl font-semibold tracking-wide text-white mb-2 px-12">
+              <span className="text-xl font-semibold block">
+                Who are we and why we do it
+              </span>
+                Placeholder for CTA
+            </div>
+            <div>
+            <button className="block text-lg font-semibold py-4 px-20 rounded-full text-white border-2 border-white ">
+              Get in touch
+            </button>
+            </div>
+          </div>
+
+
+
+
         </div>
-
-
-      
-
       </div>
     </div>
   );
