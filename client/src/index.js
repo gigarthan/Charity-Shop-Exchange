@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/main.css';
 import App from './App';
+
+import './assets/tailwind.css';
 
 
 ReactDOM.render(
