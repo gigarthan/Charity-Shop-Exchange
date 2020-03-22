@@ -49,23 +49,23 @@ function App() {
           </div>
         </div>
 
-        {/* Input section */}
+      {/* Input section */}
       
 
-        <div className="bg-gray-200 flex w-full">
+        <div className="flex w-full bg-gray-200 pb-32 pt-12">
           <form
             action=""
-            className="flex items-end mx-auto px-8 py-8 pt-8"
+            className="flex items-end mx-auto"
           >
             <div className="px-4">
-              <label htmlFor="email" className="text-sm block font-bold  pb-2">
-                EMAIL ADDRESS
+              <label htmlFor="email" className="text-base text-gray-600 block font-semibold pb-2">
+                Select your region
               </label>
               <input
                 type="email"
                 name="email"
                 id=""
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 "
+                className="shadow appearance-none border border-gray-200 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 "
                 placeholder="Johnbull@example.com"
               />
             </div>
@@ -73,9 +73,9 @@ function App() {
             <div className="px-4">
               <label
                 htmlFor="password"
-                className="text-sm block font-bold pb-2"
+                className="text-base text-gray-600 block font-semibold pb-2"
               >
-                PASSWORD
+                Select your local town
               </label>
               <input
                 type="password"
@@ -87,13 +87,34 @@ function App() {
             </div>
             <div>
               <button
-                className="border-2 border-gray-400 text-gray-400 px-12  rounded-full hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="border-2 border-gray-500 text-gray-500 px-12 rounded-full hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
               >
                 Sign In
               </button>
             </div>
           </form>
+        </div>
+
+      {/* HOW IT WORKS SECTION */}
+        <div className="pt-12">
+          <div className="mx-auto text-3xl font-bold text-gray-700 text-center mb-12">
+          How it works
+          </div>
+          <div className="flex mx-auto justify-around w-4/5">
+            <div className="flex-1 rounded-lg border border-2 border-red-600 py-4 px-3"> 
+            <div className="self-center">
+              icon 1
+            </div>
+            <div className="text-2xl font-bold text-gray-700">
+              Header
+            </div>
+            <p>
+              Paragraph
+            </p>
+
+            </div>
+          </div>
         </div>
 
 
