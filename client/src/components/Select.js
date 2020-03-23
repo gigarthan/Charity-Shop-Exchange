@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import '@vaadin/vaadin-combo-box';
+// import '@vaadin/vaadin-combo-box';
 
 
 import data from '../import/locations.json';
@@ -13,8 +13,8 @@ const Select = () => {
 
 return (
     <>
-     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+     <div className="w-full md:w-1/3 pr-4 mb-6 md:mb-0">
+      <label className="block uppercase tracking-wide text-gray-400 text-xs font-semibold mb-2" htmlFor="grid-state">
         Country
       </label>
       <div className="relative">
@@ -28,8 +28,8 @@ return (
         </div>
       </div>
     </div>
-    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+    <div className="w-full md:w-1/3 pr-4 mb-6 md:mb-0">
+      <label className="block uppercase tracking-wide text-gray-400 text-xs font-semibold mb-2" htmlFor="grid-state">
         County
       </label>
       <div className="relative">
@@ -43,8 +43,8 @@ return (
         </div>
       </div>
     </div>
-    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+    <div className="w-full md:w-1/3 mb-6 md:mb-0">
+      <label className="block uppercase tracking-wide text-gray-400 text-xs font-semibold mb-2" htmlFor="grid-state">
         Town
       </label>
       <div className="relative">
