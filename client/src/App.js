@@ -1,12 +1,15 @@
 import React from "react";
-import Select from "./components/Select";
-import logo from "./logo@2x.png";
-import balloon from "./balloon@2x.png";
-import hero from "./hero_01_girl.png";
-import boxes from "./boxes.png";
-import wish from "./wish@2x.png";
-import deliver from "./deliver@2x.png";
-import enjoy from "./enjoy@2x.png";
+
+import Select from './components/Select';
+
+import logo from "./assets/img/logo@2x.png";
+import balloon from "./assets/img/balloon@2x.png";
+import hero from "./assets/img/hero_01_girl.png";
+import boxes from "./assets/img/boxes.png";
+import wish from "./assets/img/wish@2x.png";
+import deliver from "./assets/img/deliver@2x.png";
+import enjoy from "./assets/img/enjoy@2x.png";
+
 
 function App() {
   return (
@@ -80,12 +83,13 @@ function App() {
               </label>
               <input
                 type="password"
-                name="email"
+                name="password"
                 id=""
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300"
                 placeholder="Enter your password"
               />
             </div>
+            <Select />
             <div>
               <button
                 className="border-2 border-gray-500 text-gray-500 px-12 rounded-full hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
