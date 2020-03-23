@@ -1,6 +1,7 @@
 import React from "react";
 
 import Select from './components/Select';
+import Combo from './components/Combo';
 
 import logo from "./assets/img/logo@2x.png";
 import balloon from "./assets/img/balloon@2x.png";
@@ -58,38 +59,7 @@ function App() {
         {/* Input section */}
         <div className="flex w-full bg-gray-300 pb-32 pt-12">
           <form action="" className="flex items-end mx-auto">
-            <div className="px-4">
-              <label
-                htmlFor="email"
-                className="text-base text-gray-600 block font-semibold pb-2"
-              >
-                Select your region
-              </label>
-              <input
-                type="email"
-                name="email"
-                id=""
-                className="shadow appearance-none border border-gray-200 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 "
-                placeholder="Johnbull@example.com"
-              />
-            </div>
-
-            <div className="px-4">
-              <label
-                htmlFor="password"
-                className="text-base text-gray-600 block font-semibold pb-2"
-              >
-                Select your local town
-              </label>
-              <input
-                type="password"
-                name="password"
-                id=""
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300"
-                placeholder="Enter your password"
-              />
-            </div>
-            <Select />
+            <Combo />
             <div>
               <button
                 className="border-2 border-gray-500 text-gray-500 px-12 rounded-full hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
