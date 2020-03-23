@@ -1,6 +1,6 @@
 import React from "react";
 
-import Select from "./components/Select";
+import Combo from './components/Combo';
 
 import logo from "./assets/img/logo@2x.png";
 import balloon from "./assets/img/balloon@2x.png";
@@ -16,7 +16,7 @@ function App() {
       <div className="w-screen">
         <div className="w-screen py-3 px-3 bg-white border-b-2 shadow-lg">
           <div className="flex justify-between items-center">
-            <img className="h-10 dm:h-40" src={logo} />
+            <img className="h-10 dm:h-40" src={logo} alt="logo" />
 
             <div className="block md:hidden">
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -37,9 +37,9 @@ function App() {
               <div className="mx-4 text-sm font-medium text-gray-500">
                 Subscribe
               </div>
-              <button className="py-2 px-10 bg-red-700 rounded-full text-sm text-center text-white ml-4 ">
+              <a href="https://www.subbly.co/account/auth/login?store=charity-shop-exchange" rel="noopener noreferrer" target="_blank" className="py-2 px-10 bg-red-700 rounded-full text-sm text-center text-white ml-4 ">
                 Login
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -63,9 +63,9 @@ function App() {
             </div>
             {/* hero right */}
             <div className="relative flex-1">
-              <img className="absolute z-10 left-0 bottom-0 w-12 sm:w-32 " src={boxes} />
-              <img className="absolute z-10 right-0 bottom-0 w-32 sm:w-64 " src={hero} />
-              <img className="hidden sm:block absolute left-0.top-0 w-20 sm:w-56" src={balloon} />
+              <img className="absolute z-10 left-0 bottom-0 w-12 sm:w-32 " src={boxes} alt="boxes" />
+              <img className="absolute z-10 right-0 bottom-0 w-32 sm:w-64 " src={hero} alt="hero" />
+              <img className="hidden sm:block absolute left-0.top-0 w-20 sm:w-56" src={balloon} alt="text-box" />
             </div>
         </div>
 
@@ -74,7 +74,8 @@ function App() {
             <div className="flex flex-col items-center max-w-screen-md mx-auto">
 
                 <div className="flex mb-12">
-                <Select/>
+               
+                <Combo />
                 </div>
                 <div>
                   <button
@@ -135,7 +136,7 @@ function App() {
 
             <div className="flex flex-col-reverse sm:flex-row mb-12">
               <div className="w-full sm:w-1/2">
-                <img className="sm:mr-32" src={wish} />
+                <img className="sm:mr-32" src={wish} alt="daydream" />
               </div>
               <div className="flex-1 sm:ml-8">
                 <div className="text-md sm:text-xl font-semibold text-gray-500">
@@ -158,13 +159,13 @@ function App() {
                 </div>
               </div>
               <div className="sm:w-1/2">
-                <img className="ml-8 sm:ml-20" src={deliver} />
+                <img className="ml-8 sm:ml-20" src={deliver} alt="gifts" />
               </div>
             </div>
 
             <div className="flex flex-col-reverse sm:flex-row py-4 px-3 mb-12">
               <div className=" sm:w-1/2">
-                <img className="sm:mr-32" src={enjoy} />
+                <img className="sm:mr-32" src={enjoy} alt="listening" />
               </div>
               <div className="flex-1">
                 <div className="text-md sm:text-xl font-semibold text-gray-500">
