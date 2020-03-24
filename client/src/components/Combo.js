@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import '@vaadin/vaadin-combo-box';
 
-export default function ComboGeneric(props) {
+export default function Combo(props) {
   const {
       name,
       value,
