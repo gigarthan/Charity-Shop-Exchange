@@ -1,6 +1,9 @@
 import React from "react";
 
+import Combo from './components/Combo';
+import Form from './components/Form/Form';
 import GetStartedForm from './components/GetStartedForm';
+
 
 import logo from "./assets/img/logo@2x.png";
 import balloon from "./assets/img/balloon@2x.png";
@@ -107,7 +110,7 @@ function App() {
                     />
                   </div>
                 </form> */}
-                
+
         </div>
 
         {/* HOW IT WORKS SECTION */}
@@ -186,16 +189,7 @@ function App() {
           </div>
 
           {/* CTA */}
-          <div className="py-12 bg-red-700 ">
-            <div className="flex flex-col sm:flex-row items-center sm:max-w-screen-md mx-auto sm:px-12 ">
-              <div className="flex-1 text-xl sm:text-3xl font-semibold tracking-wide text-white mb-2">
-                Placeholder for CTA
-              </div>
-              <button className="text-sm sm:text-lg mt-4 sm:mt-0 font-semibold py-2 sm:py-4 px-8 sm:px-20 rounded-full text-white border-2 border-white">
-                Get in touch
-              </button>
-            </div>
-          </div>
+          <Form/>
 
           <div className="bg-new-navy py-20 pt-12">
             <div className="flex justify-around max-w-screen-md mx-auto">
