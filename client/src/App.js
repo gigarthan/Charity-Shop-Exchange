@@ -2,6 +2,8 @@ import React from "react";
 
 import Combo from './components/Combo';
 import Form from './components/Form/Form';
+import GetStartedForm from './components/GetStartedForm';
+
 
 import logo from "./assets/img/logo@2x.png";
 import balloon from "./assets/img/balloon@2x.png";
@@ -73,20 +75,7 @@ function App() {
         {/* Input section */}
         <div className="bg-new-navy pb-12 pt-12">
             <div className="flex flex-col items-center max-w-screen-md mx-auto">
-
-                <div className="flex mb-12">
-
-                <Combo />
-                </div>
-                <div>
-                  <button
-                    className="border-2 border-gray-400 text-gray-400 px-12 py-2 rounded-full bg-transparent hover:bg-red-700 text-white font-semibold rounded focus:outline-none focus:shadow-outline"
-                    type="button"
-                  >
-                    Get Started
-                  </button>
-                </div>
-
+                <GetStartedForm />
             </div>
                 {/* <form action="" className="flex items-end mx-auto">
                   <div className="px-4">
