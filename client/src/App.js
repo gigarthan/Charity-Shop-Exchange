@@ -1,6 +1,6 @@
 import React from "react";
 
-import Combo from './components/Combo';
+
 import Form from './components/Form/Form';
 import GetStartedForm from './components/GetStartedForm';
 
@@ -53,16 +53,13 @@ function App() {
         <div className="flex flex-col sm:flex-row sm:max-w-screen-md mt-12 mx-auto px-8 sm:px-0 ">
            {/* hero left */}
             <div className="flex flex-col items-start w-full sm:w-1/2 pb-12 mr-0 mb-12 sm:mb-0 sm:mr-4">
-              <h1 className="text-3xl sm:text-5xl font-bold text-red-700 leading-tight mb-4">
+              <h1 className="text-3xl sm:text-5xl font-header text-red-700 leading-tight mb-4">
                 Fighting isolation with Books, DVDs, and Games
               </h1>
               <h3 className="text-sm sm:text-xl text-gray-500 font-md mb-8 sm:mb-12">
                 Every week a friendly neighbour will collect items from local
                 charity shops and drop them at your door.
               </h3>
-              <div className="sm:w-56 py-2 px-8 bg-red-700 rounded-full text-white text-center">
-                Subscribe Now
-              </div>
             </div>
             {/* hero right */}
             <div className="relative flex-1">
@@ -73,7 +70,7 @@ function App() {
         </div>
 
         {/* Input section */}
-        <div className="bg-new-navy pb-12 pt-12">
+        <div className=" pb-12 pt-12">
             <div className="flex flex-col items-center max-w-screen-md mx-auto">
                 <GetStartedForm />
             </div>
