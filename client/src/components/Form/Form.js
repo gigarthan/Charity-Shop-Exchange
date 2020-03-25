@@ -8,7 +8,7 @@ export default function Form() {
 
   return (
       <div className="py-12 bg-red-700 ">
-        <div className="flex flex-col lg:flex-row items-center sm:max-w-screen-lg mx-auto px-4 sm:px-12 ">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start sm:max-w-screen-lg mx-auto px-4 sm:px-12 ">
           <div className="flex-1 text-xl text-center lg:text-left sm:text-2xl font-semibold tracking-wide text-white mb-2 sm:pr-8 mb-12">
             Are you a Charity Shop who’d like to keep stock ticking over despite being closed to the public?
           </div>

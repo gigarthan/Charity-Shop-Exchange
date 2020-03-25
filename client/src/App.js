@@ -15,7 +15,7 @@ import logoWhite from "./assets/img/logo_white@2x.png";
 
 function App() {
   return (
-    <div className="App bg-gray-300">
+    <div className="App bg-gray-100">
       <div className="w-screen">
         <div className="w-screen py-3 px-8 bg-white border-b-2 shadow-lg">
           <div className="flex justify-between items-center">
@@ -96,39 +96,7 @@ function App() {
           <div className="flex flex-col items-center max-w-screen-md mx-auto">
             <GetStartedForm />
           </div>
-          {/* <form action="" className="flex items-end mx-auto">
-                  <div className="px-4">
-                    <label
-                      htmlFor="email"
-                      className="text-base text-gray-600 block font-semibold pb-2"
-                    >
-                      Select your region
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id=""
-                      className="shadow appearance-none border border-gray-200 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 "
-                      placeholder="Johnbull@example.com"
-                    />
-                  </div>
-
-                  <div className="px-4">
-                    <label
-                      htmlFor="password"
-                      className="text-base text-gray-600 block font-semibold pb-2"
-                    >
-                      Select your local town
-                    </label>
-                    <input
-                      type="password"
-                      name="password"
-                      id=""
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300"
-                      placeholder="Enter your password"
-                    />
-                  </div>
-                </form> */}
+         
         </div>
 
         {/* HOW IT WORKS SECTION */}
@@ -197,13 +165,16 @@ function App() {
             <span className="block text-base sm:text-lg font-normal mt-4 text-gray-700">
               We don’t know exactly how long we’ll be instructed to stay indoors
               but we do know there’s no cliff-edge where everything instantly
-              gets back to normal. Over 1 million people in the UK need to be
+              gets back to normal. 
+              <span className="block">
+              Over 1 million people in the UK need to be
               shielded from Coronavirus, for at least the next 12 weeks. Hence,
               a wartime effort is needed to deliver services which help these
               shielded people get through this.
+              </span>
             </span>
-            <span className="block text-base sm:text-lg text-right font-normal mt-4 text-gray-700">
-              Learn more about our approach
+            <span className="block ">
+            <a href="url" className="italic cursor-pointer text-base sm:text-lg font-semibold text-gray-700 hover:text-gray-900 ">Learn more about our approach</a>
             </span>
           </div>
         </div>
