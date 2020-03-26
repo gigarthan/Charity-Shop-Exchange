@@ -1,6 +1,5 @@
 import React from "react";
 
-import Combo from "./components/Combo";
 import Form from "./components/Form/Form";
 import GetStartedForm from "./components/GetStartedForm";
 
