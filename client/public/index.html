@@ -21,5 +21,17 @@
     <script>if (!window.customElements) { document.write("<!--"); }</script>
     <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>
     <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+
+    <!-- Vaadin styles -->
+    <dom-module id="custom-combo-box-border" theme-for="vaadin-text-field">
+      <template>
+        <style>
+          :host([theme~="white-background"]) [part="input-field"] {
+            background-color: white;
+          }
+        </style>
+      </template>
+    </dom-module>
+
   </body>
 </html>

@@ -13,6 +13,7 @@ export default function Combo(props) {
       disabled,
       placeholder,
       style,
+      theme='',
       className
   } = props;
 
@@ -69,6 +70,7 @@ export default function Combo(props) {
       placeholder={placeholder}
       style={style}
       className={className}
+      theme={theme}
     />
   );
 

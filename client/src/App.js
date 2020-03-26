@@ -1,9 +1,7 @@
 import React from "react";
 
-import Combo from './components/Combo';
 import Form from './components/Form/Form';
 import GetStartedForm from './components/GetStartedForm';
-
 
 import logo from "./assets/img/logo@2x.png";
 import balloon from "./assets/img/balloon@2x.png";
