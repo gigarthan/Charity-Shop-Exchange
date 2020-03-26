@@ -42,16 +42,18 @@ export default function About() {
 
       <div className="flex flex-wrap mx-auto px-8 w-screen">
 
-      <div className="flex items-start p-4 w-64">
-        <img className="h-12 w-12 mr-4 bg-gray-600 rounded-full " />
-        <div>
-        <h3 className="text-xl font-semibold text-gray-700">Kelvin Lockwood</h3>
-        <a href=""> <img className="sm:mr-32" src={twitter} alt="twitter" /></a>
-        <a href="">GitHub</a>
-        <a href="">Discord</a>
-        <p className="text-xs text-gray-600">Placeholder for short bio.</p>
-
-    
+      <div className="flex items-start p-4 w-64 bg-teal-200">
+        <div className="flex-shrink-0">
+        <img className="h-12 w-12 mr-4 bg-gray-600 rounded-full "/>
+        </div>
+        <div className="flex-initial">
+            <h3 className="text-xl font-semibold text-gray-700">Kelvin Lockwood</h3>
+            <div className="flex items-center">
+            <a href=""><img className="p-1" src={twitter} alt="twitter"/></a>
+            <a href=""><img className="p-1" src={github} alt="github"/></a>
+            <a href=""><img className="p-1" src={discord} alt="discord"/></a>
+            </div>
+            <p className="text-xs text-gray-600">Placeholder for short bio.</p>
         </div>
       </div>
 
