@@ -13,6 +13,7 @@ import marina from "../assets/img/marina@2x.png";
 export default function About() {
   return (
     <Layout>
+      <div className="flex flex-col sm:flex- sm:max-w-screen-md mt-12 mx-auto px-3 sm:px-0 ">
       <h1 className="text-2xl sm:text-4xl px-3 font-bold text-center mt-12 mb-8 sm:mb-20 text-red-700 leading-snug">
         Why we built Charity Shop Exchange
       </h1>
@@ -46,12 +47,14 @@ export default function About() {
         on digital projects that see the value in this approach.
       </p>
 
-    <div className="bg-gray-200 w-screen mx-auto pt-8 mb-12">
-      <h2 className="w-3/4 mx-auto text-center text-2xl sm:text-3xl font-semibold text-gray-700 px-5 mb-8 sm:mb-8 leading-snug">
+      </div>
+
+    <div className="bg-gray-200 flex flex-col sm:flex-none sm:max-w-screen mt-12">
+      <h2 className="text-center text-2xl sm:text-3xl font-semibold text-gray-700 px-5 pt-5 mb-8 sm:mb-8 leading-snug">
         Making Charity Shop Exchange Possible
       </h2>
 
-      <div className="flex flex-wrap w-full max-w-6xl items-stretch px-5 pt-5 pb-8 mx-auto mb-12">
+      <div className="flex flex-wrap w-full max-w-6xl items-stretch px-5 pt-5 pb-8 mx-auto mb-12 bg-gray-500">
 
         <div>
           <div className="flex items-start p-4 m-4">
