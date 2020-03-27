@@ -23,11 +23,41 @@
     <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
 
     <!-- Vaadin styles -->
-    <dom-module id="custom-combo-box-border" theme-for="vaadin-text-field">
+
+    <dom-module id="custom-combo-box" theme-for="vaadin-combo-box">
+      <template>
+        <style>
+          :host {
+            width: 250px;
+          }
+        </style>
+      </template>
+    </dom-module>
+        
+    <dom-module id="custom-text-field" theme-for="vaadin-text-field">
       <template>
         <style>
           :host([theme~="white-background"]) [part="input-field"] {
             background-color: white;
+          }
+        </style>
+      </template>
+    </dom-module>
+
+    <dom-module id="custom-button" theme-for="vaadin-button">
+      <template>
+        <style>
+          :host {
+            height: 3em;
+            border-radius: 9999px;
+            padding: 1px 0 2px 0;
+            background-color: #c53030;
+            color: #fff;
+            font-weight: bold;
+          }
+
+          [part="label"] {
+            padding: 0 50px;
           }
         </style>
       </template>

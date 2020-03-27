@@ -64,7 +64,7 @@ export default function Combo(props) {
     }
   }, [value, setValue, emptyValue, items, itemValuePath, itemLabelPath, disabled]);
 
-  return(
+  return (
     <vaadin-combo-box
       name={name}
       ref={combo}
