@@ -49,33 +49,33 @@ export default function About() {
 
       </div>
 
-    <div className="bg-gray-200 flex flex-col sm:flex-none sm:max-w-screen mt-12 pb-8 sm:pb-20">
-      <h2 className="text-center text-2xl sm:text-3xl font-semibold text-gray-700 px-5 pt-8 mb-8 sm:mb-12 leading-snug">
+    <div className="bg-gray-200 flex flex-col sm:flex-none sm:max-w-screen p-8 sm:p-20">
+      <h2 className="text-center text-2xl sm:text-3xl font-semibold text-gray-700 px-5 pb-8 sm:pb-12 leading-snug">
         Making Charity Shop Exchange Possible
       </h2>
 
-      <div className="flex flex-wrap justify-around mx-auto sm:max-w-screen-md pb-8">
+      <div className="flex flex-wrap justify-around mx-auto sm:max-w-screen-md">
 
         <div>
-          <div className="flex items-start p-4 m-4">
+          <div className="flex items-start p-4 m-4 w-64">
             <img
               className="h-12 w-12 mr-5 bg-gray-600 rounded-full"
               src={kelvin}
               alt="Kelvin"
             />
             <div>
-              <h3 className="text-xl font-semibold text-gray-700">
+              <h3 className="text-md font-semibold text-gray-700">
                 Kelvin Lockwood
               </h3>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <a href="">
-                  <img className="p-1" src={twitter} alt="twitter" />
+                  <img className="pr-2" src={twitter} alt="twitter" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={github} alt="github" />
+                  <img className="pr-2" src={github} alt="github" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={discord} alt="discord" />
+                  <img className="pr-2" src={discord} alt="discord" />
                 </a>
               </div>
               <p className="text-xs text-gray-600">
@@ -86,25 +86,25 @@ export default function About() {
         </div>
 
         <div>
-          <div className="flex items-start p-4 m-4">
+          <div className="flex items-start p-4 m-4 w-64">
             <img
               className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
               src={blake}
               alt="Blake"
             />
             <div>
-              <h3 className="text-xl font-semibold text-gray-700">
+              <h3 className="text-md font-semibold text-gray-700">
                 Blake Prouty
               </h3>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <a href="">
-                  <img className="p-1" src={twitter} alt="twitter" />
+                  <img className="pr-2" src={twitter} alt="twitter" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={github} alt="github" />
+                  <img className="pr-2" src={github} alt="github" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={discord} alt="discord" />
+                  <img className="pr-2" src={discord} alt="discord" />
                 </a>
               </div>
               <p className="text-xs text-gray-600">
@@ -115,54 +115,54 @@ export default function About() {
         </div>
 
         <div>
-          <div className="flex items-start p-4 m-4">
+          <div className="flex items-start p-4 m-4 w-64">
             <img
               className="h-12 w-12 mr-4 rounded-full"
               src={dicky}
               alt="Dicky"
             />
             <div>
-              <h3 className="text-xl font-semibold text-gray-700">
+              <h3 className="text-md font-semibold text-gray-700">
                 Dicky Jiang
               </h3>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <a href="">
-                  <img className="p-1" src={twitter} alt="twitter" />
+                  <img className="pr-2" src={twitter} alt="twitter" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={github} alt="github" />
+                  <img className="pr-2" src={github} alt="github" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={discord} alt="discord" />
+                  <img className="pr-2" src={discord} alt="discord" />
                 </a>
               </div>
               <p className="text-xs text-gray-600">
-                Placeholder for short bio.
+                UIX Designer by day, Jaeger pilot by night.
               </p>
             </div>
           </div>
         </div>
 
         <div>
-          <div className="flex items-start p-4 m-4">
+          <div className="flex items-start p-4 m-4 w-64">
             <img
               className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
               src={matt}
               alt="Matt"
             />
             <div>
-              <h3 className="text-xl font-semibold text-gray-700">
+              <h3 className="text-md font-semibold text-gray-700">
                 Matt Doyle
               </h3>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <a href="">
-                  <img className="p-1" src={twitter} alt="twitter" />
+                  <img className="pr-2" src={twitter} alt="twitter" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={github} alt="github" />
+                  <img className="pr-2" src={github} alt="github" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={discord} alt="discord" />
+                  <img className="pr-2" src={discord} alt="discord" />
                 </a>
               </div>
               <p className="text-xs text-gray-600">
@@ -173,52 +173,52 @@ export default function About() {
         </div>
 
         <div>
-          <div className="flex items-start p-4 m-4">
+          <div className="flex items-start p-4 m-4 w-64">
             <img
               className="h-12 w-12 mr-4 bg-gray-600 rounded-full object-cover "
               src={marina}
               alt="marina"
             />
-            <div>
-              <h3 className="text-xl font-semibold text-gray-700">
+            <div className="flex flex-col flex-wrap">
+              <h3 className="text-md font-semibold text-gray-700">
                 Marina Goto
               </h3>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <a href="">
-                  <img className="p-1" src={twitter} alt="twitter" />
+                  <img className="p-2" src={twitter} alt="twitter" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={github} alt="github" />
+                  <img className="pr-2" src={github} alt="github" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={discord} alt="discord" />
+                  <img className="pr-2" src={discord} alt="discord" />
                 </a>
               </div>
-              <p className="text-xs text-gray-600">
-                Placeholder for short bio.
+              <p className="text-xs text-gray-600 ">
+                Placeholder for short bio. Placeholder for short bio.
               </p>
             </div>
           </div>
         </div>
 
         <div>
-          <div className="flex items-start p-4 m-4">
+          <div className="flex items-start p-4 m-4 w-64">
             <img
               className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
               src={generic}
               alt="generic"
             />
             <div>
-              <h3 className="text-xl font-semibold text-gray-700">Rama Mani</h3>
-              <div className="flex items-center">
+              <h3 className="text-md font-semibold text-gray-700">Rama Mani</h3>
+              <div className="flex items-center cursor-pointer">
                 <a href="">
-                  <img className="p-1" src={twitter} alt="twitter" />
+                  <img className="pr-2" src={twitter} alt="twitter" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={github} alt="github" />
+                  <img className="pr-2" src={github} alt="github" />
                 </a>
                 <a href="">
-                  <img className="p-1" src={discord} alt="discord" />
+                  <img className="pr-2" src={discord} alt="discord" />
                 </a>
               </div>
               <p className="text-xs text-gray-600">
@@ -231,22 +231,24 @@ export default function About() {
       </div>
 </div>
       
-        <div className="items-center sm:max-w-screen-xl mx-auto pt-8 sm:pt-12 px-4 sm:px-12">
+        <div className="bg-gray-200 items-center pt-8 pb-24 sm:pt-12 px-4 sm:px-12">
 
-          <div className="text-center text-2xl sm:text-3xl font-semibold px-5 mb-8 sm:mb-12 text-gray-700 tracking-wide">
-            Want to join the cause?
-            <p className="px-5 text-center text-sm sm:text-xl text-gray-600 font-medium mb-8 tracking-normal">
-              We are always looking for amazing people regardless of experience.
-            </p>
-            <button className="bg-red-700 py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 sm:mt-0 font-medium py-1  rounded-full text-white border-2">
-              Join the Force
-            </button>
+          <div className="flex items-center flex-col sm:max-w-screen-md mx-auto px-3 sm:px-0">
+              <div className="text-center px-5 mb-2 sm:mb-2 text-xl sm:text-3xl sm:max-w-screen-xl mx-auto font-semibold text-gray-700 tracking-wide">
+                Want to join the cause?
+              </div>
+              <p className="px-5 text-center text-sm sm:text-xl text-gray-600 font-medium mb-8 tracking-normal">
+                We are always looking for amazing people regardless of experience.
+              </p>
+              <button className="bg-red-700 py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 sm:mt-0 font-medium py-1  rounded-full text-white border-2">
+                Join the Force
+              </button>
           </div>
         </div>
         
-        <div className="bg-red-700 items-center sm:max-w-screen-xl mx-auto p-8 sm:p-20 px-4 sm:px-12">
+        <div className="bg-red-700 items-center mx-auto p-8 sm:p-24 px-4 sm:px-12">
           <div className="flex items-center flex-col lg:flex-row sm:max-w-screen-md mx-auto px-3 sm:px-0">
-              <div className="flex-1 text-center mb-8 lg:mb-0 lg:text-left text-xl lg:text-2xl font-semibold text-white">
+              <div className="flex-1 text-center mb-8 lg:mb-0 lg:text-left text-lg lg:text-2xl font-semibold text-white tracking-wide">
               Have an idea you'd like to contribute? 
               <span className="block">
                 A new service you'd like to see?
