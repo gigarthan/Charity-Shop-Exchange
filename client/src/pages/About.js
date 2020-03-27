@@ -13,11 +13,11 @@ import marina from "../assets/img/marina@2x.png";
 export default function About() {
   return (
     <Layout>
-      <div className="flex flex-col sm:flex- sm:max-w-screen-md mt-12 mx-auto px-3 sm:px-0 ">
-      <h1 className="text-2xl sm:text-4xl px-3 font-bold text-center mt-12 mb-8 sm:mb-20 text-red-700 leading-snug">
+      <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto px-3 sm:px-0 ">
+      <h1 className="text-2xl sm:text-3xl font-semibold px-3 font-bold text-center mt-12 mb-8 sm:mb-12 text-red-700 leading-snug">
         Why we built Charity Shop Exchange
       </h1>
-      <div className="w-4/5 mx-auto px-5 text-sm sm:text-xl text-lg text-gray-700 font-normal mb-12 sm:mb-20 leading-relaxed sm:leading-relax">
+      <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
         <p className="mb-4">
           With the COVID-19 pandemic reaching all parts of the world, a global
           team of web developers, designers and makers have come together to
@@ -34,13 +34,13 @@ export default function About() {
           of which we have more than ten thousand in the UK.
         </p>
       </div>
-      <blockquote className="w-3/4 mx-auto text-center text-2xl sm:text-3xl font-medium text-gray-700 px-5 mb-12 sm:mb-20 leading-snug">
+      <blockquote className="w-4/5 mx-auto text-center text-2xl sm:text-3xl font-medium text-gray-700 mb-8 sm:mb-12 leading-snug">
         A nationwide network of charity shops{" "}
         <em className="text-gray-500">meets</em> cooperative approach{" "}
         <em className="text-gray-500">meets</em> online subscription box
         service.
       </blockquote>
-      <p className="w-4/5 mx-auto px-5 text-sm sm:text-xl text-gray-700 font-normal mb-12 sm:mb-20 leading-relaxed sm:leading-relax">
+      <p className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
         This fast response and joined-up thinking serve as inspiration for many
         other use cases, where a dedicated online service could take orders on
         behalf of a syndication of suppliers. And we're open to working together
@@ -49,12 +49,12 @@ export default function About() {
 
       </div>
 
-    <div className="bg-gray-200 flex flex-col sm:flex-none sm:max-w-screen mt-12">
-      <h2 className="text-center text-2xl sm:text-3xl font-semibold text-gray-700 px-5 pt-5 mb-8 sm:mb-8 leading-snug">
+    <div className="bg-gray-200 flex flex-col sm:flex-none sm:max-w-screen mt-12 pb-8 sm:pb-20">
+      <h2 className="text-center text-2xl sm:text-3xl font-semibold text-gray-700 px-5 pt-8 mb-8 sm:mb-12 leading-snug">
         Making Charity Shop Exchange Possible
       </h2>
 
-      <div className="flex flex-wrap w-full max-w-6xl items-stretch px-5 pt-5 pb-8 mx-auto mb-12 bg-gray-500">
+      <div className="flex flex-wrap justify-around mx-auto sm:max-w-screen-md pb-8">
 
         <div>
           <div className="flex items-start p-4 m-4">
@@ -117,7 +117,7 @@ export default function About() {
         <div>
           <div className="flex items-start p-4 m-4">
             <img
-              className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
+              className="h-12 w-12 mr-4 rounded-full"
               src={dicky}
               alt="Dicky"
             />
@@ -231,9 +231,9 @@ export default function About() {
       </div>
 </div>
       
-        <div className="items-center sm:max-w-screen-xl mx-auto px-4 sm:px-12">
+        <div className="items-center sm:max-w-screen-xl mx-auto pt-8 sm:pt-12 px-4 sm:px-12">
 
-          <div className="text-center text-2xl sm:text-3xl font-semibold px-5 mb-8 sm:mb-20 text-gray-700 tracking-wide">
+          <div className="text-center text-2xl sm:text-3xl font-semibold px-5 mb-8 sm:mb-12 text-gray-700 tracking-wide">
             Want to join the cause?
             <p className="px-5 text-center text-sm sm:text-xl text-gray-600 font-medium mb-8 tracking-normal">
               We are always looking for amazing people regardless of experience.
@@ -243,23 +243,18 @@ export default function About() {
             </button>
           </div>
         </div>
-      
-
-    
-      <div className="bg-red-700 pt-8 pb-20 ">
-
-        <div className="flex flex-col items-center w-full sm:max-w-screen-xl px-4 sm:px-12">
-
-          <div className="text-center text-xl sm:text-2xl font-medium px-5 mb-8 sm:mb-12 text-white tracking-wide leading-snug">
-            Have an idea you'd like to contribute? A new service you'd like to see?
-          </div>
-      
-      
-          <div className="w-64 py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 font-medium py-1 rounded-full text-white border-2">
-              Contact Us
-          </div>
-
-
+        
+        <div className="bg-red-700 items-center sm:max-w-screen-xl mx-auto p-8 sm:p-20 px-4 sm:px-12">
+          <div className="flex items-center flex-col lg:flex-row sm:max-w-screen-md mx-auto px-3 sm:px-0">
+              <div className="flex-1 text-center mb-8 lg:mb-0 lg:text-left text-xl lg:text-2xl font-semibold text-white">
+              Have an idea you'd like to contribute? 
+              <span className="block">
+                A new service you'd like to see?
+                </span>
+              </div>
+              <button className="bg-red-700 flex-initial py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 font-medium rounded-full text-white border-2">
+                Contact Us
+              </button>
         </div>
       </div>
     </Layout>
