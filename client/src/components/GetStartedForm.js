@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Combo from './Combo';
+import Button from './Button';
 import locations from '../import/locations.json';
 import {charities} from '../import/charities.json';
+import config from '../config.json';
 
 export default function GetStartedForm() {
 
@@ -32,13 +34,15 @@ export default function GetStartedForm() {
     setCharityId(0);
   }, [countyId]);
 
+  // Redirect the user to Subbly
+  function handleSubmit() {
+    window.location.href = config.subscriptionBoxUrl;
+  }
+
   return (
     <>
       <div className="flex mb-12">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label style={{ color: 'black' }} className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
-            County
-          </label>
           <div className="relative">
             <Combo
               name="countyId"
@@ -47,16 +51,14 @@ export default function GetStartedForm() {
               items={counties}
               placeholder="select"
               // style={{ background: '#c7c7c7'}}
-              theme="white-background"
+              theme=""
+              label="County"
               className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
             />
           </div>
         </div>
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label style={{ color: 'black' }} className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
-            Charity
-          </label>
           <div className="relative">
             <Combo
               name="charityId"
@@ -65,8 +67,8 @@ export default function GetStartedForm() {
               items={charities.filter(c => c.countyIds.includes(countyId))}
               disabled={!countyId || (counties.find(c => c.id === countyId).disabled)}
               placeholder="select"
-              style={{ backgroundColor: '#fff' }}
-              theme="white-background"
+              theme=""
+              label="Charity"
               className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
             />
@@ -74,12 +76,8 @@ export default function GetStartedForm() {
         </div>
       </div>
       <div>
-        <button
-          className="border-blue-400 text-white-400 px-12 py-2 rounded-full bg-red-700 hover:bg-red-600 text-white font-semibold rounded focus:outline-none focus:shadow-outline"
-          type="button"
-        >
-          Get Started
-        </button>
+
+      <Button onClick={handleSubmit}>Get Started</Button>
       </div>
     </>
   );
