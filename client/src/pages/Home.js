@@ -26,9 +26,6 @@ export default function Home() {
               Every week a friendly neighbour will collect items from local
               charity shops and drop them at your door.
             </h3>
-            <div className="sm:w-56 py-2 px-8 bg-red-700 rounded-full text-white text-center">
-              Subscribe Now
-            </div>
           </div>
           {/* hero right */}
           <div className="relative flex-1">
@@ -51,7 +48,7 @@ export default function Home() {
         </div>
 
         {/* Input section */}
-        <div className="bg-new-navy pb-12 pt-12">
+        <div className="pb-12 pt-12">
           <div className="flex flex-col items-center max-w-screen-md mx-auto">
             <GetStartedForm />
           </div>

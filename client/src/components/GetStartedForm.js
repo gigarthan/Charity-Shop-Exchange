@@ -36,7 +36,7 @@ export default function GetStartedForm() {
     <>
       <div className="flex mb-12">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label style={{ color: 'white' }} className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+          <label style={{ color: 'black' }} className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
             County
           </label>
           <div className="relative">
@@ -46,7 +46,7 @@ export default function GetStartedForm() {
               setValue={setCountyId}
               items={counties}
               placeholder="select"
-              style={{ backgroundColor: '#fff' }}
+              // style={{ background: '#c7c7c7'}}
               theme="white-background"
               className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
@@ -54,7 +54,7 @@ export default function GetStartedForm() {
           </div>
         </div>
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label style={{ color: 'white' }} className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+          <label style={{ color: 'black' }} className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
             Charity
           </label>
           <div className="relative">
@@ -75,7 +75,7 @@ export default function GetStartedForm() {
       </div>
       <div>
         <button
-          className="border-2 border-gray-400 text-gray-400 px-12 py-2 rounded-full bg-transparent hover:bg-red-700 text-white font-semibold rounded focus:outline-none focus:shadow-outline"
+          className="border-blue-400 text-white-400 px-12 py-2 rounded-full bg-red-700 hover:bg-red-600 text-white font-semibold rounded focus:outline-none focus:shadow-outline"
           type="button"
         >
           Get Started
