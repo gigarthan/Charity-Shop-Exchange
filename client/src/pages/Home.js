@@ -112,13 +112,10 @@ export default function Home() {
         </div>
 
         {/* mission section */}
-        <div className="py-16 bg-new-gray">
+        <div className="pt-12 pb-32 bg-new-gray">
           <div className="max-w-screen-lg mx-auto text-3xl sm:text-4xl font-bold text-gray-700 mb-2 px-12">
-            {/* <span className="text-gray-200 text-sm sm:text-xl font-semibold block">
-                Who are we and why we do it
-              </span> */}
             We’re in this together
-            <span className="block text-base sm:text-lg font-normal mt-4 text-gray-700">
+            <span className="block text-base sm:text-lg font-normal mt-4 text-gray-700 leading-normal">
               We don’t know exactly how long we’ll be instructed to stay indoors
               but we do know there’s no cliff-edge where everything instantly
               gets back to normal. 
@@ -129,9 +126,14 @@ export default function Home() {
               shielded people get through this.
               </span>
             </span>
-            <span className="block ">
-            <a href="url" className="italic cursor-pointer text-base sm:text-lg font-semibold text-gray-700 hover:text-gray-900 ">Learn more about our approach</a>
+            <div className="flex items-center">
+            <span className="block mr-3 ">
+            <a href="url" className="italic cursor-pointer text-base sm:text-lg font-semibold text-gray-700 hover:text-gray-900 ">Learn more about our approach </a>
             </span>
+            <svg className="h-5 mt-3 fill-current text-gray-700 hover:text-gray-900 " xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.528 10.025l-16.5-.089L1 11.272h16.241L12.7 15.96 13.705 17 20 10.53l-1.006-1.04L13.704 4 12.7 5.039z"fill-rule="nonzero"/>
+            </svg>
+            </div>
           </div>
         </div>
 

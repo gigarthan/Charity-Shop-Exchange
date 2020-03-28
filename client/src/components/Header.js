@@ -22,17 +22,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center">
           <div className="mx-4 text-sm font-medium text-gray-500">
-            <Link to="/">
-              Home
-            </Link>
-          </div>
-          <div className="mx-4 text-sm font-medium text-gray-500">
-            <Link to="/about">
-              About Us
-            </Link>
-          </div>
-          <div className="mx-4 text-sm font-medium text-gray-500">
-            Contact Us
+            Share
           </div>
           <div className="mx-4 text-sm font-medium text-gray-500">
             Subscribe
