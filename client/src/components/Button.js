@@ -22,6 +22,7 @@ export default function Button(props) {
     <vaadin-button
       name={name}
       onClick={onClick}
+      disabled={disabled}
       ref={button}
       style={style}
       className={className}

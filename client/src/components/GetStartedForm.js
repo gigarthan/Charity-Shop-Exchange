@@ -77,7 +77,7 @@ export default function GetStartedForm() {
       </div>
       <div>
 
-      <Button onClick={handleSubmit}>Get Started</Button>
+      <Button onClick={handleSubmit} disabled={charityId === 0}>Get Started</Button>
       </div>
     </>
   );
