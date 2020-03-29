@@ -19,7 +19,7 @@ export default function Footer() {
                       <Link  to="/about">About</Link>
                     </li> 
                     <li className="text-xs text-gray-200 mb-4 cursor-pointer" >
-                      <Link to="/Form">Register Your Charity</Link>
+                      <Link to="/register">Register Your Charity</Link>
                       </li>
                       <li className="text-xs text-gray-200 mb-2 cursor-pointer">
                       <Link  to="/faq">Frequently Ask Questions</Link>
