@@ -16,31 +16,32 @@ export default function Home() {
       <Layout>
 
         {/* Hero section */}
-        <div className="flex flex-col sm:flex-row sm:max-w-screen-md mt-12 mx-auto px-8 sm:px-0 ">
+        <div className="flex flex-col sm:flex-row h-full max-w-full sm:max-w-screen-md mt-12 mx-auto px-8 sm:px-0">
           {/* hero left */}
-          <div className="flex flex-col items-start w-full sm:w-1/2 pb-12  pl-12 mr-0 mb-12 sm:mb-0 sm:mr-4">
-            <h1 className="text-3xl sm:text-5xl font-bold text-red-700 leading-tight mb-4">
-              Fighting isolation with Books, DVDs, and Games
-            </h1>
-            <h3 className="text-sm sm:text-xl text-gray-500 font-md mb-8 sm:mb-12">
-              Every week a friendly neighbour will collect items from local
-              charity shops and drop them at your door.
-            </h3>
-          </div>
+                <div className="flex flex-col items-start w-full sm:pr-4 sm:mb-12 sm:mb-0">
+                  <h1 className="font-header text-3xl sm:text-5xl font-bold text-red-700 leading-tight mb-2 sm:mb-4">
+                    Fighting&nbsp;isolation with Books and DVDs
+                  </h1>
+                  <h3 className="text-xs sm:text-xl text-gray-500 font-md mb-24 sm:mb-12">
+                    Every week a friendly neighbour will collect items from local
+                    charity shops and drop them at your door.
+                  </h3>
+                </div>
           {/* hero right */}
-          <div className="relative flex-1">
+          <div className="relative h-64 sm:h-auto w-full sm:pl-4">
+           
             <img
-              className="absolute z-10 left-0 bottom-0 w-12 sm:w-32 "
+              className="absolute z-10 left-0 bottom-0 w-20 sm:w-32 "
               src={boxes}
               alt="boxes"
             />
             <img
-              className="absolute z-10 right-0 bottom-0 w-32 sm:w-64 "
+              className="absolute z-10 right-0 bottom-0 w-56 sm:w-64 "
               src={hero}
               alt="hero"
             />
             <img
-              className="hidden sm:block absolute left-0.top-0 w-20 sm:w-56"
+              className=" sm: absolute left-0.top-0 w-32 sm:w-32"
               src={balloon}
               alt="text-box"
             />
@@ -57,7 +58,7 @@ export default function Home() {
 
         {/* HOW IT WORKS SECTION */}
         <div className="max-w-screen-md mx-auto px-3 sm:px-8 pt-12">
-          <div className="mx-auto text-3xl sm:text-5xl font-bold text-red-700 text-center ">
+          <div className="font-header mx-auto text-3xl sm:text-5xl font-bold text-red-700 text-center ">
             How it works
           </div>
           <div className="text-center text-sm sm:text-xl font-normal text-gray-500 mb-20">
@@ -113,7 +114,7 @@ export default function Home() {
 
         {/* mission section */}
         <div className="pt-12 pb-32 bg-new-gray">
-          <div className="max-w-screen-lg mx-auto text-3xl sm:text-4xl font-bold text-gray-700 mb-2 px-12">
+          <div className="font-header max-w-screen-lg mx-auto text-3xl sm:text-4xl font-bold text-gray-700 mb-2 px-12">
             We’re in this together
             <span className="block text-base sm:text-lg font-normal mt-4 text-gray-700 leading-normal">
               We don’t know exactly how long we’ll be instructed to stay indoors
