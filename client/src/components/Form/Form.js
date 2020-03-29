@@ -9,7 +9,7 @@ export default function Form() {
   return (
       <div className="pt-12 pb-32 bg-red-700">
         <div className="lg:items-start mx-auto sm:max-w-screen-lg mx-auto px-12 sm:px-12">
-          <div className="flex-1 lg:text-left text-2xl sm:text-4xl font-semibold tracking-wide text-white mb-2 sm:mb-4">
+          <div className=" font-header flex-1 lg:text-left text-2xl sm:text-4xl font-semibold  text-white mb-2 sm:mb-4">
             We need more Charity Shops to join the cause
           </div>
           <div className="flex items-center">
