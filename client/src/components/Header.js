@@ -31,7 +31,7 @@ export default function Header() {
             href="https://www.subbly.co/account/auth/login?store=charity-shop-exchange"
             rel="noopener noreferrer"
             target="_blank"
-            className="py-2 px-10 bg-red-700 rounded-full text-sm text-center text-white ml-4 "
+            className="py-2 px-10 bg-new-red rounded-full text-sm text-center text-white ml-4 "
           >
             Login
           </a>

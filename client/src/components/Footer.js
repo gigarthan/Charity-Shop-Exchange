@@ -5,7 +5,7 @@ import logoWhite from "../assets/img/logo_white@2x.png";
 export default function Footer() {
 
   return (
-    <div className="bg-new-navy pt-12 sm:pt-20 pb-8 px-8">
+    <div className="bg-new-navy pt-12 sm:pt-20 pb-8 px-12 sm:px-20">
       <div>
         <div className="flex flex-col items-center sm:flex-row sm:items-start max-w-screen-lg justify-between sm:mx-auto mb-12 sm:mb-20">
           <div>

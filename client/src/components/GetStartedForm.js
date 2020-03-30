@@ -42,7 +42,7 @@ export default function GetStartedForm() {
   return (
     <>
     <div className="mx-w-screen-md">
-      <div className="flex flex-col sm:flex-row w-full items-center ">
+      <div className="flex flex-col sm:flex-row w-full items-center mt-12 ">
           <div className="md:w-1/2 px-3 mb-6 md:mb-0 ">
             <div className="relative">
               <Combo
@@ -53,7 +53,7 @@ export default function GetStartedForm() {
                 placeholder="select"
                 // style={{ background: '#c7c7c7'}}
                 theme=""
-                label="County"
+                label="Select your region"
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               />
@@ -69,7 +69,7 @@ export default function GetStartedForm() {
                 disabled={!countyId || (counties.find(c => c.id === countyId).disabled)}
                 placeholder="select"
                 theme=""
-                label="Charity"
+                label="Pick a charity"
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               />
@@ -78,6 +78,12 @@ export default function GetStartedForm() {
             <div className="mt-8 ">
             <Button onClick={handleSubmit} disabled={charityId === 0}>Get Started</Button>
             </div>
+      </div>
+      <div className="text-center text-sx sm:text-lg font-normal text-gray-600 mt-8">
+        Our charities send boxes across the UK.
+        <span className="block">
+        More charities coming soon.
+          </span> 
       </div>
 
     </div>
