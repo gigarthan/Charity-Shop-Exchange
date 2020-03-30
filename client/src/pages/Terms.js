@@ -10,7 +10,11 @@ export default function Terms() {
       <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto px-3 sm:px-0 ">
 
         <h1 className="text-2xl sm:text-3xl font-semibold px-3 font-bold text-center mt-12 mb-8 sm:mb-12 text-red-700 leading-snug">
-          Charity Shop Exchange: Terms of Service
+          Charity Shop Exchange
+          <span className="block">
+            
+            Terms of Service
+            </span>
         </h1>
 
         <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
