@@ -4013,16 +4013,12 @@ video {
   list-style-position: outside;
 }
 
-.list-none {
-  list-style-type: none;
+.list-alpha {
+  list-style-type: lower-alpha;
 }
 
-.list-disc {
-  list-style-type: disc;
-}
-
-.list-decimal {
-  list-style-type: decimal;
+.list-roman {
+  list-style-type: lower-roman;
 }
 
 .m-0 {
@@ -16721,16 +16717,12 @@ video {
     list-style-position: outside;
   }
 
-  .sm\:list-none {
-    list-style-type: none;
+  .sm\:list-alpha {
+    list-style-type: lower-alpha;
   }
 
-  .sm\:list-disc {
-    list-style-type: disc;
-  }
-
-  .sm\:list-decimal {
-    list-style-type: decimal;
+  .sm\:list-roman {
+    list-style-type: lower-roman;
   }
 
   .sm\:m-0 {
@@ -29428,16 +29420,12 @@ video {
     list-style-position: outside;
   }
 
-  .md\:list-none {
-    list-style-type: none;
+  .md\:list-alpha {
+    list-style-type: lower-alpha;
   }
 
-  .md\:list-disc {
-    list-style-type: disc;
-  }
-
-  .md\:list-decimal {
-    list-style-type: decimal;
+  .md\:list-roman {
+    list-style-type: lower-roman;
   }
 
   .md\:m-0 {
@@ -42135,16 +42123,12 @@ video {
     list-style-position: outside;
   }
 
-  .lg\:list-none {
-    list-style-type: none;
+  .lg\:list-alpha {
+    list-style-type: lower-alpha;
   }
 
-  .lg\:list-disc {
-    list-style-type: disc;
-  }
-
-  .lg\:list-decimal {
-    list-style-type: decimal;
+  .lg\:list-roman {
+    list-style-type: lower-roman;
   }
 
   .lg\:m-0 {
@@ -54842,16 +54826,12 @@ video {
     list-style-position: outside;
   }
 
-  .xl\:list-none {
-    list-style-type: none;
+  .xl\:list-alpha {
+    list-style-type: lower-alpha;
   }
 
-  .xl\:list-disc {
-    list-style-type: disc;
-  }
-
-  .xl\:list-decimal {
-    list-style-type: decimal;
+  .xl\:list-roman {
+    list-style-type: lower-roman;
   }
 
   .xl\:m-0 {
@@ -64153,4 +64133,3 @@ video {
     transition-duration: 1000ms;
   }
 }
-
