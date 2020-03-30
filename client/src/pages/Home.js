@@ -49,8 +49,8 @@ export default function Home() {
         </div>
 
         {/* Input section */}
-        <div className="pb-12 pt-12">
-          <div className="flex flex-col items-center max-w-screen-md mx-auto">
+        <div className="pb-12 pt-12 bg-gray-200">
+          <div className="max-w-screen-md mx-auto">
             <GetStartedForm />
           </div>
         
