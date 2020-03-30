@@ -41,44 +41,46 @@ export default function GetStartedForm() {
 
   return (
     <>
-      <div className="flex mb-12">
-        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <div className="relative">
-            <Combo
-              name="countyId"
-              value={countyId}
-              setValue={setCountyId}
-              items={counties}
-              placeholder="select"
-              // style={{ background: '#c7c7c7'}}
-              theme=""
-              label="County"
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
-            />
+    <div className="mx-w-screen-md">
+      <div className="flex flex-col sm:flex-row w-full items-center ">
+          <div className="md:w-1/2 px-3 mb-6 md:mb-0 ">
+            <div className="relative">
+              <Combo
+                name="countyId"
+                value={countyId}
+                setValue={setCountyId}
+                items={counties}
+                placeholder="select"
+                // style={{ background: '#c7c7c7'}}
+                theme=""
+                label="County"
+                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state"
+              />
+            </div>
           </div>
+          <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="relative">
+              <Combo
+                name="charityId"
+                value={charityId}
+                setValue={setCharityId}
+                items={charities.filter(c => c.countyIds.includes(countyId))}
+                disabled={!countyId || (counties.find(c => c.id === countyId).disabled)}
+                placeholder="select"
+                theme=""
+                label="Charity"
+                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state"
+              />
+            </div>
         </div>
-        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <div className="relative">
-            <Combo
-              name="charityId"
-              value={charityId}
-              setValue={setCharityId}
-              items={charities.filter(c => c.countyIds.includes(countyId))}
-              disabled={!countyId || (counties.find(c => c.id === countyId).disabled)}
-              placeholder="select"
-              theme=""
-              label="Charity"
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
-            />
-          </div>
-        </div>
+            <div className="mt-8 ">
+            <Button onClick={handleSubmit} disabled={charityId === 0}>Get Started</Button>
+            </div>
       </div>
-      <div>
 
-      <Button onClick={handleSubmit} disabled={charityId === 0}>Get Started</Button>
-      </div>
+    </div>
     </>
   );
 
