@@ -33,7 +33,7 @@ export default function Header() {
             target="_blank"
             className="py-2 px-10 bg-new-red rounded-full text-sm text-center text-white ml-4 "
           >
-            Login
+            Log in
           </a>
         </div>
       </div>
