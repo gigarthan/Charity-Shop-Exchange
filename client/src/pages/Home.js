@@ -9,6 +9,8 @@ import boxes from "../assets/img/boxes.png";
 import wish from "../assets/img/wish@2x.png";
 import deliver from "../assets/img/deliver@1x.png";
 import enjoy from "../assets/img/enjoy@2x.png";
+import onefinger from "../assets/img/one-finger_200_transparent.gif";
+import box from "../assets/img/box_200_transparent.gif";
 
 export default function Home() {
 
@@ -16,14 +18,14 @@ export default function Home() {
       <Layout>
 
         {/* Hero section */}
-        <div className="flex flex-col sm:flex-row h-full max-w-full sm:max-w-screen-md mt-12 mx-auto px-8 sm:px-0">
+        <div className="flex flex-col sm:flex-row h-full max-w-full sm:max-w-screen-md mt-12 mx-auto px-12 sm:px-0">
           {/* hero left */}
                 <div className="flex flex-col items-start w-full sm:pr-4 sm:mb-12 sm:mb-0">
-                  <h1 className="font-header text-3xl sm:text-5xl font-bold text-red-700 leading-tight mb-2 sm:mb-4">
+                  <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
                     Fighting&nbsp;isolation with Books and DVDs
                   </h1>
                   <h3 className="text-xs sm:text-xl text-gray-500 font-md mb-24 sm:mb-12">
-                    Get a regular supply of things to read and watch. We collect a selection of books and DVDs from local charity shops and deliver weekly, bi-weekly or monthly - it's up to you.
+                  Get a regular supply of things to read and watch. We collect a selection of books and DVDs from local charity shops and deliver weekly, bi-weekly or monthly - its up to you.
                   </h3>
                 </div>
           {/* hero right */}
@@ -31,8 +33,8 @@ export default function Home() {
            
             <img
               className="absolute z-10 left-0 bottom-0 w-20 sm:w-32 "
-              src={boxes}
-              alt="boxes"
+              src={box}
+              alt="box"
             />
             <img
               className="absolute z-10 right-0 bottom-0 w-56 sm:w-64 "
@@ -48,7 +50,7 @@ export default function Home() {
         </div>
 
         {/* Input section */}
-        <div className="pb-12 pt-12 bg-gray-200">
+        <div className="pb-20 pt-12">
           <div className="max-w-screen-md mx-auto">
             <GetStartedForm />
           </div>
@@ -56,8 +58,9 @@ export default function Home() {
         </div>
 
         {/* HOW IT WORKS SECTION */}
-        <div className="max-w-screen-md mx-auto px-3 sm:px-8 pt-12">
-          <div className="font-header mx-auto text-3xl sm:text-5xl font-bold text-red-700 text-center ">
+        <div className="bg-new-gray pt-8 sm:pt-12 pb-20">
+        <div className="max-w-screen-md mx-auto px-3 sm:px-8 ">
+          <div className="font-header mx-auto text-3xl sm:text-5xl font-bold text-new-red mb-20 text-center ">
             How it works
           </div>
           {/* <div className="text-center text-sm sm:text-xl font-normal text-gray-500 mb-20">
@@ -109,13 +112,38 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </div>
+
+
+          
+        <div className="pt-12 pb-20 bg-new-red">
+          <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-white mb-8 px-12 sm:px-20">
+          A Charity Shop Exchange subscription buys books and DVDs from local charity shops
+            <div className="flex items-center">
+
+            <div className="flex flex-col items-center w-full">
+            <span className="mt-12">
+            <a href="url" className="text-center cursor-pointer text-xs sm:text-xl font-medium text-white hover:text-gray-900 px-5 py-3 bg-new-red border-white rounded-full ">Subscribe here </a>
+            </span>
+            <img className="h-12 mt-4" src={onefinger} alt="subscribe" />
+              </div>
+            
+            {/* <svg className="h-5 mt-3 fill-current text-gray-700 hover:text-gray-900 " xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.528 10.025l-16.5-.089L1 11.272h16.241L12.7 15.96 13.705 17 20 10.53l-1.006-1.04L13.704 4 12.7 5.039z"fill-rule="nonzero"/>
+            </svg> */}
+            </div>
+          </div>
+        </div>
 
         {/* mission section */}
-        <div className="pt-12 pb-32 bg-new-gray">
-          <div className="font-header max-w-screen-lg mx-auto text-3xl sm:text-4xl font-bold text-gray-700 mb-2 px-12">
-            We’re in this together
-            <span className="block text-base sm:text-lg font-normal mt-4 text-gray-700 leading-normal">
-              We don’t know exactly how long we’ll be instructed to stay indoors
+        <div className="pt-20 pb-32">
+          <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-new-navy mb-8 px-12 sm:px-20">
+          Responding to the Coronavirus Crisis
+            <span className="block text-left text-xs sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
+              <span className="font-bold">
+                We're in this together. 
+                </span>
+                We don’t know exactly how long we’ll be instructed to stay indoors
               but we do know there’s no cliff-edge where everything instantly
               gets back to normal. 
               <span className="block">
@@ -126,8 +154,8 @@ export default function Home() {
               </span>
             </span>
             <div className="flex items-center">
-            <span className="block mr-3 ">
-            <a href="url" className="italic cursor-pointer text-base sm:text-lg font-semibold text-gray-700 hover:text-gray-900 ">Learn more about our approach </a>
+            <span className="block flex-shrink-0 mr-3 ">
+            <a href="url" className="italic  cursor-pointer text-xs sm:text-xl font-medium text-gray-700 hover:text-gray-900 ">Learn more about our approach </a>
             </span>
             <svg className="h-5 mt-3 fill-current text-gray-700 hover:text-gray-900 " xmlns="http://www.w3.org/2000/svg">
             <path d="M17.528 10.025l-16.5-.089L1 11.272h16.241L12.7 15.96 13.705 17 20 10.53l-1.006-1.04L13.704 4 12.7 5.039z"fill-rule="nonzero"/>

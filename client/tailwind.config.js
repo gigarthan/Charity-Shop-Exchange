@@ -7,8 +7,11 @@ module.exports = {
         header: ["Metropolis"]
       },
       colors: {
-        'new-gray': '#C7C7C7',
-        'new-navy': '#294B75',
+        'new-gray': '#F1F1E6',
+        'new-navy': '#111E36',
+        'new-lightnavy': '#004969',
+        'new-red': '#E33936',
+        'new-cream': '#FFF9E3',
       },
     },
     variants: {},
