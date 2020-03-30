@@ -76,11 +76,11 @@ export default function GetStartedForm() {
             </div>
         </div>
             <div className="mt-8 ">
-            <Button onClick={handleSubmit} disabled={charityId === 0}>Get Started</Button>
+            <Button onClick={handleSubmit} disabled={charityId === 0}>Continue</Button>
             </div>
       </div>
-      <div className="text-center text-sx sm:text-lg font-normal text-gray-600 mt-8">
-        Our charities send boxes across the UK.
+      <div className="text-center text-sx sm:text-sm font-normal text-gray-600 mt-8">
+        Our charities send boxes to doorsteps across the UK.
         <span className="block">
         More charities coming soon.
           </span> 
