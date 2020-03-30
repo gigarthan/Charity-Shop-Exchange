@@ -23,8 +23,7 @@ export default function Home() {
                     Fighting&nbsp;isolation with Books and DVDs
                   </h1>
                   <h3 className="text-xs sm:text-xl text-gray-500 font-md mb-24 sm:mb-12">
-                    Every week a friendly neighbour will collect items from local
-                    charity shops and drop them at your door.
+                    Get a regular supply of things to read and watch. We collect a selection of books and DVDs from local charity shops and deliver weekly, bi-weekly or monthly - it's up to you.
                   </h3>
                 </div>
           {/* hero right */}
@@ -61,9 +60,9 @@ export default function Home() {
           <div className="font-header mx-auto text-3xl sm:text-5xl font-bold text-red-700 text-center ">
             How it works
           </div>
-          <div className="text-center text-sm sm:text-xl font-normal text-gray-500 mb-20">
+          {/* <div className="text-center text-sm sm:text-xl font-normal text-gray-500 mb-20">
             Your weekly subscription buys books & DVDs from local charity shops
-          </div>
+          </div> */}
 
           <div className="px-4 sm:px-8">
             <div className="flex flex-col-reverse sm:flex-row mb-12">
@@ -104,8 +103,7 @@ export default function Home() {
                   Step 3
                 </div>
                 <div className="text-xl sm:text-3xl font-bold text-gray-700 leading-snug mb-8 sm:mb-0">
-                  Enjoy your favorites books, CDs, DVDs, and games without
-                  leaving the house.
+                  Enjoy moments of liberation without leaving home.
                 </div>
               </div>
             </div>
