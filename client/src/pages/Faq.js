@@ -7,8 +7,7 @@ export default function Faq() {
     <Layout>
       <div className="bg-new-navy w-full">
         <h1 className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-8 sm:pt-12 pb-8 sm:pb-12">
-          Frequently Asked Questions
-          <span className="block">about Charity Shop Exchange</span>
+          Frequently asked questions
         </h1>
       </div>
       <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto px-3 sm:px-0 ">
