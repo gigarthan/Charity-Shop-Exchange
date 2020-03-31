@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        custom: {
+        families: ['Metropolis'],
+        urls: ['/fonts/typeface-metropolis/index.css']
+      }
+      });
+    </script>
+
+    <style>
+      html .font-header { opacity: 1; }
+      html.wf-loading .font-header { opacity: 0; }
+    </style>
+
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
