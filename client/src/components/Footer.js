@@ -18,10 +18,10 @@ export default function Footer() {
               <Link to="/about">About</Link>
             </li>
             <li className="text-xs text-gray-200 mb-3 sm:mb-4 cursor-pointer" >
-              <Link to="/register">Register Your Charity</Link>
+              <Link to="/register">Register your charity</Link>
             </li>
             <li className="text-xs text-gray-200 mb-2 cursor-pointer">
-              <Link to="/faq">Frequently Asked Questions</Link>
+              <Link to="/faq">Frequently asked questions</Link>
             </li>
           </ul>
           <ul className="flex flex-col items-center sm:block flex-1 sm:flex-none">
@@ -31,7 +31,7 @@ export default function Footer() {
               </a>
             </li>
             <li className="text-xs text-gray-200 mb-2 cursor-pointer">
-              <a href="https://twitter.com/">Twitter @</a>
+              Twitter @</a>
             </li>
           </ul>
         </div>
