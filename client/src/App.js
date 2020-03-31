@@ -8,6 +8,7 @@ import Faq from "./pages/Faq";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
+
 function App() {
   return (
     <Switch>

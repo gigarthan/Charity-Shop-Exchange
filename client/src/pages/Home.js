@@ -5,12 +5,13 @@ import GetStartedForm from "../components/GetStartedForm";
 
 import balloon from "../assets/img/balloon@2x.png";
 import hero from "../assets/img/hero_01_girl.png";
-import boxes from "../assets/img/boxes.png";
+// import boxes from "../assets/img/boxes.png";
 import wish from "../assets/img/wish@2x.png";
 import deliver from "../assets/img/deliver@1x.png";
 import enjoy from "../assets/img/enjoy@2x.png";
 import onefinger from "../assets/img/one-finger_200_transparent.gif";
 import box from "../assets/img/box_200_transparent.gif";
+// import UncontrolledLottie from './components/UncontrolledLottie';
 
 export default function Home() {
 
@@ -24,7 +25,7 @@ export default function Home() {
                   <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
                     Fighting&nbsp;isolation with Books and DVDs
                   </h1>
-                  <h3 className="text-xs sm:text-xl text-gray-500 font-md mb-24 sm:mb-12">
+                  <h3 className="text-base sm:text-lg text-gray-700 font-normal mb-24 sm:mb-12">
                   Get a regular supply of things to read and watch. We collect a selection of books and DVDs from local charity shops and deliver weekly, bi-weekly or monthly - its up to you.
                   </h3>
                 </div>
@@ -69,13 +70,13 @@ export default function Home() {
 
           <div className="px-4 sm:px-8">
             <div className="flex flex-col-reverse sm:flex-row mb-12">
-              <div className="w-full sm:w-1/2">
+              {/* <div className="w-full sm:w-1/2">
                 <img className="sm:mr-32" src={wish} alt="daydream" />
-              </div>
+              </div> */}
               <div className="flex-1 sm:ml-8">
-                <div className="text-md sm:text-xl font-semibold text-gray-500">
+                {/* <div className="text-md sm:text-xl font-semibold text-gray-500">
                   Step 1
-                </div>
+                </div> */}
                 <div className="text-xl sm:text-3xl mt-3 font-bold text-gray-700 leading-snug">
                   Start by telling us the things you like to read and watch
                 </div>
@@ -84,27 +85,27 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row mb-12">
               <div className="flex-1 sm:mr-8">
-                <div className="text-md sm:text-xl font-semibold text-gray-500">
+                {/* <div className="text-md sm:text-xl font-semibold text-gray-500">
                   Step 2
-                </div>
+                </div> */}
                 <div className="text-xl sm:text-3xl mt-3 font-bold text-gray-700 leading-snug">
                   We buy the items from your local charity shops and drop the
                   box at your door.
                 </div>
               </div>
-              <div className="sm:w-1/2">
-                <img className="ml-8 sm:ml-20" src={deliver} alt="gifts" />
-              </div>
+              {/* <div className="lotties">
+                <img className="ml-8 sm:ml-20" src={packageWalking} alt="deliver" />
+              </div> */}
             </div>
 
             <div className="flex flex-col-reverse sm:flex-row py-4 px-3 mb-12">
-              <div className=" sm:w-1/2">
+              {/* <div className=" sm:w-1/2">
                 <img className="sm:mr-32" src={enjoy} alt="listening" />
-              </div>
+              </div> */}
               <div className="flex-1">
-                <div className="text-md sm:text-xl font-semibold text-gray-500">
+                {/* <div className="text-md sm:text-xl font-semibold text-gray-500">
                   Step 3
-                </div>
+                </div> */}
                 <div className="text-xl sm:text-3xl font-bold text-gray-700 leading-snug mb-8 sm:mb-0">
                   Enjoy moments of liberation without leaving home.
                 </div>
@@ -116,8 +117,8 @@ export default function Home() {
 
 
           
-        <div className="pt-12 pb-20 bg-new-red">
-          <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-white mb-8 px-12 sm:px-20">
+        <div className="pt-12 pb-20">
+          <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
           A Charity Shop Exchange subscription buys books and DVDs from local charity shops
             <div className="flex items-center">
 
@@ -136,8 +137,8 @@ export default function Home() {
         </div>
 
         {/* mission section */}
-        <div className="pt-20 pb-32">
-          <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-new-navy mb-8 px-12 sm:px-20">
+        <div className="pt-20 pb-32 bg-new-gray">
+          <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
           Responding to the Coronavirus Crisis
             <span className="block text-left text-xs sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
               <span className="font-bold">
