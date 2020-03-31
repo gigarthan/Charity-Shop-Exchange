@@ -25,7 +25,7 @@ export default function Home() {
           <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
             Fighting&nbsp;isolation with Books and DVDs
           </h1>
-          <h3 className="text-base sm:text-xl text-gray-600 font-medium mb-12 sm:mb-12">
+          <h3 className="text-base sm:text-lg text-gray-600 font-medium mb-12 sm:mb-12">
             Get a regular supply of things to read and watch. We collect a
             selection of books and DVDs from local charity shops and deliver
             weekly, bi-weekly or monthly - its up to you.
