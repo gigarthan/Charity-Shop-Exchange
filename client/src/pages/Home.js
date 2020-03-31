@@ -139,22 +139,19 @@ export default function Home() {
         <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
           Responding to the Coronavirus Crisis
           <span className="block text-left text-xs sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
-            <span className="font-bold">We're in this together.</span>
-            We don’t know exactly how long we’ll be instructed to stay indoors
+            We're in this together. We don’t know exactly how long we’ll be instructed to stay indoors
             but we do know there’s no single moment where everything instantly gets
             back to normal.
-            <span className="block">
               Over 1 million people in the UK need to be shielded from
               COVID-19 for at least the next 12 weeks. Hence, a wartime
               effort is needed to deliver services which help these shielded
               people get through this.
-            </span>
           </span>
           <div className="flex items-center">
             <span className="block flex-shrink-0 mr-3 ">
               <a
                 href="url"
-                className="italic  cursor-pointer text-xs sm:text-xl font-medium text-gray-700 hover:text-gray-900 "
+                className="cursor-pointer text-xs sm:text-xl font-medium text-gray-700 hover:text-gray-900 "
               >
                 Learn more about our approach{" "}
               </a>
