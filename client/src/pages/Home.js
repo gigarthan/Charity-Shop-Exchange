@@ -25,7 +25,7 @@ export default function Home() {
           <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
             Fighting&nbsp;isolation with Books and DVDs
           </h1>
-          <h3 className="text-base sm:text-lg text-gray-600 font-medium mb-12 sm:mb-12">
+          <h3 className="text-base sm:text-xl text-gray-600 font-medium mb-12 sm:mb-12">
             Get a regular supply of things to read and watch. We collect a
             selection of books and DVDs from local charity shops and deliver
             weekly, bi-weekly or monthly - its up to you.
@@ -112,7 +112,7 @@ export default function Home() {
       </div>
 
       <div className="pt-12 pb-20">
-        <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
+        <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
           A Charity Shop Exchange subscription buys books and DVDs from local
           charity shops
           <div className="flex items-center">
@@ -136,16 +136,16 @@ export default function Home() {
 
       {/* mission section */}
       <div className="pt-20 pb-32 bg-new-gray">
-        <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-3xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
+        <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
           Responding to the Coronavirus Crisis
           <span className="block text-left text-xs sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
             <span className="font-bold">We're in this together.</span>
             We don’t know exactly how long we’ll be instructed to stay indoors
-            but we do know there’s no cliff-edge where everything instantly gets
+            but we do know there’s no single moment where everything instantly gets
             back to normal.
             <span className="block">
               Over 1 million people in the UK need to be shielded from
-              Coronavirus, for at least the next 12 weeks. Hence, a wartime
+              COVID-19 for at least the next 12 weeks. Hence, a wartime
               effort is needed to deliver services which help these shielded
               people get through this.
             </span>
