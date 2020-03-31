@@ -18,7 +18,7 @@ export default function Register() {
                 save the day!
               </h1>
               <p className="text-xs sm:text-lg text-center font-medium sm:font-semibold mt-4 text-gray-600 leading-normal">
-                We’re looking for Charity Shops across all regions of the UK to
+                We’re looking for charity shops across all regions of the UK to
                 supply the demand that we have from our subscribers. In other
                 words, we collect payments and then pay you for the items that
                 you send or deliver.
@@ -56,7 +56,7 @@ export default function Register() {
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
                       htmlFor="cname"
                     >
-                      Your Charity
+                      Your Charity:
                     </label>
                     <input
                       className="appearance-none border text-sm sm:text-base tracking-loose border-gray-300 rounded w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -72,7 +72,7 @@ export default function Register() {
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
                       htmlFor="position"
                     >
-                      Your responsibilities at the charity
+                      Your responsibilities at the charity:
                     </label>
                     <input
                       className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -120,7 +120,7 @@ export default function Register() {
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
                       htmlFor="message"
                     >
-                      Feel free to tell us more about your charity shops
+                      Feel free to tell us more about your charity shops:
                     </label>
                     <textarea
                       className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
