@@ -51,7 +51,7 @@ export default function About() {
 
       <div className="bg-new-gray flex flex-col sm:flex-none pt-12 pb-20 ">
         <h2 className="text-center text-2xl sm:text-4xl font-bold text-new-lightnavy px-5 mb-12 leading-snug">
-          Making Charity Shop Exchange Possible
+          Making Charity Shop Exchange possible
         </h2>
 
         <div className="flex flex-wrap justify-around mx-auto sm:max-w-screen-md">
@@ -240,7 +240,7 @@ export default function About() {
             We are always looking for amazing people regardless of experience.
               </p>
           <button className="bg-new-red py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 sm:mt-0 font-medium py-1  rounded-full text-white border-2">
-            Join the Force
+            Contact Us
               </button>
         </div>
       </div>
