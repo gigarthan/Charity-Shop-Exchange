@@ -13,8 +13,8 @@ import marina from "../assets/img/marina@2x.png";
 export default function About() {
   return (
     <Layout>
-      <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto px-3 sm:px-0 ">
-        <h1 className="text-2xl sm:text-3xl font-semibold px-3 font-bold text-center mt-12 mb-8 sm:mb-12 text-red-700 leading-snug">
+      <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto pt-12 pb-20 px-3 sm:px-0 ">
+        <h1 className="text-3xl sm:text-5xl font-semibold px-3 font-bold text-center mt-12 mb-8 sm:mb-12 text-new-red leading-snug">
           Why we built Charity Shop Exchange
       </h1>
         <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
@@ -34,7 +34,7 @@ export default function About() {
             of which we have more than ten thousand in the UK.
         </p>
         </div>
-        <blockquote className="w-4/5 mx-auto text-center text-2xl sm:text-3xl font-medium text-gray-700 mb-8 sm:mb-12 leading-snug">
+        <blockquote className="w-4/5 mx-auto text-center text-2xl sm:text-3xl font-medium text-gray-800 mb-8 sm:mb-12 leading-snug">
           A nationwide network of charity shops{" "}
           <em className="text-gray-500">meets</em> cooperative approach{" "}
           <em className="text-gray-500">meets</em> online subscription box
@@ -49,10 +49,10 @@ export default function About() {
 
       </div>
 
-      <div className="bg-gray-200 flex flex-col sm:flex-none sm:max-w-screen p-8 sm:p-20">
-        <h2 className="text-center text-2xl sm:text-3xl font-semibold text-gray-700 px-5 pb-8 sm:pb-12 leading-snug">
+      <div className="bg-new-gray flex flex-col sm:flex-none pt-12 pb-20 ">
+        <h2 className="text-center text-2xl sm:text-4xl font-bold text-new-lightnavy px-5 mb-12 leading-snug">
           Making Charity Shop Exchange Possible
-      </h2>
+        </h2>
 
         <div className="flex flex-wrap justify-around mx-auto sm:max-w-screen-md">
 
@@ -231,30 +231,29 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-gray-200 items-center pt-8 pb-24 sm:pt-12 px-4 sm:px-12">
-
-        <div className="flex items-center flex-col sm:max-w-screen-md mx-auto px-3 sm:px-0">
-          <div className="text-center px-5 mb-2 sm:mb-2 text-xl sm:text-3xl sm:max-w-screen-xl mx-auto font-semibold text-gray-700 tracking-wide">
+      <div className="items-center pt-8 pb-24 sm:pt-12 px-4 sm:px-12 pt-32 pb-40">
+        <div className="flex items-center flex-col sm:max-w-screen-lg mx-auto px-3 sm:px-0">
+          <div className="text-center px-5 mb-2 sm:mb-2 text-3xl sm:text-5xl sm:max-w-screen-xl mx-auto font-semibold text-gray-700 tracking-wide">
             Want to join the cause?
               </div>
           <p className="px-5 text-center text-sm sm:text-xl text-gray-600 font-medium mb-8 tracking-normal">
             We are always looking for amazing people regardless of experience.
               </p>
-          <button className="bg-red-700 py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 sm:mt-0 font-medium py-1  rounded-full text-white border-2">
+          <button className="bg-new-red py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 sm:mt-0 font-medium py-1  rounded-full text-white border-2">
             Join the Force
               </button>
         </div>
       </div>
 
-      <div className="bg-red-700 items-center mx-auto p-8 sm:p-24 px-4 sm:px-12">
-        <div className="flex items-center flex-col lg:flex-row sm:max-w-screen-md mx-auto px-3 sm:px-0">
-          <div className="flex-1 text-center mb-8 lg:mb-0 lg:text-left text-lg lg:text-2xl font-semibold text-white tracking-wide">
+      <div className="bg-new-lightnavy items-center mx-auto pt-12 pb-20 sm:p-24 px-4 sm:px-12">
+        <div className="flex items-center flex-col lg:flex-row sm:max-w-screen-lg mx-auto px-3 sm:px-0">
+          <div className="flex-1 text-center mb-8 lg:mb-0 lg:text-left text-lg lg:text-2xl font-semibold text-gray-200 tracking-wide">
             Have an idea you'd like to contribute?
               <span className="block">
               A new service you'd like to see?
                 </span>
           </div>
-          <button className="bg-red-700 flex-initial py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 font-medium rounded-full text-white border-2">
+          <button className="flex-initial py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 font-medium rounded-full text-white border-2">
             Contact Us
               </button>
         </div>
