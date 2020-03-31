@@ -5,12 +5,10 @@ import Footer from './Footer';
 export default function Layout(props) {
 
   return ( 
-    <div className="App bg-gray-100">
-      <div className="w-screen">
+    <div className="App">
         <Header />
         {props.children}
         <Footer />
-      </div>
     </div>
   );
 
