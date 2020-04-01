@@ -24,7 +24,7 @@ export default function Home() {
     <Layout>
       {/* Hero section */}
       <div>
-        <div className="flex flex-col sm:flex-row max-w-full sm:max-w-screen-md pt-32 mx-auto px-12 sm:px-0">
+        <div className="flex flex-col sm:flex-row max-w-full sm:max-w-screen-md pt-10 mb-8 sm:mb-0 sm:pt-32 mx-auto px-12 sm:px-10">
           {/* hero left */}
           <div className="flex flex-col items-start w-full sm:pr-4 sm:mb">
             <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* Input section */}
-      <div className="pb-20">
+      <div className="pb-20 px-10">
         <div className="max-w-screen-md mx-auto">
           <GetStartedForm />
         </div>

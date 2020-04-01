@@ -64,7 +64,7 @@ export default function GetStartedForm() {
     <>
     <div className="mx-w-screen-md">
       <div className="flex flex-col sm:flex-row w-full items-center ">
-          <div className="md:w-1/2 px-3 mb-6 md:mb-0 ">
+          <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
             <div className="relative">
               <Combo
                 name="countyId"
@@ -80,7 +80,7 @@ export default function GetStartedForm() {
               />
             </div>
           </div>
-          <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+          <div className="md:w-1/2 pr-2 mb-6 md:mb-0">
             <div className="relative">
               <Combo
                 name="charityId"
