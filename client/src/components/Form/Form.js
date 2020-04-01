@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "@vaadin/vaadin-combo-box";
 import useDialog from "./useDialog";
 import Dialog from "./Dialog";
@@ -11,15 +12,15 @@ export default function Form() {
       <div>
             <div className=" mx-auto sm:max-w-screen-lg px-12 sm:px-20">
                 <div className="text-center leading-tight font-header text-lg lg:text-3xl font-semibold text-gray-200 mb-2 sm:mb-4">
-                  We need more Charity Shops to join the cause
+                  We need more charity shops to join the cause
                 </div>
             </div>
             
             <div className=" text-center hover:bg-new-navy w-32 py-1 px-3 mx-auto mt-8 text-xs sm:text-xl font-medium text-white cursor-pointer">
-              <a href="url"
+              <Link to="/register"
               >
                 Enlist now
-              </a>
+              </Link>
             </div>
             {/* <svg
               className="h-5 mt-1 fill-current text-gray-100 hover:text-gray-300 "

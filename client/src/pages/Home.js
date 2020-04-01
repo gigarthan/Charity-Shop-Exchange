@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import Layout from "../components/Layout";
 import Form from "../components/Form/Form";
 import GetStartedForm from "../components/GetStartedForm";
@@ -23,12 +24,12 @@ export default function Home() {
         {/* hero left */}
         <div className="flex flex-col items-start w-full sm:pr-4 sm:mb-12 sm:mb-0">
           <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
-            Fighting&nbsp;isolation with Books and DVDs
+            Fighting&nbsp;isolation with books and DVDs
           </h1>
-          <h3 className="text-base sm:text-lg text-gray-600 font-medium mb-12 sm:mb-12">
+          <h3 className="text-base sm:text-xl text-gray-600 font-medium mb-12 sm:mb-12">
             Get a regular supply of things to read and watch. We collect a
             selection of books and DVDs from local charity shops and deliver
-            weekly, bi-weekly or monthly - its up to you.
+            weekly, bi-weekly or monthly — it’s up to you.
           </h3>
         </div>
         {/* hero right */}
@@ -38,11 +39,6 @@ export default function Home() {
               </div> */}
 
         <div className="relative h-64 sm:h-auto w-full sm:pl-4">
-          <img
-            className="absolute z-10 left-0 bottom-0 w-20 sm:w-56 -mb-16 -ml-10 "
-            src={box}
-            alt="box"
-          />
           <img
             className="absolute z-10 right-0 bottom-0 w-56 sm:w-64 "
             src={hero}
@@ -75,8 +71,8 @@ export default function Home() {
 
           <div className="px-4">
             <div className="flex flex-col-reverse items-center sm:flex-row sm:items-start py-4 px-3 mb-12">
-                <div className="flex-shrink-0 text-xl sm:text-2xl mt-3 font-semibold text-gray-700 leading-snug">
-                  1. Start by telling us the things you like to read and watch
+                <div className="flex-1 text-xl sm:text-2xl mt-3 font-semibold text-gray-700 leading-snug">
+                  1. Start by telling us the things you like to read and watch.
                 </div>
                 <div className="w-3/4 sm:w-1/2 flex-initial">
                   <img className src={wish} alt="listening" />
@@ -119,7 +115,7 @@ export default function Home() {
             <div className="flex flex-col items-center w-full">
               <span className="mt-12">
                 <a
-                  href="url"
+                  href="https://charity-shop-exchange.subbly.me"
                   className="text-center cursor-pointer text-sm sm:text-xl font-medium text-gray-600 hover:text-gray-900 "
                 >
                   Subscribe here{" "}
@@ -137,7 +133,7 @@ export default function Home() {
       {/* mission section */}
       <div className="pt-20 pb-32 bg-new-gray">
         <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
-          Responding to the Coronavirus Crisis
+          Responding to the coronavirus crisis
           <span className="block text-left text-xs sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
             We're in this together. We don’t know exactly how long we’ll be instructed to stay indoors
             but we do know there’s no single moment where everything instantly gets
@@ -149,12 +145,12 @@ export default function Home() {
           </span>
           <div className="flex items-center">
             <span className="block flex-shrink-0 mr-3 ">
-              <a
-                href="url"
+              <Link
+                to="/about"
                 className="cursor-pointer text-xs sm:text-xl font-medium text-gray-700 hover:text-gray-900 "
               >
                 Learn more about our approach{" "}
-              </a>
+              </Link>
             </span>
             <svg
               className="h-5 mt-3 fill-current text-gray-700 hover:text-gray-900 "
