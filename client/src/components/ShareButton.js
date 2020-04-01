@@ -22,7 +22,7 @@ export default function ShareButton() {
 
       <div
         onClick={handleClick}
-        className="share-button fixed z-50 flex items-center top-0 right-0 mt-2 sm:mt-4 mr-4 sm:mr-8 rounded-md bg-gray-100 border border-gray-700 py-2 px-5"
+        className="share-button fixed z-50 flex items-center top-0 right-0 mt-2 sm:mt-4 mr-4 sm:mr-8 rounded-md bg-white py-2 px-5"
       >
 
         <img
