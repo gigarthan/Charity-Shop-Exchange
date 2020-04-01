@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Form from "../components/Form/Form";
 import GetStartedForm from "../components/GetStartedForm";
@@ -24,45 +24,51 @@ export default function Home() {
     <Layout>
       {/* Hero section */}
       <div>
-      <div className="flex flex-col sm:flex-row max-w-full sm:max-w-screen-md pt-32 mx-auto px-12 sm:px-0">
-        {/* hero left */}
-        <div className="flex flex-col items-start w-full sm:pr-4 sm:mb">
-          <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
-            Fighting&nbsp;isolation with books and DVDs
-          </h1>
-          <h3 className="text-base sm:text-xl text-gray-600 font-medium mb-12 sm:mb-12">
-            Get a regular supply of things to read and watch. We collect a
-            selection of books and DVDs from local charity shops and deliver
-            weekly, bi-weekly or monthly — it’s up to you.
-          </h3>
-        
-        </div>
-        {/* hero right */}
+        <div className="flex flex-col sm:flex-row max-w-full sm:max-w-screen-md pt-32 mx-auto px-12 sm:px-0">
+          {/* hero left */}
+          <div className="flex flex-col items-start w-full sm:pr-4 sm:mb">
+            <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
+              Fighting&nbsp;isolation with books and DVDs
+            </h1>
+            <h3 className="text-base sm:text-xl text-gray-600 font-medium mb-12 sm:mb-12">
+              Get a regular supply of things to read and watch. We collect a
+              selection of books and DVDs from local charity shops and deliver
+              weekly, bi-weekly or monthly — it’s up to you.
+            </h3>
+          </div>
 
-        {/* <div className="w-full">
+          {/* hero right */}
+
+          {/* =====Old Hero image - the girl====== */}
+
+          {/* <div className="w-full">
                 <img className="sm:mr-32" src={boxopen} alt="hero" />
-              </div> */}
+              </div>
 
-        <div className="flex flex-col items-center ">
-                    <img  
-                      className=""
-                      src={door}
-                      alt="door"
-                    />
+        <div className="relative h-64 sm:h-auto w-full sm:pl-4">
+          <img
+            className="absolute z-10 right-0 bottom-0 w-56 sm:w-64 "
+            src={hero}
+            alt="hero"
+          />
+          <img
+            className=" sm: absolute left-0.top-0 w-32 sm:w-32"
+            src={balloon}
+            alt="text-box"
+          />
+        </div> */}
 
-                <img
-                  className=""
-                  src={base}
-                  alt="hero"
-                />
+          {/* ============== New Hero Door ===================== */}
+          <div className="flex flex-col items-center ">
+            <img className="" src={door} alt="door" />
+
+            <img className="" src={base} alt="hero" />
+          </div>
         </div>
       </div>
-
+      <div className="max-w-screen-md mx-auto pl-12 transition duration-500 ease-in-out transform hover:-translate-y-1">
+        <img className="" src={starttext} alt="text" />
       </div>
-                <div className="max-w-screen-md mx-auto pl-12 transition duration-500 ease-in-out transform hover:-translate-y-1">
-                  <img className="" src={starttext} alt="text" />
-                </div>
-
 
       {/* Input section */}
       <div className="pb-20">
@@ -83,26 +89,23 @@ export default function Home() {
 
           <div className="px-4">
             <div className="flex flex-col-reverse items-center sm:flex-row sm:items-start py-4 px-3 mb-12">
-                <div className="flex-1 text-xl sm:text-2xl mt-3 font-semibold text-gray-700 leading-snug">
-                  1. Start by telling us the things you like to read and watch.
-                </div>
-                <div className="w-3/4 sm:w-1/2 flex-initial">
-                  <img className src={wish} alt="listening" />
-                </div>
-              
+              <div className="flex-1 text-xl sm:text-2xl mt-3 font-semibold text-gray-700 leading-snug">
+                1. Start by telling us the things you like to read and watch.
+              </div>
+              <div className="w-3/4 sm:w-1/2 flex-initial">
+                <img className src={wish} alt="listening" />
+              </div>
             </div>
-
 
             <div className="flex flex-col-reverse items-center sm:flex-row sm:items-start mb-12">
-                <div className="flex-1 text-xl sm:text-2xl mt-3 font-semibold text-gray-700 leading-snug">
-                  2. We buy the items from your local charity shops and drop the
-                  box at your door.
-                </div>
-                <div className="w-48 sm:w-1/2">
-                  <img className="ml-8 sm:mr-12" src={deliver} alt="deliver" />
-                </div>
+              <div className="flex-1 text-xl sm:text-2xl mt-3 font-semibold text-gray-700 leading-snug">
+                2. We buy the items from your local charity shops and drop the
+                box at your door.
+              </div>
+              <div className="w-48 sm:w-1/2">
+                <img className="ml-8 sm:mr-12" src={deliver} alt="deliver" />
+              </div>
             </div>
-
 
             <div className="flex flex-col-reverse items-center sm:flex-row py-4 px-3 mb-12">
               <div className="flex-1">
@@ -114,7 +117,6 @@ export default function Home() {
                 <img className="sm:mr-32" src={enjoy} alt="enjoy" />
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -147,13 +149,12 @@ export default function Home() {
         <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
           Responding to the coronavirus crisis
           <span className="block text-left text-xs sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
-            We're in this together. We don’t know exactly how long we’ll be instructed to stay indoors
-            but we do know there’s no single moment where everything instantly gets
-            back to normal.
-              Over 1 million people in the UK need to be shielded from
-              COVID-19 for at least the next 12 weeks. Hence, a wartime
-              effort is needed to deliver services which help these shielded
-              people get through this.
+            We're in this together. We don’t know exactly how long we’ll be
+            instructed to stay indoors but we do know there’s no single moment
+            where everything instantly gets back to normal. Over 1 million
+            people in the UK need to be shielded from COVID-19 for at least the
+            next 12 weeks. Hence, a wartime effort is needed to deliver services
+            which help these shielded people get through this.
           </span>
           <div className="flex items-center">
             <span className="block flex-shrink-0 mr-3 ">
