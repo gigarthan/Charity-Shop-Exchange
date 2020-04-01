@@ -15,14 +15,18 @@ import box from "../assets/img/4039-rocking-gift.gif";
 import boxopen from "../assets/img/18033-box-open-gray-200.gif";
 import boxfill from "../assets/img/3321-shipment.gif";
 import boxwalk from "../assets/img/17431-package-delivery.gif";
+import starttext from "../assets/img/start text.png";
+import base from "../assets/img/base@1x.png";
+import door from "../assets/img/door@1x.png";
 
 export default function Home() {
   return (
     <Layout>
       {/* Hero section */}
+      <div>
       <div className="flex flex-col sm:flex-row max-w-full sm:max-w-screen-md pt-32 mx-auto px-12 sm:px-0">
         {/* hero left */}
-        <div className="flex flex-col items-start w-full sm:pr-4 sm:mb-12 sm:mb-0">
+        <div className="flex flex-col items-start w-full sm:pr-4 sm:mb">
           <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
             Fighting&nbsp;isolation with books and DVDs
           </h1>
@@ -31,6 +35,7 @@ export default function Home() {
             selection of books and DVDs from local charity shops and deliver
             weekly, bi-weekly or monthly — it’s up to you.
           </h3>
+        
         </div>
         {/* hero right */}
 
@@ -38,22 +43,29 @@ export default function Home() {
                 <img className="sm:mr-32" src={boxopen} alt="hero" />
               </div> */}
 
-        <div className="relative h-64 sm:h-auto w-full sm:pl-4">
-          <img
-            className="absolute z-10 right-0 bottom-0 w-56 sm:w-64 "
-            src={hero}
-            alt="hero"
-          />
-          <img
-            className=" sm: absolute left-0.top-0 w-32 sm:w-32"
-            src={balloon}
-            alt="text-box"
-          />
+        <div className="flex flex-col items-center ">
+                    <img  
+                      className=""
+                      src={door}
+                      alt="door"
+                    />
+
+                <img
+                  className=""
+                  src={base}
+                  alt="hero"
+                />
         </div>
       </div>
 
+      </div>
+                <div className="max-w-screen-md mx-auto pl-12 transition duration-500 ease-in-out transform hover:-translate-y-1">
+                  <img className="" src={starttext} alt="text" />
+                </div>
+
+
       {/* Input section */}
-      <div className="pb-20 pt-12">
+      <div className="pb-20">
         <div className="max-w-screen-md mx-auto">
           <GetStartedForm />
         </div>

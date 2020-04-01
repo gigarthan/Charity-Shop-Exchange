@@ -148,10 +148,10 @@ export default function About() {
                   Matt Doyle
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
+                  <a href="https://twitter.com/ElatedDotCom">
                     <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
+                  <a href="https://github.com/globalmatt">
                     <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
                 

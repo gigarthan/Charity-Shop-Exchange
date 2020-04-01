@@ -63,7 +63,7 @@ export default function GetStartedForm() {
   return (
     <>
     <div className="mx-w-screen-md">
-      <div className="flex flex-col sm:flex-row w-full items-center mt-12 ">
+      <div className="flex flex-col sm:flex-row w-full items-center ">
           <div className="md:w-1/2 px-3 mb-6 md:mb-0 ">
             <div className="relative">
               <Combo
@@ -100,7 +100,7 @@ export default function GetStartedForm() {
             <Button onClick={handleSubmit} disabled={charityId === 0}>Continue</Button>
             </div>
       </div>
-      <div className="text-center text-sx sm:text-sm font-normal text-gray-400 mt-8">
+      <div className="text-center text-sx sm:text-sm font-normal text-gray-400 mt-4">
         Our charities send boxes to doorsteps across the UK. More charities coming soon.
       </div>
 
