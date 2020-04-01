@@ -68,15 +68,13 @@ export default function About() {
                   Kelvin Lockwood
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://twitter.com/kelvinlockwood">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                  <a href="https://github.com/kelvinlockwood/">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
+                  
                 </div>
                 <p className="text-xs text-gray-600">
                   Placeholder for short bio.
@@ -97,15 +95,13 @@ export default function About() {
                   Blake Prouty
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://twitter.com/BlakeNthaniel">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                  <a href="https://github.com/Prouty89">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
+                
                 </div>
                 <p className="text-xs text-gray-600">
                   Placeholder for short bio.
@@ -126,14 +122,11 @@ export default function About() {
                   Dicky Jiang
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://twitter.com/jiangd">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
-                  </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
+                  <a href="https://github.com/dickyjiang">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
                 </div>
                 <p className="text-xs text-gray-600">
@@ -156,14 +149,12 @@ export default function About() {
               </h3>
                 <div className="flex items-center cursor-pointer">
                   <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
                   <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
+                
                 </div>
                 <p className="text-xs text-gray-600">
                   Placeholder for short bio.
@@ -172,62 +163,8 @@ export default function About() {
             </div>
           </div>
 
-          <div>
-            <div className="flex items-start p-4 m-4 w-64">
-              <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full object-cover "
-                src={marina}
-                alt="marina"
-              />
-              <div className="flex flex-col flex-wrap">
-                <h3 className="text-md font-semibold text-gray-700">
-                  Marina Goto
-              </h3>
-                <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="p-2" src={twitter} alt="twitter" />
-                  </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
-                  </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600 ">
-                  Placeholder for short bio. Placeholder for short bio.
-              </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-start p-4 m-4 w-64">
-              <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
-                src={generic}
-                alt="generic"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">Rama Mani</h3>
-                <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
-                  </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
-                  </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600">
-                  {" "}
-                Placeholder for short bio.
-              </p>
-              </div>
-            </div>
-          </div>
+          
+          
         </div>
       </div>
 

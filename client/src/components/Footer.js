@@ -31,7 +31,9 @@ export default function Footer() {
               </a>
             </li>
             <li className="text-xs text-gray-200 mb-2 cursor-pointer">
-              Twitter @
+            <a href="https://twitter.com/CharityShopEx">
+                Twitter @CharityShopEx
+              </a>
             </li>
           </ul>
         </div>
