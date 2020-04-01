@@ -10,9 +10,14 @@ export default function GetStartedForm() {
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
 
+  /*
+
   // Append "Coming soon!" to the counties which aren't currently
   // serviced by any charity and mark them as "disabled" so they
   // are greyed out and can't be selected.
+  //
+  // (TODO: Add back in later; just show available counties at launch)
+
   const counties = locations.counties.map( county => {
     let numCharitiesForCounty = charities.reduce( function(count, charity) {
       return count + ( charity.countyIds.includes(county.id) ? 1 : 0 );
@@ -26,6 +31,22 @@ export default function GetStartedForm() {
         name: county.name + " (coming soon!)",
         disabled: true
       };
+    }
+  });
+  */
+
+  // Simply don't show counties that aren't serviced
+  // (TODO: This is for launch. Remove later when re-adding "Coming soon!" above)
+  
+  const counties = locations.counties.filter( county => {
+    let numCharitiesForCounty = charities.reduce( function(count, charity) {
+      return count + ( charity.countyIds.includes(county.id) ? 1 : 0 );
+    }, 0)
+
+    if (numCharitiesForCounty > 0) {
+      return true;
+    } else {
+      return false;
     }
   });
 
