@@ -39,11 +39,6 @@ export default function Home() {
 
         <div className="relative h-64 sm:h-auto w-full sm:pl-4">
           <img
-            className="absolute z-10 left-0 bottom-0 w-20 sm:w-56 -mb-16 -ml-10 "
-            src={box}
-            alt="box"
-          />
-          <img
             className="absolute z-10 right-0 bottom-0 w-56 sm:w-64 "
             src={hero}
             alt="hero"
