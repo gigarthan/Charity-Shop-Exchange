@@ -117,12 +117,24 @@ export default function Faq() {
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
           Why is my region not yet available?
           </h2>
-          <p className="mb-20">
+          <p className="mb-32">
           We’re working to enable every region of the UK. Please be patient with us as we ramp up the service. We look forward to you joining!
           </p>
+
          
         </div>
       </div>
+      <div className="bg-gray-200 items-center mx-auto pt-12 pb-20">
+        <div className="flex items-center flex-col sm:max-w-screen-lg mx-auto px-3 sm:px-0">
+          <div className="flex-1 text-center text-xl sm:text-3xl font-bold text-gray-700 tracking-wide">
+          Do you still have questions?
+          </div>
+          <button className="flex-initial py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-12 font-medium rounded-full text-gray-700 border-2 border-gray-700">
+            Contact Us 
+          </button>
+        </div>
+      </div>
+         
     </Layout>
   );
 }
