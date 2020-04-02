@@ -126,11 +126,11 @@ export default function Home() {
           A Charity Shop Exchange subscription buys books and DVDs from local
           charity shops
           <div className="flex items-center">
-            <div className="flex flex-col items-center w-full">
+            <div className="flex flex-col items-center w-full text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1 ">
               <span className="mt-12">
                 <a
                   href="https://charity-shop-exchange.subbly.me"
-                  className="text-center cursor-pointer text-sm sm:text-xl font-medium text-gray-600 hover:text-gray-900 "
+                  className=""
                 >
                   Subscribe here{" "}
                 </a>
@@ -156,16 +156,16 @@ export default function Home() {
             next 12 weeks. Hence, a wartime effort is needed to deliver services
             which help these shielded people get through this.
           </span>
-          <div className="flex items-center">
+          <div className="mt-12 text-center cursor-pointer text-xs sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1">
             <span className="block flex-shrink-0 mr-3 ">
               <Link
                 to="/about"
-                className="cursor-pointer text-xs sm:text-xl font-medium text-gray-700 hover:text-gray-900 "
+                className=""
               >
                 Learn more about our approach{" "}
               </Link>
             </span>
-            <svg
+            {/* <svg
               className="h-5 mt-3 fill-current text-gray-700 hover:text-gray-900 "
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -173,7 +173,7 @@ export default function Home() {
                 d="M17.528 10.025l-16.5-.089L1 11.272h16.241L12.7 15.96 13.705 17 20 10.53l-1.006-1.04L13.704 4 12.7 5.039z"
                 fill-rule="nonzero"
               />
-            </svg>
+            </svg> */}
           </div>
         </div>
       </div>

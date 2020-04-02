@@ -168,31 +168,25 @@ export default function About() {
         </div>
       </div>
 
-      <div className="items-center pt-8 pb-24 sm:pt-12 px-4 sm:px-12 pt-32 pb-40">
-        <div className="flex items-center flex-col sm:max-w-screen-lg mx-auto px-3 sm:px-0">
-          <div className="text-center px-5 mb-2 sm:mb-2 text-3xl sm:text-5xl sm:max-w-screen-xl mx-auto font-semibold text-gray-700 tracking-wide">
-            Want to join the cause?
-              </div>
-          <p className="px-5 text-center text-sm sm:text-xl text-gray-600 font-medium mb-8 tracking-normal">
-            We are always looking for amazing people regardless of experience.
-              </p>
-          <button className="bg-new-red py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 sm:mt-0 font-medium py-1  rounded-full text-white border-2">
-            Contact Us
-              </button>
-        </div>
-      </div>
-
-      <div className="bg-new-lightnavy items-center mx-auto pt-12 pb-20 sm:p-24 px-4 sm:px-12">
-        <div className="flex items-center flex-col lg:flex-row sm:max-w-screen-lg mx-auto px-3 sm:px-0">
-          <div className="flex-1 text-center mb-8 lg:mb-0 lg:text-left text-lg lg:text-2xl font-semibold text-gray-200 tracking-wide">
-            Have an idea you'd like to contribute?
-              <span className="block">
-              A new service you'd like to see?
-                </span>
+      <div className="bg-new-lightnavy items-center pt-20  pb-24 sm:pb-40  px-4 sm:px-12  ">
+        <div className="flex flex-col text-center sm:max-w-screen-lg mx-auto px-3 sm:px-0">
+          <div className="px-5 mb-12 sm:mb- text-3xl sm:text-5xl sm:max-w-screen-xl mx-auto font-semibold text-red-600 tracking-wide">
+          Join our fight against isolation
           </div>
-          <button className="flex-initial py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 font-medium rounded-full text-white border-2">
-            Contact Us
-              </button>
+
+          <div className="flex-1 mb-8 sm:mb-0 text-center text-md sm:text-2xl font-normal text-gray-200 tracking-wider leading-normal">
+          Do you have an idea you'd like to contribute?
+          <span className="block mt-8 sm:mt-4">
+          Is there a new delivery service you'd like to see?
+          </span>
+          <span className="block mt-8 sm:mt-4">
+          Want to volunteer?
+          </span>
+          </div>
+          <a href="mailto:together@charityshopexchange.com" target="_top"><button className="flex-initial py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 font-base rounded-full text-white border hover:border-none focus:outline-none focus:shadow-outline hover:bg-red-700 ">
+          Contact Us
+          </button></a>
+          
         </div>
       </div>
     </Layout>

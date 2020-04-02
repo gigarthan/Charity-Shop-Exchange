@@ -124,14 +124,16 @@ export default function Faq() {
          
         </div>
       </div>
-      <div className="bg-gray-200 items-center mx-auto pt-12 pb-20">
+      <div className="bg-gray-200 items-center mx-auto pt-12 pb-32">
         <div className="flex items-center flex-col sm:max-w-screen-lg mx-auto px-3 sm:px-0">
           <div className="flex-1 text-center text-xl sm:text-3xl font-bold text-gray-700 tracking-wide">
           Do you still have questions?
           </div>
-          <button className="flex-initial py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-12 font-medium rounded-full text-gray-700 border-2 border-gray-700">
+          <a href="mailto:together@charityshopexchange.com" target="_top">
+            <button className="flex-initial py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 hover:bg-red-700 font-base rounded-full text-gray-700 hover:text-white border hover:border-none border-gray-700  focus:outline-none focus:shadow-outline ">
             Contact Us 
           </button>
+          </a>
         </div>
       </div>
          
