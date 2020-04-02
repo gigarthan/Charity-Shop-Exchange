@@ -7,11 +7,11 @@ export default function Register() {
     <Layout>
       <div className="bg-new-navy">
             <div className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-12 sm:pt-20 pb-20 sm:pb-32">
-              Are you a Charity Shop who’d like to keep stock ticking over despite
+              Are you a charity shop who’d like to keep stock ticking over despite
               being closed to the public?
             </div>
         <div className="flex flex-col items-center bg-gray-100">
-          <div className="-mt-10 sm:-mt-20 mx-auto w-11/12 sm:w-1/2 bg-white py-12 px-4 sm:px-20 mb-40 rounded-lg shadow-2xl">
+          <div className="-mt-10 sm:-mt-20 mx-auto w-11/12 max-w-4xl bg-white py-12 px-4 sm:px-20 mb-40 rounded-lg shadow-2xl">
             <div>
               <h1 className="font-header text-center text-lg sm:text-3xl font-bold text-gray-700 mb-8 tracking-wide leading-snug">
                 The Charity Shop Exchange subscription box service is here to
@@ -24,7 +24,7 @@ export default function Register() {
                 you send or deliver.
               </p>
               <p className="text-xs sm:text-lg text-center font-medium sm:font-semibold mt-12 text-gray-600 leading-normal">
-                Please fill out below and we’ll get back to you right away
+                Please fill out the form below and we’ll get back to you right away.
               </p>
               <div className="bg-gray-400 h-px mt-8 mb-10"> </div>
 
@@ -104,7 +104,7 @@ export default function Register() {
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
                       htmlFor="tel"
                     >
-                      Mobile number:
+                      Mobile Number:
                     </label>
                     <input
                       className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -131,7 +131,7 @@ export default function Register() {
                   </div>
                   <div className="flex flex-col items-center">
                     <button
-                      className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-12 sm:mt-20 focus:outline-none focus:shadow-outline"
+                      className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
                       type="submit"
                     >
                       Submit
