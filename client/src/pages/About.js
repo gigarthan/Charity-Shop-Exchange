@@ -168,13 +168,13 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-new-lightnavy items-center pt-20  pb-24 sm:pb-40  px-4 sm:px-12  ">
+      <div className="bg-new-red items-center pt-20 pb-24 sm:pb-32 px-4 sm:px-12">
         <div className="flex flex-col text-center sm:max-w-screen-lg mx-auto px-3 sm:px-0">
-          <div className="px-5 mb-12 sm:mb- text-3xl sm:text-5xl sm:max-w-screen-xl mx-auto font-semibold text-red-600 tracking-wide">
+          <div className="font-header px-5 mb-12 sm:mb- text-3xl sm:text-5xl sm:max-w-screen-xl mx-auto font-bold text-new-navy ">
           Join our fight against isolation
           </div>
 
-          <div className="flex-1 mb-8 sm:mb-0 text-center text-md sm:text-2xl font-normal text-gray-200 tracking-wider leading-normal">
+          <div className="flex-1 mb-8 sm:mb-0 text-center text-md sm:text-2xl font-normal text-white tracking-wider leading-normal">
           Do you have an idea you'd like to contribute?
           <span className="block mt-8 sm:mt-4">
           Is there a new delivery service you'd like to see?
@@ -183,7 +183,7 @@ export default function About() {
           Want to volunteer?
           </span>
           </div>
-          <a href="mailto:together@charityshopexchange.com" target="_top"><button className="flex-initial py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 font-base rounded-full text-white border hover:border-none focus:outline-none focus:shadow-outline hover:bg-red-700 ">
+          <a href="mailto:together@charityshopexchange.com" target="_top"><button className="flex-initial bg-new-navy py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 font-base rounded-full text-white  hover:border-none focus:outline-none focus:shadow-outline hover:bg-red-700 ">
           Contact Us
           </button></a>
           
