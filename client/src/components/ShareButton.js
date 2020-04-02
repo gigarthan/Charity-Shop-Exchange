@@ -1,4 +1,5 @@
 import React from 'react';
+import config from '../config.json';
 import useWebShare from "react-use-web-share";
 import shareIcon from "../assets/img/share.png";
 
@@ -8,18 +9,17 @@ export default function ShareButton() {
   function handleClick() {
     if ( isSupported ) {
       share({
-        title: "Charity Shop Exchange",
-        text: "Fight isolation with books and DVDs! Charity Shop Exchange collects a selection of books and DVDs from local charity shops and delivers weekly, bi-weekly or monthly - it's up to you.",
-        url: "https://charityshopexchange.com/"
+        title: config.shareTitle,
+        text: config.shareDescription,
+        url: config.shareUrl
       });
     } else {
-      console.log("Not supported");
+      window.open(config.facebookSharerUrl + config.shareUrl, "FB", config.facebookSharerWindowFeatures);
     }
   }
 
-  return (
-    !loading && isSupported && (
-
+  return (    
+    !loading && (
       <div
         onClick={handleClick}
         className="share-button fixed z-50 flex items-center top-0 right-0 mt-2 sm:mt-4 mr-4 sm:mr-8 rounded-md bg-white py-2 px-5"
