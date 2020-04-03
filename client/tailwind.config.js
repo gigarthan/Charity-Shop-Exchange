@@ -17,6 +17,7 @@ module.exports = {
     variants: {},
     plugins: [],
     listStyleType: {
+      disc: 'disc',
       alpha: 'lower-alpha',
       roman: 'lower-roman',
     },
