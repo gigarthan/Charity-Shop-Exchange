@@ -76,7 +76,7 @@ export default function About() {
                   </a>
                   
                 </div>
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-gray-600 mt-2">
                   Placeholder for short bio.
               </p>
               </div>
@@ -103,8 +103,8 @@ export default function About() {
                   </a>
                 
                 </div>
-                <p className="text-xs text-gray-600">
-                  Placeholder for short bio.
+                <p className="text-xs text-gray-600 mt-2">
+                Full Stack Web Developer based in the United States.
               </p>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function About() {
                     <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
                 </div>
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-gray-600 mt-2">
                   UIX Designer by day, Jaeger pilot by night.
               </p>
               </div>
@@ -156,8 +156,8 @@ export default function About() {
                   </a>
                 
                 </div>
-                <p className="text-xs text-gray-600">
-                  Placeholder for short bio.
+                <p className="text-xs text-gray-600 mt-2">
+                Full-Stack Developer, Technical Author and Blogger. Enjoys making pretty things that are lovely to use.
               </p>
               </div>
             </div>
