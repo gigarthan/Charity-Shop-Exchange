@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Form from "../components/Form/Form";
 import GetStartedForm from "../components/GetStartedForm";
+import Dialog from '../components/Dialog';
+import useDialog from '../components/Dialog/useDialog';
 
 import balloon from "../assets/img/balloon@2x.png";
 import hero from "../assets/img/hero_01_girl.png";
@@ -18,10 +20,14 @@ import boxwalk from "../assets/img/17431-package-delivery.gif";
 import starttext from "../assets/img/start text.png";
 import base from "../assets/img/base@1x.png";
 import door from "../assets/img/door@1x.png";
+import twitter from "../assets/img/twitter.svg";
 import newhero from "../assets/img/newHeroImageonly.svg";
 
 export default function Home() {
+  const {isShowing, toggle} = useDialog();
+
   return (
+    <>
     <Layout>
       {/* Hero section */}
       <div>
@@ -77,7 +83,7 @@ export default function Home() {
       {/* Input section */}
       <div className="pb-20 px-10">
         <div className="max-w-screen-md mx-auto">
-          <GetStartedForm />
+          <GetStartedForm toggle={toggle} />
         </div>
       </div>
 
@@ -133,8 +139,18 @@ export default function Home() {
           <div className="flex items-center">
             <div className="flex flex-col items-center w-full text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1 ">
               <span className="mt-12">
+              { /*
                 <a
                   href="https://charity-shop-exchange.subbly.me"
+                  className=""
+                >
+                  Subscribe here{" "}
+                </a>
+                */ }
+
+                <a
+                  href="#"
+                  onClick={toggle}
                   className=""
                 >
                   Subscribe here{" "}
@@ -186,5 +202,24 @@ export default function Home() {
       {/* CTA */}
       <Form />
     </Layout>
+
+    <Dialog isShowing={isShowing} hide={toggle}>
+        <div className="m-8">
+          <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
+            Launching soon!
+          </h1>
+          <h3 class="text-base sm:text-xl text-gray-600 font-medium mb-6 sm:mb-6">We’ll be launching Charity Shop Exchange in the next few days. Please follow us on Twitter for updates:</h3>
+          <p className="font-header text-xl sm:text-2xl font-bold text-new-red">
+            <a href="https://twitter.com/CharityShopEx"><img
+              className="inline pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+              src={twitter}
+              alt="twitter"
+              style={{ width: 40, height: 40 }}
+            /> @CharityShopEx</a>
+          </p>
+        </div>
+      </Dialog>
+
+    </>
   );
 }
