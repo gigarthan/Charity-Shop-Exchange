@@ -41,7 +41,7 @@ export default function Home() {
                 </span>
             </h3>
           </div>
-          <div className="flex-1 ">
+          <div className="flex-1 w-3/4 sm:w-auto ">
             <img className="" src={newhero} alt="newhero" />
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Home() {
 
           {/* ============== New Hero Door ===================== */}
 
-      <div className="max-w-screen-md mx-auto pl-20 sm:pl-2 transition duration-500 ease-in-out transform hover:-translate-y-1">
+      <div className="max-w-screen-md mx-auto pl-20 sm:pl-12 transition duration-500 ease-in-out transform hover:-translate-y-1">
         <img className="w-3/4 sm:w-auto" src={starttext} alt="text" />
       </div>
 
