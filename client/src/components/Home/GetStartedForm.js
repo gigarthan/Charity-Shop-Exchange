@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import Combo from './Combo';
-import Button from './Button';
-import locations from '../import/locations.json';
-import {charities} from '../import/charities.json';
+import Combo from '../Combo';
+import Button from '../Button';
+import locations from '../../import/locations.json';
+import {charities} from '../../import/charities.json';
+import starttext from "../../assets/img/start text.png";
+
 
 export default function GetStartedForm({toggle}) {
 
@@ -64,8 +66,12 @@ export default function GetStartedForm({toggle}) {
 
   return (
     <>
-      <div className="max-w-screen-md">
-        <div className="flex flex-col sm:flex-row w-full items-center ">
+      <div className="max-w-screen-md mx-auto pl-20 sm:pl-12 transition duration-500 ease-in-out transform hover:-translate-y-1">
+        <img className="w-3/4 sm:w-auto" src={starttext} alt="text" />
+      </div>
+      <div className="pb-20 px-10">
+        <div className="max-w-screen-md mx-auto">
+          <div className="flex flex-col sm:flex-row w-full items-center ">
             <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
               <div className="relative">
                 <Combo
@@ -97,19 +103,16 @@ export default function GetStartedForm({toggle}) {
                   id="grid-state"
                 />
               </div>
-          </div>
-              <div className="mt-8 ">
+            </div>
+            <div className="mt-8 ">
               <Button onClick={handleSubmit} disabled={charityId === 0}>Continue</Button>
-              </div>
+            </div>
+          </div>
+          <div className="text-center text-sx sm:text-sm font-normal text-gray-400 mt-4">
+            Our charities send boxes to doorsteps across the UK. More charities coming soon.
+          </div>
         </div>
-        <div className="text-center text-sx sm:text-sm font-normal text-gray-400 mt-4">
-          Our charities send boxes to doorsteps across the UK. More charities coming soon.
-        </div>
-
       </div>
-
-
     </>
   );
-
 }
