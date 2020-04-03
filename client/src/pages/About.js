@@ -1,14 +1,19 @@
 import React from "react";
 import Layout from "../components/Layout";
 import twitter from "../assets/img/twitter.svg";
-import discord from "../assets/img/discord.svg";
 import github from "../assets/img/github.svg";
+import instagram from "../assets/img/ig.svg";
+import dribbble from "../assets/img/dribbble.svg";
+import behance from "../assets/img/be.svg";
 import blake from "../assets/img/Blake Prouty@2x.png";
 import kelvin from "../assets/img/kelvin@2x.png";
 import matt from "../assets/img/Matt Doyle@2x.png";
 import dicky from "../assets/img/Dicky Jiang@2x.png";
 import generic from "../assets/img/generic@2x.png";
-import marina from "../assets/img/marina@2x.png";
+import jasmine from "../assets/img/Jasmine@2x.png";
+import batsman from "../assets/img/batsman@2x.png";
+import beer from "../assets/img/beer@2x.png";
+
 
 export default function About() {
   return (
@@ -49,17 +54,21 @@ export default function About() {
 
       </div>
 
-      <div className="bg-new-gray flex flex-col sm:flex-none pt-12 pb-20 ">
+      <div className="bg-new-gray flex flex-col sm:flex-none pt-12 pb-20">
         <h2 className="text-center text-2xl sm:text-4xl font-bold text-new-lightnavy px-5 mb-12 leading-snug">
           Making Charity Shop Exchange possible
         </h2>
 
-        <div className="flex flex-wrap justify-around mx-auto sm:max-w-screen-md">
+
+        
+
+        <div className="sm:flex sm:flex-wrap px-12 justify-between w-full mx-auto items-center sm:max-w-screen-md">
+
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8 ">
               <img
-                className="h-12 w-12 mr-5 bg-gray-600 rounded-full"
+                className="h-12 w-12 mr-5 rounded-full"
                 src={kelvin}
                 alt="Kelvin"
               />
@@ -77,16 +86,17 @@ export default function About() {
                   
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
-                  Placeholder for short bio.
+                Product owner, design thinker and opening batsman. <img className="w-5" src={batsman} alt="batsman">
+                </img>
               </p>
               </div>
             </div>
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8 ">
               <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
+                className="h-12 w-12 mr-5 rounded-full"
                 src={blake}
                 alt="Blake"
               />
@@ -111,7 +121,7 @@ export default function About() {
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8">
               <img
                 className="h-12 w-12 mr-4 rounded-full"
                 src={dicky}
@@ -125,8 +135,11 @@ export default function About() {
                   <a href="https://twitter.com/jiangd">
                     <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="https://github.com/dickyjiang">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
+                  <a href="https://dribbble.com/Dickyjiang">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={dribbble} alt="Dribbble" />
+                  </a>
+                  <a href="https://www.behance.net/DickyJiang">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={behance} alt="behance" />
                   </a>
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
@@ -137,7 +150,7 @@ export default function About() {
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8">
               <img
                 className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
                 src={matt}
@@ -157,14 +170,39 @@ export default function About() {
                 
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
-                Full-Stack Developer, Technical Author and Blogger. Enjoys making pretty things that are lovely to use.
+                Full-Stack Developer, Technical Author and Blogger. 
               </p>
               </div>
             </div>
           </div>
 
-          
-          
+          <div>
+            <div className="flex items-start w-64 mb-8">
+              <img
+                className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
+                src={jasmine}
+                alt="Jasmine King"
+              />
+              <div>
+                <h3 className="text-md font-semibold text-gray-700">
+                Jasmine King
+              </h3>
+                <div className="flex items-center cursor-pointer">
+                  <a href="https://www.instagram.com/jasmineaking">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={instagram} alt="instagram" />
+                  </a>
+                  <a href="https://dribbble.com/Jasminargh">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={dribbble} alt="dribbble" />
+                  </a>
+                
+                </div>
+                <p className="text-xs text-gray-600 mt-2">
+                Illustrator, designer and craft beer lover. <img className="w-4" src={beer} />
+              </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
