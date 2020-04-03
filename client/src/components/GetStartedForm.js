@@ -3,12 +3,16 @@ import Combo from './Combo';
 import Button from './Button';
 import locations from '../import/locations.json';
 import {charities} from '../import/charities.json';
-import config from '../config.json';
+import Dialog from './Dialog';
+import useDialog from './Dialog/useDialog';
+import twitter from "../assets/img/twitter.svg";
+
 
 export default function GetStartedForm() {
 
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
+  const {isShowing, toggle} = useDialog();
 
   /*
 
@@ -57,54 +61,75 @@ export default function GetStartedForm() {
 
   // Redirect the user to Subbly
   function handleSubmit() {
-    window.location.href = config.subscriptionBoxUrl;
+    //window.location.href = config.subscriptionBoxUrl;
+
+    // Before launch, display a Launching Soon modal instead
+    toggle();
   }
 
   return (
     <>
-    <div className="mx-w-screen-md">
-      <div className="flex flex-col sm:flex-row w-full items-center ">
-          <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
-            <div className="relative">
-              <Combo
-                name="countyId"
-                value={countyId}
-                setValue={setCountyId}
-                items={counties}
-                placeholder="select"
-                // style={{ background: '#c7c7c7'}}
-                theme=""
-                label="Select your region"
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
-              />
+      <div className="max-w-screen-md">
+        <div className="flex flex-col sm:flex-row w-full items-center ">
+            <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+              <div className="relative">
+                <Combo
+                  name="countyId"
+                  value={countyId}
+                  setValue={setCountyId}
+                  items={counties}
+                  placeholder="select"
+                  // style={{ background: '#c7c7c7'}}
+                  theme=""
+                  label="Select your region"
+                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-state"
+                />
+              </div>
             </div>
+            <div className="md:w-1/2 pr-2 mb-6 md:mb-0">
+              <div className="relative">
+                <Combo
+                  name="charityId"
+                  value={charityId}
+                  setValue={setCharityId}
+                  items={charities.filter(c => c.countyIds.includes(countyId))}
+                  disabled={!countyId || (counties.find(c => c.id === countyId).disabled)}
+                  placeholder="select"
+                  theme=""
+                  label="Pick a charity"
+                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-state"
+                />
+              </div>
           </div>
-          <div className="md:w-1/2 pr-2 mb-6 md:mb-0">
-            <div className="relative">
-              <Combo
-                name="charityId"
-                value={charityId}
-                setValue={setCharityId}
-                items={charities.filter(c => c.countyIds.includes(countyId))}
-                disabled={!countyId || (counties.find(c => c.id === countyId).disabled)}
-                placeholder="select"
-                theme=""
-                label="Pick a charity"
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
-              />
-            </div>
+              <div className="mt-8 ">
+              <Button onClick={handleSubmit} disabled={charityId === 0}>Continue</Button>
+              </div>
         </div>
-            <div className="mt-8 ">
-            <Button onClick={handleSubmit} disabled={charityId === 0}>Continue</Button>
-            </div>
-      </div>
-      <div className="text-center text-sx sm:text-sm font-normal text-gray-400 mt-4">
-        Our charities send boxes to doorsteps across the UK. More charities coming soon.
+        <div className="text-center text-sx sm:text-sm font-normal text-gray-400 mt-4">
+          Our charities send boxes to doorsteps across the UK. More charities coming soon.
+        </div>
+
       </div>
 
-    </div>
+      <Dialog isShowing={isShowing} hide={toggle}>
+        <div className="m-8">
+          <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
+            Launching soon!
+          </h1>
+          <h3 class="text-base sm:text-xl text-gray-600 font-medium mb-6 sm:mb-6">We’ll be launching Charity Shop Exchange in the next few days. Please follow us on Twitter for updates:</h3>
+          <p className="font-header text-xl sm:text-2xl font-bold text-new-red">
+            <a href="https://twitter.com/CharityShopEx"><img
+              className="inline pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+              src={twitter}
+              alt="twitter"
+              style={{width: 40, height: 40}}
+            /> @CharityShopEx</a>
+          </p>
+
+        </div>
+      </Dialog>
     </>
   );
 

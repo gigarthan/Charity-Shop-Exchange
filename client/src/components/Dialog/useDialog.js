@@ -9,7 +9,7 @@ const useDialog = () => {
 
   return {
     isShowing,
-    toggle,
+    toggle
   }
 };
 
