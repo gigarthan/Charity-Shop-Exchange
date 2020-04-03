@@ -38,13 +38,23 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-center sm:items-none sm:flex-row max-w-screen-lg mx-auto justify-between text-gray-300 text-xs ">
+      <div className="flex flex-col items-center sm:items-none sm:flex-row max-w-screen-lg">
+        <div className="text-gray-300 text-center text-xs">
         © 2020 Charity Shop Exchange
-        <span className="text-xs text-gray-200 px-2 cursor-pointer mt-4">
-          <Link to="/privacy">Privacy</Link>
+        </div>
+        <div className="flex flex-col sm:flex-row text-xs text-center text-gray-200 px-8 cursor-pointer mt-4 sm:mt-0">
+          <div className="mb-4 sm:mb-0">
+          <Link className="mr-0 sm:mx-4" to="/privacy">Privacy</Link>
           &nbsp;|&nbsp;
-          <Link to="/terms">Terms</Link>
-        </span>
+          <Link className="mr-0 sm:mx-4 " to="/terms">Terms</Link>
+
+          </div>
+
+          <div className="block">
+          <a className="mr-0 sm:mx-4" href="https://icons8.com">How it works svgs by icon8</a>
+          </div>
+
+        </div>
       </div>
     </div>
   );

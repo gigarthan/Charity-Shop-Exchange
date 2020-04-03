@@ -62,11 +62,13 @@ export default function About() {
 
         
 
-        <div className="block sm:flex sm:flex-wrap justify-between mx-auto items-center sm:max-w-screen-md">
+        <div className="sm:flex sm:flex-wrap px-12 justify-between w-full mx-auto items-center sm:max-w-screen-md">
+
+
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8 ">
               <img
-                className="h-12 w-12 mr-5 bg-gray-600 rounded-full"
+                className="h-12 w-12 mr-5 rounded-full"
                 src={kelvin}
                 alt="Kelvin"
               />
@@ -92,9 +94,9 @@ export default function About() {
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8 ">
               <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
+                className="h-12 w-12 mr-5 rounded-full"
                 src={blake}
                 alt="Blake"
               />
@@ -119,7 +121,7 @@ export default function About() {
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8">
               <img
                 className="h-12 w-12 mr-4 rounded-full"
                 src={dicky}
@@ -148,7 +150,7 @@ export default function About() {
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8">
               <img
                 className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
                 src={matt}
@@ -168,14 +170,14 @@ export default function About() {
                 
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
-                Full-Stack Developer, Technical Author and Blogger. Enjoys making pretty things that are lovely to use.
+                Full-Stack Developer, Technical Author and Blogger. 
               </p>
               </div>
             </div>
           </div>
 
-          <div className="self-start">
-            <div className="flex items-start p-4 m-4 w-64">
+          <div>
+            <div className="flex items-start w-64 mb-8">
               <img
                 className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
                 src={jasmine}
