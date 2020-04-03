@@ -3,16 +3,11 @@ import Combo from './Combo';
 import Button from './Button';
 import locations from '../import/locations.json';
 import {charities} from '../import/charities.json';
-import Dialog from './Dialog';
-import useDialog from './Dialog/useDialog';
-import twitter from "../assets/img/twitter.svg";
 
-
-export default function GetStartedForm() {
+export default function GetStartedForm({toggle}) {
 
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
-  const {isShowing, toggle} = useDialog();
 
   /*
 
@@ -113,23 +108,7 @@ export default function GetStartedForm() {
 
       </div>
 
-      <Dialog isShowing={isShowing} hide={toggle}>
-        <div className="m-8">
-          <h1 className="font-header text-3xl sm:text-5xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
-            Launching soon!
-          </h1>
-          <h3 class="text-base sm:text-xl text-gray-600 font-medium mb-6 sm:mb-6">We’ll be launching Charity Shop Exchange in the next few days. Please follow us on Twitter for updates:</h3>
-          <p className="font-header text-xl sm:text-2xl font-bold text-new-red">
-            <a href="https://twitter.com/CharityShopEx"><img
-              className="inline pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
-              src={twitter}
-              alt="twitter"
-              style={{width: 40, height: 40}}
-            /> @CharityShopEx</a>
-          </p>
 
-        </div>
-      </Dialog>
     </>
   );
 
