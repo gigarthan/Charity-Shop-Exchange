@@ -13,8 +13,8 @@ export default function Hero() {
           <h3 className="text-xs mt-3 sm:text-sm md:text-md lg:text-lg text-gray-600 font-medium mb-12 sm:mb-12">
             Get a regular supply of things to read and watch.
             <span className="block">
-              We collect a
-              selection of books and DVDs from local charity shops and deliver
+              We&nbsp;collect a
+              selection of books and DVDs from local charity shops and&nbsp;deliver
               weekly, bi-weekly or monthly — it’s up to you.
             </span>
           </h3>
