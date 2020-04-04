@@ -14,8 +14,8 @@ export default function Hero() {
             Get a regular supply of things to read and watch.
               We&nbsp;collect a
               selection of books and DVDs from local charity shops and&nbsp;deliver
-              weekly, bi-weekly or monthly — it’s up to you.
-            
+              them to anywhere in the UK. Weekly, bi-weekly or monthly deliveries
+              — it’s up to you.
           </h3>
         </div>
         <div className="flex-1 w-3/4 sm:w-auto ">
