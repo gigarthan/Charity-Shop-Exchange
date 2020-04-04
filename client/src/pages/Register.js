@@ -30,11 +30,12 @@ export default function Register() {
 
               <div>
                 <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
+                  netlify
+                  name="register"
+                  method="post"
                   className=" w-11/12 mx-auto pt-6 pb-8 mb-4"
                 >
+                  <input type="hidden" name="form-name" value="register" />
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-medium sm:font-semibold mb-4"
