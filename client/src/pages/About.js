@@ -1,14 +1,19 @@
 import React from "react";
 import Layout from "../components/Layout";
 import twitter from "../assets/img/twitter.svg";
-import discord from "../assets/img/discord.svg";
 import github from "../assets/img/github.svg";
+import instagram from "../assets/img/ig.svg";
+import dribbble from "../assets/img/dribbble.svg";
+import behance from "../assets/img/be.svg";
 import blake from "../assets/img/Blake Prouty@2x.png";
 import kelvin from "../assets/img/kelvin@2x.png";
 import matt from "../assets/img/Matt Doyle@2x.png";
 import dicky from "../assets/img/Dicky Jiang@2x.png";
 import generic from "../assets/img/generic@2x.png";
-import marina from "../assets/img/marina@2x.png";
+import jasmine from "../assets/img/Jasmine@2x.png";
+import batsman from "../assets/img/batsman@2x.png";
+import beer from "../assets/img/beer@2x.png";
+
 
 export default function About() {
   return (
@@ -49,17 +54,21 @@ export default function About() {
 
       </div>
 
-      <div className="bg-new-gray flex flex-col sm:flex-none pt-12 pb-20 ">
+      <div className="bg-new-gray flex flex-col sm:flex-none pt-12 pb-20">
         <h2 className="text-center text-2xl sm:text-4xl font-bold text-new-lightnavy px-5 mb-12 leading-snug">
-          Making Charity Shop Exchange Possible
+          Making Charity Shop Exchange possible
         </h2>
 
-        <div className="flex flex-wrap justify-around mx-auto sm:max-w-screen-md">
+
+        
+
+        <div className="sm:flex sm:flex-wrap px-12 justify-between w-full mx-auto items-center sm:max-w-screen-md">
+
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8 ">
               <img
-                className="h-12 w-12 mr-5 bg-gray-600 rounded-full"
+                className="h-12 w-12 mr-5 rounded-full"
                 src={kelvin}
                 alt="Kelvin"
               />
@@ -68,27 +77,26 @@ export default function About() {
                   Kelvin Lockwood
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://twitter.com/kelvinlockwood">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                  <a href="https://github.com/kelvinlockwood/">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
+                  
                 </div>
-                <p className="text-xs text-gray-600">
-                  Placeholder for short bio.
+                <p className="text-xs text-gray-600 mt-2">
+                Product owner, design thinker and opening batsman. <img className="w-5" src={batsman} alt="batsman">
+                </img>
               </p>
               </div>
             </div>
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8 ">
               <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
+                className="h-12 w-12 mr-5 rounded-full"
                 src={blake}
                 alt="Blake"
               />
@@ -97,25 +105,23 @@ export default function About() {
                   Blake Prouty
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://twitter.com/BlakeNthaniel">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                  <a href="https://github.com/Prouty89">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
+                
                 </div>
-                <p className="text-xs text-gray-600">
-                  Placeholder for short bio.
+                <p className="text-xs text-gray-600 mt-2">
+                Full Stack Web Developer based in the United States.
               </p>
               </div>
             </div>
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8">
               <img
                 className="h-12 w-12 mr-4 rounded-full"
                 src={dicky}
@@ -126,17 +132,17 @@ export default function About() {
                   Dicky Jiang
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://twitter.com/jiangd">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                  <a href="https://dribbble.com/Dickyjiang">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={dribbble} alt="Dribbble" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
+                  <a href="https://www.behance.net/DickyJiang">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={behance} alt="behance" />
                   </a>
                 </div>
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-gray-600 mt-2">
                   UIX Designer by day, Jaeger pilot by night.
               </p>
               </div>
@@ -144,7 +150,7 @@ export default function About() {
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8">
               <img
                 className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
                 src={matt}
@@ -155,107 +161,70 @@ export default function About() {
                   Matt Doyle
               </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://twitter.com/ElatedDotCom">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                  <a href="https://github.com/globalmatt">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
+                
                 </div>
-                <p className="text-xs text-gray-600">
-                  Placeholder for short bio.
+                <p className="text-xs text-gray-600 mt-2">
+                Full-Stack Developer, Technical Author and Blogger. 
               </p>
               </div>
             </div>
           </div>
 
           <div>
-            <div className="flex items-start p-4 m-4 w-64">
+            <div className="flex items-start w-64 mb-8">
               <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full object-cover "
-                src={marina}
-                alt="marina"
-              />
-              <div className="flex flex-col flex-wrap">
-                <h3 className="text-md font-semibold text-gray-700">
-                  Marina Goto
-              </h3>
-                <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="p-2" src={twitter} alt="twitter" />
-                  </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
-                  </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600 ">
-                  Placeholder for short bio. Placeholder for short bio.
-              </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-start p-4 m-4 w-64">
-              <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full"
-                src={generic}
-                alt="generic"
+                className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
+                src={jasmine}
+                alt="Jasmine King"
               />
               <div>
-                <h3 className="text-md font-semibold text-gray-700">Rama Mani</h3>
+                <h3 className="text-md font-semibold text-gray-700">
+                Jasmine King
+              </h3>
                 <div className="flex items-center cursor-pointer">
-                  <a href="">
-                    <img className="pr-2" src={twitter} alt="twitter" />
+                  <a href="https://www.instagram.com/jasmineaking">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={instagram} alt="instagram" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={github} alt="github" />
+                  <a href="https://dribbble.com/Jasminargh">
+                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={dribbble} alt="dribbble" />
                   </a>
-                  <a href="">
-                    <img className="pr-2" src={discord} alt="discord" />
-                  </a>
+                
                 </div>
-                <p className="text-xs text-gray-600">
-                  {" "}
-                Placeholder for short bio.
+                <p className="text-xs text-gray-600 mt-2">
+                Illustrator, designer and craft beer lover. <img className="w-4" src={beer} />
               </p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
-      <div className="items-center pt-8 pb-24 sm:pt-12 px-4 sm:px-12 pt-32 pb-40">
-        <div className="flex items-center flex-col sm:max-w-screen-lg mx-auto px-3 sm:px-0">
-          <div className="text-center px-5 mb-2 sm:mb-2 text-3xl sm:text-5xl sm:max-w-screen-xl mx-auto font-semibold text-gray-700 tracking-wide">
-            Want to join the cause?
-              </div>
-          <p className="px-5 text-center text-sm sm:text-xl text-gray-600 font-medium mb-8 tracking-normal">
-            We are always looking for amazing people regardless of experience.
-              </p>
-          <button className="bg-new-red py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 sm:mt-0 font-medium py-1  rounded-full text-white border-2">
-            Join the Force
-              </button>
-        </div>
-      </div>
-
-      <div className="bg-new-lightnavy items-center mx-auto pt-12 pb-20 sm:p-24 px-4 sm:px-12">
-        <div className="flex items-center flex-col lg:flex-row sm:max-w-screen-lg mx-auto px-3 sm:px-0">
-          <div className="flex-1 text-center mb-8 lg:mb-0 lg:text-left text-lg lg:text-2xl font-semibold text-gray-200 tracking-wide">
-            Have an idea you'd like to contribute?
-              <span className="block">
-              A new service you'd like to see?
-                </span>
+      <div className="bg-new-red items-center pt-20 pb-24 sm:pb-32 px-4 sm:px-12">
+        <div className="flex flex-col text-center sm:max-w-screen-lg mx-auto px-3 sm:px-0">
+          <div className="font-header px-5 mb-12 sm:mb- text-3xl sm:text-5xl sm:max-w-screen-xl mx-auto font-bold text-new-navy ">
+          Join our fight against isolation
           </div>
-          <button className="flex-initial py-2 sm:py-4 px-12 sm:px-20 text-sm sm:text-lg mt-4 font-medium rounded-full text-white border-2">
-            Contact Us
-              </button>
+
+          <div className="flex-1 mb-8 sm:mb-0 text-center text-md sm:text-2xl font-normal text-white tracking-wider leading-normal">
+          Do you have an idea you'd like to contribute?
+          <span className="block mt-8 sm:mt-4">
+          Is there a new delivery service you'd like to see?
+          </span>
+          <span className="block mt-8 sm:mt-4">
+          Want to volunteer?
+          </span>
+          </div>
+          <a href="mailto:together@charityshopexchange.com" target="_top"><button className="flex-initial bg-new-navy py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 font-base rounded-full text-white  hover:border-none focus:outline-none focus:shadow-outline hover:bg-red-700 ">
+          Contact Us
+          </button></a>
+          
         </div>
       </div>
     </Layout>

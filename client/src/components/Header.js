@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ShareButton from './ShareButton';
 import logo from "../assets/img/logo_red@2x.png";
-import share from "../assets/img/share.png";
 
 export default function Header() {
 
@@ -21,29 +21,8 @@ export default function Header() {
           </svg>
         </div> */}
 
-        <div className="fixed z-50 flex items-center top-0 right-0 mt-2 sm:mt-4 mr-4 sm:mr-8 rounded-md bg-gray-100 border border-gray-700 py-2 px-5">
+        <ShareButton />
 
-        <img
-            className="h-3 w-auto mr-3"
-            src={share}
-            alt="share"
-          />
-
-          <div className="text-sm font-medium text-center text-gray-700">
-            Share
-          </div>
-          {/* <div className="mx-4 text-sm font-medium text-gray-500">
-            Subscribe
-          </div>
-          <a
-            href="https://www.subbly.co/account/auth/login?store=charity-shop-exchange"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="py-2 px-10 bg-new-red rounded-full text-sm text-center text-white ml-4 "
-          >
-            Log in
-          </a> */}
-        </div>
       </div>
     </div>
   );

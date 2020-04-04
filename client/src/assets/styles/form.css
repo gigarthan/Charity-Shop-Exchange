@@ -21,15 +21,15 @@
     outline: 0;
 }
 .modal-container {
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
 }
 .modal {
     z-index: 100;
-    background: #E4E8FB;
+    background: #fff;
     position: relative;
     margin: 1.75rem auto;
-    border-radius: 3px;
-    max-width: 40%;
+    border-radius: 0.375rem;
+    max-width: 25rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;

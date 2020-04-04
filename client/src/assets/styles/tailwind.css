@@ -4085,6 +4085,10 @@ video {
   list-style-position: outside;
 }
 
+.list-disc {
+  list-style-type: disc;
+}
+
 .list-alpha {
   list-style-type: lower-alpha;
 }
@@ -13526,6 +13530,8 @@ video {
 
 @import "form.css";
 
+@import "shareButton.css";
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
@@ -16991,6 +16997,10 @@ video {
 
   .sm\:list-outside {
     list-style-position: outside;
+  }
+
+  .sm\:list-disc {
+    list-style-type: disc;
   }
 
   .sm\:list-alpha {
@@ -29900,6 +29910,10 @@ video {
     list-style-position: outside;
   }
 
+  .md\:list-disc {
+    list-style-type: disc;
+  }
+
   .md\:list-alpha {
     list-style-type: lower-alpha;
   }
@@ -42807,6 +42821,10 @@ video {
     list-style-position: outside;
   }
 
+  .lg\:list-disc {
+    list-style-type: disc;
+  }
+
   .lg\:list-alpha {
     list-style-type: lower-alpha;
   }
@@ -55712,6 +55730,10 @@ video {
 
   .xl\:list-outside {
     list-style-position: outside;
+  }
+
+  .xl\:list-disc {
+    list-style-type: disc;
   }
 
   .xl\:list-alpha {
