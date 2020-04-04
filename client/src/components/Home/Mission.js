@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 export default function Mission() {
   return (
-    <div className="pt-20 pb-32 bg-new-gray">
-      <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
+    <div className="pt-8 sm:pt-12 pb-12 sm:pb-20 bg-new-gray">
+      <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy px-12 sm:px-20">
         Responding to the coronavirus crisis
-        <span className="block text-left text-xs sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
+        <span className="block text-left text-sm sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
           We're in this together. We don’t know exactly how long we’ll be
           instructed to stay indoors but we do know there’s no single moment
           where everything instantly gets back to normal. Over 1 million
@@ -15,7 +15,7 @@ export default function Mission() {
           next 12 weeks. Hence, a wartime effort is needed to deliver services
           which help these shielded people get through this.
         </span>
-        <div className="mt-12 text-center cursor-pointer text-xs sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1">
+        <div className="mt-8 sm:mt-12 text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1">
           <span className="block flex-shrink-0 mr-3 ">
             <Link
               to="/about"
