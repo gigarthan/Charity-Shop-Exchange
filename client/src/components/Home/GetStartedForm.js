@@ -82,7 +82,7 @@ export default function GetStartedForm({toggle}) {
                   placeholder="select"
                   // style={{ background: '#c7c7c7'}}
                   theme=""
-                  label="Select your region"
+                  label="Select a region"
                   className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
