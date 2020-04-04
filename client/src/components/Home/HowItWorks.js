@@ -5,9 +5,9 @@ import enjoy from "../../assets/img/enjoy@2x.png";
 
 export default function HowItWorks() {
   return (
-    <div className="bg-new-gray pt-8 sm:pt-12 pb-20">
+    <div className="bg-new-gray pt-8 sm:pt-12 pb-12 sm:pb-20">
       <div className="max-w-screen-lg mx-auto px-3 sm:px-8 ">
-        <div className="font-header mx-auto text-3xl sm:text-5xl font-bold text-new-red mb-20 text-center ">
+        <div className="font-header mx-auto text-3xl sm:text-5xl font-bold text-new-red mb-12 sm:mb-20 text-center ">
           How it works
         </div>
         {/* <div className="text-center text-sm sm:text-xl font-normal text-gray-500 mb-20">
@@ -35,7 +35,7 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <div className="flex flex-col-reverse items-start sm:flex-row py-4 px-3 mb-12">
+          <div className="flex flex-col-reverse items-start sm:flex-row py-4 px-3 mb-6">
             <div className="flex-1">
               <div className="text-xl sm:text-2xl mt-3 font-semibold text-gray-700 leading-snug">
                 3. Enjoy moments of liberation without leaving home.

@@ -10,7 +10,7 @@ export default function Hero() {
           <h1 className="font-header text-3xl sm:text-4xl lg:text-5xl font-bold text-new-red leading-tight">
             Fighting&nbsp;isolation<br></br> with books and DVDs
           </h1>
-          <h3 className="text-xs mt-3 sm:text-sm md:text-md lg:text-lg text-gray-600 font-medium mb-12 sm:mb-12">
+          <h3 className="text-sm mt-3 sm:text-sm md:text-md lg:text-lg text-gray-600 font-medium mb-12 sm:mb-12">
             Get a regular supply of things to read and watch.
               We&nbsp;collect a
               selection of books and DVDs from local charity shops and&nbsp;deliver

@@ -108,7 +108,7 @@ export default function GetStartedForm({toggle}) {
               <Button onClick={handleSubmit} disabled={charityId === 0}>Continue</Button>
             </div>
           </div>
-          <div className="text-center text-sx sm:text-sm font-normal text-gray-400 mt-4">
+          <div className="text-center text-sm sm:text-sm font-normal text-gray-400 mt-4">
             Our charities send boxes to doorsteps across the UK. More charities coming soon.
           </div>
         </div>

@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function Subscribe({toggle}) {
   return (
-    <div className="pt-12 pb-20">
-      <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy mb-8 px-12 sm:px-20">
+    <div className="pt-8 sm:pt-12 pb-12 sm:pb-20">
+      <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy px-12 sm:px-20">
         A Charity Shop Exchange subscription buys books and DVDs from local
         charity shops
         <div className="flex items-center">
           <div className="flex flex-col items-center w-full text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1 ">
-            <span className="mt-12">
+            <span className="mt-8 sm:mt-12">
             { /*
               <a
                 href="https://charity-shop-exchange.subbly.me"
