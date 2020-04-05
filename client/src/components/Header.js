@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ShareButton from './ShareButton';
-import logo from "../assets/img/logo_red@2x.png";
+import logo from "../assets/img/cse_logo@2x.png";
 
 export default function Header() {
 
