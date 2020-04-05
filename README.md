@@ -1,4 +1,7 @@
-# Charity-Shop-Exchange
+# Charity Shop Exchange
+### We collect things for you to read & watch, from local charity shops, and deliver them to your door.
+
+![Charity Shop Exchange website](https://user-images.githubusercontent.com/11790973/78511026-56e47f00-7791-11ea-9931-62821c0bbb5f.png)
 
 ## Install
 
