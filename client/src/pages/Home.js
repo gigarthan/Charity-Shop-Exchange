@@ -5,6 +5,7 @@ import GetStartedForm from "../components/Home/GetStartedForm";
 import HowItWorks from "../components/Home/HowItWorks";
 import Subscribe from "../components/Home/Subscribe";
 import Mission from "../components/Home/Mission";
+import Register from "../components/Home/Register";
 import Dialog from '../components/Dialog';
 import useDialog from '../components/Dialog/useDialog';
 
@@ -31,7 +32,7 @@ export default function Home() {
         <HowItWorks />
         <Subscribe toggle={toggle} />
         <Mission />
-     
+        <Register />
       </Layout>
       <Dialog isShowing={isShowing} hide={toggle}>
         <h1 className="font-header text-center text-2xl sm:text-3xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
