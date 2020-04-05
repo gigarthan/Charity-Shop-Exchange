@@ -12,7 +12,7 @@ export default function Register() {
   }
 
   const [contact, setContact] = useState({ name: "", email: "", cname: "", position: "", message: "", number: ""})
-  const [status, setStatus] = useState(null)
+  // const [status, setStatus] = useState(null);
 
 
   const handleSubmit = e => {
