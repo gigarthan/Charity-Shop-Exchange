@@ -1,7 +1,52 @@
-import React from "react";
+import React, {useState} from "react";
 import Layout from "../components/Layout";
 
+
+
 export default function Register() {
+
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
+  const [contact, setContact] = useState({ name: "", email: "", cname: "", position: "", message: "", number: ""})
+  // const [status, setStatus] = useState(null);
+
+
+  const handleSubmit = e => {
+    const state = { 
+      name: contact.name, 
+      email: contact.email, 
+      message: contact.message, 
+      cname: contact.cname, 
+      number: contact.number, 
+      position: contact.position
+     }
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": 'application/x-www-form-urlencoded' },
+      body: encode({ "form-name": "contact", ...state})
+    })
+    .then(console.log("Contact-State: ",state))
+    .catch(error => alert(error));
+  
+    e.preventDefault();
+  };
+
+  const handleChange = e => {
+    const updatedContact = {
+      ...contact,
+      [e.target.name]: e.target.value
+    };
+    setContact(updatedContact)
+  };
+
+  
+
+
   return (
     <Layout>
       <div className="bg-new-navy">
@@ -29,11 +74,10 @@ export default function Register() {
 
               <div>
                 <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
+                  onSubmit={handleSubmit} 
                   className=" w-11/12 mx-auto pt-6 pb-8 mb-4"
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-medium sm:font-semibold mb-4"
@@ -47,7 +91,9 @@ export default function Register() {
                       name="name"
                       type="text"
                       placeholder="Name"
-                    />
+                      value={contact.name}
+                      onChange={handleChange}/>
+                    
                   </div>
 
                   <div className="mb-12">
@@ -63,7 +109,9 @@ export default function Register() {
                       name="cname"
                       type="text"
                       placeholder="Charity name"
-                    />
+                      value={contact.cname}
+                      onChange={handleChange}/>
+                    
                   </div>
 
                   <div className="mb-12">
@@ -79,6 +127,8 @@ export default function Register() {
                       name="position"
                       type="text"
                       placeholder="Position"
+                      value={contact.position}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -95,22 +145,26 @@ export default function Register() {
                       name="email"
                       type="text"
                       placeholder="Email"
+                      value={contact.email}
+                      onChange={handleChange}
                     />
                   </div>
 
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="tel"
+                      htmlFor="number"
                     >
                       Mobile Number:
                     </label>
                     <input
                       className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="tel"
-                      name="tel"
-                      type="tel"
+                      id="number"
+                      name="number"
+                      type="text"
                       placeholder="Mobile number"
+                      value={contact.number}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -125,7 +179,10 @@ export default function Register() {
                       className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
                       id="message"
                       name="message"
+                      type="text"
                       placeholder="Any further information"
+                      value={contact.message}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="flex flex-col items-center">

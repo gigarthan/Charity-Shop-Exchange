@@ -36,6 +36,18 @@
     <title>Charity Shop Exchange | Books &amp; DVDs Delivered from Charity Shops to You</title>
   </head>
   <body>
+
+    <!-- A little help for the Netlify bots if you're not using a SSG -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="text" name="cname" />
+      <input type="text" name="position" />
+      <input type="text" name="email" />
+      <input type="text" name="number" />
+      <input type="text" name="message" />
+    </form>
+
+
     <noscript>You need to enable JavaScript to view this site.</noscript>
     <div id="root"></div>
     <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>
