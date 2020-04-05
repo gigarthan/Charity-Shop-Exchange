@@ -23,7 +23,7 @@ export default function Subscribe({toggle}) {
                 onClick={(e) => {e.preventDefault(); toggle();}}
                 className=""
               >
-                Subscribe here{" "}
+                Subscribe here <span class="font-sans">&rarr;</span>{" "}
               </a>
             </span>
           </div>
