@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logoWhite from "../assets/img/logo_white@2x.png";
+import logoWhite from "../assets/img/cse_logo_white@2x.png";
 
 export default function Footer() {
 
