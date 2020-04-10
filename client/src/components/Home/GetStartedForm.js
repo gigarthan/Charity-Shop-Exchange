@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Combo from '../Combo';
 import Button from '../Button';
+import config from '../../config';
 import locations from '../../import/locations.json';
 import {charities} from '../../import/charities.json';
+import {products} from '../../import/subbly-products.json';
 import starttext from "../../assets/img/start text.png";
-
 
 export default function GetStartedForm({toggle}) {
 
@@ -58,10 +59,25 @@ export default function GetStartedForm({toggle}) {
 
   // Redirect the user to Subbly
   function handleSubmit() {
-    //window.location.href = config.subscriptionBoxUrl;
+    const searchParams = new URLSearchParams(window.location.search);
 
-    // Before launch, display a Launching Soon modal instead
-    toggle();
+    if ( searchParams.has("testMode") === true ) {
+      // We are in test mode; act as if we are launched
+
+      // Find the Subbly product that represents this county
+      const subblyProduct = products.find( product => product.countyIds.includes(countyId) );
+
+      if ( subblyProduct ) {
+        // Redirect to the Subbly product
+        window.location.href = `${config.subblyCheckoutUrl}/${subblyProduct.id}`;
+      } else {
+        // Product not found in the products JSON, so display the Launching Soon modal instead
+        toggle();
+      }
+    } else {
+      // Before launch, display a Launching Soon modal instead
+      toggle();
+    }
   }
 
   return (
