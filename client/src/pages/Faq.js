@@ -112,7 +112,7 @@ export default function Faq() {
             How do you make money?
           </h2>
           <p className="mb-4">
-            For each weekly / bi-weekly / monthly box we take a standing charge of £2, plus 15% of the total order value.
+            For each weekly / bi-weekly / monthly box we take the first £1.50 of the order, plus 20% of the remaining order value.
           </p>
 
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
