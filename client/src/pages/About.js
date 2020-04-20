@@ -52,7 +52,7 @@ export default function About() {
           behalf of a syndication of suppliers. And we're open to working together
           on digital projects that see the value in this approach.
       </p>
-      <div className="flex flex-col justify-center mt-4">
+      <div className="flex flex-col justify-center mt-4 w-4/5 mx-auto">
       <span className="text-base sm:text-lg text-gray-500 font-normal mb-4 leading-relaxed text-center">
       Proudly listed on the Charity Excellence COVID19 funder database 
       </span>
