@@ -21,7 +21,7 @@ export default function Mission() {
               to="/about"
               className=""
             >
-              Learn more about our approach <span class="font-sans">&rarr;</span>{" "}
+              Learn more about our approach <span className="font-sans">&rarr;</span>{" "}
             </Link>
           </span>
           {/* <svg
