@@ -20,8 +20,11 @@ export default function Footer() {
             <li className="text-xs text-gray-200 mb-3 sm:mb-4 cursor-pointer" >
               <Link to="/register">Register your charity</Link>
             </li>
-            <li className="text-xs text-gray-200 mb-2 cursor-pointer">
+            <li className="text-xs text-gray-200 mb-3 cursor-pointer">
               <Link to="/faq">Frequently asked questions</Link>
+            </li>
+            <li className="text-xs text-gray-200 mb-3 cursor-pointer">
+              <Link to="/together">Together</Link>
             </li>
           </ul>
           <ul className="flex flex-col items-center sm:block flex-1 sm:flex-none">
