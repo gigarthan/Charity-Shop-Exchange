@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Card, Tabs } from '@shopify/polaris';
 import PlanList from './PlanList';
+import items from '../../import/planList';
 
 export default function PlanSelection() {
   const [selected, setSelected] = useState(0);
@@ -22,53 +23,6 @@ export default function PlanSelection() {
       panelID: 'Books',
     },
   ];
-
-  const items = {
-    dvd: [
-      {
-        id: 1,
-        name: 'Action',
-      },
-      {
-        id: 2,
-        name: 'Adventure',
-      },
-      {
-        id: 3,
-        name: 'Romance',
-      },
-      {
-        id: 4,
-        name: 'Comedy',
-      },
-      {
-        id: 5,
-        name: 'Drama',
-      },
-    ],
-    books: [
-      {
-        id: 11,
-        name: 'Action',
-      },
-      {
-        id: 12,
-        name: 'Adventure',
-      },
-      {
-        id: 13,
-        name: 'Romance',
-      },
-      {
-        id: 14,
-        name: 'Comedy',
-      },
-      {
-        id: 15,
-        name: 'Drama',
-      },
-    ],
-  };
 
   const resourceNames = {
     dvd: {

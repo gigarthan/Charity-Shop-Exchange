@@ -1,29 +1,36 @@
-import React from "react";
-import Layout from "../components/Layout";
-import Hero from "../components/Home/Hero";
-import GetStartedForm from "../components/Home/GetStartedForm";
-import HowItWorks from "../components/Home/HowItWorks";
-import Subscribe from "../components/Home/Subscribe";
-import Mission from "../components/Home/Mission";
-import Register from "../components/Home/Register";
+import React from 'react';
+import Layout from '../components/Layout';
+import Hero from '../components/Home/Hero';
+import GetStartedForm from '../components/Home/GetStartedForm';
+import HowItWorks from '../components/Home/HowItWorks';
+import Subscribe from '../components/Home/Subscribe';
+import Mission from '../components/Home/Mission';
+import Register from '../components/Home/Register';
 import Dialog from '../components/Dialog';
 import useDialog from '../components/Dialog/useDialog';
 
-import balloon from "../assets/img/balloon@2x.png";
-import hero from "../assets/img/hero_01_girl.png";
+import balloon from '../assets/img/balloon@2x.png';
+import hero from '../assets/img/hero_01_girl.png';
 // import boxes from "../assets/img/boxes.png";
-import onefinger from "../assets/img/one-finger_200_transparent.gif";
-import box from "../assets/img/4039-rocking-gift.gif";
-import boxopen from "../assets/img/18033-box-open-gray-200.gif";
-import boxfill from "../assets/img/3321-shipment.gif";
-import boxwalk from "../assets/img/17431-package-delivery.gif";
-import base from "../assets/img/base@1x.png";
-import door from "../assets/img/door@1x.png";
-import twitter from "../assets/img/twitter.svg";
-import PlanSelection from "../components/Home/PlanSelection";
+import onefinger from '../assets/img/one-finger_200_transparent.gif';
+import box from '../assets/img/4039-rocking-gift.gif';
+import boxopen from '../assets/img/18033-box-open-gray-200.gif';
+import boxfill from '../assets/img/3321-shipment.gif';
+import boxwalk from '../assets/img/17431-package-delivery.gif';
+import base from '../assets/img/base@1x.png';
+import door from '../assets/img/door@1x.png';
+import twitter from '../assets/img/twitter.svg';
+import PlanSelection from '../components/Home/PlanSelection';
+import items from '../import/planList';
 
 export default function Home() {
-  const {isShowing, toggle} = useDialog();
+  const { isShowing, toggle } = useDialog();
+
+  let planList = [];
+  for (const key in items) {
+    const list = items[key];
+    planList = planList.concat(list.map((elem) => elem.id));
+  }
 
   return (
     <>
@@ -51,6 +58,21 @@ export default function Home() {
           />@CharityShopEx</a>
         </p> */}
       </Dialog>
+      <div className="invisible">
+        {planList.map((planId) => (
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
+          <a
+            key={planId}
+            href="#"
+            data-cb-type="checkout"
+            data-cb-plan-id={planId}
+            // className="invisible"
+            id={'plan:' + planId}
+          >
+            Click
+          </a>
+        ))}
+      </div>
     </>
   );
 }
