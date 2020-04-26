@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Register from "./pages/Register";
 import Faq from "./pages/Faq";
+import Together from "./pages/Together";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
@@ -23,6 +24,9 @@ function App() {
       </Route>      
       <Route path="/faq">
         <Faq />
+      </Route>      
+      <Route path="/together">
+        <Together />
       </Route>      
       <Route path="/privacy">
         <Privacy />
