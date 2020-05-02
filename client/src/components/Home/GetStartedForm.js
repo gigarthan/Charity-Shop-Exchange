@@ -52,10 +52,29 @@ export default function GetStartedForm({toggle}) {
     }
   });
 
+  // On componentDidMount (when component is first loaded).
+  useEffect(() => {
+    autoSelectCounty();
+  }, []);
+
   // Clear out the 'Charity' combo if 'County' is changed
   useEffect( () => {
     setCharityId(0);
   }, [countyId]);
+
+  // If user arrives on subdomain and it is a valid county auto populate region
+  function autoSelectCounty() {
+    const host = window.location.host;
+    const subdomain = host.split(".")[0];
+    const normalizedSubdomain = subdomain.trim().toLowerCase();
+
+    for (const [, county] of Object.entries(counties)) {
+      const normalizedCountyName = county.name.toLowerCase();
+      if (normalizedCountyName === normalizedSubdomain) {
+        setCountyId(county.id);
+      }
+    }
+  }
 
   // Redirect the user to Subbly
   function handleSubmit() {
