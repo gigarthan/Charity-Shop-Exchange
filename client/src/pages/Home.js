@@ -44,7 +44,7 @@ export default function Home() {
       </Layout>
       <Dialog isLarge={true} isShowing={isShowing} hide={toggle}>
         <h1 className="font-header text-center text-2xl sm:text-3xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
-          Select a plan
+          Select items
         </h1>
 
         <PlanSelection></PlanSelection>
