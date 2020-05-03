@@ -1,14 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import Combo from '../Combo';
-import Button from '../Button';
-import config from '../../config';
-import locations from '../../import/locations.json';
-import {charities} from '../../import/charities.json';
-import {products} from '../../import/subbly-products.json';
+import React, { useState, useEffect } from "react";
+import Combo from "../Combo";
+import Button from "../Button";
+import config from "../../config";
+import locations from "../../import/locations.json";
+import { charities } from "../../import/charities.json";
+import { products } from "../../import/subbly-products.json";
 import starttext from "../../assets/img/start text.png";
 
-export default function GetStartedForm({toggle}) {
-
+export default function GetStartedForm({ toggle }) {
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
 
@@ -39,11 +38,11 @@ export default function GetStartedForm({toggle}) {
 
   // Simply don't show counties that aren't serviced
   // (TODO: This is for launch. Remove later when re-adding "Coming soon!" above)
-  
-  const counties = locations.counties.filter( county => {
-    let numCharitiesForCounty = charities.reduce( function(count, charity) {
-      return count + ( charity.countyIds.includes(county.id) ? 1 : 0 );
-    }, 0)
+
+  const counties = locations.counties.filter((county) => {
+    let numCharitiesForCounty = charities.reduce(function (count, charity) {
+      return count + (charity.countyIds.includes(county.id) ? 1 : 0);
+    }, 0);
 
     if (numCharitiesForCounty > 0) {
       return true;
@@ -58,7 +57,7 @@ export default function GetStartedForm({toggle}) {
   }, []);
 
   // Clear out the 'Charity' combo if 'County' is changed
-  useEffect( () => {
+  useEffect(() => {
     setCharityId(0);
   }, [countyId]);
 
@@ -80,13 +79,15 @@ export default function GetStartedForm({toggle}) {
   function handleSubmit() {
     const searchParams = new URLSearchParams(window.location.search);
 
-    if ( searchParams.has("testMode") === true ) {
+    if (searchParams.has("testMode") === true) {
       // We are in test mode; act as if we are launched
 
       // Find the Subbly product that represents this county
-      const subblyProduct = products.find( product => product.countyIds.includes(countyId) );
+      const subblyProduct = products.find((product) =>
+        product.countyIds.includes(countyId)
+      );
 
-      if ( subblyProduct ) {
+      if (subblyProduct) {
         // Redirect to the Subbly product
         window.location.href = `${config.subblyCheckoutUrl}/${subblyProduct.id}`;
       } else {
@@ -129,8 +130,13 @@ export default function GetStartedForm({toggle}) {
                   name="charityId"
                   value={charityId}
                   setValue={setCharityId}
-                  items={charities.filter(c => c.countyIds.includes(countyId))}
-                  disabled={!countyId || (counties.find(c => c.id === countyId).disabled)}
+                  items={charities.filter((c) =>
+                    c.countyIds.includes(countyId)
+                  )}
+                  disabled={
+                    !countyId ||
+                    counties.find((c) => c.id === countyId).disabled
+                  }
                   placeholder="select"
                   theme=""
                   label="Pick a charity"
@@ -140,11 +146,14 @@ export default function GetStartedForm({toggle}) {
               </div>
             </div>
             <div className="mt-8 ">
-              <Button onClick={handleSubmit} disabled={charityId === 0}>Continue</Button>
+              <Button onClick={handleSubmit} disabled={charityId === 0}>
+                Continue
+              </Button>
             </div>
           </div>
           <div className="text-center text-sm sm:text-sm font-normal text-gray-400 mt-4">
-            Our charities send boxes to doorsteps across the UK. More charities coming soon.
+            Our charities send boxes to doorsteps across the UK. More charities
+            coming soon.
           </div>
         </div>
       </div>
