@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-
+import {Link} from 'react-router-dom';
 
 export default function Mission() {
   return (
@@ -10,18 +9,16 @@ export default function Mission() {
         <span className="block text-left text-sm sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
           We're in this together. We don’t know exactly how long we’ll be
           instructed to stay indoors but we do know there’s no single moment
-          where everything instantly gets back to normal. Over 1 million
-          people in the UK need to be shielded from COVID-19 for at least the
-          next 12 weeks. Hence, a wartime effort is needed to deliver services
-          which help these shielded people get through this.
+          where everything instantly gets back to normal. Over 1 million people
+          in the UK need to be shielded from COVID-19 for at least the next 12
+          weeks. Hence, a wartime effort is needed to deliver services which
+          help these shielded people get through this.
         </span>
         <div className="mt-8 sm:mt-12 text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1">
           <span className="block flex-shrink-0 mr-3 ">
-            <Link
-              to="/about"
-              className=""
-            >
-              Learn more about our approach <span class="font-sans">&rarr;</span>{" "}
+            <Link to="/about" className="">
+              Learn more about our approach{' '}
+              <span className="font-sans">&rarr;</span>{' '}
             </Link>
           </span>
           {/* <svg
