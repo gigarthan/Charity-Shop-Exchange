@@ -1,0 +1,17 @@
+.collapsable-icon {
+  transition: transform 0.3s;
+}
+
+.collapsable-icon.open {
+  transform: rotateZ(90deg);
+}
+
+.collapsable-btn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.collapsable-btn:focus {
+  outline: none;
+}

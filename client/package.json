@@ -16,6 +16,7 @@
     "react-lottie": "^1.2.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-smooth-collapse": "^2.1.0",
     "react-use-web-share": "^1.0.2",
     "vendor-copy": "^2.0.0"
   },

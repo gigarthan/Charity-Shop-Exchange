@@ -13530,6 +13530,8 @@ video {
 
 @import "form.css";
 
+@import "checkout.css";
+
 @import "shareButton.css";
 
 @media (min-width: 640px) {
