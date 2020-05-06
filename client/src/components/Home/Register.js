@@ -16,7 +16,7 @@ export default function Register() {
                 <div className="">
                   <Link to="/register"
                   >
-                    Enlist now <span class="font-sans">&rarr;</span>
+                    Enlist now <span className="font-sans">&rarr;</span>
                   </Link>
                 </div>
                 {/* <svg

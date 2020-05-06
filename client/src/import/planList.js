@@ -1,0 +1,63 @@
+module.exports = {
+  dvd: [
+    { id: 'action-movie', name: 'Action movie' },
+    { id: 'adventure-movie ', name: 'Adventure movie' },
+    { id: 'animation-movie', name: 'Animation movie' },
+    { id: 'comedy-movie', name: 'Comedy movie' },
+    { id: 'crime-movie', name: 'Crime movie' },
+    { id: 'documentary-movie', name: 'Documentary movie' },
+    { id: 'drama-movie', name: 'Drama movie' },
+    { id: 'family-movie ', name: 'Family movie' },
+    { id: 'fantasy-movie', name: 'Fantasy movie' },
+    { id: 'history-movie', name: 'History movie' },
+    { id: 'horror-movie', name: 'Horror movie' },
+    { id: 'music-movie', name: 'Music movie' },
+    { id: 'mystery-movie', name: 'Mystery movie' },
+    { id: 'romance-movie', name: 'Romance movie' },
+    { id: 'science-fiction-movie', name: 'Science Fiction movie' },
+    { id: 'thriller-movie', name: 'Thriller movie' },
+    { id: 'war-movie', name: 'War movie' },
+    { id: 'western-movie', name: 'Western movie' },
+  ],
+  books: [
+    { id: 'arts-&-photography-books', name: 'Arts & Photography books' },
+    { id: 'biographies-&-memoirs-books', name: 'Biographies & Memoirs books' },
+    { id: 'business-&-money-books', name: 'Business & Money books' },
+    { id: "children's-books", name: "Children's books" },
+    {
+      id: 'cookbooks,-food-&-drink-books',
+      name: 'Cookbooks, Food & Drink books',
+    },
+    {
+      id: 'crafts,-hobbies-&-home-books',
+      name: 'Crafts, Hobbies & Home books',
+    },
+    {
+      id: 'health,-fitness-&-diet-books',
+      name: 'Health, Fitness & Diet books',
+    },
+    { id: 'history-books', name: 'History books' },
+    {
+      id: 'humour-&-entertainment-books',
+      name: 'Humour & Entertainment books',
+    },
+    {
+      id: 'mystery,-thriller-&-suspense-books',
+      name: 'Mystery, Thriller & Suspense books',
+    },
+    { id: 'poetry-&-short-story-books', name: 'Poetry & Short Story books' },
+    {
+      id: 'politics-&-social-science-books',
+      name: 'Politics & Social Science books',
+    },
+    { id: 'romance-books', name: 'Romance books' },
+    { id: 'science-&-math-books', name: 'Science & Math books' },
+    {
+      id: 'self-help-&-spirituality-books',
+      name: 'Self-Help & Spirituality books',
+    },
+    { id: 'sports-books', name: 'Sports books' },
+    { id: 'technology-books', name: 'Technology books' },
+    { id: 'travel-books', name: 'Travel books' },
+  ],
+};
