@@ -58,21 +58,6 @@ export default function Home() {
           />@CharityShopEx</a>
         </p> */}
       </Dialog>
-      <div className="invisible">
-        {planList.map((planId) => (
-          // eslint-disable-next-line jsx-a11y/anchor-is-valid
-          <a
-            key={planId}
-            href="#"
-            data-cb-type="checkout"
-            data-cb-plan-id={planId}
-            // className="invisible"
-            id={'plan:' + planId}
-          >
-            Click
-          </a>
-        ))}
-      </div>
     </>
   );
 }
