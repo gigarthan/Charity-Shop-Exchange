@@ -110,6 +110,31 @@
       </template>
     </dom-module>
 
+    <dom-module id="custom-radio-button-icon-color" theme-for="vaadin-radio-button">
+      <template>
+        <style>
+          :host([theme~="custom"][checked]) [part="radio"] {
+            background-color: #c53030;
+          }
+        </style>
+      </template>
+    </dom-module>
+
+    <dom-module id="my-text-field-styles" theme-for="vaadin-text-field vaadin-text-area">
+      <template>
+        <style>
+          :host(.custom-style) [part="input-field"] {
+            border: 1px solid #ccc;
+            background-color: #fff;
+          }
+
+          :host([focused].custom-style) [part="input-field"] {
+            border-color: #aaa;
+          }
+        </style>
+      </template>
+    </dom-module>
+
     <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>
     <script>if (!window.customElements) { document.write("<!--"); }</script>
     <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>

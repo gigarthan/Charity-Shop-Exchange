@@ -7,7 +7,7 @@ import { charities } from '../../../import/charities.json';
 import locations from '../../../import/locations.json';
 
 export default function Charity() {
-  const [isOpen, setisOpen] = useState(true);
+  const [isOpen, setisOpen] = useState(false);
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
 

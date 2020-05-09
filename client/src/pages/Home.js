@@ -43,9 +43,9 @@ export default function Home() {
         <Register />
       </Layout>
       <Dialog isLarge={true} isShowing={isShowing} hide={toggle}>
-        <h1 className="font-header text-center text-2xl sm:text-3xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
+        {/* <h1 className="font-header text-center text-2xl sm:text-3xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
           Select items
-        </h1>
+        </h1> */}
 
         <PlanSelection></PlanSelection>
         {/* <h3 className="text-center text-base sm:text-l text-gray-600 font-medium mb-6 sm:mb-6">We’ll be launching Charity Shop Exchange in the next few days. Please follow us on Twitter for updates:</h3>

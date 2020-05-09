@@ -16,6 +16,89 @@
   outline: none;
 }
 
+.model-child-main
+{
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+.vaadin-number {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.vaadin-number::-webkit-scrollbar {
+  width: 5px;
+  /* border-radius: 5px; */
+  /* background: #dadada; */
+}
+.vaadin-number::-webkit-scrollbar-thumb {
+  /* border-radius: 5px; */
+  -webkit-box-shadow: inset 10px 10px 10px #dadada;
+}
+
+.vaadin-number-main {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+}
+
+.vaadin-number-child{
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.model-child-main::-webkit-scrollbar {
+  width: 5px;
+  /* border-radius: 5px; */
+  /* background: #dadada; */
+}
+.model-child-main::-webkit-scrollbar-thumb {
+  /* border-radius: 5px; */
+  -webkit-box-shadow: inset 10px 10px 10px #dadada;
+}
+
+.text-color-red
+{
+  color: #c53030;
+}
+
+.shopping-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.shopping-cart img{
+  width: 30px;
+    margin-right: 15px;
+}
+
+.payment-text-field
+{
+  position: relative;
+}
+.payment-card-img
+{
+  position: absolute;
+  display: flex;
+  bottom: 5px;
+  right: 0;
+}
+.payment-card-img img
+{
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+}
+.text-selection
+{
+  text-align: right;
+}
+
 @media (min-width: 800px) {
 
   .Polaris-Tabs__Title:before {
@@ -38,4 +121,31 @@
   #dvd .Polaris-Tabs__Title:before {
     background-image: url('../img/film.svg');
   }  
+}
+
+@media only screen and (max-width: 750px) {
+  .vaadin-number-main {
+    width: 47%;
+  }
+}
+
+@media only screen and (max-width: 658px) {
+  .vaadin-number-main {
+    width: 43%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .text-selection {
+    text-align: center;
+  }
+  .shopping-cart {
+    justify-content: center;
+}
+}
+
+@media only screen and (max-width: 420px) {
+  .vaadin-number-main {
+    width: 100%;
+  }
 }
