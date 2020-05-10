@@ -11,8 +11,7 @@ export default function Register() {
         .join("&");
   }
 
-  const [contact, setContact] = useState({ name: "", email: "", cname: "", position: "", message: "", number: ""})
-  // const [status, setStatus] = useState(null);
+  const [contact, setContact] = useState({ name: "", email: "", cname: "", position: "", message: "", number: ""});
 
 
   const handleSubmit = e => {
@@ -76,6 +75,7 @@ export default function Register() {
                 <form
                   onSubmit={handleSubmit} 
                   className=" w-11/12 mx-auto pt-6 pb-8 mb-4"
+                  action= "thank-you"
                 >
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="mb-12">
