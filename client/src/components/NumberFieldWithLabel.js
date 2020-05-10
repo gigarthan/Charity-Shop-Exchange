@@ -40,7 +40,7 @@ export default function NumberFieldWithLabel(props) {
         label={label}
         name={id}
         value={value}
-        class="vaadin-number-child bg-gray-200"
+        class={`vaadin-number-child ${value === 0 ? 'bg-gray-200' : 'bg-red-400'}`}
       >
       </vaadin-number-field>
     </div>
