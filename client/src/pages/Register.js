@@ -1,58 +1,67 @@
 import React, {useState} from "react";
 import Layout from "../components/Layout";
+import { useHistory } from 'react-router';
 
 
 
-export default function Register() {
+function Register() {
+  const history = useHistory();
+
+  const [redirectStatus, setRedirectStatus] = useState(false);
+  const [alertStatus, setAlertStatus] = useState(null);
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    cname: "",
+    position: "",
+    message: "",
+    number: "",
+  });
 
   const encode = (data) => {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
 
-  const [contact, setContact] = useState({ name: "", email: "", cname: "", position: "", message: "", number: ""});
-
-
-  const handleSubmit = e => {
-    const state = { 
-      name: contact.name, 
-      email: contact.email, 
-      message: contact.message, 
-      cname: contact.cname, 
-      number: contact.number, 
-      position: contact.position
-     }
-    
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const state = {
+      name: contact.name,
+      email: contact.email,
+      message: contact.message,
+      cname: contact.cname,
+      number: contact.number,
+      position: contact.position,
+    };
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": 'application/x-www-form-urlencoded' },
-      body: encode({ "form-name": "contact", ...state})
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...state }),
     })
-    .then(console.log("Contact-State: ",state))
-    .catch(error => alert(error));
-  
-    e.preventDefault();
+      .then(() => setAlertStatus("Thank you!"), setRedirectStatus(true))
+      .catch((error) =>
+        setAlertStatus(error, "We've encountered an error, please try again")
+      );
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const updatedContact = {
       ...contact,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     };
-    setContact(updatedContact)
+    setContact(updatedContact);
   };
-
-  
-
 
   return (
     <Layout>
       <div className="bg-new-navy">
-            <div className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-12 sm:pt-20 pb-20 sm:pb-32">
-              Are you a charity shop who’d like to keep stock ticking over despite
-              being closed to the public?
-            </div>
+        <div className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-12 sm:pt-20 pb-20 sm:pb-32">
+          Are you a charity shop who’d like to keep stock ticking over despite
+          being closed to the public?
+        </div>
         <div className="flex flex-col items-center bg-gray-100">
           <div className="-mt-10 sm:-mt-20 mx-auto w-11/12 max-w-4xl bg-white py-12 px-4 sm:px-20 mb-40 rounded-lg shadow-2xl">
             <div>
@@ -67,15 +76,15 @@ export default function Register() {
                 you send or deliver.
               </p>
               <p className="text-xs sm:text-lg text-center font-medium sm:font-semibold mt-12 text-gray-600 leading-normal">
-                Please fill out the form below and we’ll get back to you right away.
+                Please fill out the form below and we’ll get back to you right
+                away.
               </p>
               <div className="bg-gray-400 h-px mt-8 mb-10"> </div>
 
               <div>
                 <form
-                  onSubmit={handleSubmit} 
+                  onSubmit={handleSubmit}
                   className=" w-11/12 mx-auto pt-6 pb-8 mb-4"
-                  action= "thank-you"
                 >
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="mb-12">
@@ -92,8 +101,8 @@ export default function Register() {
                       type="text"
                       placeholder="Name"
                       value={contact.name}
-                      onChange={handleChange}/>
-                    
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="mb-12">
@@ -110,8 +119,8 @@ export default function Register() {
                       type="text"
                       placeholder="Charity name"
                       value={contact.cname}
-                      onChange={handleChange}/>
-                    
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="mb-12">
@@ -189,8 +198,13 @@ export default function Register() {
                     <button
                       className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
                       type="submit"
+                      onClick={() =>
+                        setTimeout(function () {
+                          history.push("/");
+                        }, 1000)
+                      }
                     >
-                      Submit
+                      {alertStatus != null ? `${alertStatus}` : `Submit`}
                     </button>
                   </div>
                 </form>
@@ -202,3 +216,5 @@ export default function Register() {
     </Layout>
   );
 }
+
+export default Register;
