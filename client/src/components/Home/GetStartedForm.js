@@ -64,11 +64,22 @@ export default function GetStartedForm({ toggle }) {
   // If user arrives on subdomain and it is a valid county auto populate region
   function autoSelectCounty() {
     const host = window.location.host;
-    const subdomain = host.split(".")[0];
+    const domainParts = host.split(".");
+
+    let subdomain = domainParts[0];
+    if (subdomain === "www") {
+      subdomain = domainParts[1];
+    }
+
     const normalizedSubdomain = subdomain.trim().toLowerCase();
+    console.log(subdomain);
+    console.log(normalizedSubdomain);
 
     for (const [, county] of Object.entries(counties)) {
-      const normalizedCountyName = county.name.toLowerCase();
+      const normalizedCountyName = county.name
+        .toLowerCase()
+        .split(" ")
+        .join("-");
       if (normalizedCountyName === normalizedSubdomain) {
         setCountyId(county.id);
       }
