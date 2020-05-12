@@ -1,12 +1,11 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import ShareButton from './ShareButton';
-import logo from "../assets/img/cse_logo@2x.png";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import ShareButton from './ShareButton'
+import logo from '../assets/img/cse_logo@2x.png'
 
 export default function Header() {
-
   return (
-    <div className="w-screen py-3 px-8 bg-white border-b-2 z-10 shadow-lg relative">
+    <div className="w-screen relative py-3 px-8 bg-white border-b-2 z-10 shadow-lg">
       <div className="flex justify-between items-center">
         <Link to="/">
           <img className="h-8 md:h-12" src={logo} alt="logo" />
@@ -22,8 +21,7 @@ export default function Header() {
         </div> */}
 
         <ShareButton />
-
       </div>
     </div>
-  );
+  )
 }

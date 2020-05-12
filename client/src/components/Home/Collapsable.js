@@ -1,5 +1,5 @@
-import React from 'react';
-import SmoothCollapse from 'react-smooth-collapse';
+import React from 'react'
+import SmoothCollapse from 'react-smooth-collapse'
 
 export default function Collapsable({ children, title, open, toggle }) {
   const getArrowIcon = () => {
@@ -14,14 +14,14 @@ export default function Collapsable({ children, title, open, toggle }) {
         <path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z" />
         <path d="M0 0h24v24H0z" fill="none" />
       </svg>
-    );
-  };
+    )
+  }
 
   const triggerToggle = () => {
     if (toggle) {
-      toggle();
+      toggle()
     }
-  };
+  }
 
   return (
     <div>
@@ -37,13 +37,13 @@ export default function Collapsable({ children, title, open, toggle }) {
           {getArrowIcon()}
         </div>
         <div>
-          <h3>{title}</h3>
+          <h3 className="text-gray-700">{title}</h3>
         </div>
       </button>
 
       <SmoothCollapse expanded={open}>
-        <div className="pl-10 mb-4">{children}</div>
+        <div className="pl-2 pr-2 mb-4">{children}</div>
       </SmoothCollapse>
     </div>
-  );
+  )
 }
