@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Layout from "../components/Layout";
-import { useHistory } from 'react-router';
-
 
 
 function Register() {
-  const history = useHistory();
 
-  const [redirectStatus, setRedirectStatus] = useState(false);
   const [alertStatus, setAlertStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({
+    email : "",
+    name: "",
+    message: "",
+  });
   const [contact, setContact] = useState({
     name: "",
     email: "",
@@ -17,6 +19,9 @@ function Register() {
     message: "",
     number: "",
   });
+  
+
+
 
   const encode = (data) => {
     return Object.keys(data)
@@ -25,9 +30,25 @@ function Register() {
       )
       .join("&");
   };
+  function Validate(contact) {
+    if (contact.email === "") {
+      errors.email = 'Field cannot be blank';
+    } else if (!/\S+@\S+\.\S+/.test(contact.email)) {
+      errors.email = 'Enter a valid e-mail';
+    }
+    if (contact.name === "") {
+      errors.name = 'Field cannot be blank';
+    }
+    if (contact.message === "") {
+      errors.message = 'Field cannot be blank';
+    }
+    return errors;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    setIsSubmitting(true);
     const state = {
       name: contact.name,
       email: contact.email,
@@ -36,17 +57,20 @@ function Register() {
       number: contact.number,
       position: contact.position,
     };
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...state }),
-    })
-      .then(() => setAlertStatus("Thank you!"), setRedirectStatus(true))
-      .catch((error) =>
-        setAlertStatus(error, "We've encountered an error, please try again")
-      );
+    if(errors){
+      try{
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({ "form-name": "contact", ...state }),
+        })
+        .then(() => setAlertStatus("Thank you!"))
+      } 
+      catch {
+        setErrors(Validate(contact))
+      }
+    } 
   };
-
   const handleChange = (e) => {
     const updatedContact = {
       ...contact,
@@ -146,7 +170,7 @@ function Register() {
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
                       htmlFor="email"
                     >
-                      Email:
+                      Email:{errors !== undefined ? ` ${errors.email} ` : "book"}
                     </label>
                     <input
                       className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -164,7 +188,7 @@ function Register() {
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
                       htmlFor="number"
                     >
-                      Mobile Number:
+                      Mobile Number: 
                     </label>
                     <input
                       className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -198,11 +222,7 @@ function Register() {
                     <button
                       className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
                       type="submit"
-                      onClick={() =>
-                        setTimeout(function () {
-                          history.push("/");
-                        }, 1000)
-                      }
+                      // onClick={(e)=> e.preventDefault(), Validate(contact)}
                     >
                       {alertStatus != null ? `${alertStatus}` : `Submit`}
                     </button>
