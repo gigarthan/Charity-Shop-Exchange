@@ -99,6 +99,52 @@
   text-align: right;
 }
 
+.number-input {
+  padding: 4px 8px;
+  background-color: rgba(28, 55, 90, 0.16);
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.number-input:focus {
+  outline: none;
+}
+
+.number-input.selected {
+  cursor: inherit;
+  display: flex;
+  align-items: center;
+  background-color: #e53e3e;
+  justify-content: space-between;
+  position: relative;
+  color: white;
+}
+
+.number-input .number-input-count {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  color: #e53e3e;
+  top: 0;
+  right: 0;
+  font-size: 0.8rem;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  transform: translate(50%, -50%);
+  border: 2px solid #e53e3e;
+  z-index: 5;
+  line-height: 22px;
+}
+
+.number-input .number-input-action:focus {
+  outline: none;
+}
+
 @media (min-width: 800px) {
 
   .Polaris-Tabs__Title:before {

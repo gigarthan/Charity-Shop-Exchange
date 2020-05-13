@@ -10,8 +10,7 @@ import '@vaadin/vaadin-radio-button';
 import RadioField from '../../RadioField';
 
 export default class Selection extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       isOpen: true,
@@ -19,51 +18,57 @@ export default class Selection extends Component {
       genresItems: props.genres,
       checkOutItems: {
         dvd: [],
-        books: []
+        books: [],
       },
-    }
+    };
   }
 
-  handleTabChange = (selectedTabIndex) => this.setState({ selected: selectedTabIndex })
+  handleTabChange = (selectedTabIndex) =>
+    this.setState({ selected: selectedTabIndex });
 
   handleOnChange = (selectedId, value, tabSelected) => {
-
     let tempCheckoutObj = { ...this.state.checkOutItems };
 
     let index = tempCheckoutObj[tabSelected].findIndex((x) => {
-      return x.id === selectedId
+      return x.id === selectedId;
     });
 
-    if(index === -1) {
+    if (index === -1) {
       let temp = {
-        'id': selectedId,
-        'quantity': parseInt(value)
-      }
+        id: selectedId,
+        quantity: parseInt(value),
+      };
 
       tempCheckoutObj[tabSelected].push(temp);
     } else {
-      tempCheckoutObj[tabSelected][index]['quantity'] = tempCheckoutObj[tabSelected][index]['quantity'] + 1;
+      tempCheckoutObj[tabSelected][index]['quantity'] =
+        tempCheckoutObj[tabSelected][index]['quantity'] + 1;
     }
 
     let tempGenresObj = { ...this.state.genresItems };
-    const elementIndex = tempGenresObj[tabSelected].findIndex(element => element.id == selectedId);
+    const elementIndex = tempGenresObj[tabSelected].findIndex(
+      (element) => element.id == selectedId,
+    );
     let updateGenreArray = [...tempGenresObj[tabSelected]];
-    updateGenreArray[elementIndex] = { ...updateGenreArray[elementIndex], value: parseInt(value) }
+    updateGenreArray[elementIndex] = {
+      ...updateGenreArray[elementIndex],
+      value: parseInt(value),
+    };
 
     this.setState((prevState) => {
       return {
         ...prevState,
         genresItems: {
           ...prevState.genresItems,
-          [tabSelected]: updateGenreArray
+          [tabSelected]: updateGenreArray,
         },
-        checkOutItems: tempCheckoutObj
-      }
+        checkOutItems: tempCheckoutObj,
+      };
     });
-  }
+  };
 
   render() {
-    const { isOpen, genresItems, selected } = this.state; 
+    const { isOpen, genresItems, selected } = this.state;
 
     console.log('checkOutItemscheckOutItems', this.state.checkOutItems);
     const tabs = [
@@ -71,37 +76,47 @@ export default class Selection extends Component {
         id: 'books',
         content: 'Books',
         panelID: 'Books',
-      },    
+      },
       {
         id: 'dvd',
         content: 'DVDs',
         panelID: 'DVD',
-      }
-    ];  
+      },
+    ];
 
     return (
       <Collapsable
         title="Select from book and/or DVD genres"
         open={isOpen}
-        toggle={() => this.setState({ isOpen: !isOpen})}
+        toggle={() => this.setState({ isOpen: !isOpen })}
       >
-  
-        <Tabs tabs={tabs} selected={selected} onSelect={this.handleTabChange} fitted>
+        <Tabs
+          tabs={tabs}
+          selected={selected}
+          onSelect={this.handleTabChange}
+          fitted
+        >
           <Card.Section>
-            <div className="vaadin-number">
-              {
-                genresItems[tabs[selected].id].map((genre, index) => {
-                  return (
-                      <NumberFieldWithLabel 
-                        selectedTab={tabs[selected].id} 
-                        id={genre.id} 
+            <div className="flex flex-row flex-wrap items-center justify-space-between">
+              {genresItems[tabs[selected].id].map((genre, index) => {
+                return (
+                  <div
+                    className="w-1/3 flex justify-center"
+                    key={genre.id}
+                  >
+                    <div className="p-2 w-full">
+                      <NumberFieldWithLabel
+                        selectedTab={tabs[selected].id}
+                        id={genre.id}
                         label={genre.name}
                         value={genre.value}
                         onChange={this.handleOnChange}
+                        isFull={true}
                       />
-                  )
-                })
-              }
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </Card.Section>
         </Tabs>
@@ -111,18 +126,14 @@ export default class Selection extends Component {
         </div>
 
         <div className="mt-4 text-center">
-          <Button theme="small">
-            Place Order
-          </Button>
+          <Button theme="small">Place Order</Button>
         </div>
 
-        <div className="mt-4 text-selection text-color-red shopping-cart" >
-          <div>
-            Select 2 more items
-          </div>
+        <div className="mt-4 text-selection text-color-red shopping-cart">
+          <div>Select 2 more items</div>
           <div style={{ display: 'flex' }}>
             <img className="" src={shopping} alt="shopping" /> 0 items - £0.00
-          </div> 
+          </div>
         </div>
       </Collapsable>
     );
