@@ -13,7 +13,7 @@ export default function ContactDetails() {
 
   return (
     <Collapsable
-      title="Select Contact Details"
+      title="Contact"
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}
     >
@@ -21,7 +21,10 @@ export default function ContactDetails() {
         <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
           <div className="relative">
             <TextFieldWithLabel 
-              label={'Email'}
+              label={'Phone number'}
+            />
+            <TextFieldWithLabel 
+              label={'Email address'}
             />
           </div>
         </div>

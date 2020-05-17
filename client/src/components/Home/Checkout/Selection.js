@@ -121,20 +121,20 @@ export default class Selection extends Component {
           </Card.Section>
         </Tabs>
 
-        <div className="mt-4 text-center">
+        {/* <div className="mt-4 text-center">
           <RadioField />
-        </div>
+        </div> */}
 
-        <div className="mt-4 text-center">
+        {/* <div className="mt-4 text-center">
           <Button theme="small">Place Order</Button>
-        </div>
+        </div> */}
 
-        <div className="mt-4 text-selection text-color-red shopping-cart">
+        {/* <div className="mt-4 text-selection text-color-red shopping-cart">
           <div>Select 2 more items</div>
           <div style={{ display: 'flex' }}>
             <img className="" src={shopping} alt="shopping" /> 0 items - £0.00
           </div>
-        </div>
+        </div> */}
       </Collapsable>
     );
   }

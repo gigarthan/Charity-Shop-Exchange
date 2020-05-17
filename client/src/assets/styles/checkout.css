@@ -145,6 +145,11 @@
   outline: none;
 }
 
+.mt-4 .delivery-frequency {
+  font-size: 1.0rem;
+  font-weight: bold;
+}
+
 @media (min-width: 800px) {
 
   .Polaris-Tabs__Title:before {

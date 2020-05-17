@@ -6,6 +6,9 @@ export default function TextFieldWithLabel(props) {
   const {
     label,
     placeholder,
+    onChange,
+    name,
+    value,
   } = props;
 
   const textField = useRef(null);
@@ -14,7 +17,10 @@ export default function TextFieldWithLabel(props) {
     // Handle changes to the combo box
     function handleChange(e) {
       const value = e.target.value;
-      const name = e.target.name;
+
+      console.log('valuevaluevalue', value);
+      console.log('namenamename', name);
+      onChange({ name, value });
     }
 
     textField.current.addEventListener('change', handleChange);
@@ -23,7 +29,15 @@ export default function TextFieldWithLabel(props) {
   return (
     <div className="payment-text-field">
       {/* <vaadin-text-field value={label}></vaadin-text-field> */}
-      <vaadin-text-field ref={textField} class="custom-style w-full" placeholder={placeholder} label={label} value=""></vaadin-text-field>
+      <vaadin-text-field 
+        ref={textField}
+        name={name} 
+        class="custom-style w-full" 
+        placeholder={placeholder} 
+        label={label} 
+        value={value || ''}>
+
+      </vaadin-text-field>
     </div>
   );  
 }

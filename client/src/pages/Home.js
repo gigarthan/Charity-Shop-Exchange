@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Layout from '../components/Layout';
 import Hero from '../components/Home/Hero';
 import GetStartedForm from '../components/Home/GetStartedForm';
@@ -23,6 +23,8 @@ import twitter from '../assets/img/twitter.svg';
 import Checkout from '../components/Home/Checkout/index';
 import items from '../import/planList';
 
+import useFormData from "../hooks/useFormData";
+
 export default function Home() {
   const { isShowing, toggle } = useDialog();
 
@@ -31,6 +33,26 @@ export default function Home() {
     const list = items[key];
     planList = planList.concat(list.map((elem) => elem.id));
   }
+
+  const [formData, onChange] = useFormData({
+    delivery: {
+      subscription: null,
+      firstname: null,
+      lastname: null,
+      postcode: null,
+      address_1: null,
+      address_2: null,
+      town: null,
+    },
+    contact: {
+      phone: null,
+      email: null
+    }
+  });
+
+  useEffect(() => {
+    console.log(formData)
+  }, [formData]);
 
   return (
     <>
@@ -47,7 +69,7 @@ export default function Home() {
           Select items
         </h1> */}
 
-        <Checkout />
+        <Checkout formData={formData} onChange={onChange}/>
         {/* <h3 className="text-center text-base sm:text-l text-gray-600 font-medium mb-6 sm:mb-6">We’ll be launching Charity Shop Exchange in the next few days. Please follow us on Twitter for updates:</h3>
         <p className="font-header text-base text-center sm:text-l font-bold text-new-red">
           <a href="https://twitter.com/CharityShopEx"><img
