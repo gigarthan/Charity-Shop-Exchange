@@ -4,12 +4,10 @@ import Combo from '../../Combo';
 import Button from '../../Button';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 
-export default function ContactDetails() {
-  const [isOpen, setisOpen] = useState(false);
+export default function ContactDetails(props) {
+  const { formData: { contact }, handleChange } = props;
 
-  const handleSubmit = () => {
-    console.log('Submit');
-  };
+  const [isOpen, setisOpen] = useState(false);
 
   return (
     <Collapsable
@@ -22,18 +20,18 @@ export default function ContactDetails() {
           <div className="relative">
             <TextFieldWithLabel 
               label={'Phone number'}
+              name="contact.phone"
+              value={contact.phone}
+              onChange={handleChange}
             />
             <TextFieldWithLabel 
               label={'Email address'}
+              name="contact.email"
+              value={contact.email}
+              onChange={handleChange}
             />
           </div>
         </div>
-      </div>
-
-      <div className="mt-4">
-        <Button theme="small" onClick={handleSubmit}>
-          OK
-        </Button>
       </div>
     </Collapsable>
   );

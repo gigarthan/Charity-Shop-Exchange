@@ -6,14 +6,24 @@ import Button from '../../Button';
 import { charities } from '../../../import/charities.json';
 import locations from '../../../import/locations.json';
 
-export default function Charity() {
+export default function Charity(props) {
+  const { handleChange, formData: { charity } } = props;
   const [isOpen, setisOpen] = useState(false);
-  const [countyId, setCountyId] = useState(0);
-  const [charityId, setCharityId] = useState(0);
+  const [countyId, setCountyId] = useState(charity.countryId);
+  const [charityId, setCharityId] = useState(charity.charityId);
 
   useEffect(() => {
-    setCharityId(0);
-  }, [countyId]);
+    setCountyId(charity.countryId);
+  },[charity.countryId]);
+
+  useEffect(() => {
+    setCharityId(charity.charityId);
+  },[charity.charityId]);
+
+  // useEffect(() => {
+  //   setCharityId(0);
+  //   handleChange({ name: "charity.charityId", value: 0 });
+  // }, [countyId]);
 
   const counties = locations.counties.filter((county) => {
     let numCharitiesForCounty = charities.reduce(function (count, charity) {
@@ -43,7 +53,12 @@ export default function Charity() {
             <Combo
               name="countyId"
               value={countyId}
-              setValue={setCountyId}
+              setValue={(value) => {
+                setCountyId(value);
+                setCharityId(0);
+                handleChange({ name: "charity.countryId", value });
+                handleChange({ name: "charity.charityId", value: 0 });
+              }}
               items={counties}
               placeholder="select"
               // style={{ background: '#c7c7c7'}}
@@ -59,7 +74,10 @@ export default function Charity() {
             <Combo
               name="charityId"
               value={charityId}
-              setValue={setCharityId}
+              setValue={(value) => {
+                setCharityId(value);
+                handleChange({ name: "charity.charityId", value });
+              }}
               items={charities.filter((c) => c.countyIds.includes(countyId))}
               disabled={
                 !countyId || counties.find((c) => c.id === countyId).disabled
@@ -72,12 +90,6 @@ export default function Charity() {
             />
           </div>
         </div>
-      </div>
-
-      <div className="mt-4">
-        <Button theme="small" onClick={handleSubmit} disabled={charityId === 0}>
-          OK
-        </Button>
       </div>
     </Collapsable>
   );

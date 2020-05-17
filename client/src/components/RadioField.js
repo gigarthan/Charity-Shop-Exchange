@@ -5,19 +5,16 @@ import '@vaadin/vaadin-radio-button/vaadin-radio-group';
 export default function RadioField(props) {
 
   const {
-    onChange
+    onChange,
+    value,
+    name
   } = props;
 
   const radioField = useRef(null);
 
   useEffect(() => {
     function handleChange(e) {
-      // const value = e.target.value;
-      // const name = e.target.name;
-
-      console.log(e);
-      // console.log(name);
-      // onChange(name, value)
+      onChange({ name, value: e.target.value })
     }
 
     radioField.current.addEventListener('change', handleChange);
@@ -25,9 +22,9 @@ export default function RadioField(props) {
 
   return (
     <vaadin-radio-group ref={radioField}>
-      <vaadin-radio-button checked theme="custom">Weekly</vaadin-radio-button>
-      <vaadin-radio-button theme="custom">Bi-Weekly</vaadin-radio-button>
-      <vaadin-radio-button theme="custom">Monthly</vaadin-radio-button>
+      <vaadin-radio-button checked={value == 'Weekly'} theme="custom" value="Weekly">Weekly</vaadin-radio-button>
+      <vaadin-radio-button checked={value == 'Bi-Weekly'} theme="custom" value="Bi-Weekly">Bi-Weekly</vaadin-radio-button>
+      <vaadin-radio-button checked={value == 'Monthly'} theme="custom" value="Monthly">Monthly</vaadin-radio-button>
     </vaadin-radio-group>
   );  
 }

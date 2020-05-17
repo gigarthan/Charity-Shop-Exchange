@@ -12,11 +12,11 @@ export default function PlanSelection(props) {
 
   return (
     <div className="model-child-main">
-      <Charity />
-      <Selection genres={genres} />
+      <Charity handleChange={onChange} formData={formData} />
+      <Selection genres={genres} handleChange={onChange} formData={formData} />
       <DeliveryDetails handleChange={onChange} formData={formData}/>
-      <ContactDetails />
-      <Payment />
+      <ContactDetails handleChange={onChange} formData={formData} />
+      <Payment handleChange={onChange} formData={formData} />
     </div>
   );
 }

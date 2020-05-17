@@ -13,8 +13,6 @@ export default function useFormData(initialData = {}, isInitialDataForPlaceholde
 
     const path = target.name.split(".");
 
-    console.log('pathpathpath', path);
-
     setFormData(formData => (
       {
         ...formData, 
@@ -24,20 +22,6 @@ export default function useFormData(initialData = {}, isInitialDataForPlaceholde
         }
       }
     ));
-
-    // switch (evt.target.type) {
-    //   case 'button':
-    //   case 'checkbox':
-    //     setFormData(formData => ({ ...formData, [key]: !formData[key] }))
-    //     break
-    //   case 'number':
-    //   case 'text':
-    //     const value = evt.target.value
-    //     setFormData(formData => ({ ...formData, [key]: value }))    
-    //     break
-    //   default:
-    //     setFormData(formData => ({ ...formData, [key]: evt.target.value }))
-    // }
   }
 
   return [formData, onChange, initialFormData, isInitialDataForPlaceholder]

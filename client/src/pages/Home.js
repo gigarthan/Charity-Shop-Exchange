@@ -35,8 +35,16 @@ export default function Home() {
   }
 
   const [formData, onChange] = useFormData({
+    charity: {
+      countryId: null,
+      charityId: null,
+    },
+    checkoutItems: {
+      dvd: [],
+      books: [],
+    },
     delivery: {
-      subscription: null,
+      subscription: 'Monthly',
       firstname: null,
       lastname: null,
       postcode: null,
@@ -47,6 +55,12 @@ export default function Home() {
     contact: {
       phone: null,
       email: null
+    },
+    payment: {
+      card_number: null,
+      expiry_at: null,
+      cvv: null,
+      name: null
     }
   });
 
@@ -58,7 +72,7 @@ export default function Home() {
     <>
       <Layout>
         <Hero />
-        <GetStartedForm toggle={toggle} />
+        <GetStartedForm onChange={onChange} toggle={toggle} />
         <HowItWorks />
         <Subscribe toggle={toggle} />
         <Mission />

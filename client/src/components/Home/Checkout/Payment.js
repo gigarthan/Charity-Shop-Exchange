@@ -7,11 +7,13 @@ import card1 from '../../../assets/img/card1.png';
 import card2 from '../../../assets/img/card2.png';
 import card3 from '../../../assets/img/card3.png';
 
-export default function Payment() {
+export default function Payment(props) {
+  const { formData, handleChange } = props;
+  const { payment } = formData;
   const [isOpen, setisOpen] = useState(false);
 
   const handleSubmit = () => {
-    console.log('Submit');
+    console.log('Submit', formData);
   };
 
   return (
@@ -25,6 +27,9 @@ export default function Payment() {
             <TextFieldWithLabel 
               label={'Card Information'}
               placeholder={'1234 1234 1234 1234'}
+              name="payment.card_number"
+              value={payment.card_number}
+              onChange={handleChange}
             />
             <div className="payment-card-img">
               <img className="" src={card1} alt="card1" />
@@ -37,12 +42,23 @@ export default function Payment() {
           <div className="flex flex-col sm:flex-row w-full items-center ">
             <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
               <div className="relative">
-                <TextFieldWithLabel placeholder={'MM / YY'}/>
+                <TextFieldWithLabel 
+                  placeholder={'MM/YY'}
+                  name="payment.expiry_at"
+                  value={payment.expiry_at}
+                  onChange={handleChange}
+                  max={5}
+                />
               </div>
             </div>
             <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
               <div className="relative">
-                <TextFieldWithLabel placeholder={'CVV'}/>
+                <TextFieldWithLabel 
+                  placeholder={'CVV'}
+                  name="payment.cvv"
+                  value={payment.cvv}
+                  onChange={handleChange}
+                />
                 <div className="payment-card-img">
                   <img className="" src={card1} alt="card1" />
                 </div>
@@ -55,13 +71,16 @@ export default function Payment() {
             <TextFieldWithLabel 
               label={'Name of Card'}
               placeholder={''}
+              name="payment.name"
+              value={payment.name}
+              onChange={handleChange}
             />
           </div>
         </div>
 
       <div className="mt-4">
         <Button theme="small" onClick={handleSubmit}>
-          OK
+          Place Order
         </Button>
       </div>
     </Collapsable>

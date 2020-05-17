@@ -9,6 +9,7 @@ export default function TextFieldWithLabel(props) {
     onChange,
     name,
     value,
+    max
   } = props;
 
   const textField = useRef(null);
@@ -17,9 +18,6 @@ export default function TextFieldWithLabel(props) {
     // Handle changes to the combo box
     function handleChange(e) {
       const value = e.target.value;
-
-      console.log('valuevaluevalue', value);
-      console.log('namenamename', name);
       onChange({ name, value });
     }
 
@@ -35,7 +33,9 @@ export default function TextFieldWithLabel(props) {
         class="custom-style w-full" 
         placeholder={placeholder} 
         label={label} 
-        value={value || ''}>
+        value={value || ''}
+        maxLength={max || ''}
+      >
 
       </vaadin-text-field>
     </div>

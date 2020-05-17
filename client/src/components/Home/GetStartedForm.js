@@ -7,7 +7,7 @@ import { charities } from "../../import/charities.json";
 import { products } from "../../import/subbly-products.json";
 import starttext from "../../assets/img/start text.png";
 
-export default function GetStartedForm({ toggle }) {
+export default function GetStartedForm({ toggle, onChange }) {
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
 
@@ -59,6 +59,7 @@ export default function GetStartedForm({ toggle }) {
   // Clear out the 'Charity' combo if 'County' is changed
   useEffect(() => {
     setCharityId(0);
+    onChange({ name: "charity.charityId", value: 0 });
   }, [countyId]);
 
   // If user arrives on subdomain and it is a valid county auto populate region
@@ -71,6 +72,7 @@ export default function GetStartedForm({ toggle }) {
       const normalizedCountyName = county.name.toLowerCase();
       if (normalizedCountyName === normalizedSubdomain) {
         setCountyId(county.id);
+        onChange({ name: "charity.countryId", value: county.id });
       }
     }
   }
@@ -113,7 +115,10 @@ export default function GetStartedForm({ toggle }) {
                 <Combo
                   name="countyId"
                   value={countyId}
-                  setValue={setCountyId}
+                  setValue={(value) => {
+                    setCountyId(value);
+                    onChange({ name: "charity.countryId", value });
+                  }}
                   items={counties}
                   placeholder="select"
                   // style={{ background: '#c7c7c7'}}
@@ -129,7 +134,10 @@ export default function GetStartedForm({ toggle }) {
                 <Combo
                   name="charityId"
                   value={charityId}
-                  setValue={setCharityId}
+                  setValue={(value) => {
+                    setCharityId(value);
+                    onChange({ name: "charity.charityId", value });
+                  }}
                   items={charities.filter((c) =>
                     c.countyIds.includes(countyId)
                   )}

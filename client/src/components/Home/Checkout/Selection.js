@@ -64,13 +64,15 @@ export default class Selection extends Component {
         },
         checkOutItems: tempCheckoutObj,
       };
+    }, () => {
+      this.props.handleChange({ name: 'checkoutItems.dvd', value: this.state.checkOutItems && this.state.checkOutItems.dvd })
+      this.props.handleChange({ name: 'checkoutItems.books', value: this.state.checkOutItems && this.state.checkOutItems.books })
     });
   };
 
   render() {
     const { isOpen, genresItems, selected } = this.state;
 
-    console.log('checkOutItemscheckOutItems', this.state.checkOutItems);
     const tabs = [
       {
         id: 'books',

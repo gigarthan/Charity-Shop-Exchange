@@ -10,10 +10,6 @@ export default function DeliveryDetails(props) {
   const { formData: { delivery }, handleChange } = props;
   const [isOpen, setisOpen] = useState(false);
 
-  const handleSubmit = () => {
-    console.log('Submit');
-  };
-
   return (
     <Collapsable
       title="Delivery"
@@ -22,7 +18,7 @@ export default function DeliveryDetails(props) {
     >
       <div className="mt-4">
         <div className="delivery-frequency">Delivery frequency:</div>
-        <RadioField />
+        <RadioField name="delivery.subscription" value={delivery.subscription} onChange={handleChange}/>
       </div>
 
       <div className="mt-4">
@@ -69,12 +65,6 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
-      </div>
-      
-      <div className="mt-4">
-        <Button theme="small" onClick={handleSubmit}>
-          OK
-        </Button>
       </div>
     </Collapsable>
   );
