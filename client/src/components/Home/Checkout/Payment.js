@@ -22,7 +22,7 @@ export default function Payment(props) {
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}
     >
-        <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+        <div className="payment-textbox-width">
           <div className="relative">
             <TextFieldWithLabel 
               label={'Card Information'}
@@ -38,9 +38,9 @@ export default function Payment(props) {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
-          <div className="flex flex-col sm:flex-row w-full items-center ">
-            <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+        <div className="payment-textbox-width">
+          <div className="flex flex-col sm:flex-row w-full">
+            <div className="payment-textbox-inner-width">
               <div className="relative">
                 <TextFieldWithLabel 
                   placeholder={'MM/YY'}
@@ -51,7 +51,7 @@ export default function Payment(props) {
                 />
               </div>
             </div>
-            <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+            <div className="payment-textbox-inner-width">
               <div className="relative">
                 <TextFieldWithLabel 
                   placeholder={'CVV'}
@@ -66,7 +66,7 @@ export default function Payment(props) {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+        <div className="payment-textbox-width">
           <div className="relative">
             <TextFieldWithLabel 
               label={'Name of Card'}

@@ -24,8 +24,8 @@ export default function DeliveryDetails(props) {
       <div className="mt-4">
         <div className="delivery-frequency">Delivery to:</div>
       </div>
-      <div className="flex flex-col sm:flex-row w-full">
-        <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+      <div className="flex flex-col sm:flex-row w-full flex-wrap">
+        <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
               label={'First name'}
@@ -33,30 +33,50 @@ export default function DeliveryDetails(props) {
               value={delivery.firstname}
               onChange={handleChange}
             />
+          </div>
+        </div>
+        <div className="md:w-1/2 pr-1">
+          <div className="relative">
             <TextFieldWithLabel 
               label={'Last name'}
               name="delivery.lastname"
               value={delivery.lastname}
               onChange={handleChange}
             />
+          </div>
+        </div>
+        <div className="md:w-1/2 pr-1">
+          <div className="relative">
             <TextFieldWithLabel 
               label={'UK Postcode'}
               name="delivery.postcode"
               value={delivery.postcode}
               onChange={handleChange}
             />
+          </div>
+        </div>
+        <div className="md:w-1/2 pr-1">
+          <div className="relative">
             <TextFieldWithLabel 
               label={'Address line 1'}
               name="delivery.address_1"
               value={delivery.address_1}
               onChange={handleChange}
             />
+          </div>
+        </div>
+        <div className="md:w-1/2 pr-1">
+          <div className="relative">
             <TextFieldWithLabel 
               label={'Address line 2'}
               name="delivery.address_2"
               value={delivery.address_2}
               onChange={handleChange}
             />
+          </div>
+        </div>
+        <div className="md:w-1/2 pr-1">
+          <div className="relative">
             <TextFieldWithLabel 
               label={'Town / City'}
               name="delivery.town"

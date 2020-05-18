@@ -27,17 +27,17 @@ export default function Collapsable({ children, title, open, toggle }) {
     <div>
       <button
         onClick={triggerToggle}
-        className="flex mb-2 items-center collapsable-btn"
+        className="flex mb-2 collapsable-btn"
       >
         <div
           className={
-            open ? 'mr-4 collapsable-icon open' : 'mr-4 collapsable-icon'
+            open ? 'mr-4 collapsable-icon open accordion-tab' : 'mr-4 collapsable-icon accordion-tab'
           }
         >
           {getArrowIcon()}
         </div>
         <div>
-          <h3>{title}</h3>
+          <h3 className="accordion-tab-title">{title}</h3>
         </div>
       </button>
 

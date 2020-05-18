@@ -47,8 +47,8 @@ export default function Charity(props) {
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}
     >
-      <div className="flex flex-col sm:flex-row w-full items-center ">
-        <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+      <div className="flex flex-col sm:flex-row w-full">
+        <div className="payment-textbox-inner-width ">
           <div className="relative">
             <Combo
               name="countyId"
@@ -64,12 +64,12 @@ export default function Charity(props) {
               // style={{ background: '#c7c7c7'}}
               theme=""
               label="Select a region"
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="charity_select_box"
               id="grid-state"
             />
           </div>
         </div>
-        <div className="md:w-1/2 pr-2 mb-6 md:mb-0">
+        <div className="payment-textbox-inner-width">
           <div className="relative">
             <Combo
               name="charityId"
@@ -85,7 +85,7 @@ export default function Charity(props) {
               placeholder="select"
               theme=""
               label="Pick a charity"
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="charity_select_box"
               id="grid-state"
             />
           </div>

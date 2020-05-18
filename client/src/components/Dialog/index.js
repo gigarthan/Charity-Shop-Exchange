@@ -5,7 +5,7 @@ const Dialog = ({ isLarge = false, isShowing, hide, children }) => isShowing ? R
     <>
       <div className="modal-overlay" />
       <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
-        <div className={ isLarge ? "modal modal-lg" : "modal" }>
+        <div className={ isLarge ? "modal modal-lg charity_modal" : "modal" }>
           <div className="modal-container">
             <div className="modal-header">
               <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>

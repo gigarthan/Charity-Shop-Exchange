@@ -70,7 +70,7 @@ export default function Combo(props) {
       ref={combo}
       placeholder={placeholder}
       style={style}
-      className={className}
+      class={className}
       theme={theme}
       label={label}
     />

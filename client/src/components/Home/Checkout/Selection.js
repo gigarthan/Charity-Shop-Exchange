@@ -92,36 +92,38 @@ export default class Selection extends Component {
         open={isOpen}
         toggle={() => this.setState({ isOpen: !isOpen })}
       >
-        <Tabs
-          tabs={tabs}
-          selected={selected}
-          onSelect={this.handleTabChange}
-          fitted
-        >
-          <Card.Section>
-            <div className="flex flex-row flex-wrap items-center justify-space-between">
-              {genresItems[tabs[selected].id].map((genre, index) => {
-                return (
-                  <div
-                    className="w-1/3 flex justify-center"
-                    key={genre.id}
-                  >
-                    <div className="p-2 w-full">
-                      <NumberFieldWithLabel
-                        selectedTab={tabs[selected].id}
-                        id={genre.id}
-                        label={genre.name}
-                        value={genre.value}
-                        onChange={this.handleOnChange}
-                        isFull={true}
-                      />
+        <div className="accordion-inner-tab">
+          <Tabs
+            tabs={tabs}
+            selected={selected}
+            onSelect={this.handleTabChange}
+            fitted
+          >
+            <Card.Section>
+              <div className="flex flex-row flex-wrap items-center justify-space-between">
+                {genresItems[tabs[selected].id].map((genre, index) => {
+                  return (
+                    <div
+                      className="numberfild-width"
+                      key={genre.id}
+                    >
+                      <div className="p-2 w-full">
+                        <NumberFieldWithLabel
+                          selectedTab={tabs[selected].id}
+                          id={genre.id}
+                          label={genre.name}
+                          value={genre.value}
+                          onChange={this.handleOnChange}
+                          isFull={true}
+                        />
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          </Card.Section>
-        </Tabs>
+                  );
+                })}
+              </div>
+            </Card.Section>
+          </Tabs>
+        </div>
 
         {/* <div className="mt-4 text-center">
           <RadioField />

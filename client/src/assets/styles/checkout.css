@@ -86,7 +86,7 @@
   position: absolute;
   display: flex;
   bottom: 5px;
-  right: 0;
+  right: 10px;
 }
 .payment-card-img img
 {
@@ -101,7 +101,7 @@
 
 .number-input {
   padding: 4px 8px;
-  background-color: rgba(28, 55, 90, 0.16);
+  background-color:#F2F3EC;
   border-radius: 8px;
   font-size: 1rem;
   text-align: center;
@@ -150,6 +150,51 @@
   font-weight: bold;
 }
 
+.accordion-tab
+{
+  margin-top: 7px;
+}
+.accordion-tab-title {
+  text-align: left;
+}
+
+.charity_modal
+{
+  max-width: 600px !important;
+}
+
+.numberfild-width{
+  width: 50%;
+}
+
+.accordion-inner-tab .Polaris-Tabs__Title:before {
+  left: 0px !important;
+}
+
+.payment-textbox-width{
+  padding-right: 10px;
+}
+.payment-textbox-inner-width{
+  width: 50%;
+}
+.payment-text-field
+{
+  padding: 0 10px;
+}
+.charity_select_box{
+  width: 95%;
+}
+button.number-input-action {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 767px) {
+  .numberfild-width {
+      width: 50%;
+  }
+}
+
 @media (min-width: 800px) {
 
   .Polaris-Tabs__Title:before {
@@ -186,6 +231,15 @@
   }
 }
 
+@media only screen and (max-width: 639px) {
+  .charity_modal{
+    max-width: 550px !important;
+  }
+  .payment-textbox-inner-width{
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .text-selection {
     text-align: center;
@@ -193,6 +247,36 @@
   .shopping-cart {
     justify-content: center;
 }
+}
+
+@media only screen and (max-width: 578px) {
+  .charity_modal
+  {
+    max-width: 500px !important;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .charity_modal
+  {
+    max-width: 450px !important;
+  }
+  .numberfild-width {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width: 476px) {
+  .charity_modal
+  {
+    max-width: 400px !important;
+  }
+  .payment-card-img {
+    display: none;
+  }
+  .radio-width{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 420px) {

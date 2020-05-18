@@ -16,7 +16,7 @@ export default function ContactDetails(props) {
       toggle={() => setisOpen(!isOpen)}
     >
       <div className="flex flex-col sm:flex-row w-full">
-        <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+        <div className="payment-textbox-inner-width ">
           <div className="relative">
             <TextFieldWithLabel 
               label={'Phone number'}
@@ -24,6 +24,10 @@ export default function ContactDetails(props) {
               value={contact.phone}
               onChange={handleChange}
             />
+            </div>
+        </div>
+        <div className="payment-textbox-inner-width ">
+          <div className="relative">
             <TextFieldWithLabel 
               label={'Email address'}
               name="contact.email"
