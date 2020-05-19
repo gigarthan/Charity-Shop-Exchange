@@ -1,20 +1,20 @@
-import React from "react";
-import Layout from "../components/Layout";
-import twitter from "../assets/img/twitter.svg";
-import github from "../assets/img/github.svg";
-import instagram from "../assets/img/ig.svg";
-import dribbble from "../assets/img/dribbble.svg";
-import behance from "../assets/img/be.svg";
-import blake from "../assets/img/Blake Prouty@2x.png";
-import kelvin from "../assets/img/kelvin@2x.png";
-import matt from "../assets/img/Matt Doyle@2x.png";
-import dicky from "../assets/img/Dicky Jiang@2x.png";
-import generic from "../assets/img/generic@2x.png";
-import jasmine from "../assets/img/Jasmine@2x.png";
-import haseeb from "../assets/img/Haseeb Majid@2x.png";
-import batsman from "../assets/img/batsman@2x.png";
-import beer from "../assets/img/beer@2x.png";
-import charityexcellentlogo from "../assets/img/charityexcellent-logo.png";
+import React from 'react';
+
+import batsman from '../assets/img/batsman@2x.png';
+import behance from '../assets/img/be.svg';
+import beer from '../assets/img/beer@2x.png';
+import blake from '../assets/img/Blake Prouty@2x.png';
+import charityexcellentlogo from '../assets/img/charityexcellent-logo.png';
+import dicky from '../assets/img/Dicky Jiang@2x.png';
+import dribbble from '../assets/img/dribbble.svg';
+import github from '../assets/img/github.svg';
+import haseeb from '../assets/img/Haseeb Majid@2x.png';
+import instagram from '../assets/img/ig.svg';
+import jasmine from '../assets/img/Jasmine@2x.png';
+import kelvin from '../assets/img/kelvin@2x.png';
+import matt from '../assets/img/Matt Doyle@2x.png';
+import twitter from '../assets/img/twitter.svg';
+import Layout from '../components/Layout';
 
 export default function About() {
   return (
@@ -41,15 +41,15 @@ export default function About() {
           </p>
         </div>
         <blockquote className="w-4/5 mx-auto text-center text-2xl sm:text-3xl font-medium text-gray-800 mb-8 sm:mb-12 leading-snug">
-          A nationwide network of charity shops{" "}
-          <em className="text-gray-500">meets</em> cooperative approach{" "}
+          A nationwide network of charity shops{' '}
+          <em className="text-gray-500">meets</em> cooperative approach{' '}
           <em className="text-gray-500">meets</em> online subscription box
           service.
         </blockquote>
         <p className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
           This fast response and joined-up thinking serve as inspiration for
           many other use cases, where a dedicated online service could take
-          orders on behalf of a syndication of suppliers. And we're open to
+          orders on behalf of a syndication of suppliers. And we&apos;re open to
           working together on digital projects that see the value in this
           approach.
         </p>
@@ -101,8 +101,8 @@ export default function About() {
                   </a>
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
-                  Product owner, design thinker and opening batsman.{" "}
-                  <img className="w-5" src={batsman} alt="batsman"></img>
+                  Product owner, design thinker and opening batsman.{' '}
+                  <img className="w-5" src={batsman} alt="batsman" />
                 </p>
               </div>
             </div>
@@ -245,8 +245,8 @@ export default function About() {
                   </a>
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
-                  Illustrator, designer and craft beer lover.{" "}
-                  <img className="w-4" src={beer} />
+                  Illustrator, designer and craft beer lover.{' '}
+                  <img className="w-4" src={beer} alt="beer" />
                 </p>
               </div>
             </div>
@@ -273,8 +273,8 @@ export default function About() {
                   </a>
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
-                  Software Developer, bowls a bit and bats at 8.{" "}
-                  <img className="w-4" src={batsman} />
+                  Software Developer, bowls a bit and bats at 8.{' '}
+                  <img className="w-4" src={batsman} alt="batsman" />
                 </p>
               </div>
             </div>
@@ -289,14 +289,16 @@ export default function About() {
           </div>
 
           <div className="flex-1 mb-8 sm:mb-0 text-center text-md sm:text-2xl font-normal text-white tracking-wider leading-normal">
-            Do you have an idea you'd like to contribute?
+            Do you have an idea you&apos;d like to contribute?
             <span className="block mt-8 sm:mt-4">
-              Is there a new delivery service you'd like to see?
+              Is there a new delivery service you&apos;d like to see?
             </span>
             <span className="block mt-8 sm:mt-4">Want to volunteer?</span>
           </div>
           <a href="mailto:together@charityshopexchange.com" target="_top">
-            <button className="flex-initial bg-new-navy py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 font-base rounded-full text-white  hover:border-none focus:outline-none focus:shadow-outline hover:bg-red-700 ">
+            <button
+              className="flex-initial bg-new-navy py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 font-base rounded-full text-white  hover:border-none focus:outline-none focus:shadow-outline hover:bg-red-700"
+              type="submit">
               Contact Us
             </button>
           </a>

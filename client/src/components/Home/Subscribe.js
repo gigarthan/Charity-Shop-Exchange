@@ -9,21 +9,23 @@ export default function Subscribe({toggle}) {
         <div className="flex items-center">
           <div className="flex flex-col items-center w-full text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1 ">
             <span className="mt-8 sm:mt-12">
-            { /*
+              {/*
               <a
                 href="https://charity-shop-exchange.subbly.me"
                 className=""
               >
                 Subscribe here{" "}
               </a>
-              */ }
+              */}
 
               <a
                 href="https://charityshopexchange.com/"
-                onClick={(e) => {e.preventDefault(); toggle();}}
-                className=""
-              >
-                Subscribe here <span class="font-sans">&rarr;</span>{" "}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggle();
+                }}
+                className="">
+                Subscribe here <span className="font-sans">&rarr;</span>{' '}
               </a>
             </span>
           </div>

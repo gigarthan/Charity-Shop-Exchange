@@ -12,6 +12,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: cd client
-      - run: npm install
-      - run: npm run code-formatter-check
+      - run: |
+          cd client
+          yarn
+          yarn run format:check

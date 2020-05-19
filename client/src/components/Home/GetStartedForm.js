@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-import Combo from "../Combo";
-import Button from "../Button";
-import config from "../../config";
-import locations from "../../import/locations.json";
-import { charities } from "../../import/charities.json";
-import { products } from "../../import/subbly-products.json";
-import starttext from "../../assets/img/start text.png";
+import React, {useState, useEffect} from 'react';
 
-export default function GetStartedForm({ toggle }) {
+import Combo from '../Combo';
+import Button from '../Button';
+import config from '../../config';
+import locations from '../../import/locations.json';
+import {charities} from '../../import/charities.json';
+import {products} from '../../import/subbly-products.json';
+import starttext from '../../assets/img/start text.png';
+
+export default function GetStartedForm({toggle}) {
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
 
@@ -64,22 +65,19 @@ export default function GetStartedForm({ toggle }) {
   // If user arrives on subdomain and it is a valid county auto populate region
   function autoSelectCounty() {
     const host = window.location.host;
-    const domainParts = host.split(".");
+    const domainParts = host.split('.');
 
     let subdomain = domainParts[0];
-    if (subdomain === "www") {
+    if (subdomain === 'www') {
       subdomain = domainParts[1];
     }
 
     const normalizedSubdomain = subdomain.trim().toLowerCase();
-    console.log(subdomain);
-    console.log(normalizedSubdomain);
-
     for (const [, county] of Object.entries(counties)) {
       const normalizedCountyName = county.name
         .toLowerCase()
-        .split(" ")
-        .join("-");
+        .split(' ')
+        .join('-');
       if (normalizedCountyName === normalizedSubdomain) {
         setCountyId(county.id);
       }
@@ -90,12 +88,12 @@ export default function GetStartedForm({ toggle }) {
   function handleSubmit() {
     const searchParams = new URLSearchParams(window.location.search);
 
-    if (searchParams.has("testMode") === true) {
+    if (searchParams.has('testMode') === true) {
       // We are in test mode; act as if we are launched
 
       // Find the Subbly product that represents this county
       const subblyProduct = products.find((product) =>
-        product.countyIds.includes(countyId)
+        product.countyIds.includes(countyId),
       );
 
       if (subblyProduct) {
@@ -142,7 +140,7 @@ export default function GetStartedForm({ toggle }) {
                   value={charityId}
                   setValue={setCharityId}
                   items={charities.filter((c) =>
-                    c.countyIds.includes(countyId)
+                    c.countyIds.includes(countyId),
                   )}
                   disabled={
                     !countyId ||

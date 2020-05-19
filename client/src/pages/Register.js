@@ -1,29 +1,28 @@
-import React, {useState} from "react";
-import Layout from "../components/Layout";
-import { useHistory } from 'react-router';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
-
+import Layout from '../components/Layout';
 
 function Register() {
   const history = useHistory();
 
-  const [redirectStatus, setRedirectStatus] = useState(false);
+  const [_, setRedirectStatus] = useState(false);
   const [alertStatus, setAlertStatus] = useState(null);
   const [contact, setContact] = useState({
-    name: "",
-    email: "",
-    cname: "",
-    position: "",
-    message: "",
-    number: "",
+    name: '',
+    email: '',
+    cname: '',
+    position: '',
+    message: '',
+    number: '',
   });
 
   const encode = (data) => {
     return Object.keys(data)
       .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
       )
-      .join("&");
+      .join('&');
   };
 
   const handleSubmit = (e) => {
@@ -36,14 +35,14 @@ function Register() {
       number: contact.number,
       position: contact.position,
     };
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...state }),
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...state }),
     })
-      .then(() => setAlertStatus("Thank you!"), setRedirectStatus(true))
+      .then(() => setAlertStatus('Thank you!'), setRedirectStatus(true))
       .catch((error) =>
-        setAlertStatus(error, "We've encountered an error, please try again")
+        setAlertStatus(error, "We've encountered an error, please try again"),
       );
   };
 
@@ -84,14 +83,12 @@ function Register() {
               <div>
                 <form
                   onSubmit={handleSubmit}
-                  className=" w-11/12 mx-auto pt-6 pb-8 mb-4"
-                >
+                  className=" w-11/12 mx-auto pt-6 pb-8 mb-4">
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-medium sm:font-semibold mb-4"
-                      htmlFor="name"
-                    >
+                      htmlFor="name">
                       Your Name:
                     </label>
                     <input
@@ -108,8 +105,7 @@ function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="cname"
-                    >
+                      htmlFor="cname">
                       Your Charity:
                     </label>
                     <input
@@ -126,8 +122,7 @@ function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="position"
-                    >
+                      htmlFor="position">
                       Your responsibilities at the charity:
                     </label>
                     <input
@@ -144,8 +139,7 @@ function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="email"
-                    >
+                      htmlFor="email">
                       Email:
                     </label>
                     <input
@@ -162,8 +156,7 @@ function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="number"
-                    >
+                      htmlFor="number">
                       Mobile Number:
                     </label>
                     <input
@@ -180,8 +173,7 @@ function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="message"
-                    >
+                      htmlFor="message">
                       Feel free to tell us more about your charity shops:
                     </label>
                     <textarea
@@ -199,11 +191,10 @@ function Register() {
                       className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
                       type="submit"
                       onClick={() =>
-                        setTimeout(function () {
-                          history.push("/");
+                        setTimeout(() => {
+                          history.push('/');
                         }, 1000)
-                      }
-                    >
+                      }>
                       {alertStatus != null ? `${alertStatus}` : `Submit`}
                     </button>
                   </div>

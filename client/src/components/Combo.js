@@ -1,37 +1,38 @@
-import React, {useEffect, useRef} from 'react';
 import '@vaadin/vaadin-combo-box';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
+import stylePropType from 'react-style-proptype';
 
 export default function Combo(props) {
   const {
-      name,
-      value,
-      setValue,
-      emptyValue=0,
-      items,
-      itemValuePath='id',
-      itemLabelPath='name',
-      disabled,
-      placeholder,
-      style,
-      theme='',
-      label='',
-      className
+    name,
+    value,
+    setValue,
+    emptyValue = 0,
+    items,
+    itemValuePath = 'id',
+    itemLabelPath = 'name',
+    disabled,
+    placeholder,
+    style,
+    theme = '',
+    label = '',
+    className,
   } = props;
 
   const combo = useRef(null);
 
-  useEffect( () => {
-
+  useEffect(() => {
     // Handle changes to the combo box
     function handleChange(e) {
-      const value = e.target.value;
+      const newValue = e.target.value;
 
-    // Clear out the combo box if the user manually typed a disabled option      
-      const item = items.find( i => i[itemValuePath] === value );
-      if ( !item || item.disabled ) {
+      // Clear out the combo box if the user manually typed a disabled option
+      const item = items.find((i) => i[itemValuePath] === newValue);
+      if (!item || item.disabled) {
         setValue(emptyValue);
       } else {
-        setValue(value);
+        setValue(newValue);
       }
     }
 
@@ -47,22 +48,34 @@ export default function Combo(props) {
     // that can't be clicked on, and grey out the text.
     //
     // If the item isn't disabled, just render the item name as normal.
-    combo.current.renderer = function(root, owner, model) {
-      if ( model.item.disabled ) {
+    combo.current.renderer = (root, owner, model) => {
+      if (model.item.disabled) {
         root.innerHTML = `<div class="item" style="background: #fff; color: #aaa; margin: -.5rem -2rem; padding: .9rem 2rem; position: relative;">${model.item.name}</div>`;
-        root.querySelector('.item').addEventListener('click', (e) => {e.preventDefault(); e.stopPropagation(); return false;});
+        root.querySelector('.item').addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
       } else {
         root.innerHTML = model.item.name;
-      };
+      }
     };
 
     const el = combo.current; // Make a copy of the element for the cleanup function
-    
+
     return function cleanup() {
-      // Element might have been removed by this point, so use the copy      
+      // Element might have been removed by this point, so use the copy
       el.removeEventListener('change', handleChange);
-    }
-  }, [value, setValue, emptyValue, items, itemValuePath, itemLabelPath, disabled]);
+    };
+  }, [
+    value,
+    setValue,
+    emptyValue,
+    items,
+    itemValuePath,
+    itemLabelPath,
+    disabled,
+  ]);
 
   return (
     <vaadin-combo-box
@@ -75,5 +88,30 @@ export default function Combo(props) {
       label={label}
     />
   );
-
 }
+
+Combo.propTypes = {
+  name: PropTypes.string.isRequired,
+  theme: PropTypes.string,
+  label: PropTypes.string,
+  style: stylePropType,
+  className: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  itemValuePath: PropTypes.string,
+  itemLabelPath: PropTypes.string,
+  emptyValue: PropTypes.number,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  setValue: PropTypes.func.isRequired,
+};
+
+Combo.defaultProps = {
+  emptyValue: 0,
+  itemValuePath: 'id',
+  itemLabelPath: 'name',
+  disabled: false,
+  label: '',
+  style: {},
+  theme: '',
+};
