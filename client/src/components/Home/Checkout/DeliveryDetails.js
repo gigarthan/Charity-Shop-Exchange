@@ -4,7 +4,7 @@ import Combo from '../../Combo';
 import Button from '../../Button';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 import RadioField from '../../RadioField';
-
+import CheckboxField from '../../CheckboxField'
 
 export default function DeliveryDetails(props) {
   const { formData: { delivery }, handleChange } = props;
@@ -85,6 +85,14 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
+      </div>
+      <div className="mt-4">
+        <CheckboxField 
+          name="delivery.is_used_same_address_for_billing" 
+          value={delivery.is_used_same_address_for_billing} 
+          onChange={handleChange}
+          lable="Use same address for billing"
+        />
       </div>
     </Collapsable>
   );

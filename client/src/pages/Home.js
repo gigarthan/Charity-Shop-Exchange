@@ -51,16 +51,27 @@ export default function Home() {
       address_1: null,
       address_2: null,
       town: null,
+      is_used_same_address_for_billing: true
     },
-    contact: {
-      phone: null,
-      email: null
-    },
+    // contact: {
+    //   phone: null,
+    //   email: null
+    // },
     payment: {
+      phone: null,
+      email: null,
+
       card_number: null,
       expiry_at: null,
       cvv: null,
-      name: null
+      name: null,
+
+      billing_firstname: null,
+      billing_lastname: null,
+      billing_postcode: null,
+      billing_address_1: null,
+      billing_address_2: null,
+      billing_town: null,
     }
   });
 

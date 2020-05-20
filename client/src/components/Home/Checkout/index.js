@@ -15,7 +15,7 @@ export default function PlanSelection(props) {
       <Charity handleChange={onChange} formData={formData} />
       <Selection genres={genres} handleChange={onChange} formData={formData} />
       <DeliveryDetails handleChange={onChange} formData={formData}/>
-      <ContactDetails handleChange={onChange} formData={formData} />
+      {/* <ContactDetails handleChange={onChange} formData={formData} /> */}
       <Payment handleChange={onChange} formData={formData} />
     </div>
   );

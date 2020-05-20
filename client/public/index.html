@@ -135,6 +135,29 @@
       </template>
     </dom-module>
 
+    <dom-module id="checkbox-button-icon-color" theme-for="vaadin-checkbox">
+      <template>
+        <style>
+          :host([checked]) [part="checkbox"]::after {
+            width: 13px;
+            height: 24px;
+          }
+          [part="checkbox"] {
+            width: calc(18px + 2px);
+            height: calc(18px + 2px);
+          }
+          [part="checkbox"]::after
+          {
+            top: 15px;
+            left: 8px;
+          }
+          :host([theme~="custom"][checked]) [part="checkbox"] {
+            background-color: #c53030;
+          }
+        </style>
+      </template>
+    </dom-module>
+
     <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>
     <script>if (!window.customElements) { document.write("<!--"); }</script>
     <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>
