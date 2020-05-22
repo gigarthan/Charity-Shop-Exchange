@@ -20,6 +20,7 @@
 {
   max-height: 600px;
   overflow-y: scroll;
+  padding: 0rem 0rem 0rem 2rem;
 }
 
 .vaadin-number {
@@ -36,7 +37,7 @@
 }
 .vaadin-number::-webkit-scrollbar-thumb {
   /* border-radius: 5px; */
-  -webkit-box-shadow: inset 10px 10px 10px #dadada;
+  box-shadow: inset 10px 10px 10px #dadada;
 }
 
 .vaadin-number-main {
@@ -58,7 +59,7 @@
 }
 .model-child-main::-webkit-scrollbar-thumb {
   /* border-radius: 5px; */
-  -webkit-box-shadow: inset 10px 10px 10px #dadada;
+  box-shadow: inset 10px 10px 10px #dadada;
 }
 
 .text-color-red

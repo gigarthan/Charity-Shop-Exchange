@@ -41,8 +41,7 @@ export default class Selection extends Component {
 
       tempCheckoutObj[tabSelected].push(temp);
     } else {
-      tempCheckoutObj[tabSelected][index]['quantity'] =
-        tempCheckoutObj[tabSelected][index]['quantity'] + 1;
+      tempCheckoutObj[tabSelected][index]['quantity'] = value
     }
 
     let tempGenresObj = { ...this.state.genresItems };
