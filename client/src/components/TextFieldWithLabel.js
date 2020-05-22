@@ -19,9 +19,16 @@ export default function TextFieldWithLabel(props) {
     function handleChange(e) {
       const value = e.target.value;
       onChange({ name, value });
+      ;
+    }
+
+    function handleOnBlue(e){
+      const value = e.target.value;
+      props.onblur(e)
     }
 
     textField.current.addEventListener('change', handleChange);
+    textField.current.addEventListener('blur', handleOnBlue);
   }, []);
 
   return (

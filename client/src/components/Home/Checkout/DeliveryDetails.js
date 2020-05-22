@@ -4,10 +4,40 @@ import Combo from '../../Combo';
 import Button from '../../Button';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 import RadioField from '../../RadioField';
-import CheckboxField from '../../CheckboxField'
+import CheckboxField from '../../CheckboxField';
+import useFormDataValidation, { isRequired, isEmail } from "../../../hooks/useFormDataValidation";
 
 export default function DeliveryDetails(props) {
-  const { formData: { delivery }, handleChange } = props;
+  const { formData, handleChange } = props;
+
+  const [formInitialValues, setFormInitialValues] = useState({ ...formData.delivery });
+
+  useEffect(() => {
+    setFormInitialValues({ ...formData.delivery });
+  },[formData]);
+
+  const fieldValidators = {
+    firstname: [isRequired],
+    lastname: [isRequired],
+    postcode: [isRequired],
+    address_1: [isRequired],
+    address_2: [isRequired],
+    town: [isRequired],
+  };
+
+  const formSubmitAction = values => {
+    // console.log(values);
+  };
+
+  const [initErrors, setInitErrors] = useState({});
+
+  const { values, errors, fieldChange } = useFormDataValidation(
+    formInitialValues,
+    initErrors,
+    formSubmitAction,
+    fieldValidators
+  );
+
   const [isOpen, setisOpen] = useState(false);
 
   return (
@@ -18,7 +48,7 @@ export default function DeliveryDetails(props) {
     >
       <div className="mt-4">
         <div className="delivery-frequency">Delivery frequency:</div>
-        <RadioField name="delivery.subscription" value={delivery.subscription} onChange={handleChange}/>
+        <RadioField name="delivery.subscription" value={formData.delivery.subscription} onChange={handleChange}/>
       </div>
 
       <div className="mt-4">
@@ -30,9 +60,13 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'First name'}
               name="delivery.firstname"
-              value={delivery.firstname}
-              onChange={handleChange}
+              value={values.firstname}
+              onChange={(value) => { 
+                handleChange(value);
+              }}
+              onblur={(event) => fieldChange(event, 'firstname')}
             />
+            <p className="error">{errors.firstname}</p>
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -40,9 +74,11 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'Last name'}
               name="delivery.lastname"
-              value={delivery.lastname}
-              onChange={handleChange}
+              value={values.lastname}
+              onblur={(event) => fieldChange(event, 'lastname')}
+              onChange={(value) => { handleChange(value); }}
             />
+            <p className="error">{errors.lastname}</p>
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -50,9 +86,11 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'UK Postcode'}
               name="delivery.postcode"
-              value={delivery.postcode}
-              onChange={handleChange}
+              value={values.postcode}
+              onblur={(event) => fieldChange(event, 'postcode')}
+              onChange={(value) => { handleChange(value) }}
             />
+            <p className="error">{errors.postcode}</p>
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -60,9 +98,11 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'Address line 1'}
               name="delivery.address_1"
-              value={delivery.address_1}
-              onChange={handleChange}
+              value={values.address_1}
+              onblur={(event) => fieldChange(event, 'address_1')}
+              onChange={(value) => { handleChange(value)}}
             />
+            <p className="error">{errors.address_1}</p>
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -70,9 +110,11 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'Address line 2'}
               name="delivery.address_2"
-              value={delivery.address_2}
-              onChange={handleChange}
+              value={values.address_2}
+              onblur={(event) => fieldChange(event, 'address_2')}
+              onChange={(value) => { handleChange(value) }}
             />
+            <p className="error">{errors.address_2}</p>
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -80,17 +122,19 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'Town / City'}
               name="delivery.town"
-              value={delivery.town}
-              onChange={handleChange}
+              value={values.town}
+              onblur={(event) => fieldChange(event, 'town')}
+              onChange={(value) => { handleChange(value) }}
             />
+            <p className="error">{errors.town}</p>
           </div>
         </div>
       </div>
       <div className="mt-4">
         <CheckboxField 
           name="delivery.is_used_same_address_for_billing" 
-          value={delivery.is_used_same_address_for_billing} 
-          onChange={handleChange}
+          value={formData.delivery.is_used_same_address_for_billing} 
+          onChange={(value) => { handleChange(value)}}
           lable="Use same address for billing"
         />
       </div>

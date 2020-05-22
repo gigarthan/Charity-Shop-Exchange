@@ -196,6 +196,12 @@ button.number-input-action {
   font-family: sans-serif;
 }
 
+.relative .error {
+  font-size: 14px;
+  padding: 0 10px;
+  color: #c53030;
+}
+
 @media only screen and (max-width: 767px) {
   .numberfild-width {
       width: 50%;
