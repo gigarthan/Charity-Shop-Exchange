@@ -73,14 +73,45 @@ html {
   box-shadow: 0 -5px 5px -3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .p {
-  align-self: center;
-  color: #d9d9d9;
+  color: #004969;
   display: inline-flex;
-  font-size: 1.2rem;
+  font-size: 0.94rem;
+  margin-top: 0.7rem;
+  line-height: 1.5rem;
+}
+.s {
+  color: #E33936;
+  display: block;
+  margin-right: 4px;
+  font-weight: 600;
+}
+
+.s:hover {
+  background: #FFF9E3;
+  color: #E33936;
+  font-weight: 600;
+  height: 25px;
+  line-height: 1.5rem;
+}
+.s2 {
+  color: #E33936;
+  display: block;
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+.s2:hover {
+  background: #FFF9E3;
+  font-weight: 600;
+  color: #E33936;
+  height: 25px;
+  line-height: 1.5rem;
+}
+.sum {
+  font-weight: 600;
 }
 .modal-button {
-  background-color: #C53030;
-    border: none;
+    background-color: #e33936;
     color: white;
     padding: 0px 15px;
     text-align: center;
@@ -90,6 +121,13 @@ html {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 0.7rem;
+}
+.modal-button:hover {
+  cursor: inherit;
+  background-color: #C53030;
+}
+.modal-button:focus {
+  outline: none;
 }
 .modal-button-disabled {
     background-color: #E9EDF0;
@@ -102,9 +140,8 @@ html {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 0.7rem;
-    cursor: not-allowed;
+    cursor: unset;
   }
 .img-logo {
   margin-right: 2rem;
 }
-

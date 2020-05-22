@@ -25,15 +25,16 @@ export default function Footer(props) {
   
 
   const totalSum = total.reduce((sum,i) => (
-    sum += i.quantity * 2 
-  ),3.5)
+    sum += i.quantity * 2.00 
+  ),3.50)
+  const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
 
 
 
   return (
     <div className="modal-footer">
       <img className="h-10 md:h-12 img-logo" src={Logo} alt="Charity Shop Exchange" />
-      <Info orderSummary={orderSummary} formData={formData} totalSum={totalSum} text="items delivered" handleChange={handleChange} handleSubmit={handleSubmit} />
+      <Info orderSummary={orderSummary} formData={formData} totalDecimalSum={totalDecimalSum} text="delivered every" handleChange={handleChange} handleSubmit={handleSubmit} />
       <Selection orderSummary={orderSummary} formData={formData} handleSubmit={handleSubmit} handleChange={handleChange} />
     </div>
 
@@ -41,14 +42,14 @@ export default function Footer(props) {
 }
 
 
-const Info = ({ orderSummary, formData, text,handleSubmit,handleChange,totalSum }) => {
+const Info = ({ orderSummary, formData, text,handleSubmit,handleChange,totalDecimalSum }) => {
   if (typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true) {
     return null
   }
   return (
     <>
-    <p className="p">{orderSummary.quantity} {text} {formData.delivery.subscription}</p>
-    <ModalButton className="modal-button" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true} onClick={handleSubmit} handleChange={handleChange}>£{totalSum} Subscribe</ModalButton>
+    <span className="p"><a className="s">{orderSummary.quantity} items</a> { text} <a className="s2">{formData.delivery.subscription}</a></span>
+    <ModalButton className="modal-button" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true} onClick={handleSubmit} handleChange={handleChange}><><span className="sum">£{totalDecimalSum}</span></> Subscribe</ModalButton>
     </> 
   )
 }
@@ -58,7 +59,7 @@ const Selection = ({ orderSummary, formData,handleSubmit,handleChange }) => {
   } if (orderSummary.quantity >= 1) {
     return (
       <>
-      <p className="p">1 item delivered {formData.delivery.subscription}</p>
+      {/*<p className="p"><a className="s">{orderSummary.quantity} item</a> delivered every <a className="s2">{formData.delivery.subscription}</a></p>*/}
       <ModalButton className="modal-button-disabled" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true} onClick={handleSubmit} handleChange={handleChange} text="Select 1 more item"></ModalButton>
       </>
     )

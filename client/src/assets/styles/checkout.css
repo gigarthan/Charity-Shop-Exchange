@@ -225,7 +225,9 @@ button.number-input-action {
     background-image: url('../img/film.svg');
   }  
 }
-
+.Polaris-Tabs__Tab.Polaris-Tabs__Tab--selected .Polaris-Tabs__Title {
+  border-bottom: var(--p-override-none, 0.2rem) solid #1090FF;
+}
 @media only screen and (max-width: 750px) {
   .vaadin-number-main {
     width: 47%;
