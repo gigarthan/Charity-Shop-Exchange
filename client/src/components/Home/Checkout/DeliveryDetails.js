@@ -5,7 +5,7 @@ import Button from '../../Button';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 import RadioField from '../../RadioField';
 import CheckboxField from '../../CheckboxField';
-import useFormDataValidation, { isRequired, isEmail } from "../../../hooks/useFormDataValidation";
+import useFormDataValidation, { isRequired, isEmail, isValidPostCode } from "../../../hooks/useFormDataValidation";
 
 export default function DeliveryDetails(props) {
   const { formData, handleChange } = props;
@@ -17,9 +17,10 @@ export default function DeliveryDetails(props) {
   },[formData]);
 
   const fieldValidators = {
-    firstname: [isRequired],
-    lastname: [isRequired],
-    postcode: [isRequired],
+    // firstname: [isRequired],
+    // lastname: [isRequired],
+    fullname: [isRequired],
+    postcode: [isRequired, isValidPostCode],
     address_1: [isRequired],
     address_2: [isRequired],
     town: [isRequired],
@@ -52,10 +53,24 @@ export default function DeliveryDetails(props) {
       </div>
 
       <div className="mt-4">
-        <div className="delivery-frequency">Delivery to:</div>
+        <div className="delivery-frequency">Deliver to:</div>
       </div>
-      <div className="flex flex-col sm:flex-row w-full flex-wrap">
+      <div className="flex flex-col flex-wrap">
         <div className="md:w-1/2 pr-1">
+          <div className="relative">
+            <TextFieldWithLabel 
+              label={'Full name'}
+              name="delivery.fullname"
+              value={values.fullname}
+              onChange={(value) => { 
+                handleChange(value);
+              }}
+              onblur={(event) => fieldChange(event, 'fullname')}
+            />
+            <p className="error">{errors.fullname}</p>
+          </div>
+        </div>
+        {/* <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
               label={'First name'}
@@ -80,7 +95,7 @@ export default function DeliveryDetails(props) {
             />
             <p className="error">{errors.lastname}</p>
           </div>
-        </div>
+        </div> */}
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 

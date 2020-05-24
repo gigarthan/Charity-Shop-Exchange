@@ -161,11 +161,11 @@
 
 .charity_modal
 {
-  max-width: 600px !important;
+  max-width: 768px !important;
 }
 
 .numberfild-width{
-  width: 50%;
+  width: 33.33%;
 }
 
 .accordion-inner-tab .Polaris-Tabs__Title:before {
@@ -200,6 +200,10 @@ button.number-input-action {
   font-size: 14px;
   padding: 0 10px;
   color: #c53030;
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 767px) {
