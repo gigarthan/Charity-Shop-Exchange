@@ -5,7 +5,7 @@ import Button from '../../Button';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 import RadioField from '../../RadioField';
 import CheckboxField from '../../CheckboxField';
-import useFormDataValidation, { isRequired, isEmail } from "../../../hooks/useFormDataValidation";
+import useFormDataValidation, { isRequired, isEmail, isValidPostCode } from "../../../hooks/useFormDataValidation";
 
 export default function DeliveryDetails(props) {
   const { formData, handleChange } = props;
@@ -20,7 +20,7 @@ export default function DeliveryDetails(props) {
     // firstname: [isRequired],
     // lastname: [isRequired],
     fullname: [isRequired],
-    postcode: [isRequired],
+    postcode: [isRequired, isValidPostCode],
     address_1: [isRequired],
     address_2: [isRequired],
     town: [isRequired],

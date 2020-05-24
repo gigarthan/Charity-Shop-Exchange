@@ -89,8 +89,6 @@ export default function useFormDataValidation(initValues = {}, initErrors = {}, 
   };
 }
 
-const emailRegex = /\S+@\S+\.\S+/;
-
 const getExactName = (key) => {
   switch (key) {
     case 'firstname':
@@ -113,10 +111,16 @@ const getExactName = (key) => {
   }
 }
 
+const emailRegex = /\S+@\S+\.\S+/;
+
 export const isRequired = (value, field) => !value && `${getExactName(field)} is required`
 
 export const isEmail = value =>
-  !emailRegex.test(value) && 'Field must be a valid email'
+  !emailRegex.test(value) && 'Field must be a valid email';
+
+const postCodeRegx= /^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/;
+
+export const isValidPostCode = value => !postCodeRegx.test(value) && 'Please enter a valid postcode';
 
 export const customValidation = (method, message) => (
   value,
