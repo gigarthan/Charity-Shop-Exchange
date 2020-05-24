@@ -97,6 +97,8 @@ const getExactName = (key) => {
       return 'First name';
     case 'lastname':
       return 'Last name';
+    case 'fullname':
+      return 'Full name';
     case 'postcode':
       return 'Postcode';
     case 'address_1':

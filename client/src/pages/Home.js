@@ -45,8 +45,9 @@ export default function Home() {
     },
     delivery: {
       subscription: 'month',
-      firstname: null,
-      lastname: null,
+      // firstname: null,
+      // lastname: null,
+      fullname: null,
       postcode: null,
       address_1: null,
       address_2: null,
@@ -66,8 +67,9 @@ export default function Home() {
       cvv: null,
       name: null,
 
-      billing_firstname: null,
-      billing_lastname: null,
+      // billing_firstname: null,
+      // billing_lastname: null,
+      billing_fullname: null,
       billing_postcode: null,
       billing_address_1: null,
       billing_address_2: null,
@@ -78,6 +80,14 @@ export default function Home() {
   useEffect(() => {
     console.log(formData)
   }, [formData]);
+
+  useEffect(() => {
+    if(isShowing){
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  }, [isShowing]); 
 
   return (
     <>

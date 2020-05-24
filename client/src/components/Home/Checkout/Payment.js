@@ -22,40 +22,42 @@ export default function Payment(props) {
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}
     >
-      <div className="payment-textbox-width">
-        <div className="relative">
-          <TextFieldWithLabel 
-            label={'Card Information'}
-            placeholder={'1234 1234 1234 1234'}
-            name="payment.card_number"
-            value={payment.card_number}
-            onChange={handleChange}
-          />
-          <div className="payment-card-img">
-            <img className="" src={card1} alt="card1" />
-            <img className="" src={card2} alt="card2" />
-            <img className="" src={card3} alt="card3" />
+      <div className="flex flex-col">
+        <div className="payment-textbox-inner-width">
+          <div className="relative">
+            <TextFieldWithLabel 
+              label={'Card Information'}
+              placeholder={'1234 1234 1234 1234'}
+              name="payment.card_number"
+              value={payment.card_number}
+              onChange={handleChange}
+            />
+            <div className="payment-card-img">
+              <img className="" src={card1} alt="card1" />
+              <img className="" src={card2} alt="card2" />
+              <img className="" src={card3} alt="card3" />
+            </div>
           </div>
         </div>
       </div>
-      <div className="payment-textbox-width">
-        <div className="flex flex-col sm:flex-row w-full">
-          <div className="payment-textbox-inner-width">
-            <div className="relative">
+      <div>
+        <div className="payment-textbox-inner-width">
+          <div style={{ display: 'flex' }}>
+            <div className="relative" style={{ width: '50%' }}>
               <TextFieldWithLabel 
                 placeholder={'MM/YY'}
                 name="payment.expiry_at"
+                // className="w-6/12"
                 value={payment.expiry_at}
                 onChange={handleChange}
                 max={5}
               />
             </div>
-          </div>
-          <div className="payment-textbox-inner-width">
-            <div className="relative">
+            <div className="relative" style={{ width: '50%' }}>
               <TextFieldWithLabel 
                 placeholder={'CVV'}
                 name="payment.cvv"
+                // className="w-6/12"
                 value={payment.cvv}
                 onChange={handleChange}
               />
@@ -66,22 +68,24 @@ export default function Payment(props) {
           </div>
         </div>
       </div>
-      <div className="payment-textbox-width">
-        <div className="relative">
-          <TextFieldWithLabel 
-            label={'Name of Card'}
-            placeholder={''}
-            name="payment.name"
-            value={payment.name}
-            onChange={handleChange}
-          />
+      <div className="flex flex-col">
+        <div className="payment-textbox-inner-width">
+          <div className="relative">
+            <TextFieldWithLabel 
+              label={'Name on card'}
+              placeholder={''}
+              name="payment.name"
+              value={payment.name}
+              onChange={handleChange}
+            />
+          </div>
         </div>
       </div>
       {/* <div className="mt-4">
         <div className="delivery-frequency">Your's:</div>
       </div> */}
-      <div className="flex flex-col sm:flex-row w-full">
-        <div className="payment-textbox-inner-width ">
+      <div className="flex flex-col">
+        <div className="payment-textbox-inner-width">
           <div className="relative">
             <TextFieldWithLabel 
               label={'Phone number'}
@@ -107,8 +111,18 @@ export default function Payment(props) {
           <div className="mt-4">
             <div className="delivery-frequency">Billing address:</div>
           </div>
-          <div className="flex flex-col sm:flex-row w-full flex-wrap">
+          <div className="flex flex-col flex-wrap">
             <div className="md:w-1/2 pr-1">
+              <div className="relative">
+                <TextFieldWithLabel 
+                  label={'Full name'}
+                  name="payment.billing_fullname"
+                  value={payment.billing_fullname}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            {/* <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel 
                   label={'First name'}
@@ -127,7 +141,7 @@ export default function Payment(props) {
                   onChange={handleChange}
                 />
               </div>
-            </div>
+            </div> */}
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel 

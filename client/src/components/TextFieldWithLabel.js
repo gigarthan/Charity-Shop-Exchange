@@ -8,6 +8,7 @@ export default function TextFieldWithLabel(props) {
     placeholder,
     onChange,
     name,
+    className,
     value,
     max
   } = props;
@@ -28,7 +29,9 @@ export default function TextFieldWithLabel(props) {
     }
 
     textField.current.addEventListener('change', handleChange);
-    textField.current.addEventListener('blur', handleOnBlue);
+    if(props.onblur){
+      textField.current.addEventListener('blur', handleOnBlue);
+    }
   }, []);
 
   return (
@@ -37,7 +40,7 @@ export default function TextFieldWithLabel(props) {
       <vaadin-text-field 
         ref={textField}
         name={name} 
-        class="custom-style w-full" 
+        class={`custom-style ${className ? className : 'w-full'}`} 
         placeholder={placeholder} 
         label={label} 
         value={value || ''}
