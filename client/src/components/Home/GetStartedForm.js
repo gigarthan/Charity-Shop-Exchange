@@ -40,15 +40,15 @@ export default function GetStartedForm({ toggle, onChange }) {
   // (TODO: This is for launch. Remove later when re-adding "Coming soon!" above)
 
   const counties = locations.counties.filter((county) => {
-    let numCharitiesForCounty = charities.reduce(function (count, charity) {
+    const numCharitiesForCounty = charities.reduce(function (count, charity) {
       return count + (charity.countyIds.includes(county.id) ? 1 : 0);
     }, 0);
 
     if (numCharitiesForCounty > 0) {
       return true;
-    } else {
+    } 
       return false;
-    }
+    
   });
 
   // On componentDidMount (when component is first loaded).
@@ -64,7 +64,7 @@ export default function GetStartedForm({ toggle, onChange }) {
 
   // If user arrives on subdomain and it is a valid county auto populate region
   function autoSelectCounty() {
-    const host = window.location.host;
+    const {host} = window.location;
     const subdomain = host.split(".")[0];
     const normalizedSubdomain = subdomain.trim().toLowerCase();
 
@@ -124,7 +124,7 @@ export default function GetStartedForm({ toggle, onChange }) {
                   // style={{ background: '#c7c7c7'}}
                   theme=""
                   label="Select a region"
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full border border-none text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>
@@ -148,7 +148,7 @@ export default function GetStartedForm({ toggle, onChange }) {
                   placeholder="select"
                   theme=""
                   label="Pick a charity"
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full border border-none text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>
