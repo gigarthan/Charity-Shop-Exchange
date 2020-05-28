@@ -201,6 +201,11 @@ button.number-input-action {
   padding: 0 10px;
   color: #c53030;
 }
+.ccError {
+  font-size: 14px;
+  padding: 0 10px;
+  color: #c53030;
+}
 
 .modal-open {
   overflow: hidden;
@@ -233,11 +238,16 @@ button.number-input-action {
 
   #dvd .Polaris-Tabs__Title:before {
     background-image: url('../img/film.svg');
-  }  
+  }
+  #dvd  .Polaris-Tabs__Tab:hover {
+       display: none;
+  }
 }
 .Polaris-Tabs__Tab.Polaris-Tabs__Tab--selected .Polaris-Tabs__Title {
-  border-bottom: var(--p-override-none, 0.2rem) solid #1090FF;
+  border-bottom: var(--p-override-none, 0.2rem) solid #e33936;
+  color: #e33936;
 }
+
 @media only screen and (max-width: 750px) {
   .vaadin-number-main {
     width: 47%;

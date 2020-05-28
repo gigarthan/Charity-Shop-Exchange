@@ -10,6 +10,7 @@ export default function Footer(props) {
   const books = formData.checkoutItems.books.filter(item => item.quantity !== 0);
   const dvd = formData.checkoutItems.dvd.filter(item => item.quantity !== 0);
 
+
   const total = books.concat(dvd)
 
   const orderSummary = total.reduce((orderSummary, summary) => {
@@ -23,6 +24,7 @@ export default function Footer(props) {
     return orderSummary
   }, {});
   
+  console.log(orderSummary)
 
   const totalSum = total.reduce((sum,i) => (
     sum += i.quantity * 2.00 
@@ -31,12 +33,13 @@ export default function Footer(props) {
 
 
 
+
   return (
     <div className="modal-footer">
       <img className="h-10 md:h-12 img-logo" src={Logo} alt="Charity Shop Exchange" />
-      <Info orderSummary={orderSummary} formData={formData} totalDecimalSum={totalDecimalSum} text="delivered every" handleChange={handleChange} handleSubmit={handleSubmit} />
+      <Info orderSummary={orderSummary} formData={formData} totalDecimalSum={totalDecimalSum} text="delivered every" handleChange={handleChange} handleSubmit={handleSubmit}/>
       <Selection orderSummary={orderSummary} formData={formData} handleSubmit={handleSubmit} handleChange={handleChange} />
-    </div>
+    </div> 
 
   )
 }
@@ -49,7 +52,7 @@ const Info = ({ orderSummary, formData, text,handleSubmit,handleChange,totalDeci
   return (
     <>
     <span className="p"><a className="s">{orderSummary.quantity} items</a> { text} <a className="s2">{formData.delivery.subscription}</a></span>
-    <ModalButton className="modal-button" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true} onClick={handleSubmit} handleChange={handleChange}><><span className="sum">£{totalDecimalSum}</span></> Subscribe</ModalButton>
+    <ModalButton  className="modal-button" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true} onClick={handleSubmit} handleChange={handleChange}><><span className="sum">£{totalDecimalSum}</span></> Subscribe</ModalButton>
     </> 
   )
 }
@@ -66,7 +69,7 @@ const Selection = ({ orderSummary, formData,handleSubmit,handleChange }) => {
   }
   return (
     <>
-    <ModalButton className="modal-button-disabled" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true} onClick={handleSubmit} handleChange={handleChange} text="Select 2 more items"></ModalButton>
+    <ModalButton className="modal-button-disabled-2" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true} onClick={handleSubmit} handleChange={handleChange} text="Select 2 more items"></ModalButton>
     </>
   )
 }

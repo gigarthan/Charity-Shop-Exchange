@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import '@vaadin/vaadin-text-field';
 
+
 export default function TextFieldWithLabel(props) {
 
   const {
@@ -12,6 +13,7 @@ export default function TextFieldWithLabel(props) {
     value,
     max
   } = props;
+ 
 
   const textField = useRef(null);
 
@@ -46,8 +48,10 @@ export default function TextFieldWithLabel(props) {
         value={value || ''}
         maxLength={max || ''}
       >
+       
 
       </vaadin-text-field>
+      
     </div>
   );  
 }

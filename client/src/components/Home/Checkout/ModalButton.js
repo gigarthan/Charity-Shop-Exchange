@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 
 export default function modalButton(props) {
@@ -13,9 +13,8 @@ export default function modalButton(props) {
     className
   } = props;
 
-
-
   return (
+    <>
     <button
       name={name}
       onClick={onClick}
@@ -28,5 +27,6 @@ export default function modalButton(props) {
       {text}
       {props.children}
     </button>
+    </>
   );
 }
