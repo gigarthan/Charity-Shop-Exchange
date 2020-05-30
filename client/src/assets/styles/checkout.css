@@ -248,10 +248,19 @@ button.number-input-action {
   color: #e33936;
 }
 
+@media only screen and (max-width: 780px) {
+  .charity_modal{
+    max-width: 95% !important;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .vaadin-number-main {
     width: 47%;
   }
+  /* .charity_modal {
+    max-width: 710px !important;
+  } */
 }
 
 @media only screen and (max-width: 658px) {
@@ -261,9 +270,9 @@ button.number-input-action {
 }
 
 @media only screen and (max-width: 639px) {
-  .charity_modal{
+  /* .charity_modal{
     max-width: 550px !important;
-  }
+  } */
   .payment-textbox-inner-width{
     width: 100%;
   }
@@ -279,27 +288,27 @@ button.number-input-action {
 }
 
 @media only screen and (max-width: 578px) {
-  .charity_modal
+  /* .charity_modal
   {
     max-width: 500px !important;
-  }
+  } */
 }
 
 @media only screen and (max-width: 520px) {
-  .charity_modal
+  /* .charity_modal
   {
     max-width: 450px !important;
-  }
+  } */
   .numberfild-width {
       width: 100%;
   }
 }
 
 @media only screen and (max-width: 476px) {
-  .charity_modal
+  /* .charity_modal
   {
     max-width: 400px !important;
-  }
+  } */
   .payment-card-img {
     display: none;
   }

@@ -49,6 +49,7 @@ html {
   display: flex;
   justify-content: flex-end;
   position: relative;
+  padding: 12px;
 }
 
 .modal-close-button {
@@ -60,8 +61,8 @@ html {
   opacity: 0.3;
   cursor: pointer;
   border: none;
-  top: 0;
-  right: 0;
+  top: 0px;
+  right: 10px;
 }
 .modal-footer {
   margin-top: 1rem;
@@ -72,6 +73,11 @@ html {
   justify-content: space-between;
   box-shadow: 0 -5px 5px -3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
+
+ .error-border {
+  border: 1px solid #c83d40;
+ }
+
  @media screen and (max-width: 580px) {
   .modal-footer {
   width: 107.5%;

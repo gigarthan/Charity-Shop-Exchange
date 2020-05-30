@@ -131,6 +131,14 @@
           :host([focused].custom-style) [part="input-field"] {
             border-color: #aaa;
           }
+
+          :host([invalid].custom-style) [part="input-field"] {
+            border-color: #c53030;
+          }
+
+          [part="label"]::after {
+            display: none;
+          }
         </style>
       </template>
     </dom-module>

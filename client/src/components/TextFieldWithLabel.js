@@ -11,7 +11,10 @@ export default function TextFieldWithLabel(props) {
     name,
     className,
     value,
-    max
+    max,
+    required,
+    pattern,
+    error,
   } = props;
  
 
@@ -38,20 +41,19 @@ export default function TextFieldWithLabel(props) {
 
   return (
     <div className="payment-text-field">
-      {/* <vaadin-text-field value={label}></vaadin-text-field> */}
       <vaadin-text-field 
         ref={textField}
+        required={required}
         name={name} 
+        pattern={pattern || ''}
+        error-message={error || ''}
         class={`custom-style ${className ? className : 'w-full'}`} 
         placeholder={placeholder} 
         label={label} 
         value={value || ''}
         maxLength={max || ''}
       >
-       
-
       </vaadin-text-field>
-      
     </div>
   );  
 }

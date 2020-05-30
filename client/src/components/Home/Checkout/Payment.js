@@ -67,11 +67,12 @@ export default function Payment(props) {
               onChange={(value) => {
                 handleChange(value)
               }}
+              required={true}
               onblur={(event) => fieldChange(event, 'card_number')}
             />
             <Card valid={valid} formData={formData}  Card1={Card1} Card2={Card2} Card3={Card3} Discover={Discover} MasterCard={MasterCard} Visa={Visa} />
           </div>
-          <p style={{fontSize: '14px', padding: '0 10px', color: '#c53030'}}>{errors.card_number}</p>
+          {/* <p style={{fontSize: '14px', padding: '0 10px', color: '#c53030'}}>{errors.card_number}</p> */}
         </div>
       </div>
         <div className="payment-textbox-inner-width">
@@ -83,6 +84,7 @@ export default function Payment(props) {
                 // className="w-6/12"
                 value={payment.expiry_at}
                 max={5}
+                required={true}
                 onChange={(value) => {
                   handleChange(value)
                 }}
@@ -95,6 +97,7 @@ export default function Payment(props) {
                 name="payment.cvv"
                 // className="w-6/12"
                 value={payment.cvv}
+                required={true}
                 onChange={(value) => {
                   handleChange(value)
                 }}
@@ -105,8 +108,8 @@ export default function Payment(props) {
             </div>
           </div>
           <div style={{display: 'flex'}}>
-          <p style={{fontSize: '14px', padding: '0 10px', color: '#c53030'}}>{errors.expiry_at}</p>
-          <p style={{fontSize: '14px', padding: '0 16px', color: '#c53030'}}>{errors.cvv}</p>
+          {/* <p style={{fontSize: '14px', padding: '0 10px', color: '#c53030'}}>{errors.expiry_at}</p>
+          <p style={{fontSize: '14px', padding: '0 16px', color: '#c53030'}}>{errors.cvv}</p> */}
           </div>
         </div>
       <div className="flex flex-col">
@@ -115,6 +118,7 @@ export default function Payment(props) {
             <TextFieldWithLabel
               label="Name on card"
               placeholder=""
+              required={false}
               name="payment.name"
               value={payment.name}
               onChange={(value) => {
@@ -122,7 +126,7 @@ export default function Payment(props) {
               }}
               onBlur={(event) => fieldChange(event, 'name')}
             />
-            <p className="error">{errors.name}</p>
+            {/* <p className="error">{errors.name}</p> */}
           </div>
         </div>
       </div>
@@ -136,12 +140,13 @@ export default function Payment(props) {
               label="Phone number"
               name="payment.phone"
               value={payment.phone}
+              required={true}
               onChange={(value) => {
                 handleChange(value)
               }}
               onblur={(event) => fieldChange(event, 'phone')}
             />
-            <p className="error">{errors.phone}</p>
+            {/* <p className="error">{errors.phone}</p> */}
           </div>
         </div>
         <div className="payment-textbox-inner-width ">
@@ -150,12 +155,14 @@ export default function Payment(props) {
               label="Email address"
               name="payment.email"
               value={payment.email}
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              required={true}
               onChange={(value) => {
                 handleChange(value)
               }}
               onblur={(event) => fieldChange(event, 'email')}
             />
-            <p className="error">{errors.email}</p>
+            {/* <p className="error">{errors.email}</p> */}
           </div>
         </div>
       </div>

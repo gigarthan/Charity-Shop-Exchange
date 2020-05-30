@@ -65,9 +65,10 @@ export default function DeliveryDetails(props) {
               onChange={(value) => { 
                 handleChange(value);
               }}
+              required={true}
               onblur={(event) => fieldChange(event, 'fullname')}
             />
-            <p className="error">{errors.fullname}</p>
+            {/* <p className="error">{errors.fullname}</p> */}
           </div>
         </div>
         {/* <div className="md:w-1/2 pr-1">
@@ -101,11 +102,13 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'UK Postcode'}
               name="delivery.postcode"
+              required={true}
+              pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$"
               value={values.postcode}
               onblur={(event) => fieldChange(event, 'postcode')}
               onChange={(value) => { handleChange(value) }}
             />
-            <p className="error">{errors.postcode}</p>
+            {/* <p className="error">{errors.postcode}</p> */}
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -113,11 +116,12 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'Address line 1'}
               name="delivery.address_1"
+              required={true}
               value={values.address_1}
               onblur={(event) => fieldChange(event, 'address_1')}
               onChange={(value) => { handleChange(value)}}
             />
-            <p className="error">{errors.address_1}</p>
+            {/* <p className="error">{errors.address_1}</p> */}
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -125,11 +129,12 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'Address line 2'}
               name="delivery.address_2"
+              required={true}
               value={values.address_2}
               onblur={(event) => fieldChange(event, 'address_2')}
               onChange={(value) => { handleChange(value) }}
             />
-            <p className="error">{errors.address_2}</p>
+            {/* <p className="error">{errors.address_2}</p> */}
           </div>
         </div>
         <div className="md:w-1/2 pr-1">
@@ -137,11 +142,12 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel 
               label={'Town / City'}
               name="delivery.town"
+              required={true}
               value={values.town}
               onblur={(event) => fieldChange(event, 'town')}
               onChange={(value) => { handleChange(value) }}
             />
-            <p className="error">{errors.town}</p>
+            {/* <p className="error">{errors.town}</p> */}
           </div>
         </div>
       </div>
