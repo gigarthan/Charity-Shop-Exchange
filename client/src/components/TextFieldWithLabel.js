@@ -48,7 +48,7 @@ export default function TextFieldWithLabel(props) {
         name={name} 
         pattern={pattern || ''}
         error-message={error || ''}
-        title={label || title}
+        title={''}
         class={`custom-style ${className ? className : 'w-full'}`} 
         placeholder={placeholder} 
         label={label} 
