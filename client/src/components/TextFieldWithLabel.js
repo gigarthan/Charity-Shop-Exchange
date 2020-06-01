@@ -15,11 +15,7 @@ export default function TextFieldWithLabel(props) {
     required,
     pattern,
     error,
-<<<<<<< HEAD
-    type
-=======
     title,
->>>>>>> 82ac059552381a41ac6495d27e223ae72ca3f374
   } = props;
  
 
@@ -52,11 +48,7 @@ export default function TextFieldWithLabel(props) {
         name={name} 
         pattern={pattern || ''}
         error-message={error || ''}
-<<<<<<< HEAD
-        type={type}
-=======
         title={''}
->>>>>>> 82ac059552381a41ac6495d27e223ae72ca3f374
         class={`custom-style ${className ? className : 'w-full'}`} 
         placeholder={placeholder} 
         label={label} 
