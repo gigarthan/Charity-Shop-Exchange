@@ -83,6 +83,7 @@ export default function Payment(props) {
                 placeholder="MM/YY"
                 name="payment.expiry_at"
                 // className="w-6/12"
+                title="MM/YY"
                 value={payment.expiry_at}
                 max={5}
                 required={true}
@@ -97,6 +98,7 @@ export default function Payment(props) {
                 placeholder="CVV"
                 name="payment.cvv"
                 // className="w-6/12"
+                title="CVV"
                 value={payment.cvv}
                 required={true}
                 onChange={(value) => {
