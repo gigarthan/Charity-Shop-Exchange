@@ -57,10 +57,11 @@ export default function Payment(props) {
       toggle={() => setisOpen(!isOpen)}
     >
       <div className="flex flex-col">
-        <div className="payment-textbox-inner-width">
+        <div className="payment-textbox-inner-width" autoCorrect="off">
           <div className="relative">
             <TextFieldWithLabel
-              label="Card Information"
+              label="Card Details"
+              type="cc-card"
               placeholder="1234 1234 1234 1234"
               name="payment.card_number"
               value={payment.card_number}

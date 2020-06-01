@@ -47,11 +47,11 @@ export default function Home() {
       subscription: 'month',
       // firstname: null,
       // lastname: null,
-      fullname: null,
-      postcode: null,
-      address_1: null,
-      address_2: null,
-      town: null,
+      fullname: '',
+      postcode: '',
+      address_1: '',
+      address_2: '',
+      town: '',
       is_used_same_address_for_billing: true
     },
     // contact: {
@@ -59,21 +59,21 @@ export default function Home() {
     //   email: null
     // },
     payment: {
-      phone: null,
-      email: null,
+      phone: '',
+      email: '',
 
-      card_number: null,
-      expiry_at: null,
-      cvv: null,
-      name: null,
+      card_number: '',
+      expiry_at: '',
+      cvv: '',
+      name: '',
 
       // billing_firstname: null,
       // billing_lastname: null,
-      billing_fullname: null,
-      billing_postcode: null,
-      billing_address_1: null,
-      billing_address_2: null,
-      billing_town: null,
+      billing_fullname: '',
+      billing_postcode: '',
+      billing_address_1: '',
+      billing_address_2: '',
+      billing_town: '',
     }
   });
 

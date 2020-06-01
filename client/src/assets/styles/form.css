@@ -108,26 +108,11 @@ html {
 }
 @media screen and (max-width: 600px) {
   .p {
-    font-size: 1.8vw;
+    font-size: 3vw;
     line-height: 1rem;
   }
 }
-@media screen and (max-width: 414px) {
-  .p {
-    font-size: 1.6vw;
-  }
-}
-@media screen and (max-width: 375px) {
-  .p {
-    font-size: 2vw;
-    line-height: 1rem;
-  }
-}
-@media screen and (max-width: 320px) {
-  .p {
-    font-size: 1.8vw;
-  }
-}
+
 
 .s {
   color: #E33936;
@@ -183,7 +168,9 @@ html {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 0.7rem;
+    position: relative;
 }
+
 @media screen and (max-width: 600px) {
   .modal-button {
     font-size: 2vw;
@@ -201,7 +188,7 @@ html {
     font-size: 2vw;
   }
 }
-.modal-button:hover {
+modal-button:hover {
   cursor: inherit;
   background-color: #C53030;
 }
@@ -221,6 +208,37 @@ html {
     border-radius: 0.7rem;
     cursor: unset;
   }
+  .modal-button-disabled .tooltiptext {
+    visibility: hidden;
+    width: 11rem;
+    height: 3rem;
+    background-color: #111e36;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 9px 0;
+    font-weight: 600;
+    right: 0.8rem;
+    bottom: 5rem;
+    position: absolute;
+    z-index: 1;
+    cursor: unset;
+  }
+  .modal-button-disabled .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    cursor: unset;
+  }
+  .modal-button-disabled:hover .tooltiptext {
+    visibility: visible;
+    cursor: unset;
+  }
 .modal-button-disabled-2 {
   background-color: #E9EDF0;
   border: none;
@@ -233,32 +251,13 @@ html {
   margin: 4px 2px;
   border-radius: 0.7rem;
   cursor: unset;
-
 }
 .img-logo {
   margin-right: 2rem;
 }
-@media screen and (max-width: 375px) {
-  .img-logo {
-   width: 30%;
-   margin-right: 1rem;
-  }
-}
-@media screen and (max-width: 320px) {
-  .img-logo {
-    width: 30%;
-    margin-right: 0.6rem
-  }
-}
 @media screen and (max-width: 414px) {
   .img-logo {
-    width: 30%;
-    margin-right: 0.6rem
+   display: none;
   }
 }
-.toolTip {
-  background-color: none;
-}
-.toolTip:hover{
-  background-color: yellow;
-} 
+

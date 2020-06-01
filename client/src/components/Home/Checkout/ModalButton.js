@@ -8,7 +8,7 @@ export default function modalButton(props) {
     onClick,
     disabled,
     style,
-    theme='',
+    theme,
     text,
     className
   } = props;
