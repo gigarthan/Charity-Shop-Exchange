@@ -59,7 +59,9 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
-              label={'Full name'}
+              autoselect
+              label='Full name'
+              autocomplete="name"
               name="delivery.fullname"
               value={values.fullname}
               onChange={(value) => { 

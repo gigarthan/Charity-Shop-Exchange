@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import '@vaadin/vaadin-text-field';
 
-
 export default function TextFieldWithLabel(props) {
 
   const {
@@ -15,7 +14,6 @@ export default function TextFieldWithLabel(props) {
     required,
     pattern,
     error,
-    title,
   } = props;
  
 
@@ -42,8 +40,10 @@ export default function TextFieldWithLabel(props) {
 
   return (
     <div className="payment-text-field">
+      
       <vaadin-text-field 
         ref={textField}
+        autoselect
         required={required}
         name={name} 
         pattern={pattern || ''}

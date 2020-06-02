@@ -155,7 +155,7 @@ export default function Payment(props) {
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <TextFieldWithLabel
-              label="Email address"
+              label="Email"
               name="payment.email"
               value={payment.email}
               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"

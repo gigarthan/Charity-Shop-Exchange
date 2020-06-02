@@ -93,14 +93,21 @@ const Subscription = ({ formData, orderSummary, handleSubmit, handleChange, tota
         <ModalButton className="modal-button-disabled tooltiptext" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true}  handleChange={handleChange}><><span className="sum">£{totalDecimalSum}</span></> Subscribe<span className="tooltiptext">Enter Delivery Details</span></ModalButton>
       </>
       )
-      } else if (formData.payment.town === '' && orderSummary.quantity >= 2) {
+      } else if (formData.delivery.town === '' && orderSummary.quantity >= 2) {
+    return (
+      <>
+        <span className="p"><a className="s">{orderSummary.quantity} items</a> {text} <a className="s2">{formData.delivery.subscription}</a></span>
+        <ModalButton className="modal-button-disabled tooltiptext" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true}  handleChange={handleChange}><><span className="sum">£{totalDecimalSum}</span></> Subscribe<span className="tooltiptext">Enter Delivery Details</span></ModalButton>
+      </>
+    )
+  }   else if (formData.payment.card_number === '' && orderSummary.quantity >= 2) {
     return (
       <>
         <span className="p"><a className="s">{orderSummary.quantity} items</a> {text} <a className="s2">{formData.delivery.subscription}</a></span>
         <ModalButton className="modal-button-disabled tooltiptext" disabled={typeof orderSummary.quantity !== 'undefined' ? orderSummary.quantity < 2 : true}  handleChange={handleChange}><><span className="sum">£{totalDecimalSum}</span></> Subscribe<span className="tooltiptext">Enter Payment Details</span></ModalButton>
       </>
-    )
-  } else if (formData.payment.cvv === '' && orderSummary.quantity >= 2) {
+    ) 
+    }else if (formData.payment.cvv === '' && orderSummary.quantity >= 2) {
     return (
       <>
         <span className="p"><a className="s">{orderSummary.quantity} items</a> {text} <a className="s2">{formData.delivery.subscription}</a></span>

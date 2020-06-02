@@ -43,7 +43,7 @@ export default function Charity(props) {
 
   return (
     <Collapsable
-      title="Pick Charity"
+      title="Pick charity"
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}
     >

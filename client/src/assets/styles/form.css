@@ -92,11 +92,7 @@ html {
   box-shadow: 0 -5px 5px -3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
- @media screen and (max-width: 420px) {
-   .modal-footer {
-     justify-content: space-between;
-   }
- }
+ 
 
  .error-border {
   border: 1px solid #c83d40;
@@ -105,7 +101,7 @@ html {
  @media screen and (max-width: 580px) {
   .modal-footer {
   width: 107.5%;
-  justify-content: space-between;
+  justify-content: flex-end;
   } 
 }
 
@@ -133,13 +129,13 @@ html {
 }
 @media screen and (max-width: 414px) {
   .p {
-    font-size: 3.5vw;
+    font-size: 3vw;
     line-height: 1.4rem;
   }
 }
 @media screen and (max-width: 320px) {
   .p {
-    font-size: 3.5vw;
+    font-size: 2.8vw;
     line-height: 1.5rem;
   }
 }
@@ -206,7 +202,6 @@ html {
     font-size: 3vw;
     display: inline-block;
     padding: 3px 15px;
-    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 320px) {
@@ -237,6 +232,7 @@ html {
     border-radius: 0.7rem;
     cursor: unset;
   }
+
   .modal-button-disabled .tooltiptext {
     visibility: hidden;
     width: 11rem;
@@ -252,6 +248,21 @@ html {
     position: absolute;
     z-index: 1;
     cursor: unset;
+  }
+  @media screen and (max-width: 600px) {
+    .modal-button-disabled {
+      font-size: 3vw;
+      display: inline-block;
+      padding: 3px 15px;
+      font-size: 0.8rem;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .modal-button-disabled {
+      font-size: 3.1vw;
+      display: inline-block;
+      padding: 3px 15px;
+    }
   }
   .modal-button-disabled .tooltiptext::after {
     content: "";
@@ -280,6 +291,15 @@ html {
   margin: 4px 2px;
   border-radius: 0.7rem;
   cursor: unset;
+}
+@media screen and (max-width: 600px) {
+  .modal-button-disabled-2 {
+    font-size: 3vw;
+    display: inline-block;
+    padding: 3px 15px;
+    font-size: 0.8rem;
+    align-self: flex-end;
+  }
 }
 .img-logo {
   margin-right: 2rem;
