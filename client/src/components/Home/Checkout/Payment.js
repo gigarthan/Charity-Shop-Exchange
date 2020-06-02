@@ -215,6 +215,8 @@ export default function Payment(props) {
                   label={'Last name'}
                   name="payment.billing_lastname"
                   value={payment.billing_lastname}
+                  pattern=".{2,}"
+                  required={true}
                   error={(values.billing_lastname && values.billing_lastname.length > 0) && !(/^.{2,}$/).test(values.billing_lastname) && 'Please enter recipients last name'}
                   onChange={handleChange}
                   onblur={(event) => fieldChange(event, 'billing_lastname')}
