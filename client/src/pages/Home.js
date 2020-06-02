@@ -45,8 +45,8 @@ export default function Home() {
     },
     delivery: {
       subscription: 'week',
-      firstname: null,
-      lastname: null,
+      firstname: '',
+      lastname: '',
       // fullname: '',
       postcode: '',
       address_1: '',
