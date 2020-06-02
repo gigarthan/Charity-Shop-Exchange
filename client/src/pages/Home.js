@@ -44,7 +44,7 @@ export default function Home() {
       books: [],
     },
     delivery: {
-      subscription: 'month',
+      subscription: 'week',
       // firstname: null,
       // lastname: null,
       fullname: '',

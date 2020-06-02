@@ -22,9 +22,10 @@ export default function RadioField(props) {
 
   return (
     <vaadin-radio-group ref={radioField}>
-      <vaadin-radio-button class="radio-width" checked={value == 'Weekly'} theme="custom" value="week">Weekly</vaadin-radio-button>
-      <vaadin-radio-button class="radio-width" checked={value == 'Bi-Weekly'} theme="custom" value="other week">Bi-Weekly</vaadin-radio-button>
-      <vaadin-radio-button class="radio-width" checked={value == 'Monthly'} theme="custom" value="month">Monthly</vaadin-radio-button>
+      <span>Deliver every: </span>  
+      <vaadin-radio-button class="radio-width" checked theme="custom" value="week"> week</vaadin-radio-button>
+      <vaadin-radio-button class="radio-width" theme="custom" value="other week">other week</vaadin-radio-button>
+      <vaadin-radio-button class="radio-width" theme="custom" value="month">month</vaadin-radio-button>
     </vaadin-radio-group>
   );  
 }

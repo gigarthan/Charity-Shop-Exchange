@@ -48,7 +48,7 @@ export default function DeliveryDetails(props) {
       toggle={() => setisOpen(!isOpen)}
     >
       <div className="mt-4">
-        <div className="delivery-frequency">Delivery frequency:</div>
+        <div className="delivery-frequency">Each delivery costs £3.50</div>
         <RadioField name="delivery.subscription" value={formData.delivery.subscription} onChange={handleChange}/>
       </div>
 
@@ -151,7 +151,7 @@ export default function DeliveryDetails(props) {
           </div>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4" style={{color: '#696969'}}>
         <CheckboxField 
           name="delivery.is_used_same_address_for_billing" 
           value={formData.delivery.is_used_same_address_for_billing} 
