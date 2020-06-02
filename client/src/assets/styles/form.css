@@ -31,6 +31,24 @@ html {
 .modal.modal-lg {
   max-width: 50rem;
 }
+.items {
+  font-size: 18.5px;
+  color: #696969;
+
+}
+@media screen and (max-width: 414px) {
+  .items {
+    font-size: 13.71px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .items {
+    font-size: 10.71px;
+  }
+}
+.itemsInfo {
+  line-height: 12px;
+}
 
 .modal {
   z-index: 100;
@@ -81,6 +99,7 @@ html {
  @media screen and (max-width: 580px) {
   .modal-footer {
   width: 107.5%;
+  justify-content: flex-end;
   } 
 }
 
@@ -112,7 +131,12 @@ html {
     line-height: 1rem;
   }
 }
-
+@media screen and (max-width: 320px) {
+  .p {
+    font-size: 2.3vw;
+    line-height: 1rem;
+  }
+}
 
 .s {
   color: #E33936;

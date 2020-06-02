@@ -126,6 +126,7 @@ export default class Selection extends Component {
         open={isOpen}
         toggle={() => this.setState({ isOpen: !isOpen })}
       >
+        <div className="itemsInfo"><span className="items">£2 per item, receive up to eight items per<span className="items"> delivery, start with a minimum of two.</span></span></div>
         <div className="accordion-inner-tab">
           <Tabs
             tabs={tabs}
