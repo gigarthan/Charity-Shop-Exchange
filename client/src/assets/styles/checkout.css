@@ -198,10 +198,15 @@ button.number-input-action {
 }
 
 .relative .error {
-  font-size: 14px;
+  font-size: 0.8125rem;
   padding: 0 10px;
   color: #c53030;
+  /* font-style: italic;
+  font-weight: bold; */
+  margin: 0;
+  line-height: 1.5;
 }
+
 .ccError {
   font-size: 14px;
   padding: 0 10px;

@@ -162,11 +162,11 @@ export const validCvv = value => !cvvRegex.test(value) && 'CVV invalid'
 const date = /^(0[1-9]|1[0-2]).+(20)?(2[0-9]|[2-9]\d)$/;
 export const validDate = value => !date.test(value) && 'Please enter e valid date'
 
-const phoneNumber = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/
+export const phoneNumber = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/
 export const validNumber = value => !phoneNumber.test(value) && 'Please enter a valid UK phone number'
 
 const email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-export const isValidEmail = value => !email.test(value) && 'Please enter a valid email address'
+export const isValidEmail = value => !email.test(value) && 'A valid email address is required for your subscription'
 
 const name = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 export const isValidCardName = value => !name.test(value) && 'Please type a valid credit card name'

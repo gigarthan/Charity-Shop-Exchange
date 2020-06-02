@@ -45,13 +45,14 @@ export default function Home() {
     },
     delivery: {
       subscription: 'week',
-      // firstname: null,
-      // lastname: null,
-      fullname: '',
+      firstname: null,
+      lastname: null,
+      // fullname: '',
       postcode: '',
       address_1: '',
       address_2: '',
       town: '',
+      county: '',
       is_used_same_address_for_billing: true
     },
     // contact: {
@@ -61,19 +62,21 @@ export default function Home() {
     payment: {
       phone: '',
       email: '',
+      isEmailedMe: false,
 
       card_number: '',
       expiry_at: '',
       cvv: '',
       name: '',
 
-      // billing_firstname: null,
-      // billing_lastname: null,
-      billing_fullname: '',
+      billing_firstname: null,
+      billing_lastname: null,
+      // billing_fullname: '',
       billing_postcode: '',
       billing_address_1: '',
       billing_address_2: '',
       billing_town: '',
+      billing_county: ''
     }
   });
 
