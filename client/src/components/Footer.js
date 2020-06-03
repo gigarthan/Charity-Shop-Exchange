@@ -26,6 +26,9 @@ export default function Footer() {
             <li className="text-xs text-gray-200 mb-3 cursor-pointer">
               <Link to="/together">Together</Link>
             </li>
+            <li className="text-xs text-gray-200 mb-3 cursor-pointer">
+              <a data-billsby-type="account">Manage account</a>
+            </li>
           </ul>
           <ul className="flex flex-col items-center sm:block flex-1 sm:flex-none">
             <li className="text-xs text-gray-200 mb-3 sm:mb-4 cursor-pointer">
