@@ -56,8 +56,8 @@ export default function Charity(props) {
               setValue={(value) => {
                 setCountyId(value);
                 setCharityId(0);
-                handleChange({ name: "charity.countryId", value });
-                handleChange({ name: "charity.charityId", value: 0 });
+                handleChange({ keyToUpdate: "charity.countryId", value });
+                handleChange({ keyToUpdate: "charity.charityId", value: 0 });
               }}
               items={counties}
               placeholder="select"
@@ -76,7 +76,7 @@ export default function Charity(props) {
               value={charityId}
               setValue={(value) => {
                 setCharityId(value);
-                handleChange({ name: "charity.charityId", value });
+                handleChange({ keyToUpdate: "charity.charityId", value });
               }}
               items={charities.filter((c) => c.countyIds.includes(countyId))}
               disabled={

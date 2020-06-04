@@ -195,7 +195,11 @@ html {
     cursor: pointer;
     border-radius: 0.7rem;
     position: relative;
+    
 }
+
+
+
 
 @media screen and (max-width: 600px) {
   .modal-button {
