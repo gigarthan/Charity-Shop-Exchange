@@ -49,6 +49,7 @@ export default function DeliveryDetails(props) {
       title="Delivery"
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}
+      autocomplete="on"
     >
       <div className="mt-4">
         <div className="delivery-frequency">Each delivery costs £3.50</div>
@@ -79,8 +80,11 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
+              name="name"
+              autocomplete="name"
               label={'First name'}
-              name="delivery.firstname"
+              title="name"
+              keyToUpdate="delivery.firstname"
               value={values.firstname}
               onChange={(value) => { 
                 handleChange(value);
@@ -95,8 +99,10 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
+              autocomplete="name"
               label={'Last name'}
-              name="delivery.lastname"
+              name="name"
+              keyToUpdate="delivery.lastname"
               value={values.lastname}
               pattern=".{2,}"
               required={true}
@@ -109,8 +115,11 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
+              autocomplete="postal-code"
               label={'UK Postcode'}
-              name="delivery.postcode"
+              name="postal-code"
+              max={8}
+              keyToUpdate="delivery.postcode"
               required={true}
               pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$"
               value={values.postcode}
@@ -123,8 +132,11 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
+              autocomplete="address-line1"
               label={'Address line 1'}
-              name="delivery.address_1"
+              name="address-line1"
+              max={255}
+              keyToUpdate="delivery.address_1"
               required={true}
               pattern=".{1,}"
               value={values.address_1}
@@ -137,8 +149,11 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
+              autocomplete="address-line2"
               label={'Address line 2'}
-              name="delivery.address_2"
+              max={255}
+              name="address-line2"
+              keyToUpdate="delivery.address_2"
               value={values.address_2}
               onblur={(event) => fieldChange(event, 'address_2')}
               onChange={(value) => { handleChange(value) }}
@@ -148,8 +163,11 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
+              autocomplete="address-level1"
               label={'Town / City'}
-              name="delivery.town"
+              name="address-level1"
+              keyToUpdate="delivery.town"
+              max={35}
               required={true}
               value={values.town}
               pattern=".{2,}"
@@ -162,8 +180,13 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
+              autocomplete="on"
+              name="address-level1"
+              autocomplete="address-level1"
+              max={35}
               label={'County'}
-              name="delivery.county"
+              keyToUpdate="delivery.county"
+              required={true}
               value={values.county}
               onblur={(event) => fieldChange(event, 'county')}
               onChange={(value) => { handleChange(value) }}
@@ -173,7 +196,7 @@ export default function DeliveryDetails(props) {
       </div>
       <div className="mt-4" style={{color: '#696969'}}>
         <CheckboxField 
-          name="delivery.is_used_same_address_for_billing" 
+          keyToUpdate="delivery.is_used_same_address_for_billing" 
           value={formData.delivery.is_used_same_address_for_billing} 
           onChange={(value) => { handleChange(value)}}
           lable="Use same address for billing"

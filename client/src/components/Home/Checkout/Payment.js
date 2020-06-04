@@ -63,10 +63,13 @@ export default function Payment(props) {
         <div className="payment-textbox-inner-width" autoCorrect="off">
           <div className="relative">
             <TextFieldWithLabel
+              autocomplete="cc-number"
+              type="cc-number"
               label="Card details"
-              type="cc-card"
+              htmlFor="cc-number"
               placeholder="1234 1234 1234 1234"
-              name="payment.card_number"
+              name="cc-number"
+              keyToUpdate="payment.card_number"
               value={payment.card_number}
               onChange={(value) => {
                 handleChange(value)
@@ -83,8 +86,10 @@ export default function Payment(props) {
           <div style={{ display: 'flex' }}>
             <div className="relative" style={{ width: '50%' }}>
               <TextFieldWithLabel
+                autocomplete="cc-exp"
                 placeholder="MM/YY"
-                name="payment.expiry_at"
+                name="cc-exp"
+                keyToUpdate="payment.expiry_at"
                 // className="w-6/12"
                 title="MM/YY"
                 value={payment.expiry_at}
@@ -98,8 +103,10 @@ export default function Payment(props) {
             </div>
             <div className="relative" style={{ width: '50%' }}>
               <TextFieldWithLabel
+                autocomplete="cc-csc"
                 placeholder="CVV"
-                name="payment.cvv"
+                name="cc-csc"
+                keyToUpdate="payment.cvv"
                 // className="w-6/12"
                 title="CVV"
                 value={payment.cvv}
@@ -122,10 +129,12 @@ export default function Payment(props) {
         <div className="payment-textbox-inner-width">
           <div className="relative">
             <TextFieldWithLabel
+              autocomplete="cc-name"
               label="Name on card"
               placeholder=""
               required={false}
-              name="payment.name"
+              name="cc-name"
+              keyToUpdate="payment.name"
               value={payment.name}
               onChange={(value) => {
                 handleChange(value)
@@ -143,8 +152,10 @@ export default function Payment(props) {
         <div className="payment-textbox-inner-width">
           <div className="relative">
             <TextFieldWithLabel
+              autocomplete="number"
               label="Phone number"
-              name="payment.phone"
+              name="number"
+              keyToUpdate="payment.phone"
               value={payment.phone}
               onChange={(value) => {
                 handleChange(value)
@@ -158,8 +169,10 @@ export default function Payment(props) {
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <TextFieldWithLabel
+              autocomplete="email"
               label="Email"
-              name="payment.email"
+              name="email"
+              keyToUpdate="payment.email"
               value={payment.email}
               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
               required={true}
@@ -198,8 +211,10 @@ export default function Payment(props) {
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel 
+                  autocomplete="name"
                   label={'First name'}
-                  name="payment.billing_firstname"
+                  name="name"
+                  keyToUpdate="payment.billing_firstname"
                   value={payment.billing_firstname}
                   pattern=".{2,}"
                   required={true}
@@ -212,8 +227,10 @@ export default function Payment(props) {
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel 
+                  autocomplete="name"
                   label={'Last name'}
-                  name="payment.billing_lastname"
+                  name="name"
+                  keyToUpdate="payment.billing_lastname"
                   value={payment.billing_lastname}
                   pattern=".{2,}"
                   required={true}
@@ -226,8 +243,11 @@ export default function Payment(props) {
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel
+                  autocomplete="postal-code"
                   label="UK Postcode"
-                  name="payment.billing_postcode"
+                  name="postal-code"
+                  max={8}
+                  keyToUpdate="payment.billing_postcode"
                   required={true}
                   value={payment.billing_postcode}
                   pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$"
@@ -240,9 +260,12 @@ export default function Payment(props) {
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel
+                  autocomplete="address-line1"
                   label="Address line 1"
-                  name="payment.billing_address_1"
+                  name="address-line1"
+                  keyToUpdate="payment.billing_address_1"
                   required={true}
+                  max={255}
                   pattern=".{1,}"
                   error={(values.billing_address_1 && values.billing_address_1.length > 0) && !(/^.{1,}$/).test(values.billing_address_1) && 'Please enter a valid address'}
                   value={payment.billing_address_1}
@@ -254,8 +277,11 @@ export default function Payment(props) {
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel
+                  autocomplete="address-line2"
                   label="Address line 2"
-                  name="payment.billing_address_2"
+                  name="address-line2"
+                  max={255}
+                  keyToUpdate="payment.billing_address_2"
                   value={payment.billing_address_2}
                   onblur={(event) => fieldChange(event, 'billing_address_2')}
                   onChange={handleChange}
@@ -265,8 +291,11 @@ export default function Payment(props) {
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel
+                  autocomplete="address-level1"
                   label="Town / City"
-                  name="payment.billing_town"
+                  name="address-level1"
+                  keyToUpdate="payment.billing_town"
+                  max={35}
                   pattern=".{2,}"
                   required={true}
                   error={(values.billing_town && values.billing_town.length > 0) && !(/^.{2,}$/).test(values.billing_town) && 'Please enter the postal town or city'}
@@ -279,8 +308,11 @@ export default function Payment(props) {
             <div className="md:w-1/2 pr-1">
               <div className="relative">
                 <TextFieldWithLabel
+                  autocomplete=""
                   label="County"
-                  name="payment.billing_county"
+                  max={35}
+                  required={true}
+                  keyToUpdate="payment.billing_county"
                   value={payment.billing_county}
                   onblur={(event) => fieldChange(event, 'billing_county')}
                   onChange={handleChange}

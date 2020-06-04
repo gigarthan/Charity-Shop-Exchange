@@ -14,7 +14,11 @@ export default function TextFieldWithLabel(props) {
     required,
     pattern,
     error,
-    title
+    title,
+    autocomplete,
+    keyToUpdate,
+    htmlFor,
+    type,
   } = props;
  
 
@@ -24,7 +28,7 @@ export default function TextFieldWithLabel(props) {
     // Handle changes to the combo box
     function handleChange(e) {
       const value = e.target.value;
-      onChange({ name, value });
+      onChange({ keyToUpdate, value });
       ;
     }
 
@@ -38,15 +42,17 @@ export default function TextFieldWithLabel(props) {
       textField.current.addEventListener('blur', handleOnBlue);
     }
   }, []);
-
   return (
     <div className="payment-text-field">
       
       <vaadin-text-field 
+        type={type}
         ref={textField}
-        autoselect
+        autocomplete={autocomplete}
         required={required}
         name={name} 
+        htmlFor={htmlFor}
+        keyToUpdate={keyToUpdate}
         pattern={pattern || ''}
         error-message={error || ''}
         title={title || ''}

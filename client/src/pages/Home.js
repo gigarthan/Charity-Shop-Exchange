@@ -69,8 +69,8 @@ export default function Home() {
       cvv: '',
       name: '',
 
-      billing_firstname: null,
-      billing_lastname: null,
+      billing_firstname: '',
+      billing_lastname: '',
       // billing_fullname: '',
       billing_postcode: '',
       billing_address_1: '',

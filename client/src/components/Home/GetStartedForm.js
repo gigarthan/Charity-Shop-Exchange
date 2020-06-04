@@ -59,7 +59,7 @@ export default function GetStartedForm({ toggle, onChange }) {
   // Clear out the 'Charity' combo if 'County' is changed
   useEffect(() => {
     setCharityId(0);
-    onChange({ name: "charity.charityId", value: 0 });
+    onChange({ keyToUpdate: "charity.charityId", value: 0 });
   }, [countyId]);
 
   // If user arrives on subdomain and it is a valid county auto populate region
@@ -117,7 +117,7 @@ export default function GetStartedForm({ toggle, onChange }) {
                   value={countyId}
                   setValue={(value) => {
                     setCountyId(value);
-                    onChange({ name: "charity.countryId", value });
+                    onChange({ keyToUpdate: "charity.countryId", value });
                   }}
                   items={counties}
                   placeholder="select"
@@ -136,7 +136,7 @@ export default function GetStartedForm({ toggle, onChange }) {
                   value={charityId}
                   setValue={(value) => {
                     setCharityId(value);
-                    onChange({ name: "charity.charityId", value });
+                    onChange({ keyToUpdate: "charity.charityId", value });
                   }}
                   items={charities.filter((c) =>
                     c.countyIds.includes(countyId)

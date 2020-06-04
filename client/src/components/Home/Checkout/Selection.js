@@ -93,11 +93,11 @@ export default class Selection extends Component {
       },
       () => {
         this.props.handleChange({
-          name: "checkoutItems.dvd",
+          keyToUpdate: "checkoutItems.dvd",
           value: this.state.checkOutItems && this.state.checkOutItems.dvd
         });
         this.props.handleChange({
-          name: "checkoutItems.books",
+          keyToUpdate: "checkoutItems.books",
           value: this.state.checkOutItems && this.state.checkOutItems.books
         });
       }
