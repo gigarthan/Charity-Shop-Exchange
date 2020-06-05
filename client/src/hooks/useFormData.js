@@ -11,6 +11,7 @@ export default function useFormData(initialData = {}, isInitialDataForPlaceholde
 
     let value = target.value;
 
+    console.log(target);
     const path = target.keyToUpdate.split(".");
 
     setFormData(formData => (
