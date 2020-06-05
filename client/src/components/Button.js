@@ -1,19 +1,12 @@
-import React, {useEffect, useRef} from 'react';
-import '@vaadin/vaadin-button';
+import React, { useEffect, useRef } from "react";
+import "@vaadin/vaadin-button";
 
 export default function Button(props) {
-  const {
-    name,
-    onClick,
-    disabled,
-    style,
-    theme='',
-    className
-  } = props;
+  const { name, onClick, disabled, style, theme = "", className } = props;
 
   const button = useRef(null);
 
-  useEffect( () => {
+  useEffect(() => {
     // Set up the button
     button.current.disabled = disabled;
   });

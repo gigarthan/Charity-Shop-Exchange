@@ -5,5 +5,5 @@ module.exports = {
     weekly: 423,
     biweekly: 422,
     monthly: 421,
-  }
-}
+  },
+};

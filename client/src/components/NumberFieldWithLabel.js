@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function NumberFieldWithLabel(props) {
   const { label, id, selectedTab, value, onChange, isFull } = props;
@@ -11,7 +11,7 @@ export default function NumberFieldWithLabel(props) {
     return (
       <button
         type="button"
-        className={isFull ? 'number-input w-full' : 'number-input'}
+        className={isFull ? "number-input w-full" : "number-input"}
         onClick={() => handleChange(1)}
       >
         {label}
@@ -23,7 +23,7 @@ export default function NumberFieldWithLabel(props) {
     return (
       <div
         className={
-          isFull ? 'number-input selected w-full' : 'number-input selected'
+          isFull ? "number-input selected w-full" : "number-input selected"
         }
       >
         <button
