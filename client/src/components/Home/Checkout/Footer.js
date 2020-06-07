@@ -69,6 +69,10 @@ export default function Footer(props) {
   const handleSubmit = () => {
     console.log("Submit", formData);
     console.log(billsbyData);
+    let phone = formData.payment.phone;
+    if(phone.startsWith("0")) 
+      phone = phone.slice(1);
+
     window.billsbyData = {
       firstName: formData.delivery.firstname,
       lastName: formData.delivery.lastname,
@@ -78,14 +82,16 @@ export default function Footer(props) {
       billingAddressCity: formData.delivery.town,
       billingAddressState: formData.delivery.county,
       billingAddressZip: formData.delivery.postcode,
-      billingAddressCountry: "GB",
+      billingAddressCountry: "GBR",
       shippingAddressLine1: formData.delivery.address_1,
       shippingAddressLine2: formData.delivery.address_2,
       shippingAddressCity: formData.delivery.town,
       shippingAddressState: formData.delivery.county,
       shippingAddressZip: formData.delivery.postcode,
-      shippingAddressCountry: "GB",
-      phoneNumber: formData.payment.phone,
+      shippingAddressCountry: "GBR",
+      phoneNumberDialCode: "44",
+      phoneNumberDialCountry: "GB",
+      phoneNumber: phone,
       marketingConsent: formData.payment.isEmailedMe,
       customFields: [{
         customFieldId: 94 ,
