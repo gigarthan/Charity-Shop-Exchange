@@ -53,7 +53,7 @@ export default function DeliveryDetails(props) {
     >
       <div className="mt-4">
         <div className="delivery-frequency">Each delivery costs £3.50</div>
-        <RadioField name="delivery.subscription" value={formData.delivery.subscription} onChange={handleChange}/>
+        <RadioField keyToUpdate="delivery.subscription" value={formData.delivery.subscription} onChange={handleChange}/>
       </div>
 
       <div className="mt-4">
@@ -121,9 +121,9 @@ export default function DeliveryDetails(props) {
               max={8}
               keyToUpdate="delivery.postcode"
               required={true}
-              pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$"
+              pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$"
               value={values.postcode}
-              error={(values.postcode && values.postcode.length > 0) && !(/^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/).test(values.postcode) && 'Please enter a valid postcode'}
+              error={(values.postcode && values.postcode.length > 0) && !(/^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/).test(values.postcode) && 'Please enter a valid postcode'}
               onblur={(event) => fieldChange(event, 'postcode')}
               onChange={(value) => { handleChange(value) }}
             />

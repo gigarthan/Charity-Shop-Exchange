@@ -79,7 +79,6 @@ export default function Home() {
       billing_county: ''
     }
   });
-
   useEffect(() => {
     console.log(formData)
   }, [formData]);
@@ -89,8 +88,14 @@ export default function Home() {
       document.body.classList.add('modal-open');
     } else {
       document.body.classList.remove('modal-open');
+      
     }
   }, [isShowing]); 
+
+  
+  
+
+ 
 
   return (
     <>

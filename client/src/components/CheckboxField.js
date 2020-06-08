@@ -6,7 +6,7 @@ export default function CheckboxField(props) {
   const {
     onChange,
     value,
-    name,
+    keyToUpdate,
     lable
   } = props;
 
@@ -14,7 +14,7 @@ export default function CheckboxField(props) {
 
   useEffect(() => {
     function handleChange(e) {
-      onChange({ name, value: e.target.checked }, e)
+      onChange({ keyToUpdate, value: e.target.checked }, e)
     }
 
     checkBoxRef.current.addEventListener('change', handleChange);

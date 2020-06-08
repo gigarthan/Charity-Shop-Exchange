@@ -18,7 +18,8 @@ export default function TextFieldWithLabel(props) {
     autocomplete,
     keyToUpdate,
     htmlFor,
-    type,
+    type
+
   } = props;
  
 

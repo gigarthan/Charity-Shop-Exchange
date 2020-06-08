@@ -10,7 +10,8 @@ export default function modalButton(props) {
     style,
     theme,
     text,
-    className
+    className,
+    type
   } = props;
 
   return (
@@ -23,6 +24,7 @@ export default function modalButton(props) {
       style={style}
       className={className}
       theme={theme}
+      type={type}
     >
       {text}
       {props.children}

@@ -9,7 +9,7 @@ import Footer from './Footer'
 
 export default function PlanSelection(props) {
 
-  const {formData, onChange} = props;
+  const {formData, onChange, handleClassChange} = props;
 
   return (
     <>

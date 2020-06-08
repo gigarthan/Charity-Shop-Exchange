@@ -69,6 +69,8 @@ export default function Payment(props) {
               htmlFor="cc-number"
               placeholder="1234 1234 1234 1234"
               name="cc-number"
+              pattern="[0-9\s]{13,19}"
+              max={16}
               keyToUpdate="payment.card_number"
               value={payment.card_number}
               onChange={(value) => {
@@ -89,10 +91,12 @@ export default function Payment(props) {
                 autocomplete="cc-exp"
                 placeholder="MM/YY"
                 name="cc-exp"
+                mask={"00/0000"}
                 keyToUpdate="payment.expiry_at"
                 // className="w-6/12"
                 title="MM/YY"
                 value={payment.expiry_at}
+                pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)"s
                 max={5}
                 required={true}
                 onChange={(value) => {
@@ -186,7 +190,7 @@ export default function Payment(props) {
         </div>
         <div className="mt-4" style={{ color: '#696969', padding: '0 8px', margin: 0 }}>
           <EmailMeWhenSubscribed 
-            name="payment.isEmailedMe" 
+            keyToUpdate="payment.isEmailedMe" 
             onChange={(value) => { handleChange(value)}}
             lable="Yes, email me about special offers and new product information"
           />

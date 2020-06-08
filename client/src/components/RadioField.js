@@ -7,14 +7,14 @@ export default function RadioField(props) {
   const {
     onChange,
     value,
-    name
+    keyToUpdate
   } = props;
 
   const radioField = useRef(null);
 
   useEffect(() => {
     function handleChange(e) {
-      onChange({ name, value: e.target.value })
+      onChange({ keyToUpdate, value: e.target.value })
     }
 
     radioField.current.addEventListener('change', handleChange);
