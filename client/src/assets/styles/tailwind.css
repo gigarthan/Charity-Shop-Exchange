@@ -9238,12 +9238,7 @@ video {
 .relative {
   position: relative;
 }
-.red:hover {
-  color: #e33936;
-}
-.blue:hover {
-  color: #1090ff;
-}
+
 .sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -9290,6 +9285,7 @@ video {
 .right-0 {
   right: 0;
 }
+
 
 .bottom-0 {
   bottom: 0;
@@ -10726,14 +10722,6 @@ video {
 .lowercase {
   text-transform: lowercase;
 }
-.right {
-  margin-right: 10rem;
-}
-@media screen and (max-width: 490px) {
-  .right {
-    margin-right: 8rem;
-  }
-  } 
 
 .capitalize {
   text-transform: capitalize;
@@ -13622,9 +13610,6 @@ video {
 
   .sm\:bg-white {
     background-color: #fff;
-  }
-  .sm\:bg-white:hover {
-    background-color: #1090ff;
   }
 
   .sm\:bg-gray-100 {
