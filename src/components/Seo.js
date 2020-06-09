@@ -5,7 +5,8 @@ import { Helmet } from 'react-helmet';
 
 import favicon128 from '~/assets/img/favicon-128.png';
 import favicon from '~/assets/img/favicon.png';
-import getOGText from '~/utils/GetOGText';
+import og from '~/assets/img/og.png';
+// import getOGText from '~/utils/GetOGText';
 
 function SEO({ description, lang, meta }) {
   const { site } = useStaticQuery(
@@ -61,7 +62,8 @@ function SEO({ description, lang, meta }) {
         },
         {
           property: `og:image`,
-          content: `https://og-image-sooty.now.sh/${getOGText()}?theme=light&md=1&fontSize=70px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fzeit-black-triangle.svg`,
+          // content: `https://og-image-sooty.now.sh/${getOGText()}?theme=light&md=1&fontSize=70px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fzeit-black-triangle.svg`,
+          content: og,
         },
         {
           property: `og:description`,
