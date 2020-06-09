@@ -50,7 +50,7 @@ export default function Combo(props) {
     // If the item isn't disabled, just render the item name as normal.
     combo.current.renderer = (root, owner, model) => {
       if (model.item.disabled) {
-        root.innerHTML = `<div class="item" style="background: #fff; color: #aaa; margin: -.5rem -2rem; padding: .9rem 2rem; position: relative;">${model.item.name}</div>`;
+        root.innerHTML = `<div class="item" style="color: #aaa; margin: -.5rem -2rem; padding: .9rem 2rem; position: relative;">${model.item.name}</div>`;
         root.querySelector('.item').addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
