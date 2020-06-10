@@ -10,6 +10,8 @@ import Register from './pages/Register';
 import Faq from './pages/Faq';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import CustomerTerms from './pages/CustomerTerms';
+import Cookies from './pages/Cookies';
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
         </Route>
         <Route path="/terms">
           <Terms />
+        </Route>
+        <Route path="/customer-terms">
+          <CustomerTerms />
+        </Route>
+        <Route path="/cookies">
+          <Cookies />
         </Route>
       </Switch>
     </AppProvider>
