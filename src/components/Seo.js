@@ -17,7 +17,6 @@ function SEO({ description, lang, meta }) {
             title
             description
             author
-            siteUrl
           }
         }
       }
@@ -64,7 +63,7 @@ function SEO({ description, lang, meta }) {
         {
           property: `og:image`,
           // content: `https://og-image-sooty.now.sh/${getOGText()}?theme=light&md=1&fontSize=70px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fzeit-black-triangle.svg`,
-          content: `${site.siteMetadata.siteUrl}${og}`,
+          content: `https://charityshopexchange.com${og}`,
         },
         {
           property: `og:description`,
