@@ -58,12 +58,14 @@ export default function Footer() {
             <Link className="mr-0 sm:mx-4 " to="/terms">
               Terms
             </Link>
+            &nbsp;|&nbsp;
           </div>
-
+          <div className="mb-4 sm:mb-0">
+            <Link className="mr-0 sm:mx-4 " to="/customer-terms">Customer Terms and Conditions</Link>
+          &nbsp;|&nbsp;
+          </div>
           <div className="block">
-            <a className="mr-0 sm:mx-4" href="https://icons8.com">
-              How it works svgs by icon8
-            </a>
+            <a className="mr-0 sm:mx-4" href="https://icons8.com">How it works svgs by icon8</a>
           </div>
         </div>
       </div>

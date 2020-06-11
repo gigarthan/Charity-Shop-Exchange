@@ -1,5 +1,5 @@
 import React from "react";
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,6 +8,8 @@ import Faq from "./pages/Faq";
 import Together from "./pages/Together";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import CustomerTerms from './pages/CustomerTerms';
+import Cookies from './pages/Cookies';
 
 
 function App() {
@@ -21,19 +23,25 @@ function App() {
       </Route>
       <Route path="/register">
         <Register />
-      </Route>      
+      </Route>
       <Route path="/faq">
         <Faq />
-      </Route>      
+      </Route>
       <Route path="/together">
         <Together />
-      </Route>      
+      </Route>
       <Route path="/privacy">
         <Privacy />
-      </Route>      
+      </Route>
       <Route path="/terms">
         <Terms />
-      </Route>      
+      </Route>
+      <Route path="/customer-terms">
+        <CustomerTerms />
+      </Route>
+      <Route path="/cookies">
+        <Cookies />
+      </Route>
     </Switch>
   );
 }
