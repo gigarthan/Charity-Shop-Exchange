@@ -180,7 +180,7 @@ export default function Register() {
                   </div>
                   <div className="flex flex-col items-center">
                     <button
-                      className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
+                      className="red rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
                       type="submit"
                     >
                       Submit
