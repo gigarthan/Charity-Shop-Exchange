@@ -30,8 +30,8 @@ export default function HowItWorks() {
             <div className="hidden sm:flex flex-none w-px h-32 bg-gray-700 mr-4"></div>
             <div className="flex-1 text-lg mt-3 mb-12 sm:mb-0 font-semibold text-gray-700 leading-snug">
               <span className="block text-3xl font-normal">2.</span>
-              We buy the items from your local charity shops and drop the box at
-              your door.
+              We handpick and buy the items from your chosen charity shop and deliver to your door.
+
             </div>
             <div className="flex-none transition duration-500 ease-in-out transform hover:-translate-y-1">
               <img className="ml-8 sm:mr-12" src={deliver} alt="deliver" />
