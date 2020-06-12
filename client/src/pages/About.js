@@ -34,7 +34,7 @@ export default function About() {
             of which we have more than ten thousand in the UK.
         </p>
         </div>
-        <blockquote className="w-4/5 px-3 py-3 text-lg mx-auto bg-gray-300 text-gray-700 mb-8">
+        <blockquote className="w-4/5 px-3 py-3 text-lg mx-auto bg-gray-300 text-blue-800 mb-8">
           <strong>
           By bringing a cooperative approach to the nation's vast network of charity
           shops we’ve developed a robust, dedicated online service. Welcome to
