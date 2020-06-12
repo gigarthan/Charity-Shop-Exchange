@@ -6,8 +6,8 @@ resolveConfig(tailwindConfig);
 
 module.exports = {
   siteMetadata: {
-    title: `Charity Shop Exchange | Books &amp; DVDs Delivered from Charity Shops to You`,
-    description: `Fight isolation with books and DVDs! Charity Shop Exchange collects a selection of books and DVDs from local charity shops and delivers weekly, bi-weekly or monthly - it's up to you.`,
+    title: `Book & DVD subscription service by Charity Shop Exchange`,
+    description: `Get a regular selection of new things to read and watch, handpicked by your favourite charity shop.`,
     author: `CharityShopExchange`,
   },
   plugins: [

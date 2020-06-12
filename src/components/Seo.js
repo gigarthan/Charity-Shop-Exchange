@@ -46,14 +46,6 @@ function SEO({ description, lang, meta }) {
           content: metaDescription,
         },
         {
-          name: `theme-coolor`,
-          content: `#fff`,
-        },
-        {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1`,
-        },
-        {
           charset: `utf-8`,
         },
         {
@@ -76,6 +68,26 @@ function SEO({ description, lang, meta }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          property: `twitter:image:alt`,
+          content: `Charity Shop Exchange’s subscription service`,
+        },
+        {
+          property: `twitter:site`,
+          content: `@CharityShopEx`,
+        },
+        {
+          name: `theme-coolor`,
+          content: `#fff`,
+        },
+        {
+          name: `viewport`,
+          content: `width=device-width, initial-scale=1`,
         },
       ].concat(meta)}
     />
