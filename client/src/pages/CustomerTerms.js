@@ -47,13 +47,13 @@ export default function CustomerTerms() {
                             have the autonomy to make selections and their own interpretations;
                         </li>
                         <li className="mb-4">
-                            reserve the right to not send certain combinations of products together in an order;
+                            reserve the right to not send certain combinations of products together in an order.
                         </li>
                     </ul>
 
                     <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">5. Payments</h3>
                     <p className="mb-4">The price of products is as quoted on the website at time of purchase.</p>
-                    <p className="mb-4"> Upon acceptance of your order your credit or debit card will be billed at checkout for your first delivery only. You will then be billed on a recurring basis every week in which a delivery is scheduled. The amount your card will be billed in any given week will be the value of your order for the given week.</p>
+                    <p className="mb-4">Upon acceptance of your order your credit or debit card will be billed at checkout for your first delivery only. You will then be billed on a recurring basis every week in which a delivery is scheduled. The amount your card will be billed in any given week will be the value of your order for the given week.</p>
                     <p className="mb-4">If you wish to change the scope of your subscription after we accept your order, we will modify the charges accordingly at the time of the next payment cycle.</p>
                     <p className="mb-4">We take payments by continuous payment authority using your debit or credit card. We accept Visa, Mastercard and American Express payments.</p>
                     <p className="mb-4">Where any payment you make is not authorised, your order will not be processed or communicated to the relevant Charity.</p>

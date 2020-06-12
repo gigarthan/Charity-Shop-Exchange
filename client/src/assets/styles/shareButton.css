@@ -4,3 +4,9 @@
 .red {
   background-color: #e33936;
 }
+.w {
+  color: #f1f1f6e5;
+}
+.w:hover {
+  color: #FFFFFF;
+}

@@ -50,21 +50,23 @@ export default function Footer() {
           © 2020 Charity Shop Exchange
         </div>
         <div className="flex flex-col sm:flex-row text-xs text-center text-gray-200 px-8 cursor-pointer mt-4 sm:mt-0">
-          <div className="mb-4 sm:mb-0">
+          <div className="w mb-4 sm:mb-0">
             <Link className="mr-0 sm:mx-4" to="/privacy">
               Privacy
             </Link>
             &nbsp;|&nbsp;
+          </div>
+          <div className="w mb-4 sm:mb-0">
             <Link className="mr-0 sm:mx-4 " to="/terms">
               Terms
             </Link>
             &nbsp;|&nbsp;
-          </div>
-          <div className="mb-4 sm:mb-0">
+            </div>
+          <div className="w mb-4 sm:mb-0">
             <Link className="mr-0 sm:mx-4 " to="/customer-terms">Customer Terms and Conditions</Link>
           &nbsp;|&nbsp;
           </div>
-          <div className="block">
+          <div className="block w">
             <a className="mr-0 sm:mx-4" href="https://icons8.com">How it works svgs by icon8</a>
           </div>
         </div>
