@@ -328,7 +328,7 @@ html {
 .img-logo {
   margin-right: 2rem;
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 480px) {
   .img-logo {
    display: none;
   }

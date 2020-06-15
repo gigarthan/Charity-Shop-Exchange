@@ -18,7 +18,8 @@ export default function TextFieldWithLabel(props) {
     autocomplete,
     keyToUpdate,
     htmlFor,
-    type
+    type,
+    id
 
   } = props;
  
@@ -62,6 +63,7 @@ export default function TextFieldWithLabel(props) {
         label={label} 
         value={value || ''}
         maxLength={max || ''}
+        id={id}
       >
       </vaadin-text-field>
     </div>
