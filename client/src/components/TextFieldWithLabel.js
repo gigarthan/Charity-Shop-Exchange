@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import '@vaadin/vaadin-text-field';
 
 export default function TextFieldWithLabel(props) {
@@ -22,7 +22,7 @@ export default function TextFieldWithLabel(props) {
     id
 
   } = props;
- 
+
 
   const textField = useRef(null);
 
@@ -34,38 +34,38 @@ export default function TextFieldWithLabel(props) {
       ;
     }
 
-    function handleOnBlue(e){
+    function handleOnBlue(e) {
       const value = e.target.value;
       props.onblur(e)
     }
 
     textField.current.addEventListener('change', handleChange);
-    if(props.onblur){
+    if (props.onblur) {
       textField.current.addEventListener('blur', handleOnBlue);
     }
   }, []);
   return (
     <div className="payment-text-field">
-      
-      <vaadin-text-field 
+
+      <vaadin-text-field
         type={type}
         ref={textField}
         autocomplete={autocomplete}
         required={required}
-        name={name} 
+        name={name}
         htmlFor={htmlFor}
         keyToUpdate={keyToUpdate}
         pattern={pattern || ''}
         error-message={error || ''}
         title={title || ''}
-        class={`custom-style ${className ? className : 'w-full'}`} 
-        placeholder={placeholder} 
-        label={label} 
+        class={`custom-style ${className ? className : 'w-full'}`}
+        placeholder={placeholder}
+        label={label}
         value={value || ''}
         maxLength={max || ''}
         id={id}
       >
       </vaadin-text-field>
     </div>
-  );  
+  );
 }
