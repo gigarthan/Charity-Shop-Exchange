@@ -2,13 +2,13 @@ module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react'],
   plugins: ['react', 'prettier'],
   rules: {
-    'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
-    'no-alert': 'error',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-alert': 'warn',
     'no-console': 'warn',
-    'no-param-reassign': ['error', {props: false}],
+    'no-param-reassign': ['error', { props: false }],
     'no-unused-vars': [
       'error',
-      {varsIgnorePattern: '_', argsIgnorePattern: '_'},
+      { varsIgnorePattern: '_', argsIgnorePattern: '_' },
     ],
     'import/order': [
       'error',
