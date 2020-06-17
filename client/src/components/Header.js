@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 
 import logo from '../assets/img/cse_logo@2x.png';
 import ShareButton from './ShareButton';
+import LoginButton from './LoginButton';
 
 export default function Header() {
   return (
-    <div className="w-screen py-3 px-8 bg-white border-b-2 z-10 shadow-lg relative">
+    <div className="w-screen py-3 px-8 bg-white z-10 relative">
       <div className="flex justify-between items-center">
         <Link to="/">
           <img className="h-8 md:h-12" src={logo} alt="logo" />
@@ -20,7 +21,7 @@ export default function Header() {
             />
           </svg>
         </div> */}
-
+        <LoginButton />
         <ShareButton />
       </div>
     </div>

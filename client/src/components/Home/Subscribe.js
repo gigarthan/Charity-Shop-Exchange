@@ -20,12 +20,10 @@ export default function Subscribe({toggle}) {
 
               <a
                 href="https://charityshopexchange.com/"
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggle();
-                }}
-                className="">
-                Subscribe here <span className="font-sans">&rarr;</span>{' '}
+                onClick={(e) => {e.preventDefault(); toggle();}}
+                className=""
+              >
+                Subscribe here <span className="font-sans">&rarr;</span>{" "}
               </a>
             </span>
           </div>

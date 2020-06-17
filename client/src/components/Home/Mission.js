@@ -14,9 +14,11 @@ export default function Mission() {
         </span>
         <div className="mt-8 sm:mt-12 text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1">
           <span className="block flex-shrink-0 mr-3 ">
-            <Link to="/about" className="">
-              Learn more about our approach{' '}
-              <span className="font-sans">&rarr;</span>{' '}
+            <Link
+              to="/about"
+              className=""
+            >
+              Learn more about our approach <span className="font-sans">&rarr;</span>{" "}
             </Link>
           </span>
           {/* <svg
