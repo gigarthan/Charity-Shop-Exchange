@@ -1,2 +1,0 @@
-[context.branch-deploy]
-  command = "yarn build && cp extra/_headers.dev public/_headers"

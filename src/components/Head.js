@@ -8,7 +8,7 @@ import favicon from '~/assets/img/favicon.png';
 import og from '~/assets/img/og.png';
 // import getOGText from '~/utils/GetOGText';
 
-function SEO({ description, lang, meta }) {
+function Head({ description, lang, meta }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -46,6 +46,18 @@ function SEO({ description, lang, meta }) {
           content: metaDescription,
         },
         {
+          name: `geo.region`,
+          content: `GB`,
+        },
+        {
+          name: `theme-coolor`,
+          content: `#fff`,
+        },
+        {
+          name: `viewport`,
+          content: `width=device-width, initial-scale=1`,
+        },
+        {
           charset: `utf-8`,
         },
         {
@@ -74,6 +86,10 @@ function SEO({ description, lang, meta }) {
           content: `summary_large_image`,
         },
         {
+          property: `twitter:image`,
+          content: `https://charityshopexchange.com/static/t_book_dvd_exchange.png`,
+        },
+        {
           property: `twitter:image:alt`,
           content: `Charity Shop Exchange’s subscription service`,
         },
@@ -81,29 +97,21 @@ function SEO({ description, lang, meta }) {
           property: `twitter:site`,
           content: `@CharityShopEx`,
         },
-        {
-          name: `theme-coolor`,
-          content: `#fff`,
-        },
-        {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1`,
-        },
       ].concat(meta)}
     />
   );
 }
 
-SEO.defaultProps = {
+Head.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
 };
 
-SEO.propTypes = {
+Head.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default SEO;
+export default Head;

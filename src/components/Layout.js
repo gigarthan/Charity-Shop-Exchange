@@ -2,13 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Footer from './Footer';
+import Head from './Head';
 import Header from './Header';
-import SEO from './Seo';
 
 const Layout = ({ children }) => (
   <div className="App overflow-x-hidden">
-    <SEO />
-
+    <Head />
     <Header />
     {children}
     <Footer />
