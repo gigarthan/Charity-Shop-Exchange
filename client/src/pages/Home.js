@@ -1,38 +1,25 @@
-import React, {useState, useEffect} from 'react';
-import Layout from '../components/Layout';
-import Hero from '../components/Home/Hero';
-import GetStartedForm from '../components/Home/GetStartedForm';
-import HowItWorks from '../components/Home/HowItWorks';
-import Subscribe from '../components/Home/Subscribe';
-import Mission from '../components/Home/Mission';
-import Register from '../components/Home/Register';
+import React, { useEffect } from 'react';
+
 import Dialog from '../components/Dialog';
 import useDialog from '../components/Dialog/useDialog';
-
-import balloon from '../assets/img/balloon@2x.png';
-import hero from '../assets/img/hero_01_girl.png';
-// import boxes from "../assets/img/boxes.png";
-import onefinger from '../assets/img/one-finger_200_transparent.gif';
-import box from '../assets/img/4039-rocking-gift.gif';
-import boxopen from '../assets/img/18033-box-open-gray-200.gif';
-import boxfill from '../assets/img/3321-shipment.gif';
-import boxwalk from '../assets/img/17431-package-delivery.gif';
-import base from '../assets/img/base@1x.png';
-import door from '../assets/img/door@1x.png';
-import twitter from '../assets/img/twitter.svg';
 import Checkout from '../components/Home/Checkout/index';
+import GetStartedForm from '../components/Home/GetStartedForm';
+import Hero from '../components/Home/Hero';
+import HowItWorks from '../components/Home/HowItWorks';
+import Mission from '../components/Home/Mission';
+import Register from '../components/Home/Register';
+import Subscribe from '../components/Home/Subscribe';
+import Layout from '../components/Layout';
+import useFormData from '../hooks/useFormData';
 import items from '../import/planList';
-
-import useFormData from "../hooks/useFormData";
 
 export default function Home() {
   const { isShowing, toggle } = useDialog();
 
   let planList = [];
-  for (const key in items) {
-    const list = items[key];
+  Object.values(items).forEach((list) => {
     planList = planList.concat(list.map((elem) => elem.id));
-  }
+  });
 
   const [formData, onChange] = useFormData({
     charity: {
@@ -53,7 +40,7 @@ export default function Home() {
       address_2: '',
       town: '',
       county: '',
-      is_used_same_address_for_billing: true
+      is_used_same_address_for_billing: true,
     },
     // contact: {
     //   phone: null,
@@ -76,26 +63,20 @@ export default function Home() {
       billing_address_1: '',
       billing_address_2: '',
       billing_town: '',
-      billing_county: ''
-    }
+      billing_county: '',
+    },
   });
   useEffect(() => {
-    console.log(formData)
+    console.log(formData);
   }, [formData]);
 
   useEffect(() => {
-    if(isShowing){
+    if (isShowing) {
       document.body.classList.add('modal-open');
     } else {
       document.body.classList.remove('modal-open');
-      
     }
-  }, [isShowing]); 
-
-  
-  
-
- 
+  }, [isShowing]);
 
   return (
     <>
@@ -112,7 +93,7 @@ export default function Home() {
           Select items
         </h1> */}
 
-        <Checkout formData={formData} onChange={onChange}/>
+        <Checkout formData={formData} onChange={onChange} />
         {/* <h3 className="text-center text-base sm:text-l text-gray-600 font-medium mb-6 sm:mb-6">We’ll be launching Charity Shop Exchange in the next few days. Please follow us on Twitter for updates:</h3>
         <p className="font-header text-base text-center sm:text-l font-bold text-new-red">
           <a href="https://twitter.com/CharityShopEx"><img

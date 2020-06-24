@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../assets/img/cse_logo@2x.png';
-import ShareButton from './ShareButton';
 import LoginButton from './LoginButton';
+import ShareButton from './ShareButton';
 
 export default function Header() {
   return (

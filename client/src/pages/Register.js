@@ -53,18 +53,21 @@ export default function Register() {
   return (
     <Layout>
       <div className="bg-new-navy">
-            <div className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-12 sm:pt-20 pb-20 sm:pb-32">
-              By selling books & DVDs on a subscription basis we give charity shops a simple way to earn recurring revenue.
-            </div>
+        <div className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-12 sm:pt-20 pb-20 sm:pb-32">
+          By selling books & DVDs on a subscription basis we give charity shops
+          a simple way to earn recurring revenue.
+        </div>
         <div className="flex flex-col items-center bg-gray-100">
           <div className="-mt-10 sm:-mt-20 mx-auto w-11/12 max-w-4xl bg-white py-12 px-4 sm:px-20 mb-40 rounded-lg shadow-2xl">
             <div>
-            <p className="text-xs sm:text-xl font-medium sm:font-semibold mt-4 text-gray-600 leading-normal">   
-              Our website takes the orders, we collect the payments, and then we pay you every time you send items to subscribers.
+              <p className="text-xs sm:text-xl font-medium sm:font-semibold mt-4 text-gray-600 leading-normal">
+                Our website takes the orders, we collect the payments, and then
+                we pay you every time you send items to subscribers.
               </p>
               <p className="text-xs sm:text-xl font-medium sm:font-semibold mt-4 text-gray-600 leading-normal">
-              There is no cost to join, just a commitment to delighting a new breed of customer!
-              Enquire below and we'll get back to you right away.
+                There is no cost to join, just a commitment to delighting a new
+                breed of customer! Enquire below and we&apos;ll get back to you
+                right away.
               </p>
               <div className="bg-gray-400 h-px mt-8 mb-10"> </div>
 
@@ -76,8 +79,7 @@ export default function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-medium sm:font-semibold mb-4"
-                      htmlFor="name"
-                    >
+                      htmlFor="name">
                       Your name:
                     </label>
                     <input
@@ -94,8 +96,7 @@ export default function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="cname"
-                    >
+                      htmlFor="cname">
                       Your charity:
                     </label>
                     <input
@@ -146,8 +147,7 @@ export default function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="number"
-                    >
+                      htmlFor="number">
                       Mobile number:
                     </label>
                     <input
@@ -164,8 +164,7 @@ export default function Register() {
                   <div className="mb-12">
                     <label
                       className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
-                      htmlFor="message"
-                    >
+                      htmlFor="message">
                       Anything else we should know
                     </label>
                     <textarea

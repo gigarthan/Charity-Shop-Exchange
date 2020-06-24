@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import Layout from '../components/Layout';
 
 export default function Terms() {
@@ -20,9 +21,10 @@ export default function Terms() {
           </h2>
           <p className="mb-4">
             The website charityshopexchange.com is owned and operated by Beyond
-            Bazaar Limited, trading as 'Charity Shop Exchange'. References to
-            "we", "us", or "our" are references to Beyond Bazaar Limited. We are
-            a company registered in England and Wales (company number 12583240).
+            Bazaar Limited, trading as &apos;Charity Shop Exchange&apos;.
+            References to &quot;we&quot;, &quot;us&quot;, or &quot;our&quot; are
+            references to Beyond Bazaar Limited. We are a company registered in
+            England and Wales (company number 12583240).
           </p>
           <p className="mb-4">
             By accessing the website, you agree to be bound by the terms of use,
@@ -103,8 +105,8 @@ export default function Terms() {
             within the service may violate copyright laws, trademark laws, the
             laws of privacy and publicity, and/or other regulations and
             statutes. If you believe that any of the materials infringe on any
-            third party's rights, please contact Beyond Bazaar Limited at the
-            address provided below.
+            third party&apos;s rights, please contact Beyond Bazaar Limited at
+            the address provided below.
           </p>
 
           <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
@@ -136,8 +138,8 @@ export default function Terms() {
             In no event shall Beyond Bazaar Limited or its suppliers be liable
             for any damages (including, without limitation, damages for loss of
             data or profit, or due to business interruption) arising out of the
-            use or inability to use the materials on Charity Shop Exchange's
-            website.
+            use or inability to use the materials on Charity Shop
+            Exchange&apos;s website.
           </p>
           <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Accuracy of materials

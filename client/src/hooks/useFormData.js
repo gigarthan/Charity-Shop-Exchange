@@ -1,28 +1,26 @@
-import { useState, useRef } from 'react'
+import { useState, useRef } from 'react';
 
-export default function useFormData(initialData = {}, isInitialDataForPlaceholder = null) {
-  
-  const [formData, setFormData] = useState(initialData)
+export default function useFormData(
+  initialData = {},
+  isInitialDataForPlaceholder = null,
+) {
+  const [formData, setFormData] = useState(initialData);
 
-  const initialFormData = useRef(initialData).current
+  const initialFormData = useRef(initialData).current;
 
   const onChange = (target) => {
     if (!target) return;
+    const { value } = target;
+    const path = target.keyToUpdate.split('.');
 
-    let value = target.value;
+    setFormData((data) => ({
+      ...data,
+      [path[0]]: {
+        ...data[path[0]],
+        [path[1]]: value,
+      },
+    }));
+  };
 
-    const path = target.keyToUpdate.split(".");
-
-    setFormData(formData => (
-      {
-        ...formData, 
-        [path[0]]: {
-          ...formData[path[0]],
-          [path[1]]: value
-        }
-      }
-    ));
-  }
-
-  return [formData, onChange, initialFormData, isInitialDataForPlaceholder]
+  return [formData, onChange, initialFormData, isInitialDataForPlaceholder];
 }

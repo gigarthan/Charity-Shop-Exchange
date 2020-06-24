@@ -1,20 +1,20 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import twitter from '../assets/img/twitter.svg';
+
+import batsman from '../assets/img/batsman@2x.png';
+import behance from '../assets/img/be.svg';
+import beer from '../assets/img/beer@2x.png';
+import blake from '../assets/img/Blake Prouty@2x.png';
+import charityexcellentlogo from '../assets/img/charityexcellent-logo.png';
+import dicky from '../assets/img/Dicky Jiang@2x.png';
+import dribbble from '../assets/img/dribbble.svg';
+import engjell from '../assets/img/Engjell.png';
 import github from '../assets/img/github.svg';
 import instagram from '../assets/img/ig.svg';
-import dribbble from '../assets/img/dribbble.svg';
-import behance from '../assets/img/be.svg';
-import blake from '../assets/img/Blake Prouty@2x.png';
+import jasmine from '../assets/img/Jasmine@2x.png';
 import kelvin from '../assets/img/kelvin@2x.png';
 import matt from '../assets/img/Matt Doyle@2x.png';
-import dicky from '../assets/img/Dicky Jiang@2x.png';
-import generic from '../assets/img/generic@2x.png';
-import jasmine from '../assets/img/Jasmine@2x.png';
-import engjell from '../assets/img/Engjell.png';
-import batsman from '../assets/img/batsman@2x.png';
-import beer from '../assets/img/beer@2x.png';
-import charityexcellentlogo from '../assets/img/charityexcellent-logo.png';
+import twitter from '../assets/img/twitter.svg';
+import Layout from '../components/Layout';
 
 export default function About() {
   return (
@@ -40,18 +40,18 @@ export default function About() {
         </div>
         <blockquote className="w-4/5 px-3 py-3 text-lg mx-auto bg-gray-300 text-gray-700 mb-8">
           <strong>
-            By bringing a cooperative approach to the nation's vast network of
-            charity shops we’ve developed a robust, dedicated online service.
-            Welcome to Charity Shop Exchange.
+            By bringing a cooperative approach to the nation&apos;s vast network
+            of charity shops we&apos;ve developed a robust, dedicated online
+            service. Welcome to Charity Shop Exchange.
           </strong>
         </blockquote>
         <p className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
           The way Charity Shop Exchange brings together buyers and sellers can
           serve as inspiration for other use cases, where the dedicated online
-          service takes orders on behalf of a syndication of suppliers. We're
-          open to working together on digital projects that also see value in
-          this approach, just let us know how you think we may be able to help
-          you.
+          service takes orders on behalf of a syndication of suppliers.
+          We&apos;re open to working together on digital projects that also see
+          value in this approach, just let us know how you think we may be able
+          to help you.
         </p>
         <div className="flex flex-col justify-center mt-4 w-4/5 mx-auto">
           <span className="text-base sm:text-lg text-gray-500 font-normal mb-4 leading-relaxed text-center">
@@ -100,7 +100,7 @@ export default function About() {
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
                   Product owner, design thinker and opening batsman.{' '}
-                  <img className="w-5" src={batsman} alt="batsman"></img>
+                  <img className="w-5" src={batsman} alt="batsman" />
                 </p>
               </div>
             </div>
@@ -241,7 +241,7 @@ export default function About() {
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
                   Illustrator, designer and craft beer lover.{' '}
-                  <img className="w-4" src={beer} />
+                  <img className="w-4" src={beer} alt="Beer" />
                 </p>
               </div>
             </div>

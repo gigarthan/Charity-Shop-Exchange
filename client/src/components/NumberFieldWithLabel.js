@@ -12,8 +12,7 @@ export default function NumberFieldWithLabel(props) {
       <button
         type="button"
         className={isFull ? 'number-input w-full' : 'number-input'}
-        onClick={() => handleChange(1)}
-      >
+        onClick={() => handleChange(1)}>
         {label}
       </button>
     );
@@ -24,21 +23,18 @@ export default function NumberFieldWithLabel(props) {
       <div
         className={
           isFull ? 'number-input selected w-full' : 'number-input selected'
-        }
-      >
+        }>
         <button
           type="button"
           className="number-input-action px-2 mr-2"
-          onClick={() => handleChange(value - 1)}
-        >
+          onClick={() => handleChange(value - 1)}>
           -
         </button>
         <div className="number-input-text mr-2">{label}</div>
         <button
           type="button"
           className="number-input-action px-2"
-          onClick={() => handleChange(value + 1)}
-        >
+          onClick={() => handleChange(value + 1)}>
           +
         </button>
 
