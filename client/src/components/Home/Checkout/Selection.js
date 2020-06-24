@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import { Card, Tabs } from "@shopify/polaris";
 import Collapsable from "../Collapsable";
-import Button from "../../Button";
 import NumberFieldWithLabel from "../../NumberFieldWithLabel";
 
-import shopping from "../../../assets/img/shopping.png";
-
-import "@vaadin/vaadin-radio-button";
-import RadioField from "../../RadioField";
 
 export default class Selection extends Component {
   constructor(props) {
@@ -72,7 +67,7 @@ export default class Selection extends Component {
 
     let tempGenresObj = { ...this.state.genresItems };
     const elementIndex = tempGenresObj[tabSelected].findIndex(
-      element => element.id == selectedId
+      element => element.id === selectedId
     );
     let updateGenreArray = [...tempGenresObj[tabSelected]];
     updateGenreArray[elementIndex] = {

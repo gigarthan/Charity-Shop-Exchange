@@ -6,7 +6,6 @@ export default function RadioField(props) {
 
   const {
     onChange,
-    value,
     keyToUpdate
   } = props;
 
@@ -18,7 +17,7 @@ export default function RadioField(props) {
     }
 
     radioField.current.addEventListener('change', handleChange);
-  }, []);
+  }, [keyToUpdate, onChange]);
 
   return (
     <vaadin-radio-group ref={radioField}>

@@ -35,7 +35,6 @@ export default function TextFieldWithLabel(props) {
     }
 
     function handleOnBlue(e) {
-      const value = e.target.value;
       props.onblur(e)
     }
 
@@ -43,7 +42,8 @@ export default function TextFieldWithLabel(props) {
     if (props.onblur) {
       textField.current.addEventListener('blur', handleOnBlue);
     }
-  }, []);
+    //eslint-disable-next-line
+  }, [keyToUpdate]);
   return (
     <div className="payment-text-field">
 

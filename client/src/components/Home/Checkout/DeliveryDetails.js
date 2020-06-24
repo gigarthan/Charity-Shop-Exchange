@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Collapsable from '../Collapsable';
-import Combo from '../../Combo';
-import Button from '../../Button';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 import RadioField from '../../RadioField';
 import CheckboxField from '../../CheckboxField';
-import useFormDataValidation, { isRequired, isEmail, isValidPostCode } from "../../../hooks/useFormDataValidation";
+import useFormDataValidation, { isRequired, isValidPostCode } from "../../../hooks/useFormDataValidation";
 
 export default function DeliveryDetails(props) {
   const { formData, handleChange } = props;
@@ -30,10 +28,10 @@ export default function DeliveryDetails(props) {
   const formSubmitAction = values => {
     // console.log(values);
   };
-
+//eslint-disable-next-line
   const [initErrors, setInitErrors] = useState({});
 
-  const { values, errors, fieldChange } = useFormDataValidation(
+  const { values, fieldChange } = useFormDataValidation(
     formInitialValues,
     initErrors,
     formSubmitAction,
@@ -180,7 +178,6 @@ export default function DeliveryDetails(props) {
         <div className="md:w-1/2 pr-1">
           <div className="relative">
             <TextFieldWithLabel 
-              autocomplete="on"
               name="address-level1"
               autocomplete="address-level1"
               max={35}

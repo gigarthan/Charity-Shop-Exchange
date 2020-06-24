@@ -1,7 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logoWhite from "../assets/img/cse_logo_white@2x.png";
 
+const onClick = (e) => {
+  e.preventDefault()
+}
 export default function Footer() {
 
   return (
@@ -27,7 +30,9 @@ export default function Footer() {
               <Link to="/together">Together</Link>
             </li>
             <li className="text-xs text-gray-200 mb-3 cursor-pointer">
-              <a data-billsby-type="account">Manage account</a>
+              <button onClick={onClick}>
+                <a href="/#" data-billsby-type="account">Manage account</a>
+              </button>
             </li>
           </ul>
           <ul className="flex flex-col items-center sm:block flex-1 sm:flex-none">
@@ -37,7 +42,7 @@ export default function Footer() {
               </a>
             </li>
             <li className="text-xs text-gray-200 mb-2 cursor-pointer">
-            <a href="https://twitter.com/CharityShopEx">
+              <a href="https://twitter.com/CharityShopEx">
                 Twitter @CharityShopEx
               </a>
             </li>
@@ -46,21 +51,21 @@ export default function Footer() {
       </div>
       <div className="flex flex-col items-center sm:items-none sm:flex-row max-w-screen-lg">
         <div className="text-gray-300 text-center text-xs">
-        © 2020 Charity Shop Exchange
+          © 2020 Charity Shop Exchange
         </div>
         <div className="flex flex-col sm:flex-row text-xs text-center text-gray-200 px-8 cursor-pointer mt-4 sm:mt-0">
           <div className="mb-4 sm:mb-0">
-          <Link className="mr-0 sm:mx-4" to="/privacy">Privacy</Link>
+            <Link className="mr-0 sm:mx-4" to="/privacy">Privacy</Link>
           &nbsp;|&nbsp;
           <Link className="mr-0 sm:mx-4 " to="/terms">Terms</Link>
           &nbsp;|&nbsp;
           </div>
           <div className="mb-4 sm:mb-0">
-          <Link className="mr-0 sm:mx-4 " to="/customer-terms">Customer Terms and Conditions</Link>
+            <Link className="mr-0 sm:mx-4 " to="/customer-terms">Customer Terms and Conditions</Link>
           &nbsp;|&nbsp;
           </div>
           <div className="block">
-          <a className="mr-0 sm:mx-4" href="https://icons8.com">How it works svgs by icon8</a>
+            <a className="mr-0 sm:mx-4" href="https://icons8.com">How it works svgs by icon8</a>
           </div>
 
         </div>

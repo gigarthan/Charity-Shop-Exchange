@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Collapsable from '../Collapsable';
 import Combo from '../../Combo';
-import Button from '../../Button';
 
 import { charities } from '../../../import/charities.json';
 import locations from '../../../import/locations.json';
@@ -37,6 +36,7 @@ export default function Charity(props) {
     }
   });
 
+//eslint-disable-next-line
   const handleSubmit = () => {
     console.log('Submit');
   };

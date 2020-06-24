@@ -9,7 +9,6 @@ import blake from "../assets/img/Blake Prouty@2x.png";
 import kelvin from "../assets/img/kelvin@2x.png";
 import matt from "../assets/img/Matt Doyle@2x.png";
 import dicky from "../assets/img/Dicky Jiang@2x.png";
-import generic from "../assets/img/generic@2x.png";
 import jasmine from "../assets/img/Jasmine@2x.png";
 import engjell from "../assets/img/Engjell.png";
 import batsman from "../assets/img/batsman@2x.png";
@@ -187,7 +186,7 @@ export default function About() {
 
                 </div>
                 <p className="text-xs text-gray-600 mt-2">
-                  Illustrator, designer and craft beer lover. <img className="w-4" src={beer} />
+                  Illustrator, designer and craft beer lover. <img className="w-4" src={beer} alt="beer" />
                 </p>
               </div>
             </div>

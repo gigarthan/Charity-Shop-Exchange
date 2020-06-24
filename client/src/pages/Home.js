@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import Layout from '../components/Layout';
 import Hero from '../components/Home/Hero';
 import GetStartedForm from '../components/Home/GetStartedForm';
@@ -9,17 +9,7 @@ import Register from '../components/Home/Register';
 import Dialog from '../components/Dialog';
 import useDialog from '../components/Dialog/useDialog';
 
-import balloon from '../assets/img/balloon@2x.png';
-import hero from '../assets/img/hero_01_girl.png';
-// import boxes from "../assets/img/boxes.png";
-import onefinger from '../assets/img/one-finger_200_transparent.gif';
-import box from '../assets/img/4039-rocking-gift.gif';
-import boxopen from '../assets/img/18033-box-open-gray-200.gif';
-import boxfill from '../assets/img/3321-shipment.gif';
-import boxwalk from '../assets/img/17431-package-delivery.gif';
-import base from '../assets/img/base@1x.png';
-import door from '../assets/img/door@1x.png';
-import twitter from '../assets/img/twitter.svg';
+
 import Checkout from '../components/Home/Checkout/index';
 import items from '../import/planList';
 

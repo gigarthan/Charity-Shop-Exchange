@@ -62,11 +62,12 @@ export default function Footer(props) {
       billsbyData.itemCount = localItemCount;
     }
 
-  }, [formData]);
-
+  }, [formData,billsbyData.cycleId,billsbyData.itemCount,billsbyData.itemDetails]);
+   // eslint-disable-next-line
   let [newClass, setClassName] = useState('')
+   // eslint-disable-next-line
   let [button, changeButton] = useState('modal-button')
-
+   // eslint-disable-next-line
   const [quantity, setQuantity] = useState(true)
   const handleSubmit = () => {
     //setClassName('loader')//
@@ -166,7 +167,7 @@ export default function Footer(props) {
       <a
         style={{ display: "none" }}
         id="billsbyTriggerAnchor"
-        href="#"
+        href="/#"
         data-billsby-type="checkout"
         data-billsby-product={billsbyData.productId}
         data-billsby-plan={billsbyData.planId}
@@ -202,7 +203,7 @@ const Subscription = ({ formData, orderSummary, newClass, button, handleSubmit, 
     return null
   } return (
     <>
-      {quantity ? <span className="p"><a className="s">{orderSummary.quantity} items</a>delivered every<a className="s2">{formData.delivery.subscription}</a></span> : <div className="fade-in"><span>Thank  You! An email confirmation has been sent.</span></div>}
+      {quantity ? <span className="p"><span className="s">{orderSummary.quantity} items</span>delivered every<span className="s2">{formData.delivery.subscription}</span></span> : <div className="fade-in"><span>Thank  You! An email confirmation has been sent.</span></div>}
       <ModalButton className={modalButtonClassName} type="button" disabled={!isEnabled}
         onClick={handleSubmit} handleChange={handleChange}>
         <>

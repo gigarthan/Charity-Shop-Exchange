@@ -17,7 +17,7 @@ export default function EmailMeWhenSubscribed(props) {
     }
 
     checkBoxRef.current.addEventListener('change', handleChange);
-  }, []);
+  }, [keyToUpdate,onChange]);
 
   return (
     <vaadin-checkbox

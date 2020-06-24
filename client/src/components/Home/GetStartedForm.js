@@ -53,29 +53,30 @@ export default function GetStartedForm({ toggle, onChange }) {
 
   // On componentDidMount (when component is first loaded).
   useEffect(() => {
+    const autoSelectCounty = () => {
+      const {host} = window.location;
+      const subdomain = host.split(".")[0];
+      const normalizedSubdomain = subdomain.trim().toLowerCase();
+  
+      for (const [, county] of Object.entries(counties)) {
+        const normalizedCountyName = county.name.toLowerCase();
+        if (normalizedCountyName === normalizedSubdomain) {
+          setCountyId(county.id);
+          onChange({ name: "charity.countryId", value: county.id });
+        }
+      }
+    }
     autoSelectCounty();
-  }, []);
+  }, [counties,onChange]);
 
   // Clear out the 'Charity' combo if 'County' is changed
   useEffect(() => {
     setCharityId(0);
     onChange({ keyToUpdate: "charity.charityId", value: 0 });
+     // eslint-disable-next-line 
   }, [countyId]);
 
-  // If user arrives on subdomain and it is a valid county auto populate region
-  function autoSelectCounty() {
-    const {host} = window.location;
-    const subdomain = host.split(".")[0];
-    const normalizedSubdomain = subdomain.trim().toLowerCase();
 
-    for (const [, county] of Object.entries(counties)) {
-      const normalizedCountyName = county.name.toLowerCase();
-      if (normalizedCountyName === normalizedSubdomain) {
-        setCountyId(county.id);
-        onChange({ name: "charity.countryId", value: county.id });
-      }
-    }
-  }
 
   // Redirect the user to Subbly
   function handleSubmit() {

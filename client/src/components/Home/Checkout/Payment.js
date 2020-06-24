@@ -33,6 +33,7 @@ export default function Payment(props) {
     cvv: [isRequiredPayment, validCvv],
     name: [isRequiredPayment, isValidCardName],
   }
+  //eslint-disable-next-line
   const [initErrors, setInitErrors] = useState({})
 
   const formSubmitAction = values => {
@@ -40,13 +41,13 @@ export default function Payment(props) {
   };
 
 
-  const { values, errors, fieldChange } = useFormDataValidation(
+  const { values, fieldChange } = useFormDataValidation(
     formInitialValues,
     initErrors,
     formSubmitAction,
     fieldValidators
   )
-
+//eslint-disable-next-line
   const handleSubmit = () => {
     console.log('Submit', formData);
   };

@@ -5,7 +5,6 @@ export default function CheckboxField(props) {
 
   const {
     onChange,
-    value,
     keyToUpdate,
     lable
   } = props;
@@ -18,7 +17,7 @@ export default function CheckboxField(props) {
     }
 
     checkBoxRef.current.addEventListener('change', handleChange);
-  }, []);
+  }, [keyToUpdate, onChange]);
 
   return (
     <vaadin-checkbox
