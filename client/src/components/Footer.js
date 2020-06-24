@@ -28,9 +28,6 @@ export default function Footer() {
               <Link to="/faq">Frequently asked questions</Link>
             </li>
             <li className="text-xs text-gray-200 mb-3 cursor-pointer">
-              <Link to="/together">Together</Link>
-            </li>
-            <li className="text-xs text-gray-200 mb-3 cursor-pointer">
               <button type="button" data-billsby-type="account">
                 Manage account
               </button>
