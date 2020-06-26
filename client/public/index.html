@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-gb">
   <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
       WebFont.load({
@@ -11,6 +11,9 @@
       }
       });
     </script>
+
+    <!-- Billsby script -->
+    <script src="https://checkoutlib.billsby.com/checkout.min.js" data-billsby-company="charityshopexchange"></script>
 
     <!-- GoSquared Analytics -->
     <script>
@@ -22,6 +25,8 @@
       _gs('GSN-976982-Z');
       _gs('set', 'anonymizeIP', true);
     </script>
+
+    <script src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="charityshopexchange-test" ></script>
 
     <style>
       html .font-header { opacity: 1; }
@@ -97,9 +102,9 @@
         <style>
           :host {
             height: 3em;
-            border-radius: 9999px;
+            border-radius: 0.7rem;
             padding: 1px 0 2px 0;
-            background-color: #c53030;
+            background-color: #e33936;
             color: #fff;
             font-weight: bold;
           }
@@ -110,6 +115,82 @@
         </style>
       </template>
     </dom-module>
+
+    <dom-module id="custom-radio-button-icon-color" theme-for="vaadin-radio-button">
+      <template>
+        <style>
+          :host([theme~="custom"][checked]) [part="radio"] {
+            background-color: #c53030;
+          }
+        </style>
+      </template>
+    </dom-module>
+
+    <dom-module id="my-text-field-styles" theme-for="vaadin-text-field vaadin-text-area">
+      <template>
+        <style>
+          :host(.custom-style) [part="input-field"] {
+            border: 1px solid #ccc;
+            background-color: #fff;
+          }
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover, 
+            input:-webkit-autofill:focus, 
+            input:-webkit-autofill:active  {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            box-shadow: 0 0 0 30px white inset !important;
+            -webkit-text-fill-color: #263445;         
+          }
+
+          :host([focused].custom-style) [part="input-field"] {
+            border-color: #aaa;
+            
+          }
+
+          :host([invalid].custom-style) [part="input-field"] {
+            border-color: #c53030;
+          }
+
+          [part="label"]::after {
+            display: none;
+          }
+
+          [part="error-message"]{
+            color: #c53030;
+            font-size: 0.8125rem;
+            margin: 0;
+          }
+        </style>
+      </template>
+    </dom-module>
+
+    <dom-module id="checkbox-button-icon-color" theme-for="vaadin-checkbox">
+      <template>
+        <style>
+          :host([checked]) [part="checkbox"]::after {
+            width: 13px;
+            height: 24px;
+          }
+          [part="checkbox"] {
+            width: calc(18px + 2px);
+            height: calc(18px + 2px);
+          }
+          [part="checkbox"]::after
+          {
+            top: 15px;
+            left: 8px;
+          }
+          :host([theme~="custom"][checked]) [part="checkbox"] {
+            background-color: #c53030;
+          }
+        </style>
+      </template>
+    </dom-module>
+
+    <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>
+    <script>if (!window.customElements) { document.write("<!--"); }</script>
+    <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>
+    <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
 
   </body>
 </html>

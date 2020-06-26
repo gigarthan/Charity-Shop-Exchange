@@ -1,14 +1,13 @@
-import React, {useState, useEffect} from 'react';
-
+import React, { useState, useEffect } from 'react';
 import Combo from '../Combo';
 import Button from '../Button';
 import config from '../../config';
 import locations from '../../import/locations.json';
-import {charities} from '../../import/charities.json';
-import {products} from '../../import/subbly-products.json';
+import { charities } from '../../import/charities.json';
+import { products } from '../../import/subbly-products.json';
 import starttext from '../../assets/img/start text.png';
 
-export default function GetStartedForm({toggle}) {
+export default function GetStartedForm({ toggle, onChange }) {
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
 
@@ -41,15 +40,14 @@ export default function GetStartedForm({toggle}) {
   // (TODO: This is for launch. Remove later when re-adding "Coming soon!" above)
 
   const counties = locations.counties.filter((county) => {
-    let numCharitiesForCounty = charities.reduce(function (count, charity) {
+    const numCharitiesForCounty = charities.reduce(function (count, charity) {
       return count + (charity.countyIds.includes(county.id) ? 1 : 0);
     }, 0);
 
     if (numCharitiesForCounty > 0) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   });
 
   // On componentDidMount (when component is first loaded).
@@ -60,6 +58,7 @@ export default function GetStartedForm({toggle}) {
   // Clear out the 'Charity' combo if 'County' is changed
   useEffect(() => {
     setCharityId(0);
+    onChange({ keyToUpdate: 'charity.charityId', value: 0 });
   }, [countyId]);
 
   // If user arrives on subdomain and it is a valid county auto populate region
@@ -122,13 +121,16 @@ export default function GetStartedForm({toggle}) {
                 <Combo
                   name="countyId"
                   value={countyId}
-                  setValue={setCountyId}
+                  setValue={(value) => {
+                    setCountyId(value);
+                    onChange({ keyToUpdate: 'charity.countryId', value });
+                  }}
                   items={counties}
                   placeholder="select"
                   // style={{ background: '#c7c7c7'}}
                   theme=""
                   label="Select a region"
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full border border-none text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>
@@ -138,7 +140,10 @@ export default function GetStartedForm({toggle}) {
                 <Combo
                   name="charityId"
                   value={charityId}
-                  setValue={setCharityId}
+                  setValue={(value) => {
+                    setCharityId(value);
+                    onChange({ keyToUpdate: 'charity.charityId', value });
+                  }}
                   items={charities.filter((c) =>
                     c.countyIds.includes(countyId),
                   )}
@@ -149,7 +154,7 @@ export default function GetStartedForm({toggle}) {
                   placeholder="select"
                   theme=""
                   label="Pick a charity"
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full border border-none text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>

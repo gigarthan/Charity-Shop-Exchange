@@ -50,6 +50,29 @@ export default function Privacy() {
           </p>
 
           <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+            1. About this policy
+          </h3>
+          <p className="mb-4">
+            The website charityshopexchange.com is owned and operated by Beyond
+            Bazaar Limited, trading as &apos;Charity Shop Exchange&apos;.
+            References to &quot;we&quot;, &quot;us&quot;, or &quot;our&quot; are
+            references to Beyond Bazaar Limited. We are a company registered in
+            England and Wales (company number 12583240).
+          </p>
+          <p className="mb-4">
+            We are committed to respecting the confidentiality of the personal
+            information you supply to us and all data will be processed in
+            accordance with data privacy laws. For the purposes of UK data
+            protection legislation, we are the data controller.
+          </p>
+          <p className="mb-4">
+            You have the right to be provided with clear, transparent and easily
+            understandable information about how we use your information and
+            your rights. This is why we are providing you with the information
+            in this Privacy Policy.
+          </p>
+
+          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             2. Your rights
           </h3>
           <p className="mb-4">
@@ -323,6 +346,17 @@ export default function Privacy() {
               if you have consented to any disclosure to a third party.
             </li>
           </ul>
+          <p className="mb-4">
+            If provision of your personal information is a legal or contractual
+            requirement or a requirement necessary to enter into a contract with
+            us, and you choose not to provide it, we may not be able to perform
+            some of the tasks we need to in order to provide certain products or
+            services to you.
+          </p>
+          <p className="mb-4">
+            If you do choose to provide your consent you can withdraw it at any
+            time by contacting us (see section 3).
+          </p>
 
           <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             7. Where we store your information

@@ -163,7 +163,7 @@ export default function CustomerTerms() {
             </li>
             <li className="mb-4">
               reserve the right to not send certain combinations of products
-              together in an order.
+              together in an order;
             </li>
           </ul>
 
@@ -175,6 +175,7 @@ export default function CustomerTerms() {
             purchase.
           </p>
           <p className="mb-4">
+            {' '}
             Upon acceptance of your order your credit or debit card will be
             billed at checkout for your first delivery only. You will then be
             billed on a recurring basis every week in which a delivery is

@@ -38,11 +38,11 @@ export default function About() {
             charity shops, of which we have more than ten thousand in the UK.
           </p>
         </div>
-        <blockquote className="w-4/5 px-3 py-3 text-lg mx-auto bg-gray-300 text-blue-800 mb-8">
+        <blockquote className="w-4/5 px-3 py-3 text-lg mx-auto bg-gray-300 text-gray-700 mb-8">
           <strong>
             By bringing a cooperative approach to the nation&apos;s vast network
-            of charity shops we’ve developed a robust, dedicated online service.
-            Welcome to Charity Shop Exchange.
+            of charity shops we&apos;ve developed a robust, dedicated online
+            service. Welcome to Charity Shop Exchange.
           </strong>
         </blockquote>
         <p className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">

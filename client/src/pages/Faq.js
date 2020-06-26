@@ -36,6 +36,16 @@ export default function Faq() {
             Is Charity Shop Exchange available in my region of the UK?
           </h2>
           <p className="mb-4">
+            Yes, we deliver UK-wide. If your region isn&apos;t listed on our
+            homepage it&apos;s because we don’t yet have a charity who operates
+            within your region. However don’t let that stop you, you can pick
+            any listed charity, from any region, and they will deliver items to
+            any UK address.
+          </p>
+          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+            Is this a weekly subscription service?
+          </h2>
+          <p className="mb-4">
             Yes, we deliver UK-wide. If your region isn’t listed on our homepage
             it&apos;s because we don’t yet have a charity who operates within
             your region. However don’t let that stop you, you can pick any
@@ -50,6 +60,33 @@ export default function Faq() {
             have too many books and movies in times like these. And if you do
             end up with more than you can manage, they can always be donated
             back to charity shops!
+          </p>
+          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+            What items should I expect to receive?
+          </h2>
+          <p className="mb-4">
+            When subscribing you select from book and/or DVD genres, and with
+            your preferences in mind we handpick items that we think you might
+            enjoy. For example if you select ‘Adventure movie’ then we might
+            send you Raiders of the Lost Ark. We don’t promise that every pick
+            will be a perfect match but we’re sure we can delight you more often
+            than not. And by delegating us responsibility to find you
+            interesting and entertaining material you can sit back and enjoy the
+            serendipity! If you’re unhappy with a selection we’ve made we’ll be
+            happy to replace it.
+          </p>
+          <p className="mb-4">
+            You can start a subscription with just two items per delivery or
+            choose to have as many as eight, and you can change anything about
+            your subscription plan at any time.
+          </p>
+          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+            How else can I help you understand my preferences?
+          </h2>
+          <p className="mb-4">
+            We’ll introduce further ways for you to express your preferences and
+            make more granular choices. In the meantime feel free to tell us how
+            this might work better for you.
           </p>
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             What items should I expect to receive?
@@ -140,6 +177,23 @@ export default function Faq() {
             right now. At the same time it keeps the charity shop sector moving,
             helping to mitigate some of the impact that lockdown has on their
             businesses.
+          </p>
+          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+            What inspires this initiative?
+          </h2>
+          <p className="mb-4">
+            We’re helping the great British institution of charity shops get
+            back to business by selling their books and DVDs. Our subscription
+            service helps charities stay close to their existing customers and
+            brings them a stream of entirely new customers. Hopefully this will
+            mitigate some of the impact that lockdown and social distancing has
+            had, and will have, on charities retail operations and their
+            fundraising.
+          </p>
+          <p className="mb-4">
+            We’re also passionate about how receiving new things to read and
+            watch brings a little therapy to the isolation that many people feel
+            right now with less social interaction in their lives.
           </p>
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             What inspires this initiative?
@@ -263,7 +317,7 @@ export default function Faq() {
           </div>
           <a href="mailto:together@charityshopexchange.com" target="_top">
             <button
-              className="flex-initial py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 hover:bg-red-700 font-base rounded-full text-gray-700 hover:text-white border hover:border-none border-gray-700  focus:outline-none focus:shadow-outline"
+              className="flex-initial py-2 sm:py-3 px-12 sm:px-12 text-sm sm:text-lg mt-20 hover:bg-red-700 font-base rounded-full text-gray-700 hover:text-white border hover:border-none border-gray-700 focus:outline-none focus:shadow-outline"
               type="submit">
               Contact Us
             </button>
