@@ -1,5 +1,4 @@
 import React from 'react';
-// import '@vaadin/vaadin-combo-box';
 
 import data from '~/import/locations.json';
 

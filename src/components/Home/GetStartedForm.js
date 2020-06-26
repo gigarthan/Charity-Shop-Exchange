@@ -9,23 +9,20 @@ import locations from '~/import/locations.json';
 import { products } from '~/import/subbly-products.json';
 import getCountyIdFromURL from '~/utils/GetCountyId';
 
-export default function GetStartedForm({ toggle }) {
+export default function GetStartedForm({ toggle, onChange }) {
   const [countyId, setCountyId] = useState(0);
   const [charityId, setCharityId] = useState(0);
 
   /*
-
   // Append "Coming soon!" to the counties which aren't currently
   // serviced by any charity and mark them as "disabled" so they
   // are greyed out and can't be selected.
   //
   // (TODO: Add back in later; just show available counties at launch)
-
   const counties = locations.counties.map( county => {
     let numCharitiesForCounty = charities.reduce( function(count, charity) {
       return count + ( charity.countyIds.includes(county.id) ? 1 : 0 );
     }, 0)
-
     if (numCharitiesForCounty > 0) {
       return county;
     } else {
@@ -52,7 +49,6 @@ export default function GetStartedForm({ toggle }) {
     return false;
   });
 
-  // On componentDidMount (when component is first loaded).
   useEffect(() => {
     autoSelectCounty();
   }, []);
@@ -149,9 +145,9 @@ export default function GetStartedForm({ toggle }) {
             </div>
             <div className="mt-8">
               <Button
+                className="px-8"
                 onClick={handleSubmit}
-                disabled={charityId === 0}
-                className="px-8">
+                disabled={charityId === 0}>
                 Continue
               </Button>
             </div>

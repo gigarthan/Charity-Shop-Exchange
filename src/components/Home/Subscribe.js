@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default function Subscribe({ toggle }) {
@@ -20,10 +21,12 @@ export default function Subscribe({ toggle }) {
 
               <a
                 href="https://charityshopexchange.com/"
-                onClick={(e) => {e.preventDefault(); toggle();}}
-                className=""
-              >
-                Subscribe here <span className="font-sans">&rarr;</span>{" "}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggle();
+                }}
+                className="">
+                Subscribe here <span className="font-sans">&rarr;</span>{' '}
               </a>
             </span>
           </div>
@@ -36,3 +39,7 @@ export default function Subscribe({ toggle }) {
     </div>
   );
 }
+
+Subscribe.propTypes = {
+  toggle: PropTypes.func.isRequired,
+};

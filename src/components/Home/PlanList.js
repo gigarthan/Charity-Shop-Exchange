@@ -1,4 +1,3 @@
-import React, { useState, useCallback } from 'react';
 import {
   Filters,
   ResourceItem,
@@ -6,6 +5,7 @@ import {
   ResourceList,
   TextStyle,
 } from '@shopify/polaris';
+import React, { useState, useCallback } from 'react';
 
 export default function PlanList({
   items = [],
@@ -49,12 +49,12 @@ export default function PlanList({
       onQueryChange={handleQueryValueChange}
       onQueryClear={handleQueryValueRemove}
       onClearAll={handleClearAll}
-    ></Filters>
+    />
   );
 
   const onPlanSelect = (id) => {
-    console.log('Plan ' + id + ' is slected');
-    const elem = document.getElementById('plan:' + id);
+    console.log(`Plan ${id} is slected`);
+    const elem = document.getElementById(`plan:${id}`);
     console.log(elem);
     elem.click();
   };

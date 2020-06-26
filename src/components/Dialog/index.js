@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Dialog = ({ isShowing, hide, children }) =>
+const Dialog = ({ isLarge = false, isShowing, hide, children }) =>
   isShowing
     ? ReactDOM.createPortal(
         <>
@@ -12,7 +12,9 @@ const Dialog = ({ isShowing, hide, children }) =>
             aria-hidden
             tabIndex={-1}
             role="dialog">
-            <div className="modal">
+            <div
+              id="modal"
+              className={isLarge ? 'modal modal-lg charity_modal' : 'modal'}>
               <div className="modal-container">
                 <div className="modal-header">
                   <button

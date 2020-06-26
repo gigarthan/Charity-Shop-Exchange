@@ -7,18 +7,21 @@ import { charities } from '../../../import/charities.json';
 import locations from '../../../import/locations.json';
 
 export default function Charity(props) {
-  const { handleChange, formData: { charity } } = props;
+  const {
+    handleChange,
+    formData: { charity },
+  } = props;
   const [isOpen, setisOpen] = useState(false);
   const [countyId, setCountyId] = useState(charity.countryId);
   const [charityId, setCharityId] = useState(charity.charityId);
 
   useEffect(() => {
     setCountyId(charity.countryId);
-  },[charity.countryId]);
+  }, [charity.countryId]);
 
   useEffect(() => {
     setCharityId(charity.charityId);
-  },[charity.charityId]);
+  }, [charity.charityId]);
 
   // useEffect(() => {
   //   setCharityId(0);
@@ -45,8 +48,7 @@ export default function Charity(props) {
     <Collapsable
       title="Pick charity"
       open={isOpen}
-      toggle={() => setisOpen(!isOpen)}
-    >
+      toggle={() => setisOpen(!isOpen)}>
       <div className="flex flex-col sm:flex-row w-full">
         <div className="payment-textbox-inner-width ">
           <div className="relative">
@@ -56,8 +58,8 @@ export default function Charity(props) {
               setValue={(value) => {
                 setCountyId(value);
                 setCharityId(0);
-                handleChange({ keyToUpdate: "charity.countryId", value });
-                handleChange({ keyToUpdate: "charity.charityId", value: 0 });
+                handleChange({ keyToUpdate: 'charity.countryId', value });
+                handleChange({ keyToUpdate: 'charity.charityId', value: 0 });
               }}
               items={counties}
               placeholder="select"
@@ -76,7 +78,7 @@ export default function Charity(props) {
               value={charityId}
               setValue={(value) => {
                 setCharityId(value);
-                handleChange({ keyToUpdate: "charity.charityId", value });
+                handleChange({ keyToUpdate: 'charity.charityId', value });
               }}
               items={charities.filter((c) => c.countyIds.includes(countyId))}
               disabled={

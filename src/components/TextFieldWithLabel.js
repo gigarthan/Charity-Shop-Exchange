@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import '@vaadin/vaadin-text-field';
 import React, { useEffect, useRef } from 'react';
 
 export default function TextFieldWithLabel(props) {
@@ -25,6 +24,7 @@ export default function TextFieldWithLabel(props) {
   const textField = useRef(null);
 
   useEffect(() => {
+    require('@vaadin/vaadin-text-field');
     // Handle changes to the combo box
     function handleChange(e) {
       const { value: targetValue } = e.target;
@@ -67,8 +67,8 @@ export default function TextFieldWithLabel(props) {
 TextFieldWithLabel.propTypes = {
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
@@ -82,4 +82,9 @@ TextFieldWithLabel.propTypes = {
   required: PropTypes.bool.isRequired,
   onblur: PropTypes.bool.isRequired,
   htmlFor: PropTypes.string.isRequired,
+};
+
+TextFieldWithLabel.defaultProps = {
+  label: '',
+  placeholder: '',
 };

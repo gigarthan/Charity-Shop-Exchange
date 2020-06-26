@@ -3,4 +3,5 @@
 @tailwind utilities;
 
 @import 'form.css';
+@import 'checkout.css';
 @import 'shareButton.css';

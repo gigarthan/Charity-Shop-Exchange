@@ -1,9 +1,16 @@
-import { navigate } from 'gatsby';
 import React, { useState } from 'react';
 
-function Register() {
-  const [_, setRedirectStatus] = useState(false);
-  const [alertStatus, setAlertStatus] = useState(null);
+import Layout from '~/components/Layout';
+
+export default function Register() {
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
+      )
+      .join('&');
+  };
+
   const [contact, setContact] = useState({
     name: '',
     email: '',
@@ -44,7 +51,7 @@ function Register() {
   };
 
   return (
-    <div>
+    <Layout>
       <div className="bg-new-navy">
         <div className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-12 sm:pt-20 pb-20 sm:pb-32">
           By selling books & DVDs on a subscription basis we give charity shops
@@ -173,13 +180,8 @@ function Register() {
                   <div className="flex flex-col items-center">
                     <button
                       className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
-                      type="submit"
-                      onClick={() =>
-                        setTimeout(() => {
-                          navigate('/');
-                        }, 1000)
-                      }>
-                      {alertStatus != null ? `${alertStatus}` : `Submit`}
+                      type="submit">
+                      Submit
                     </button>
                   </div>
                 </form>
@@ -188,6 +190,6 @@ function Register() {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

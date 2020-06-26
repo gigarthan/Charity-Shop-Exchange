@@ -4,26 +4,36 @@ import TextFieldWithLabel from '../../TextFieldWithLabel';
 import Visa from '../../../assets/img/icons8-visa.svg';
 import MasterCard from '../../../assets/img/icons8-mastercard.svg';
 import Discover from '../../../assets/img/icons8-discover.svg';
-import Card1 from '../../../assets/img/card1.png'
-import Card2 from '../../../assets/img/card2.png'
-import Card3 from '../../../assets/img/card3.png'
+import Card1 from '../../../assets/img/card1.png';
+import Card2 from '../../../assets/img/card2.png';
+import Card3 from '../../../assets/img/card3.png';
 import EmailMeWhenSubscribed from './EmailMeWhenSubscribed';
 
-import useFormDataValidation, { isRequiredPayment, validNumber, isValidCardName, isValidEmail, validCreditCard, validCvv, validDate, phoneNumber } from "../../../hooks/useFormDataValidation";
+import useFormDataValidation, {
+  isRequiredPayment,
+  validNumber,
+  isValidCardName,
+  isValidEmail,
+  validCreditCard,
+  validCvv,
+  validDate,
+  phoneNumber,
+} from '../../../hooks/useFormDataValidation';
 
-const valid = require('card-validator')
+const valid = require('card-validator');
 
 export default function Payment(props) {
   const { formData, handleChange } = props;
   const { payment, delivery } = formData;
   const [isOpen, setisOpen] = useState(false);
 
-
-  const [formInitialValues, setFormInitialValues] = useState({ ...formData.payment });
+  const [formInitialValues, setFormInitialValues] = useState({
+    ...formData.payment,
+  });
 
   useEffect(() => {
-    setFormInitialValues({ ...formData.payment })
-  }, [formData])
+    setFormInitialValues({ ...formData.payment });
+  }, [formData]);
 
   const fieldValidators = {
     phone: [isRequiredPayment, validNumber],
@@ -32,33 +42,34 @@ export default function Payment(props) {
     expiry_at: [isRequiredPayment, validDate],
     cvv: [isRequiredPayment, validCvv],
     name: [isRequiredPayment, isValidCardName],
-  }
-  const [initErrors, setInitErrors] = useState({})
-
-  const formSubmitAction = values => {
-    console.log(values)
   };
+  const [initErrors, setInitErrors] = useState({});
 
+  const formSubmitAction = (values) => {
+    console.log(values);
+  };
 
   const { values, errors, fieldChange } = useFormDataValidation(
     formInitialValues,
     initErrors,
     formSubmitAction,
-    fieldValidators
-  )
+    fieldValidators,
+  );
 
   const handleSubmit = () => {
     console.log('Submit', formData);
   };
 
-  console.log('payment.phone && payment.phone.length > 0 && !phoneNumber.test(payment.phone)',payment.phone.length > 0 ? !phoneNumber.test(payment.phone) : false);
+  console.log(
+    'payment.phone && payment.phone.length > 0 && !phoneNumber.test(payment.phone)',
+    payment.phone.length > 0 ? !phoneNumber.test(payment.phone) : false,
+  );
 
   return (
     <Collapsable
       title="Payment"
       open={isOpen}
-      toggle={() => setisOpen(!isOpen)}
-    >
+      toggle={() => setisOpen(!isOpen)}>
       <div className="flex flex-col">
         <div className="payment-textbox-inner-width" autoCorrect="off">
           <div className="relative">
@@ -74,61 +85,80 @@ export default function Payment(props) {
               keyToUpdate="payment.card_number"
               value={payment.card_number}
               onChange={(value) => {
-                handleChange(value)
+                handleChange(value);
               }}
               required={true}
               onblur={(event) => fieldChange(event, 'card_number')}
             />
-            <Card valid={valid} formData={formData}  Card1={Card1} Card2={Card2} Card3={Card3} Discover={Discover} MasterCard={MasterCard} Visa={Visa} />
+            <Card
+              valid={valid}
+              formData={formData}
+              Card1={Card1}
+              Card2={Card2}
+              Card3={Card3}
+              Discover={Discover}
+              MasterCard={MasterCard}
+              Visa={Visa}
+            />
           </div>
           {/* <p style={{fontSize: '14px', padding: '0 10px', color: '#c53030'}}>{errors.card_number}</p> */}
         </div>
       </div>
-        <div className="payment-textbox-inner-width">
-          <div style={{ display: 'flex' }}>
-            <div className="relative" style={{ width: '50%' }}>
-              <TextFieldWithLabel
-                autocomplete="cc-exp"
-                placeholder="MM/YY"
-                name="cc-exp"
-                mask={"00/0000"}
-                keyToUpdate="payment.expiry_at"
-                // className="w-6/12"
-                title="MM/YY"
-                value={payment.expiry_at}
-                pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)"s
-                max={5}
-                required={true}
-                onChange={(value) => {
-                  handleChange(value)
-                }}
-                onblur={(event) => fieldChange(event, 'expiry_at')}
-              />  
-            </div>
-            <div className="relative" style={{ width: '50%' }}>
-              <TextFieldWithLabel
-                autocomplete="cc-csc"
-                placeholder="CVV"
-                name="cc-csc"
-                keyToUpdate="payment.cvv"
-                // className="w-6/12"
-                title="CVV"
-                value={payment.cvv}
-                required={true}
-                onChange={(value) => {
-                  handleChange(value)
-                }}
-                max={4}
-                onblur={(event) => fieldChange(event, 'cvv')}
-              />
-             <CVVIMG valid={valid} formData={formData}  Card1={Card1} Card2={Card2} Card3={Card3} Discover={Discover} MasterCard={MasterCard} Visa={Visa} />  
-            </div>
+      <div className="payment-textbox-inner-width">
+        <div style={{ display: 'flex' }}>
+          <div className="relative" style={{ width: '50%' }}>
+            <TextFieldWithLabel
+              autocomplete="cc-exp"
+              placeholder="MM/YY"
+              name="cc-exp"
+              mask={'00/0000'}
+              keyToUpdate="payment.expiry_at"
+              // className="w-6/12"
+              title="MM/YY"
+              value={payment.expiry_at}
+              pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)"
+              s
+              max={5}
+              required={true}
+              onChange={(value) => {
+                handleChange(value);
+              }}
+              onblur={(event) => fieldChange(event, 'expiry_at')}
+            />
           </div>
-          <div style={{display: 'flex'}}>
-          {/* <p style={{fontSize: '14px', padding: '0 10px', color: '#c53030'}}>{errors.expiry_at}</p>
-          <p style={{fontSize: '14px', padding: '0 16px', color: '#c53030'}}>{errors.cvv}</p> */}
+          <div className="relative" style={{ width: '50%' }}>
+            <TextFieldWithLabel
+              autocomplete="cc-csc"
+              placeholder="CVV"
+              name="cc-csc"
+              keyToUpdate="payment.cvv"
+              // className="w-6/12"
+              title="CVV"
+              value={payment.cvv}
+              required={true}
+              onChange={(value) => {
+                handleChange(value);
+              }}
+              max={4}
+              onblur={(event) => fieldChange(event, 'cvv')}
+            />
+            <CVVIMG
+              valid={valid}
+              formData={formData}
+              Card1={Card1}
+              Card2={Card2}
+              Card3={Card3}
+              Discover={Discover}
+              MasterCard={MasterCard}
+              Visa={Visa}
+            />
           </div>
         </div>
+        <div style={{ display: 'flex' }}>
+          {/* <p style={{fontSize: '14px', padding: '0 10px', color: '#c53030'}}>{errors.expiry_at}</p>
+          <p style={{fontSize: '14px', padding: '0 16px', color: '#c53030'}}>{errors.cvv}</p> */}
+        </div>
+      </div>
       <div className="flex flex-col">
         <div className="payment-textbox-inner-width">
           <div className="relative">
@@ -141,7 +171,7 @@ export default function Payment(props) {
               keyToUpdate="payment.name"
               value={payment.name}
               onChange={(value) => {
-                handleChange(value)
+                handleChange(value);
               }}
               onBlur={(event) => fieldChange(event, 'name')}
             />
@@ -162,12 +192,16 @@ export default function Payment(props) {
               keyToUpdate="payment.phone"
               value={payment.phone}
               onChange={(value) => {
-                handleChange(value)
+                handleChange(value);
               }}
               title="May be used to assist delivery"
               onblur={(event) => fieldChange(event, 'phone')}
             />
-            <p className="error">{(payment.phone && payment.phone.length > 0) && validNumber(payment.phone)}</p>
+            <p className="error">
+              {payment.phone &&
+                payment.phone.length > 0 &&
+                validNumber(payment.phone)}
+            </p>
           </div>
         </div>
         <div className="payment-textbox-inner-width ">
@@ -180,18 +214,26 @@ export default function Payment(props) {
               value={payment.email}
               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
               required={true}
-              error={(payment.email && payment.email.length > 0) && isValidEmail(payment.email)}
+              error={
+                payment.email &&
+                payment.email.length > 0 &&
+                isValidEmail(payment.email)
+              }
               onChange={(value) => {
-                handleChange(value)
+                handleChange(value);
               }}
               onblur={(event) => fieldChange(event, 'email')}
             />
           </div>
         </div>
-        <div className="mt-4" style={{ color: '#696969', padding: '0 8px', margin: 0 }}>
-          <EmailMeWhenSubscribed 
-            keyToUpdate="payment.isEmailedMe" 
-            onChange={(value) => { handleChange(value)}}
+        <div
+          className="mt-4"
+          style={{ color: '#696969', padding: '0 8px', margin: 0 }}>
+          <EmailMeWhenSubscribed
+            keyToUpdate="payment.isEmailedMe"
+            onChange={(value) => {
+              handleChange(value);
+            }}
             lable="Yes, email me about special offers and new product information"
           />
         </div>
@@ -214,7 +256,7 @@ export default function Payment(props) {
             </div> */}
             <div className="md:w-1/2 pr-1">
               <div className="relative">
-                <TextFieldWithLabel 
+                <TextFieldWithLabel
                   autocomplete="name"
                   label={'First name'}
                   name="name"
@@ -222,7 +264,12 @@ export default function Payment(props) {
                   value={payment.billing_firstname}
                   pattern=".{2,}"
                   required={true}
-                  error={(values.billing_firstname && values.billing_firstname.length > 0) && !(/^.{2,}$/).test(values.billing_firstname) && 'Please enter recipients first name'}
+                  error={
+                    values.billing_firstname &&
+                    values.billing_firstname.length > 0 &&
+                    !/^.{2,}$/.test(values.billing_firstname) &&
+                    'Please enter recipients first name'
+                  }
                   onChange={handleChange}
                   onblur={(event) => fieldChange(event, 'billing_firstname')}
                 />
@@ -230,7 +277,7 @@ export default function Payment(props) {
             </div>
             <div className="md:w-1/2 pr-1">
               <div className="relative">
-                <TextFieldWithLabel 
+                <TextFieldWithLabel
                   autocomplete="name"
                   label={'Last name'}
                   name="name"
@@ -238,7 +285,12 @@ export default function Payment(props) {
                   value={payment.billing_lastname}
                   pattern=".{2,}"
                   required={true}
-                  error={(values.billing_lastname && values.billing_lastname.length > 0) && !(/^.{2,}$/).test(values.billing_lastname) && 'Please enter recipients last name'}
+                  error={
+                    values.billing_lastname &&
+                    values.billing_lastname.length > 0 &&
+                    !/^.{2,}$/.test(values.billing_lastname) &&
+                    'Please enter recipients last name'
+                  }
                   onChange={handleChange}
                   onblur={(event) => fieldChange(event, 'billing_lastname')}
                 />
@@ -255,7 +307,14 @@ export default function Payment(props) {
                   required={true}
                   value={payment.billing_postcode}
                   pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$"
-                  error={(values.billing_postcode && values.billing_postcode.length > 0) && !(/^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/).test(values.billing_postcode) && 'Please enter a valid postcode'}
+                  error={
+                    values.billing_postcode &&
+                    values.billing_postcode.length > 0 &&
+                    !/^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/.test(
+                      values.billing_postcode,
+                    ) &&
+                    'Please enter a valid postcode'
+                  }
                   onblur={(event) => fieldChange(event, 'billing_postcode')}
                   onChange={handleChange}
                 />
@@ -271,7 +330,12 @@ export default function Payment(props) {
                   required={true}
                   max={255}
                   pattern=".{1,}"
-                  error={(values.billing_address_1 && values.billing_address_1.length > 0) && !(/^.{1,}$/).test(values.billing_address_1) && 'Please enter a valid address'}
+                  error={
+                    values.billing_address_1 &&
+                    values.billing_address_1.length > 0 &&
+                    !/^.{1,}$/.test(values.billing_address_1) &&
+                    'Please enter a valid address'
+                  }
                   value={payment.billing_address_1}
                   onblur={(event) => fieldChange(event, 'billing_address_1')}
                   onChange={handleChange}
@@ -302,7 +366,12 @@ export default function Payment(props) {
                   max={35}
                   pattern=".{2,}"
                   required={true}
-                  error={(values.billing_town && values.billing_town.length > 0) && !(/^.{2,}$/).test(values.billing_town) && 'Please enter the postal town or city'}
+                  error={
+                    values.billing_town &&
+                    values.billing_town.length > 0 &&
+                    !/^.{2,}$/.test(values.billing_town) &&
+                    'Please enter the postal town or city'
+                  }
                   value={payment.billing_town}
                   onblur={(event) => fieldChange(event, 'billing_town')}
                   onChange={handleChange}
@@ -335,43 +404,109 @@ export default function Payment(props) {
     </Collapsable>
   );
 }
-const Card = ({ formData, valid, Visa,MasterCard,Discover, Card1, Card2, Card3 }) => {
-  const cardValidator = valid.number(formData.payment['card_number'], { luhnValidateVisaCard: false });
+const Card = ({
+  formData,
+  valid,
+  Visa,
+  MasterCard,
+  Discover,
+  Card1,
+  Card2,
+  Card3,
+}) => {
+  const cardValidator = valid.number(formData.payment['card_number'], {
+    luhnValidateVisaCard: false,
+  });
   if (cardValidator.card) {
     return (
       <div className="payment-card-img">
-        <img className="" src={cardValidator.card && cardValidator.card.type && cardValidator.card.type === 'mastercard' ? MasterCard : Card1}  alt="card1" />
-        <img className="" src={cardValidator.card && cardValidator.card.type && cardValidator.card.type === 'discover' ? Discover : Card2}  alt="card2" />
-        <img className="" src={cardValidator.card && cardValidator.card.type && cardValidator.card.type === 'visa' ? Visa : Card3} alt="card3" />
+        <img
+          className=""
+          src={
+            cardValidator.card &&
+            cardValidator.card.type &&
+            cardValidator.card.type === 'mastercard'
+              ? MasterCard
+              : Card1
+          }
+          alt="card1"
+        />
+        <img
+          className=""
+          src={
+            cardValidator.card &&
+            cardValidator.card.type &&
+            cardValidator.card.type === 'discover'
+              ? Discover
+              : Card2
+          }
+          alt="card2"
+        />
+        <img
+          className=""
+          src={
+            cardValidator.card &&
+            cardValidator.card.type &&
+            cardValidator.card.type === 'visa'
+              ? Visa
+              : Card3
+          }
+          alt="card3"
+        />
       </div>
-    )
+    );
   }
-    return (
-      <>
-        <div className="payment-card-img">
-          <img className="" src={Card1} alt="card1" />
-          <img className="" src={Card2} alt="card2" />
-          <img className="" src={Card3} alt="card3" />
-        </div>
-      </>
-    )
-}
-const CVVIMG = ({formData, valid, Visa,MasterCard,Discover, Card1, Card2, Card3}) => {
-  const cardValidator = valid.number(formData.payment['card_number'], { luhnValidateVisaCard: false });
+  return (
+    <>
+      <div className="payment-card-img">
+        <img className="" src={Card1} alt="card1" />
+        <img className="" src={Card2} alt="card2" />
+        <img className="" src={Card3} alt="card3" />
+      </div>
+    </>
+  );
+};
+const CVVIMG = ({
+  formData,
+  valid,
+  Visa,
+  MasterCard,
+  Discover,
+  Card1,
+  Card2,
+  Card3,
+}) => {
+  const cardValidator = valid.number(formData.payment['card_number'], {
+    luhnValidateVisaCard: false,
+  });
   if (cardValidator.card) {
     return (
       <div className="payment-card-img">
-      <img className="" src={cardValidator.card && cardValidator.card.type && cardValidator.card.type === 'mastercard' ? MasterCard
-      : cardValidator.card && cardValidator.card.type && cardValidator.card.type  === 'visa' ? Visa 
-      : cardValidator.card && cardValidator.card.type && cardValidator.card.type  === 'discover' ? Discover : Card1 } alt="cvv" />
-    </div>
-    )
+        <img
+          className=""
+          src={
+            cardValidator.card &&
+            cardValidator.card.type &&
+            cardValidator.card.type === 'mastercard'
+              ? MasterCard
+              : cardValidator.card &&
+                cardValidator.card.type &&
+                cardValidator.card.type === 'visa'
+              ? Visa
+              : cardValidator.card &&
+                cardValidator.card.type &&
+                cardValidator.card.type === 'discover'
+              ? Discover
+              : Card1
+          }
+          alt="cvv"
+        />
+      </div>
+    );
   }
   return (
     <div className="payment-card-img">
-    <img className="" src={Card1} alt="card1" />
-  </div>
-  )
-}
-
-
+      <img className="" src={Card1} alt="card1" />
+    </div>
+  );
+};

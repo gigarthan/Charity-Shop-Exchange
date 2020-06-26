@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { Card, Tabs } from "@shopify/polaris";
-import Collapsable from "../Collapsable";
-import Button from "../../Button";
-import NumberFieldWithLabel from "../../NumberFieldWithLabel";
+import React, { Component } from 'react';
+import { Card, Tabs } from '@shopify/polaris';
+import Collapsable from '../Collapsable';
+import Button from '../../Button';
+import NumberFieldWithLabel from '../../NumberFieldWithLabel';
 
-import shopping from "../../../assets/img/shopping.png";
+import shopping from '../../../assets/img/shopping.png';
 
-import "@vaadin/vaadin-radio-button";
-import RadioField from "../../RadioField";
+import RadioField from '../../RadioField';
 
 export default class Selection extends Component {
   constructor(props) {
+    require('@vaadin/vaadin-radio-button');
     super(props);
     this.state = {
       isOpen: true,
@@ -18,8 +18,8 @@ export default class Selection extends Component {
       genresItems: props.genres,
       checkOutItems: {
         dvd: [],
-        books: []
-      }
+        books: [],
+      },
     };
   }
 
@@ -29,14 +29,14 @@ export default class Selection extends Component {
 
     const keys = ['dvd', 'books'];
 
-    for(const key of keys) {
+    for (const key of keys) {
       const checkoutKeyItems = checkoutItems[key];
       const genreKeyItems = genreItems[key];
 
-      for(const item of checkoutKeyItems) {
-        if(item.quantity > 0) {
-          const index = genreKeyItems.findIndex(elem => elem.id === item.id);
-          if(index !== -1) {
+      for (const item of checkoutKeyItems) {
+        if (item.quantity > 0) {
+          const index = genreKeyItems.findIndex((elem) => elem.id === item.id);
+          if (index !== -1) {
             genreKeyItems[index].value = item.quantity;
           }
         }
@@ -45,62 +45,62 @@ export default class Selection extends Component {
 
     this.setState({
       checkOutItems: checkoutItems,
-      genresItems: genreItems
+      genresItems: genreItems,
     });
   }
 
-  handleTabChange = selectedTabIndex =>
+  handleTabChange = (selectedTabIndex) =>
     this.setState({ selected: selectedTabIndex });
 
   handleOnChange = (selectedId, value, tabSelected) => {
     let tempCheckoutObj = { ...this.state.checkOutItems };
 
-    let index = tempCheckoutObj[tabSelected].findIndex(x => {
+    let index = tempCheckoutObj[tabSelected].findIndex((x) => {
       return x.id === selectedId;
     });
 
     if (index === -1) {
       let temp = {
         id: selectedId,
-        quantity: parseInt(value)
+        quantity: parseInt(value),
       };
 
       tempCheckoutObj[tabSelected].push(temp);
     } else {
-      tempCheckoutObj[tabSelected][index]["quantity"] = value;
+      tempCheckoutObj[tabSelected][index]['quantity'] = value;
     }
 
     let tempGenresObj = { ...this.state.genresItems };
     const elementIndex = tempGenresObj[tabSelected].findIndex(
-      element => element.id == selectedId
+      (element) => element.id == selectedId,
     );
     let updateGenreArray = [...tempGenresObj[tabSelected]];
     updateGenreArray[elementIndex] = {
       ...updateGenreArray[elementIndex],
-      value: parseInt(value)
+      value: parseInt(value),
     };
 
     this.setState(
-      prevState => {
+      (prevState) => {
         return {
           ...prevState,
           genresItems: {
             ...prevState.genresItems,
-            [tabSelected]: updateGenreArray
+            [tabSelected]: updateGenreArray,
           },
-          checkOutItems: tempCheckoutObj
+          checkOutItems: tempCheckoutObj,
         };
       },
       () => {
         this.props.handleChange({
-          keyToUpdate: "checkoutItems.dvd",
-          value: this.state.checkOutItems && this.state.checkOutItems.dvd
+          keyToUpdate: 'checkoutItems.dvd',
+          value: this.state.checkOutItems && this.state.checkOutItems.dvd,
         });
         this.props.handleChange({
-          keyToUpdate: "checkoutItems.books",
-          value: this.state.checkOutItems && this.state.checkOutItems.books
+          keyToUpdate: 'checkoutItems.books',
+          value: this.state.checkOutItems && this.state.checkOutItems.books,
         });
-      }
+      },
     );
   };
 
@@ -109,31 +109,37 @@ export default class Selection extends Component {
 
     const tabs = [
       {
-        id: "books",
-        content: "Books",
-        panelID: "Books"
+        id: 'books',
+        content: 'Books',
+        panelID: 'Books',
       },
       {
-        id: "dvd",
-        content: "DVDs",
-        panelID: "DVD"
-      }
+        id: 'dvd',
+        content: 'DVDs',
+        panelID: 'DVD',
+      },
     ];
 
     return (
       <Collapsable
         title="Select from book and/or DVD genres"
         open={isOpen}
-        toggle={() => this.setState({ isOpen: !isOpen })}
-      >
-        <div className="itemsInfo"><span className="items">£2 per item, receive up to eight items per<span className="items"> delivery, start with a minimum of two.</span></span></div>
+        toggle={() => this.setState({ isOpen: !isOpen })}>
+        <div className="itemsInfo">
+          <span className="items">
+            £2 per item, receive up to eight items per
+            <span className="items">
+              {' '}
+              delivery, start with a minimum of two.
+            </span>
+          </span>
+        </div>
         <div className="accordion-inner-tab">
           <Tabs
             tabs={tabs}
             selected={selected}
             onSelect={this.handleTabChange}
-            fitted
-          >
+            fitted>
             <Card.Section>
               <div className="flex flex-row flex-wrap items-center justify-space-between">
                 {genresItems[tabs[selected].id].map((genre, index) => {

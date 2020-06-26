@@ -9,6 +9,8 @@ import HowItWorks from '~/components/Home/HowItWorks';
 import Mission from '~/components/Home/Mission';
 import Register from '~/components/Home/Register';
 import Subscribe from '~/components/Home/Subscribe';
+import useFormData from '~/hooks/useFormData';
+import items from '~/import/planList';
 
 export default function Home() {
   const { isShowing, toggle } = useDialog();
@@ -104,7 +106,6 @@ export default function Home() {
             @CharityShopEx
           </a>
         </p>{' '}
-        */}
       </Dialog>
     </>
   );

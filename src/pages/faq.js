@@ -1,9 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '~/components/Layout';
+
 export default function Faq() {
   return (
-    <div>
+    <Layout>
       <div className="bg-new-navy w-full">
         <h1 className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-8 sm:pt-12 pb-8 sm:pb-12">
           Frequently asked questions
@@ -322,6 +324,6 @@ export default function Faq() {
           </a>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

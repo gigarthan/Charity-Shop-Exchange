@@ -1,5 +1,3 @@
-import '@vaadin/vaadin-radio-button';
-import '@vaadin/vaadin-radio-button/vaadin-radio-group';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef } from 'react';
 
@@ -9,6 +7,8 @@ export default function RadioField(props) {
   const radioField = useRef(null);
 
   useEffect(() => {
+    require('@vaadin/vaadin-radio-button');
+    require('@vaadin/vaadin-radio-button/vaadin-radio-group');
     function handleChange(e) {
       onChange({ keyToUpdate, value: e.target.value });
     }

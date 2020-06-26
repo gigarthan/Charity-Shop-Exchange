@@ -5,7 +5,10 @@ import Button from '../../Button';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 
 export default function ContactDetails(props) {
-  const { formData: { contact }, handleChange } = props;
+  const {
+    formData: { contact },
+    handleChange,
+  } = props;
 
   const [isOpen, setisOpen] = useState(false);
 
@@ -13,22 +16,21 @@ export default function ContactDetails(props) {
     <Collapsable
       title="Contact"
       open={isOpen}
-      toggle={() => setisOpen(!isOpen)}
-    >
+      toggle={() => setisOpen(!isOpen)}>
       <div className="flex flex-col sm:flex-row w-full">
         <div className="payment-textbox-inner-width ">
           <div className="relative">
-            <TextFieldWithLabel 
+            <TextFieldWithLabel
               label={'Phone number'}
               name="contact.phone"
               value={contact.phone}
               onChange={handleChange}
             />
-            </div>
+          </div>
         </div>
         <div className="payment-textbox-inner-width ">
           <div className="relative">
-            <TextFieldWithLabel 
+            <TextFieldWithLabel
               label={'Email address'}
               name="contact.email"
               value={contact.email}

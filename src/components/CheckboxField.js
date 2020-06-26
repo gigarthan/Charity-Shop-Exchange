@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef } from 'react';
-import '@vaadin/vaadin-checkbox';
 
 export default function CheckboxField(props) {
   const { onChange, keyToUpdate, label } = props;
@@ -8,6 +7,7 @@ export default function CheckboxField(props) {
   const checkBoxRef = useRef(null);
 
   useEffect(() => {
+    require('@vaadin/vaadin-checkbox');
     function handleChange(e) {
       onChange({ keyToUpdate, value: e.target.checked }, e);
     }

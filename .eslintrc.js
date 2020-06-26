@@ -2,8 +2,10 @@ module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react'],
   plugins: ['react', 'prettier'],
   rules: {
+    'global-require': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'no-alert': 'error',
+    'import/no-named-as-default': 'off',
+    'no-alert': 'warn',
     'no-console': 'warn',
     'global-require': 'off',
     'no-param-reassign': ['error', { props: false }],

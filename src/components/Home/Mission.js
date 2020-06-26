@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 
 export default function Mission() {
   return (
@@ -7,18 +7,18 @@ export default function Mission() {
       <div className="text-center leading-tight font-header max-w-screen-lg mx-auto text-2xl sm:text-5xl font-bold text-new-lightnavy px-12 sm:px-20">
         Responding to the coronavirus crisis
         <span className="block text-left text-sm sm:text-xl font-medium mt-12 text-gray-700 leading-normal">
-        We're in this together. Whilst we’re past the peak, the heightened public health situation remains and there will be no 
-        single moment when everything gets back to normal. Charity Shop Exchange is our response. A service built for
-        the “new normal”, an effort to deliver a service to people who need the benefit of new things to read and watch, and an 
-        initiative to help charity shops back on their feet.
+          We're in this together. Whilst we’re past the peak, the heightened
+          public health situation remains and there will be no single moment
+          when everything gets back to normal. Charity Shop Exchange is our
+          response. A service built for the “new normal”, an effort to deliver a
+          service to people who need the benefit of new things to read and
+          watch, and an initiative to help charity shops back on their feet.
         </span>
         <div className="mt-8 sm:mt-12 text-center cursor-pointer text-sm sm:text-xl font-medium text-red-700 transition duration-500 ease-in-out transform hover:-translate-y-1">
           <span className="block flex-shrink-0 mr-3 ">
-            <Link
-              to="/about"
-              className=""
-            >
-              Learn more about our approach <span className="font-sans">&rarr;</span>{" "}
+            <Link to="/about" className="">
+              Learn more about our approach{' '}
+              <span className="font-sans">&rarr;</span>{' '}
             </Link>
           </span>
           {/* <svg

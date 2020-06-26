@@ -1,9 +1,11 @@
+import { Link } from 'gatsby';
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import Layout from '~/components/Layout';
 
 export default function Terms() {
   return (
-    <div>
+    <Layout>
       <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto px-3 sm:px-0 ">
         <blockquote className="w-4/5 px-3 py-3 text-lg mx-auto bg-gray-300 text-gray-700 mb-8 mt-4">
           <p>
@@ -212,6 +214,6 @@ export default function Terms() {
           </p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

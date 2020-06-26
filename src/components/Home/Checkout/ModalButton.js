@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
 
 export default function modalButton(props) {
   const {
@@ -11,24 +10,23 @@ export default function modalButton(props) {
     theme,
     text,
     className,
-    type
+    type,
   } = props;
 
   return (
     <>
-    <button
-      name={name}
-      onClick={onClick}
-      disabled={disabled}
-      ref={button}
-      style={style}
-      className={className}
-      theme={theme}
-      type={type}
-    >
-      {text}
-      {props.children}
-    </button>
+      <button
+        name={name}
+        onClick={onClick}
+        disabled={disabled}
+        ref={button}
+        style={style}
+        className={className}
+        theme={theme}
+        type={type}>
+        {text}
+        {props.children}
+      </button>
     </>
   );
 }

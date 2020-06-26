@@ -5,12 +5,6 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
         <style>{`
         .font-header {
           opacity: 0;
@@ -54,7 +48,7 @@ export default function HTML(props) {
             <style>{`
           :host {
             height: 3em;
-            border-radius: 9999px;
+            border-radius: 0.7rem;
             padding: 1px 0 2px 0;
             background-color: #c53030;
             color: #fff;
@@ -85,14 +79,37 @@ export default function HTML(props) {
           theme-for="vaadin-text-field vaadin-text-area">
           <template>
             <style>{`
-          :host(.custom-style) [part="input-field"] {
-            border: 1px solid #ccc;
-            background-color: #fff;
-          }
+            :host(.custom-style) [part="input-field"] {
+              border: 1px solid #ccc;
+              background-color: #fff;
+            }
+              input:-webkit-autofill,
+              input:-webkit-autofill:hover, 
+              input:-webkit-autofill:focus, 
+              input:-webkit-autofill:active  {
+              -webkit-box-shadow: 0 0 0 30px white inset !important;
+              box-shadow: 0 0 0 30px white inset !important;
+              -webkit-text-fill-color: #263445;         
+            }
 
-          :host([focused].custom-style) [part="input-field"] {
-            border-color: #aaa;
-          }
+            :host([focused].custom-style) [part="input-field"] {
+              border-color: #aaa;
+              
+            }
+
+            :host([invalid].custom-style) [part="input-field"] {
+              border-color: #c53030;
+            }
+
+            [part="label"]::after {
+              display: none;
+            }
+
+            [part="error-message"]{
+              color: #c53030;
+              font-size: 0.8125rem;
+              margin: 0;
+            }
         `}</style>
           </template>
         </dom-module>
@@ -127,6 +144,12 @@ export default function HTML(props) {
           <input type="text" name="number" />
           <input type="text" name="message" />
         </form>
+
+        <script
+          src="https://checkoutlib.billsby.com/checkout.min.js"
+          data-billsby-company="charityshopexchange"
+          crossOrigin="anonymous"
+        />
 
         <script>{`
       !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
