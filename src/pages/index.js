@@ -6,9 +6,6 @@ import Home from './home';
 
 import Layout from '~/components/Layout';
 
-import '@shopify/polaris/styles.css';
-import '~/assets/styles/index.css';
-
 const IndexPage = () => (
   <AppProvider i18n={enTranslations}>
     <Layout>

@@ -70,7 +70,6 @@ export default function GetStartedForm({ toggle, onChange }) {
   // Redirect the user to Subbly
   function handleSubmit() {
     const searchParams = new URLSearchParams(window.location.search);
-
     if (searchParams.has('testMode') === true) {
       // We are in test mode; act as if we are launched
 
