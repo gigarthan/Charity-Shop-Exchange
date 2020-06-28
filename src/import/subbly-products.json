@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": 42766,
+      "name": "Dorset Charities Box",
+      "countyIds": [12]
+    },
+    {
+      "id": 44432,
+      "name": "Hampshire Charities Box",
+      "countyIds": [19]
+    }
+  ]
+}

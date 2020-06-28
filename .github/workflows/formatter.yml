@@ -13,6 +13,5 @@ jobs:
         with:
           node-version: 12
       - run: |
-          cd client
           yarn
           yarn run format:check

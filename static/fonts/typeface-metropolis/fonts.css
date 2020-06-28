@@ -1,0 +1,26 @@
+
+/* metropolis-700normal - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Metropolis Bold normal'),
+    local('Metropolis-Boldnormal'),
+    url('./metropolis-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./metropolis-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* metropolis-700italic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Metropolis Bold italic'),
+    local('Metropolis-Bolditalic'),
+    url('./metropolis-700italic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./metropolis-700italic.woff') format('woff'); /* Modern Browsers */
+}
