@@ -249,7 +249,7 @@ export default function DeliveryDetails(props) {
           onChange={(value) => {
             handleChange(value);
           }}
-          lable="Use same address for billing"
+          label="Use same address for billing"
         />
       </div>
     </Collapsable>
