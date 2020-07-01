@@ -47,7 +47,7 @@ export default function Register() {
     })
       .then((_) => {
         setSuccess(true);
-        // setContact({});
+        setContact({});
         setTimeout(() => setSuccess(false), 3000);
       })
       .catch((error) => setError(error));
