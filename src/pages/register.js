@@ -46,9 +46,9 @@ export default function Register() {
       body: encode({ 'form-name': 'contact', ...state }),
     })
       .then((_) => {
-        //   setSuccess(true);
-        //   setContact({});
-        //   setTimeout(() => setSuccess(false), 3000);
+        setSuccess(true);
+        // setContact({});
+        setTimeout(() => setSuccess(false), 3000);
       })
       .catch((error) => setError(error));
   };
