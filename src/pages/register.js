@@ -30,7 +30,7 @@ export default function Register() {
     // Validate email
 
     if (!isValidEmail(contact.email))
-      return setError('Please use a valid email');
+      return setError('Please use a valid email address');
 
     const state = {
       name: contact.name,
