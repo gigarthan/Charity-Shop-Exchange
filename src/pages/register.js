@@ -29,7 +29,7 @@ export default function Register() {
     // Validate email
 
     if (!isValidEmail(contact.email))
-      return setError('Please use a valid Email');
+      return setError('Please use a valid email');
 
     const state = {
       name: contact.name,
@@ -47,7 +47,14 @@ export default function Register() {
     })
       .then((_) => {
         setSuccess(true);
-        setContact({});
+        setContact({
+          name: '',
+          email: '',
+          message: '',
+          cname: '',
+          number: '',
+          position: '',
+        });
         setTimeout(() => setSuccess(false), 3000);
       })
       .catch((error) => setError(error));
