@@ -201,9 +201,15 @@ export default function Register() {
                     />
                   </div>
                   <div className="flex flex-col items-center">
-                    {error && (
+                    {error ? (
                       <p className="text-red-500 font-semibold">{error}</p>
+                    ) : (
+                      <p className="text-transparent font-semibold cursor-default">
+                        ABC
+                      </p>
                     )}
+                  </div>
+                  <div className="flex flex-col items-center">
                     {success ? (
                       <button
                         className="bg-green-700 rounded-full hover:bg-green-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
