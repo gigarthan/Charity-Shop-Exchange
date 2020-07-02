@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, { useState } from 'react';
 
 import Layout from '~/components/Layout';
@@ -57,7 +58,9 @@ export default function Register() {
         });
         setTimeout(() => setSuccess(false), 3000);
       })
-      .catch((error) => setError(error));
+      .catch((err) => setError(err));
+
+    return true;
   };
 
   const handleChange = (e) => {
