@@ -60,10 +60,7 @@ export default function Payment(props) {
     console.log('Submit', formData);
   };
 
-  console.log(
-    'payment.phone && payment.phone.length > 0 && !phoneNumber.test(payment.phone)',
-    payment.phone.length > 0 ? !phoneNumber.test(payment.phone) : false,
-  );
+ 
 
   return (
     <Collapsable

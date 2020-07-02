@@ -70,8 +70,8 @@ export default function Footer(props) {
     //setClassName('loader')//
     console.log('Submit', formData);
     console.log(billsbyData);
-    let phone = formData.payment.phone;
-    if (phone.startsWith('0')) phone = phone.slice(1);
+   // let phone = formData.payment.phone;
+    //if (phone.startsWith('0')) phone = phone.slice(1);
 
     window.billsbyData = {
       firstName: formData.delivery.firstname,
@@ -91,7 +91,7 @@ export default function Footer(props) {
       shippingAddressCountry: 'GBR',
       phoneNumberDialCode: '44',
       phoneNumberDialCountry: 'GB',
-      phoneNumber: phone,
+      phoneNumber: formData.payment.phone,
       marketingConsent: formData.payment.isEmailedMe,
       customFields: [
         {
@@ -110,7 +110,7 @@ export default function Footer(props) {
     };
     setTimeout(() => {
       console.log('Trigger scan');
-      window.scanDomBillsby();
+      window.scanDomBillsby()
       setTimeout(() => {
         const elem = document.getElementById('billsbyTriggerAnchor');
         console.log(elem);
@@ -184,7 +184,7 @@ export default function Footer(props) {
       <a
         style={{ display: 'none' }}
         id="billsbyTriggerAnchor"
-        href="#"
+        href="/#"
         data-billsby-type="checkout"
         data-billsby-product={billsbyData.productId}
         data-billsby-plan={billsbyData.planId}
