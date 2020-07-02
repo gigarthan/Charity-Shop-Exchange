@@ -205,7 +205,7 @@ export default function Register() {
                       <p className="text-red-500 font-semibold">{error}</p>
                     ) : (
                       <p className="text-transparent font-semibold cursor-default">
-                        ABC
+                        &nbsp;
                       </p>
                     )}
                   </div>
