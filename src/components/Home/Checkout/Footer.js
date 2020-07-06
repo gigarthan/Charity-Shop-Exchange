@@ -70,8 +70,8 @@ export default function Footer(props) {
     //setClassName('loader')//
     console.log('Submit', formData);
     console.log(billsbyData);
-    let phone = formData.payment.phone;
-    if (phone.startsWith('0')) phone = phone.slice(1);
+    //let phone = formData.payment.phone;
+    //if (phone.startsWith('0')) phone = phone.slice(1);
 
     window.billsbyData = {
       firstName: formData.delivery.firstname,
@@ -91,7 +91,7 @@ export default function Footer(props) {
       shippingAddressCountry: 'GBR',
       phoneNumberDialCode: '44',
       phoneNumberDialCountry: 'GB',
-      phoneNumber: phone,
+      phoneNumber: formData.payment.phone,
       marketingConsent: formData.payment.isEmailedMe,
       customFields: [
         {

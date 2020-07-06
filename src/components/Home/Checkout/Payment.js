@@ -106,6 +106,7 @@ export default function Payment(props) {
           <div className="relative" style={{ width: '50%' }}>
             <TextFieldWithLabel
               autocomplete="cc-exp"
+              type="cc-exp"
               placeholder="MM/YY"
               name="cc-exp"
               mask={'00/0000'}
@@ -127,6 +128,7 @@ export default function Payment(props) {
             <TextFieldWithLabel
               autocomplete="cc-csc"
               placeholder="CVV"
+              type="cc-csc"
               name="cc-csc"
               keyToUpdate="payment.cvv"
               // className="w-6/12"
@@ -161,6 +163,7 @@ export default function Payment(props) {
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="cc-name"
+              type="cc-name"
               label="Name on card"
               placeholder=""
               required={false}
@@ -186,6 +189,7 @@ export default function Payment(props) {
               autocomplete="number"
               label="Phone number"
               name="number"
+              type="number"
               keyToUpdate="payment.phone"
               value={payment.phone}
               onChange={(value) => {
@@ -206,6 +210,7 @@ export default function Payment(props) {
             <TextFieldWithLabel
               autocomplete="email"
               label="Email"
+              type="email"
               name="email"
               keyToUpdate="payment.email"
               value={payment.email}
@@ -257,6 +262,7 @@ export default function Payment(props) {
                   autocomplete="name"
                   label={'First name'}
                   name="name"
+                  type="name"
                   keyToUpdate="payment.billing_firstname"
                   value={payment.billing_firstname}
                   pattern=".{2,}"
@@ -277,6 +283,7 @@ export default function Payment(props) {
                 <TextFieldWithLabel
                   autocomplete="name"
                   label={'Last name'}
+                  type="name"
                   name="name"
                   keyToUpdate="payment.billing_lastname"
                   value={payment.billing_lastname}
@@ -299,6 +306,7 @@ export default function Payment(props) {
                   autocomplete="postal-code"
                   label="UK Postcode"
                   name="postal-code"
+                  type="postal-code"
                   max={8}
                   keyToUpdate="payment.billing_postcode"
                   required={true}
@@ -323,6 +331,7 @@ export default function Payment(props) {
                   autocomplete="address-line1"
                   label="Address line 1"
                   name="address-line1"
+                  type="address-line1"
                   keyToUpdate="payment.billing_address_1"
                   required={true}
                   max={255}
@@ -344,6 +353,7 @@ export default function Payment(props) {
                 <TextFieldWithLabel
                   autocomplete="address-line2"
                   label="Address line 2"
+                  type="address-line2"
                   name="address-line2"
                   max={255}
                   keyToUpdate="payment.billing_address_2"
@@ -359,6 +369,7 @@ export default function Payment(props) {
                   autocomplete="address-level1"
                   label="Town / City"
                   name="address-level1"
+                  type="address-level1"
                   keyToUpdate="payment.billing_town"
                   max={35}
                   pattern=".{2,}"
@@ -379,6 +390,7 @@ export default function Payment(props) {
               <div className="relative">
                 <TextFieldWithLabel
                   autocomplete=""
+                  type="county"
                   label="County"
                   max={35}
                   required={true}

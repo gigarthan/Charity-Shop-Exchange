@@ -90,6 +90,7 @@ export default function DeliveryDetails(props) {
           <div className="relative">
             <TextFieldWithLabel
               name="name"
+              type="name"
               autocomplete="name"
               label={'First name'}
               title="name"
@@ -115,6 +116,7 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel
               autocomplete="name"
               label={'Last name'}
+              type="name"
               name="name"
               keyToUpdate="delivery.lastname"
               value={values.lastname}
@@ -138,6 +140,7 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel
               autocomplete="postal-code"
               label={'UK Postcode'}
+              type="postal-code"
               name="postal-code"
               max={8}
               keyToUpdate="delivery.postcode"
@@ -163,6 +166,7 @@ export default function DeliveryDetails(props) {
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="address-line1"
+              type="address-line1"
               label={'Address line 1'}
               name="address-line1"
               max={255}
@@ -187,6 +191,7 @@ export default function DeliveryDetails(props) {
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="address-line2"
+              type="address-line2"
               label={'Address line 2'}
               max={255}
               name="address-line2"
@@ -204,6 +209,7 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel
               autocomplete="address-level1"
               label={'Town / City'}
+              type="address-level1"
               name="address-level1"
               keyToUpdate="delivery.town"
               max={35}
@@ -228,6 +234,7 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel
               autocomplete="on"
               name="address-level1"
+              type="address-level1"
               autocomplete="address-level1"
               max={35}
               label={'County'}

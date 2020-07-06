@@ -75,13 +75,13 @@ TextFieldWithLabel.propTypes = {
   title: PropTypes.string.isRequired,
   keyToUpdate: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  pattern: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
   error: PropTypes.string.isRequired,
   max: PropTypes.string.isRequired,
   autocomplete: PropTypes.string.isRequired,
   required: PropTypes.bool.isRequired,
-  onblur: PropTypes.bool.isRequired,
-  htmlFor: PropTypes.string.isRequired,
+  onblur: PropTypes.bool,
+  htmlFor: PropTypes.string,
 };
 
 TextFieldWithLabel.defaultProps = {
