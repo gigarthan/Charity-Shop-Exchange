@@ -9,6 +9,7 @@ import useFormDataValidation, {
   isRequired,
   isEmail,
   isValidPostCode,
+  isValidEmail
 } from '../../../hooks/useFormDataValidation';
 
 export default function DeliveryDetails(props) {
@@ -226,6 +227,29 @@ export default function DeliveryDetails(props) {
               onChange={(value) => {
                 handleChange(value);
               }}
+            />
+          </div>
+        </div>
+        <div className="md:w-1/2 pr-1">
+          <div className="relative">
+            <TextFieldWithLabel
+              autocomplete="email"
+              label="Email"
+              type="email"
+              name="email"
+              keyToUpdate="payment.email"
+              value={values.email}
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              required={true}
+              error={
+                values.email &&
+                values.email.length > 0 &&
+                isValidEmail(values.email)
+              }
+              onChange={(value) => {
+                handleChange(value);
+              }}
+              onblur={(event) => fieldChange(event, 'email')}
             />
           </div>
         </div>

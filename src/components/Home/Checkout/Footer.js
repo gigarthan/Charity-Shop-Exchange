@@ -147,12 +147,12 @@ export default function Footer(props) {
   const totalSum = total.reduce((sum, i) => (sum += i.quantity * 2.0), 3.5);
   const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
 
-  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
-  const keysToLook2 = ['phone', 'email'];
+  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town','email'];
+  //const keysToLook2 = ['phone', 'email'];
   //['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
   const showToolTip = keysToLook.some((key) => formData.delivery[key] === '');
-  const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
+  //const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
 
   return (
     <div className="modal-footer" id="footer">
@@ -172,7 +172,7 @@ export default function Footer(props) {
         formData={formData}
         button={button}
         showToolTip={showToolTip}
-        showToolTip2={showToolTip2}
+        /* showToolTip2={showToolTip2} */
         quantity={quantity}
         orderSummary={orderSummary}
         handleSubmit={handleSubmit}
@@ -278,11 +278,11 @@ const Subscription = ({
           ) : (
             <span className="subscribe">Subscribed</span>
           )}
-          {showToolTip2 ? (
+         {/* {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (
             ''
-          )}
+          )} */}
           {showToolTip ? (
             <span className="tooltiptext">Enter Delivery Details</span>
           ) : (
