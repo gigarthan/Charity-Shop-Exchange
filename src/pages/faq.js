@@ -180,12 +180,6 @@ export default function Faq() {
               </a>
             </li>
           </ul>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
-            Can I have a discount?
-          </h2>
-          <p className="mb-4">
-            If you don’t ask you don’t get… enter <strong>nineteen</strong> at
-            checkout to get 19p off your first order.
           </p>
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Who are you and why did you start this?
