@@ -79,33 +79,6 @@ export default function Faq() {
             this might work better for you.
           </p>
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
-            What items should I expect to receive?
-          </h2>
-          <p className="mb-4">
-            When subscribing you select from book and/or DVD genres, and with
-            your preferences in mind we handpick items that we think you might
-            enjoy. For example if you select ‘Adventure movie’ then we might
-            send you Raiders of the Lost Ark. We don’t promise that every pick
-            will be a perfect match but we’re sure we can delight you more often
-            than not. And by delegating us responsibility to find you
-            interesting and entertaining material you can sit back and enjoy the
-            serendipity! If you’re unhappy with a selection we’ve made we’ll be
-            happy to replace it.
-          </p>
-          <p className="mb-4">
-            You can start a subscription with just two items per delivery or
-            choose to have as many as eight, and you can change anything about
-            your subscription plan at any time.
-          </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
-            How else can I help you understand my preferences?
-          </h2>
-          <p className="mb-4">
-            We’ll introduce further ways for you to express your preferences and
-            make more granular choices. In the meantime feel free to tell us how
-            this might work better for you.
-          </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How do my items arrive?
           </h2>
           <p className="mb-4">
@@ -179,28 +152,6 @@ export default function Faq() {
             mitigate some of the impact that lockdown and social distancing has
             had, and will have, on charities retail operations and their
             fundraising.
-          </p>
-          <p className="mb-4">
-            We’re also passionate about how receiving new things to read and
-            watch brings a little therapy to the isolation that many people feel
-            right now with less social interaction in their lives.
-          </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
-            What inspires this initiative?
-          </h2>
-          <p className="mb-4">
-            We’re helping the great British institution of charity shops get
-            back to business by selling their books and DVDs. Our subscription
-            service helps charities stay close to their existing customers and
-            brings them a stream of entirely new customers. Hopefully this will
-            mitigate some of the impact that lockdown and social distancing has
-            had, and will have, on charities retail operations and their
-            fundraising.
-          </p>
-          <p className="mb-4">
-            We’re also passionate about how receiving new things to read and
-            watch brings a little therapy to the isolation that many people feel
-            right now with less social interaction in their lives.
           </p>
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How can I contribute to this initiative?
