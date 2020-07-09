@@ -36,21 +36,11 @@ export default function Faq() {
             Is Charity Shop Exchange available in my region of the UK?
           </h2>
           <p className="mb-4">
-            Yes, we deliver UK-wide. If your region isn&apos;t listed on our
+            Yes, we deliver UK-wide. If your region isn't listed on our
             homepage it&apos;s because we don’t yet have a charity who operates
             within your region. However don’t let that stop you, you can pick
             any listed charity, from any region, and they will deliver items to
             any UK address.
-          </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
-            Is this a weekly subscription service?
-          </h2>
-          <p className="mb-4">
-            Yes, we deliver UK-wide. If your region isn’t listed on our homepage
-            it&apos;s because we don’t yet have a charity who operates within
-            your region. However don’t let that stop you, you can pick any
-            listed charity, from any region, and they will deliver items to any
-            UK address.
           </p>
           <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Is this a weekly subscription service?
