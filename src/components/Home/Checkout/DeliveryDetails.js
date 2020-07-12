@@ -9,7 +9,7 @@ import useFormDataValidation, {
   isRequired,
   isEmail,
   isValidPostCode,
-  isValidEmail
+  isValidEmail,
 } from '../../../hooks/useFormDataValidation';
 
 export default function DeliveryDetails(props) {

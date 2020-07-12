@@ -29,7 +29,9 @@ export default function Footer() {
             </li>
             <li className="text-xs text-gray-200 mb-3 cursor-pointer">
               <button type="button">
-                <a href="/#" data-billsby-type="account">Manage account</a>
+                <a href="/#" data-billsby-type="account">
+                  Manage account
+                </a>
               </button>
             </li>
           </ul>

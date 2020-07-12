@@ -6,7 +6,10 @@ export default function HTML(props) {
     <html {...props.htmlAttributes}>
       <head>
         <meta http-equiv="Access-Control-Allow-Origin" content="*" />
-        <meta http-equiv="Access-Control-Allow-Headers" content="X-Requested-With" />
+        <meta
+          http-equiv="Access-Control-Allow-Headers"
+          content="X-Requested-With"
+        />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width,user-scalable=no" />
@@ -153,8 +156,7 @@ export default function HTML(props) {
         <script
           src="https://checkoutlib.billsby.com/checkout.min.js"
           data-billsby-company="charityshopexchange"
-          crossOrigin="anonymous"
-        ></script>
+          crossOrigin="anonymous"></script>
         <script>{`
       !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
       arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];

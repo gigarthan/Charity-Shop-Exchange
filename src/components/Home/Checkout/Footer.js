@@ -110,7 +110,7 @@ export default function Footer(props) {
     };
     setTimeout(() => {
       console.log('Trigger scan');
-      window.scanDomBillsby()
+      window.scanDomBillsby();
       setTimeout(() => {
         const elem = document.getElementById('billsbyTriggerAnchor');
         console.log(elem);
@@ -147,7 +147,14 @@ export default function Footer(props) {
   const totalSum = total.reduce((sum, i) => (sum += i.quantity * 2.0), 3.5);
   const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
 
-  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town','email'];
+  const keysToLook = [
+    'address_1',
+    'firstname',
+    'lastname',
+    'postcode',
+    'town',
+    'email',
+  ];
   //const keysToLook2 = ['phone', 'email'];
   //['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
@@ -278,7 +285,7 @@ const Subscription = ({
           ) : (
             <span className="subscribe">Subscribed</span>
           )}
-         {/* {showToolTip2 ? (
+          {/* {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (
             ''

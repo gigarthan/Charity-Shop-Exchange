@@ -71,82 +71,103 @@ export default function About() {
         </div>
       </div>
 
-       {/* Ridho Start here */}
-       <div className="flex flex-col sm:flex-none pt-12 pb-20">
+      {/* Ridho Start here */}
+      <div className="flex flex-col sm:flex-none pt-12 pb-20">
         <h2 className="text-center text-2xl sm:text-4xl font-bold text-new-lightnavy px-5 mb-12 leading-snug">
           Team
         </h2>
         <div className="grid grid-col-1 px-6 sm:px-12 md:px-6 lg:px-0 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full sm:max-w-screen-lg mx-auto">
           <div className="bg-new-gray p-4 rounded-lg flex items-start">
-              <img
-                className="h-12 w-12 mr-5 rounded-full"
-                src={kelvin}
-                alt="Kelvin"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">
-                  Kelvin Lockwood
+            <img
+              className="h-12 w-12 mr-5 rounded-full"
+              src={kelvin}
+              alt="Kelvin"
+            />
+            <div>
+              <h3 className="text-md font-semibold text-gray-700">
+                Kelvin Lockwood
               </h3>
-                <div className="flex items-center pt-2 cursor-pointer">
-                  <a href="https://twitter.com/kelvinlockwood">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
-                  </a>
-                  <a href="https://github.com/kelvinlockwood/">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600 mt-2 leading-normal">
-                  Product owner, design thinker and opening batsman. <img className="w-5" src={batsman} alt="batsman"/>
-                </p>
+              <div className="flex items-center pt-2 cursor-pointer">
+                <a href="https://twitter.com/kelvinlockwood">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={twitter}
+                    alt="twitter"
+                  />
+                </a>
+                <a href="https://github.com/kelvinlockwood/">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={github}
+                    alt="github"
+                  />
+                </a>
               </div>
+              <p className="text-xs text-gray-600 mt-2 leading-normal">
+                Product owner, design thinker and opening batsman.{' '}
+                <img className="w-5" src={batsman} alt="batsman" />
+              </p>
+            </div>
           </div>
           <div className="bg-new-gray p-4 rounded-lg flex items-start">
-              <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
-                src={jasmine}
-                alt="Jasmine King"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">
-                  Jasmine King
-                </h3>
-                <div className="flex items-center pt-2 cursor-pointer">
-                  <a href="https://www.instagram.com/jasmineaking">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={instagram} alt="instagram" />
-                  </a>
-                  <a href="https://dribbble.com/Jasminargh">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={dribbble} alt="dribbble" />
-                  </a>
-
-                </div>
-                <p className="text-xs text-gray-600 mt-2 leading-normal">
-                  Illustrator, designer and craft beer lover. <img className="w-4" src={beer} />
-                </p>
+            <img
+              className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
+              src={jasmine}
+              alt="Jasmine King"
+            />
+            <div>
+              <h3 className="text-md font-semibold text-gray-700">
+                Jasmine King
+              </h3>
+              <div className="flex items-center pt-2 cursor-pointer">
+                <a href="https://www.instagram.com/jasmineaking">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={instagram}
+                    alt="instagram"
+                  />
+                </a>
+                <a href="https://dribbble.com/Jasminargh">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={dribbble}
+                    alt="dribbble"
+                  />
+                </a>
               </div>
+              <p className="text-xs text-gray-600 mt-2 leading-normal">
+                Illustrator, designer and craft beer lover.{' '}
+                <img className="w-4" src={beer} />
+              </p>
+            </div>
           </div>
           <div className="bg-new-gray p-4 rounded-lg flex items-start">
-              <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
-                src={haseeb}
-                alt="Haseeb Majid"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">
-                  Haseeb Majid
-                </h3>
-                <div className="flex items-center pt-2 cursor-pointer">
-                  <a href="https://github.com/hmajid2301">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600 mt-2 leading-normal">
-                  Software Engineer, bats and bowls a bit.. <img className="w-4" src={batsman} />
-                </p>
+            <img
+              className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
+              src={haseeb}
+              alt="Haseeb Majid"
+            />
+            <div>
+              <h3 className="text-md font-semibold text-gray-700">
+                Haseeb Majid
+              </h3>
+              <div className="flex items-center pt-2 cursor-pointer">
+                <a href="https://github.com/hmajid2301">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={github}
+                    alt="github"
+                  />
+                </a>
               </div>
+              <p className="text-xs text-gray-600 mt-2 leading-normal">
+                Software Engineer, bats and bowls a bit..{' '}
+                <img className="w-4" src={batsman} />
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
 
       <div className="flex flex-col sm:flex-none pt-12 pb-20">
         <h2 className="text-center text-2xl sm:text-4xl font-bold text-new-lightnavy px-5 mb-12 leading-snug">
@@ -154,104 +175,132 @@ export default function About() {
         </h2>
         <div className="grid grid-rows-1 px-6 sm:px-12 md:px-6 lg:px-0 sm:grid-cols-2 gap-3 w-full sm:max-w-screen-lg mx-auto">
           <div className="bg-new-gray p-4 rounded-lg flex items-start">
-              <img
-                className="h-12 w-12 mr-5 rounded-full"
-                src={blake}
-                alt="Blake"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">
-                  Blake Prouty
+            <img
+              className="h-12 w-12 mr-5 rounded-full"
+              src={blake}
+              alt="Blake"
+            />
+            <div>
+              <h3 className="text-md font-semibold text-gray-700">
+                Blake Prouty
               </h3>
-                <div className="flex items-center pt-2 cursor-pointer">
-                  <a href="https://twitter.com/BlakeNthaniel">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
-                  </a>
-                  <a href="https://github.com/Prouty89">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
-                  </a>
-
-                </div>
-                <p className="text-xs text-gray-600 mt-2 leading-normal">
-                  Full Stack Web Developer based in the United States.
-              </p>
+              <div className="flex items-center pt-2 cursor-pointer">
+                <a href="https://twitter.com/BlakeNthaniel">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={twitter}
+                    alt="twitter"
+                  />
+                </a>
+                <a href="https://github.com/Prouty89">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={github}
+                    alt="github"
+                  />
+                </a>
               </div>
+              <p className="text-xs text-gray-600 mt-2 leading-normal">
+                Full Stack Web Developer based in the United States.
+              </p>
+            </div>
           </div>
           <div className="bg-new-gray p-4 rounded-lg flex items-start">
-              <img
-                className="h-12 w-12 mr-4 rounded-full"
-                src={dicky}
-                alt="Dicky"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">
-                  Dicky Jiang
+            <img
+              className="h-12 w-12 mr-4 rounded-full"
+              src={dicky}
+              alt="Dicky"
+            />
+            <div>
+              <h3 className="text-md font-semibold text-gray-700">
+                Dicky Jiang
               </h3>
-                <div className="flex items-center pt-2 cursor-pointer">
-                  <a href="https://twitter.com/jiangd">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
-                  </a>
-                  <a href="https://dribbble.com/Dickyjiang">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={dribbble} alt="Dribbble" />
-                  </a>
-                  <a href="https://www.behance.net/DickyJiang">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={behance} alt="behance" />
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600 mt-2 leading-normal">
-                  UIX Designer by day, Jaeger pilot by night.
-              </p>
+              <div className="flex items-center pt-2 cursor-pointer">
+                <a href="https://twitter.com/jiangd">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={twitter}
+                    alt="twitter"
+                  />
+                </a>
+                <a href="https://dribbble.com/Dickyjiang">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={dribbble}
+                    alt="Dribbble"
+                  />
+                </a>
+                <a href="https://www.behance.net/DickyJiang">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={behance}
+                    alt="behance"
+                  />
+                </a>
               </div>
+              <p className="text-xs text-gray-600 mt-2 leading-normal">
+                UIX Designer by day, Jaeger pilot by night.
+              </p>
+            </div>
           </div>
           <div className="bg-new-gray p-4 rounded-lg flex items-start">
-              <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
-                src={matt}
-                alt="Matt"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">
-                  Matt Doyle
+            <img
+              className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
+              src={matt}
+              alt="Matt"
+            />
+            <div>
+              <h3 className="text-md font-semibold text-gray-700">
+                Matt Doyle
               </h3>
-                <div className="flex items-center pt-2 cursor-pointer">
-                  <a href="https://twitter.com/ElatedDotCom">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={twitter} alt="twitter" />
-                  </a>
-                  <a href="https://github.com/globalmatt">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
-                  </a>
-
-                </div>
-                <p className="text-xs text-gray-600 mt-2 leading-normal">
-                  Full-Stack Developer, Technical Author and Blogger.
-              </p>
+              <div className="flex items-center pt-2 cursor-pointer">
+                <a href="https://twitter.com/ElatedDotCom">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={twitter}
+                    alt="twitter"
+                  />
+                </a>
+                <a href="https://github.com/globalmatt">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={github}
+                    alt="github"
+                  />
+                </a>
               </div>
+              <p className="text-xs text-gray-600 mt-2 leading-normal">
+                Full-Stack Developer, Technical Author and Blogger.
+              </p>
+            </div>
           </div>
           <div className="bg-new-gray p-4 rounded-lg flex items-start">
-              <img
-                className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
-                src={engjell}
-                alt="Engjell Selaci"
-              />
-              <div>
-                <h3 className="text-md font-semibold text-gray-700">
-                  Engjell Selaci
+            <img
+              className="h-12 w-12 mr-4 bg-gray-600 rounded-full "
+              src={engjell}
+              alt="Engjell Selaci"
+            />
+            <div>
+              <h3 className="text-md font-semibold text-gray-700">
+                Engjell Selaci
               </h3>
-                <div className="flex items-center pt-2 cursor-pointer">
-                  <a href="https://github.com/engjellselaci">
-                    <img className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1" src={github} alt="github" />
-                  </a>
-                </div>
-                <p className="text-xs text-gray-600 mt-2 leading-normal">
-                  Full Stack Web Developer. 
-                </p>
+              <div className="flex items-center pt-2 cursor-pointer">
+                <a href="https://github.com/engjellselaci">
+                  <img
+                    className="pr-2 transition duration-500 ease-in-out transform hover:-translate-y-1"
+                    src={github}
+                    alt="github"
+                  />
+                </a>
               </div>
+              <p className="text-xs text-gray-600 mt-2 leading-normal">
+                Full Stack Web Developer.
+              </p>
+            </div>
           </div>
-          
         </div>
       </div>
       {/* Ridho Stop here */}
-
 
       {/* <div className="bg-new-gray flex flex-col sm:flex-none pt-12 pb-20">
         <h2 className="text-center text-2xl sm:text-4xl font-bold text-new-lightnavy px-5 mb-12 leading-snug">
