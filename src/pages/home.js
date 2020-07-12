@@ -46,23 +46,23 @@ export default function Home() {
     //   email: null
     // },
     payment: {
-      //phone: '',
+      // phone: '',
       email: '',
-      //isEmailedMe: false,
+      // isEmailedMe: false,
 
-      //card_number: '',
-      //expiry_at: '',
-      //cvv: '',
-      //name: '',
+      // card_number: '',
+      // expiry_at: '',
+      // cvv: '',
+      // name: '',
 
-      //billing_firstname: '',
-      //billing_lastname: '',
+      // billing_firstname: '',
+      // billing_lastname: '',
       // billing_fullname: '',
-      //billing_postcode: '',
-      //billing_address_1: '',
-      //billing_address_2: '',
-      //billing_town: '',
-      //billing_county: '',
+      // billing_postcode: '',
+      // billing_address_1: '',
+      // billing_address_2: '',
+      // billing_town: '',
+      // billing_county: '',
     },
   });
   useEffect(() => {

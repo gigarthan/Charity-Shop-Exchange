@@ -21,7 +21,7 @@ export default function About() {
   return (
     <Layout>
       <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto pt-12 pb-20 px-3 sm:px-0 ">
-        <h1 className="text-2xl sm:text-5xl font-semibold px-3 font-bold text-center mt-12 mb-8 sm:mb-12 text-new-red leading-snug">
+        <h1 className="text-2xl sm:text-5xl px-3 font-bold text-center mt-12 mb-8 sm:mb-12 text-new-red leading-snug">
           Why we built Charity Shop Exchange
         </h1>
         <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
@@ -137,7 +137,7 @@ export default function About() {
               </div>
               <p className="text-xs text-gray-600 mt-2 leading-normal">
                 Illustrator, designer and craft beer lover.{' '}
-                <img className="w-4" src={beer} />
+                <img className="w-4" src={beer} alt="beer" />
               </p>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function About() {
               </div>
               <p className="text-xs text-gray-600 mt-2 leading-normal">
                 Software Engineer, bats and bowls a bit..{' '}
-                <img className="w-4" src={batsman} />
+                <img className="w-4" src={batsman} alt="batsman" />
               </p>
             </div>
           </div>

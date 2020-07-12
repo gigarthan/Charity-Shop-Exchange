@@ -7,13 +7,13 @@ export default function Faq() {
   return (
     <Layout>
       <div className="bg-new-navy w-full">
-        <h1 className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-8 sm:pt-12 pb-8 sm:pb-12">
+        <h1 className="font-header text-lg leading-normal  sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-8 sm:pt-12 pb-8 sm:pb-12">
           Frequently asked questions
         </h1>
       </div>
       <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto px-3 sm:px-0 ">
         <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             What is Charity Shop Exchange?
           </h2>
           <p className="mb-4">
@@ -23,7 +23,7 @@ export default function Faq() {
             selection of books and DVDs which have been handpicked from local
             charity shops.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Is this service fully operational now?
           </h2>
           <p className="mb-4">
@@ -32,17 +32,17 @@ export default function Faq() {
             we’ll soon update this as we onboard more charity shops across the
             UK. If you’re a charity shop, find out more here.{' '}
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Is Charity Shop Exchange available in my region of the UK?
           </h2>
           <p className="mb-4">
-            Yes, we deliver UK-wide. If your region isn't listed on our homepage
+            Yes, we deliver UK-wide. If your region isn’t listed on our homepage
             it&apos;s because we don’t yet have a charity who operates within
             your region. However don’t let that stop you, you can pick any
             listed charity, from any region, and they will deliver items to any
             UK address.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Is this a weekly subscription service?
           </h2>
           <p className="mb-4">
@@ -51,7 +51,7 @@ export default function Faq() {
             end up with more than you can manage, they can always be donated
             back to charity shops!
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             What items should I expect to receive?
           </h2>
           <p className="mb-4">
@@ -70,7 +70,7 @@ export default function Faq() {
             choose to have as many as eight, and you can change anything about
             your subscription plan at any time.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How else can I help you understand my preferences?
           </h2>
           <p className="mb-4">
@@ -78,7 +78,7 @@ export default function Faq() {
             make more granular choices. In the meantime feel free to tell us how
             this might work better for you.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How do my items arrive?
           </h2>
           <p className="mb-4">
@@ -93,7 +93,7 @@ export default function Faq() {
             shops to do their own local deliveries, if and when they have the
             capacity to do so; again we’ll tell you if this happens.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             I’m a charity shop. What do you need from me?
           </h2>
           <p className="mb-4">
@@ -103,7 +103,7 @@ export default function Faq() {
             this is repeatable business for you. We just ask you to sign our
             supplier agreement to get started.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How many charities are needed?
           </h2>
           <p className="mb-4">
@@ -111,7 +111,7 @@ export default function Faq() {
             UK. For efficiency and coordination we’ll need to limit this to ten
             charity shop listings per county.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How are items being donated to charity shops right now?
           </h2>
           <p className="mb-4">
@@ -119,7 +119,7 @@ export default function Faq() {
             because they don’t yet have the resources, or storage space, to take
             an influx of donated items. Please be patient.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             What other challenges do charity shops have right now?
           </h2>
           <p className="mb-4">
@@ -132,7 +132,7 @@ export default function Faq() {
             shop if they need fresh volunteers to help them get back up and
             running.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             What is the goal of this initiative?
           </h2>
           <p className="mb-4">
@@ -141,7 +141,7 @@ export default function Faq() {
             helping to mitigate some of the impact that lockdown has on their
             businesses.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             What inspires this initiative?
           </h2>
           <p className="mb-4">
@@ -153,7 +153,7 @@ export default function Faq() {
             had, and will have, on charities retail operations and their
             fundraising.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How can I contribute to this initiative?
           </h2>
           <p className="mb-4">
@@ -180,7 +180,7 @@ export default function Faq() {
               </a>
             </li>
           </ul>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Who are you and why did you start this?
           </h2>
           <p className="mb-4">
@@ -192,7 +192,7 @@ export default function Faq() {
             </Link>
             .
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             How do you make money?
           </h2>
           <p className="mb-4">
@@ -200,7 +200,7 @@ export default function Faq() {
             delivery) we keep between £1 and £1.40, plus 20% of the remaining
             delivery value.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Why do you ask for a favourite charity?
           </h2>
           <p className="mb-4">
@@ -219,14 +219,14 @@ export default function Faq() {
             charity shops to supply local people, please be patient as we build
             this together.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Will this service continue post-coronavirus?
           </h2>
           <p className="mb-4">
             Of course! Equally there’s no problem if you just want to depend on
             it for the next few months. It’s easy to cancel at any time.
           </p>
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             I love Charity Shop Exchange so much that I need to hear about more
             ways to support it!
           </h2>
