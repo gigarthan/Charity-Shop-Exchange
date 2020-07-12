@@ -34,7 +34,7 @@ export default function About() {
           <p className=" mb-4">
             At first we thought about the delight people get from receiving
             books and DVDs and how delivering these items to doorsteps could
-            help combat isolation
+            help combat isolation.
           </p>
           <p className=" mb-4">
             From there we set out to see how the subscription-box-service
