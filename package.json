@@ -12,6 +12,7 @@
     "@vaadin/vaadin-text-field": "^2.6.1",
     "card-validator": "^6.2.0",
     "gatsby": "^2.21.22",
+    "gatsby-plugin-polyfill-io": "^1.1.0",
     "gatsby-plugin-postcss": "^2.3.1",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
@@ -62,7 +63,7 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.25%",
       "not dead",
       "not op_mini all"
     ],

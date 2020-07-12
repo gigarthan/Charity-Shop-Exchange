@@ -255,9 +255,9 @@ const Subscription = ({
     return null;
   }
   return (
-    <>
+    <div className="w-full flex justify-center flex-wrap">
       {quantity ? (
-        <span className="p">
+        <span className="p text-lg justify-center text-center flex-grow">
           <a className="s">{orderSummary.quantity} items</a>delivered every
           <a className="s2">{formData.delivery.subscription}</a>
         </span>
@@ -291,6 +291,6 @@ const Subscription = ({
           <div className={newClass}></div>
         </>
       </ModalButton>
-    </>
+    </div>
   );
 };
