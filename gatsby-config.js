@@ -22,6 +22,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-polyfill-io`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {

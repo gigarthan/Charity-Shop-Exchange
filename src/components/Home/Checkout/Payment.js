@@ -60,8 +60,6 @@ export default function Payment(props) {
     console.log('Submit', formData);
   };
 
- 
-
   return (
     <Collapsable
       title="Payment"

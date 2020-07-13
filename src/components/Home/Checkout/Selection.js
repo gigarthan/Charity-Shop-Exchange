@@ -141,7 +141,7 @@ export default class Selection extends Component {
             onSelect={this.handleTabChange}
             fitted>
             <Card.Section>
-              <div className="flex flex-row flex-wrap items-center justify-space-between">
+              <div className="-ml-10 flex flex-row flex-wrap items-center justify-space-between">
                 {genresItems[tabs[selected].id].map((genre, index) => {
                   return (
                     <div className="numberfild-width" key={genre.id}>

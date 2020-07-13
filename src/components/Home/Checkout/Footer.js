@@ -110,7 +110,7 @@ export default function Footer(props) {
     };
     setTimeout(() => {
       console.log('Trigger scan');
-      window.scanDomBillsby()
+      window.scanDomBillsby();
       setTimeout(() => {
         const elem = document.getElementById('billsbyTriggerAnchor');
         console.log(elem);
@@ -147,7 +147,14 @@ export default function Footer(props) {
   const totalSum = total.reduce((sum, i) => (sum += i.quantity * 2.0), 3.5);
   const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
 
-  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town','email'];
+  const keysToLook = [
+    'address_1',
+    'firstname',
+    'lastname',
+    'postcode',
+    'town',
+    'email',
+  ];
   //const keysToLook2 = ['phone', 'email'];
   //['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
@@ -255,9 +262,9 @@ const Subscription = ({
     return null;
   }
   return (
-    <>
+    <div className="w-full flex justify-center flex-wrap">
       {quantity ? (
-        <span className="p">
+        <span className="p text-lg justify-center text-center flex-grow">
           <a className="s">{orderSummary.quantity} items</a>delivered every
           <a className="s2">{formData.delivery.subscription}</a>
         </span>
@@ -278,7 +285,7 @@ const Subscription = ({
           ) : (
             <span className="subscribe">Subscribed</span>
           )}
-         {/* {showToolTip2 ? (
+          {/* {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (
             ''
@@ -291,6 +298,6 @@ const Subscription = ({
           <div className={newClass}></div>
         </>
       </ModalButton>
-    </>
+    </div>
   );
 };
