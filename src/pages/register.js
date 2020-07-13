@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, { useState } from 'react';
 
 import Layout from '~/components/Layout';
@@ -11,17 +12,26 @@ export default function Register() {
       .join('&');
   };
 
-  const [contact, setContact] = useState({
-    name: '',
-    email: '',
-    cname: '',
-    position: '',
-    message: '',
-    number: '',
-  });
-  // const [status, setStatus] = useState(null);
+  const [contact, setContact] = useState({});
+
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const isValidEmail = (email) => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      return true;
+    }
+    return false;
+  };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    setError(null);
+    // Validate email
+
+    if (!isValidEmail(contact.email))
+      return setError('Please use a valid email address');
+
     const state = {
       name: contact.name,
       email: contact.email,
@@ -36,16 +46,29 @@ export default function Register() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...state }),
     })
-      .then(console.log('Contact-State: ', state))
-      .catch((error) => alert(error));
+      .then((_) => {
+        setSuccess(true);
+        setContact({
+          name: '',
+          email: '',
+          message: '',
+          cname: '',
+          number: '',
+          position: '',
+        });
+        setTimeout(() => setSuccess(false), 3000);
+      })
+      .catch((err) => setError(err));
 
-    e.preventDefault();
+    return true;
   };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     const updatedContact = {
       ...contact,
-      [e.target.name]: e.target.value,
+      [name]: value,
     };
     setContact(updatedContact);
   };
@@ -178,11 +201,29 @@ export default function Register() {
                     />
                   </div>
                   <div className="flex flex-col items-center">
-                    <button
-                      className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
-                      type="submit">
-                      Submit
-                    </button>
+                    {error ? (
+                      <p className="text-red-500 font-semibold">{error}</p>
+                    ) : (
+                      <p className="text-transparent font-semibold cursor-default">
+                        &nbsp;
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex flex-col items-center">
+                    {success ? (
+                      <button
+                        className="bg-green-700 rounded-full hover:bg-green-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
+                        type="submit"
+                        disabled>
+                        Thank you
+                      </button>
+                    ) : (
+                      <button
+                        className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
+                        type="submit">
+                        Submit
+                      </button>
+                    )}
                   </div>
                 </form>
               </div>
