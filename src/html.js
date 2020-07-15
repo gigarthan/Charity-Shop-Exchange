@@ -95,8 +95,8 @@ export default function HTML(props) {
               input:-webkit-autofill:hover, 
               input:-webkit-autofill:focus, 
               input:-webkit-autofill:active  {
-              -webkit-box-shadow: 0 0 0 30px white inset !important;
-              box-shadow: 0 0 0 30px white inset !important;
+              -webkit-box-shadow: 0 0 0 30px #E7EBEF inset !important;
+              box-shadow: 0 0 0 30px #E7EBEF inset !important;
               -webkit-text-fill-color: #263445;         
             }
 
