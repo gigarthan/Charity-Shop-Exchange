@@ -98,8 +98,8 @@ export default function GetStartedForm({ toggle, onChange }) {
       </div>
       <div className="pb-20 px-10">
         <div className="max-w-screen-md mx-auto">
-          <div className="flex flex-col sm:flex-row w-full items-center ">
-            <div className="md:w-1/2 pr-1 mb-6 md:mb-0 ">
+          <div className="flex flex-col sm:flex-row w-full sm:space-x-8 justify-center items-center md:items-end ">
+            <div className="w-full md:w-1/2 mb-2 md:mb-0">
               <div className="relative">
                 <Combo
                   name="countyId"
@@ -113,12 +113,12 @@ export default function GetStartedForm({ toggle, onChange }) {
                   // style={{ background: '#c7c7c7'}}
                   theme=""
                   label="Select a region"
-                  className="block appearance-none w-full border border-none text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full border border-none text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>
             </div>
-            <div className="md:w-1/2 pr-2 mb-6 md:mb-0">
+            <div className="w-full md:w-1/2 mb-2 md:mb-0">
               <div className="relative">
                 <Combo
                   name="charityId"
@@ -137,12 +137,12 @@ export default function GetStartedForm({ toggle, onChange }) {
                   placeholder="select"
                   theme=""
                   label="Pick a charity"
-                  className="block appearance-none w-full border border-none text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block appearance-none w-full border border-none text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 sm:mt-4">
               <Button
                 className="px-8"
                 onClick={handleSubmit}

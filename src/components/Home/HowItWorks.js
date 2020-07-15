@@ -16,7 +16,7 @@ export default function HowItWorks() {
         </div> */}
 
         <div className="flex flex-col items-center sm:items-stretch">
-          <div className="flex w-3/4 sm:w-1/2 flex-col items-center mb-12 sm:flex-row mb-12 sm:self-end">
+          <div className="flex w-3/4 md:w-1/2 flex-col items-center sm:flex-row mb-12 sm:self-end">
             <div className="hidden sm:flex flex-none w-px h-32 bg-gray-700 mr-4" />
             <div className="flex-initial text-lg mt-3 mr-2 mb-12 sm:mb-0 font-semibold text-gray-700 leading-snug">
               <span className="block text-3xl font-normal">1.</span>
@@ -27,7 +27,7 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <div className="flex  w-3/4 sm:w-1/2 flex-col items-center sm:flex-row sm:items-center mb-12 sm:self-start ">
+          <div className="flex  w-3/4 md:w-1/2 flex-col items-center sm:flex-row sm:items-center mb-12 sm:self-start ">
             <div className="hidden sm:flex flex-none w-px h-32 bg-gray-700 mr-4" />
             <div className="flex-1 text-lg mt-3 mb-12 sm:mb-0 font-semibold text-gray-700 leading-snug">
               <span className="block text-3xl font-normal">2.</span>
@@ -39,7 +39,7 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <div className="flex  w-3/4 sm:w-1/2 flex-col items-center sm:flex-row py-4 px-3 mb-6 sm:self-center">
+          <div className="flex  w-3/4 md:w-1/2 flex-col items-center sm:flex-row py-4 px-3 mb-6 sm:self-center">
             <div className="hidden sm:flex flex-none w-px h-32 bg-gray-700 mr-4" />
             <div className="text-lg mt-3 mb-12 sm:mb-0 font-semibold text-gray-700 leading-snug">
               <span className="block text-3xl font-normal">3.</span>
