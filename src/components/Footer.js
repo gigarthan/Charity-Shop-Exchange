@@ -50,28 +50,28 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex flex-col items-center sm:items-none sm:flex-row max-w-screen-lg">
-        <div className="text-gray-300 text-center text-xs">
+        <div className="text-gray-400 text-center text-xs">
           © 2020 Charity Shop Exchange
         </div>
-        <div className="flex flex-col sm:flex-row text-xs text-center text-gray-200 px-8 cursor-pointer mt-4 sm:mt-0">
+        <div className="flex flex-col sm:flex-row text-xs text-center px-8  mt-4 sm:mt-0">
           <div className="mb-4 sm:mb-0">
-            <Link className="mr-0 sm:mx-4" to="/privacy">
+            <Link className="mr-0 sm:mx-4 text-gray-400 hover:text-white" to="/privacy">
               Privacy
             </Link>
             &nbsp;|&nbsp;
-            <Link className="mr-0 sm:mx-4 " to="/terms">
+            <Link className="mr-0 sm:mx-4 text-gray-400 hover:text-white" to="/terms">
               Terms
             </Link>
             &nbsp;|&nbsp;
           </div>
           <div className="mb-4 sm:mb-0">
-            <Link className="mr-0 sm:mx-4 " to="/customer-terms">
+            <Link className="mr-0 sm:mx-4 text-gray-400 hover:text-white" to="/customer-terms">
               Customer Terms and Conditions
             </Link>
             &nbsp;|&nbsp;
           </div>
           <div className="block">
-            <a className="mr-0 sm:mx-4" href="https://icons8.com">
+            <a className="mr-0 sm:mx-4 text-gray-400 hover:text-white" href="https://icons8.com">
               How it works svgs by icon8
             </a>
           </div>
