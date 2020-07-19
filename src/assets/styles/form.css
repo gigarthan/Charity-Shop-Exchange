@@ -29,7 +29,7 @@ html {
 }
 
 .modal.modal-lg {
-  max-width: 50rem;
+  /* max-width: 50rem; */
 }
 .items {
   font-size: 18.5px;

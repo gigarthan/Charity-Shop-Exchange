@@ -14,7 +14,9 @@ const Dialog = ({ isLarge = false, isShowing, hide, children }) =>
             role="dialog">
             <div
               id="modal"
-              className={isLarge ? 'modal modal-lg charity_modal' : 'modal'}>
+              className={
+                isLarge ? 'modal modal-lg charity_modal p-8 max-w-sm' : 'modal'
+              }>
               <div className="modal-container">
                 <div className="modal-header">
                   <button
