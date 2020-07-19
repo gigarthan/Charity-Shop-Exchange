@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <div className="bg-new-navy pt-12 sm:pt-20 pb-8 px-12 sm:px-20">
       <div>
-        <div className="flex flex-col items-center sm:flex-row sm:items-start max-w-screen-lg justify-between sm:mx-auto mb-12 sm:mb-20">
+        <div className="flex flex-col items-center sm:flex-row sm:items-start max-w-screen-lg justify-between sm:mx-auto mb-12">
           <div>
             <Link to="/">
               <img
@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </Link>
           </div>
-          <ul className="flex flex-col items-center sm:inline-block flex-1 sm:flex-none mb-8 sm:mb-12">
+          <ul className="flex flex-col text-center sm:text-left items-center sm:inline-block flex-1 sm:flex-none mb-8 sm:mb-12">
             <li className="text-xs text-gray-200 mb-3 sm:mb-4 cursor-pointer">
               <Link to="/about">About</Link>
             </li>
@@ -49,26 +49,26 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-center sm:items-none sm:flex-row max-w-screen-lg">
-        <div className="text-gray-400 text-center text-xs">
+      <div className="flex flex-col items-center flex-wrap sm:flex-row sm:items-start max-w-screen-lg justify-between sm:mx-auto">
+        <div className="text-gray-400 text-center text-xs w-full lg:w-auto">
           © 2020 Charity Shop Exchange
         </div>
-        <div className="flex flex-col sm:flex-row text-xs text-center px-8  mt-4 sm:mt-0">
-          <div className="mb-4 sm:mb-0">
-            <Link className="mr-0 sm:mx-4 text-gray-400 hover:text-white" to="/privacy">
+        <div className="flex flex-col sm:flex-row text-xs w-full lg:w-auto flex-wrap justify-center text-center mt-4 sm:mt-0">
+          <div className="flex flex-col sm:flex-row">
+            <Link className="mr-0 sm:mr-4 text-gray-400 hover:text-white " to="/privacy">
               Privacy
             </Link>
-            &nbsp;|&nbsp;
+            <span className="hidden sm:inline">|</span>
             <Link className="mr-0 sm:mx-4 text-gray-400 hover:text-white" to="/terms">
               Terms
             </Link>
-            &nbsp;|&nbsp;
+            <span className="hidden sm:inline">|</span>
           </div>
-          <div className="mb-4 sm:mb-0">
+          <div className="flex flex-col sm:flex-row">
             <Link className="mr-0 sm:mx-4 text-gray-400 hover:text-white" to="/customer-terms">
               Customer Terms and Conditions
             </Link>
-            &nbsp;|&nbsp;
+            <span className="hidden sm:inline">|</span>
           </div>
           <div className="block">
             <a className="mr-0 sm:mx-4 text-gray-400 hover:text-white" href="https://icons8.com">
