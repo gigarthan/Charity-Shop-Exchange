@@ -1,0 +1,20 @@
+.share-button:hover {
+  cursor: pointer;
+}
+.login-button:hover {
+  cursor: pointer;
+}
+.r {
+  margin-right: 10rem;
+}
+@media screen and (max-width: 580px) {
+  .r {
+    margin-right: 8rem;
+  }
+}
+.red:hover {
+  color: #e33936;
+}
+.blue:hover {
+  color: #1090ff;
+}
