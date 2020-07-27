@@ -53,11 +53,11 @@ export default function CustomerTerms() {
           </p>
           <p className="mb-4">
             In addition to these Terms and Conditions our{' '}
-            <Link className="italic text-md text-gray-500" to="/terms">
+            <Link className="italic text-md text-gray-600" to="/terms">
               Website Terms of Use
             </Link>{' '}
             and{' '}
-            <Link className="italic text-md text-gray-500" to="/privacy">
+            <Link className="italic text-md text-gray-600" to="/privacy">
               Privacy Policy
             </Link>{' '}
             also apply to your use of the website and are, where relevant,
@@ -308,7 +308,7 @@ export default function CustomerTerms() {
           </h3>
           <p className="mb-4">
             If you wish to change your subscription, please do so via the
-            &quot;Log In&quot; area of the Charity Shop Exchange website.
+            &quot;Manage account&quot; area of the Charity Shop Exchange website.
             You can pause or cancel a subscription at any time by providing 5
             days notice before any intended delivery within your subscription
             plan. In such circumstances the pause or cancellation will take
@@ -479,7 +479,7 @@ export default function CustomerTerms() {
           <p className="mb-4">
             Nothing in these Terms limits or affects the exclusions and
             limitations set out in our{' '}
-            <Link className="italic text-md text-gray-500" to="/terms">
+            <Link className="italic text-md text-gray-600" to="/terms">
               Website Terms of Use
             </Link>
             .
@@ -578,7 +578,7 @@ export default function CustomerTerms() {
             Conditions, or about any part of our service we are always happy to
             help. You can email us at{' '}
             <a
-              className="italic text-md text-gray-500"
+              className="italic text-md text-gray-600"
               href="mailto:together@charityshopexchange.com"
               target="_top">
               together@charityshopexchange.com
