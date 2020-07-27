@@ -21,7 +21,7 @@ export default function PlanSelection(props) {
         />
         <DeliveryDetails handleChange={onChange} formData={formData} />
         {/* <ContactDetails handleChange={onChange} formData={formData} /> */}
-        {/* <Payment handleChange={onChange} formData={formData} /> */}
+        <Payment handleChange={onChange} formData={formData} />
       </div>
       <Footer handleChange={onChange} formData={formData} />
     </>
