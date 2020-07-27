@@ -31,7 +31,7 @@ export default function Faq() {
             listed on our homepage right now are to demonstrate regionality,
             we’ll soon update this as we onboard more charity shops across the
             UK. If you’re a charity shop please enquire <a
-                className="italic text-md text-gray-500"
+                className="italic text-md text-gray-600"
                 href="https://charityshopexchange.com/register/">
                 here.
               </a>
@@ -179,7 +179,7 @@ export default function Faq() {
             <li className="mb-4">
               You can buy Kelvin a coffee{' '}
               <a
-                className="italic text-md text-gray-500"
+                className="italic text-md text-gray-600"
                 href="https://www.buymeacoffee.com/tEYx6jc">
                 here.
               </a>
@@ -192,10 +192,9 @@ export default function Faq() {
             We are a new business that came together during the coronavirus lockdown.
             Our business is committed to creating a material positive impact on society and the
             environment through our operations. We explain our beginnings{' '}
-            <Link className="italic text-md text-gray-500" to="/about">
-              here
+            <Link className="italic text-md text-gray-600" to="/about">
+              here.
             </Link>
-            .
           </p>
           <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Where does my money go??
@@ -246,11 +245,10 @@ export default function Faq() {
             more money to the charity shop sector. If you’d like to provide this
             kind of support please{' '}
             <a
-              className="italic text-md text-gray-500"
+              className="italic text-md text-gray-600"
               href="mailto:together@charityshopexchange.com?subject=Support%20Charity%20Shop%20Exchange">
-              send us an email
+              send us an email.
             </a>
-            .
           </p>
         </div>
       </div>
