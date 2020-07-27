@@ -30,7 +30,7 @@ export default function Faq() {
             Yes we’re open for subscriptions! Some of the charities we have
             listed on our homepage right now are to demonstrate regionality,
             we’ll soon update this as we onboard more charity shops across the
-            UK. If you’re a charity shop please enquire here[https://charityshopexchange.com/register/].
+            UK. If you’re a charity shop please enquire [here](https://charityshopexchange.com/register/).
           </p>
           <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Is Charity Shop Exchange available in my region of the UK?
