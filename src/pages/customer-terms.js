@@ -246,10 +246,10 @@ export default function CustomerTerms() {
           <p className="mb-4">
             If your box does not fit through your letterbox and you are out when
             it is delivered, your postal carrier should leave a card at the
-            address with information about collection or re-delivery. The
-            postage provider will hold the box for 18 days before returning it
-            to us and it is your responsibility to contact them to arrange
-            receipt of the box as soon as you can. We cannot be held responsible
+            address with information about collection or re-delivery. It is your
+            responsibility to contact them to arrange receipt of the box as soon as
+            you can. The postage provider will hold the box for a reasonable period
+            of time before returning it to the sender. We cannot be held responsible
             for refunding or replacing the box if this process has not been
             followed.
           </p>
@@ -281,7 +281,7 @@ export default function CustomerTerms() {
             to notify us you wish to return it, then have 14 days from notifying
             us to return the item. If you contact us outside of the 14-day
             period or fail to return the item to us within 28 days we will not
-            refund the order (unless defective/damaged).
+            refund the order.
           </p>
           <p className="mb-4">
             When you send your item back to us we will process the returned item
@@ -299,7 +299,7 @@ export default function CustomerTerms() {
             products that are faulty or not as described. These legal rights are
             not affected by our returns policy or these Terms and Conditions.
             Advice about your legal rights is available from
-            www.consumerdirect.gov.uk or your local Citizens&apos; Advice
+            www.citizensadvice.org.uk or your local Citizens&apos; Advice
             Bureau.
           </p>
 
@@ -308,7 +308,7 @@ export default function CustomerTerms() {
           </h3>
           <p className="mb-4">
             If you wish to change your subscription, please do so via the
-            &quot;My Account&quot; area of the Charity Shop Exchange website.
+            &quot;Log In&quot; area of the Charity Shop Exchange website.
             You can pause or cancel a subscription at any time by providing 5
             days notice before any intended delivery within your subscription
             plan. In such circumstances the pause or cancellation will take
