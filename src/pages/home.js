@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import twitter from '~/assets/img/twitter.svg';
 import Dialog from '~/components/Dialog';
 import useDialog from '~/components/Dialog/useDialog';
-// import Checkout from '~/components/Home/Checkout/index';
+import Checkout from '~/components/Home/Checkout/index';
 import GetStartedForm from '~/components/Home/GetStartedForm';
 import Hero from '~/components/Home/Hero';
 import HowItWorks from '~/components/Home/HowItWorks';
@@ -47,23 +47,23 @@ export default function Home() {
     //   email: null
     // },
     payment: {
-      // phone: '',
+      phone: '',
       email: '',
-      // isEmailedMe: false,
+      isEmailedMe: false,
 
-      // card_number: '',
-      // expiry_at: '',
-      // cvv: '',
-      // name: '',
+      card_number: '',
+      expiry_at: '',
+      cvv: '',
+      name: '',
 
-      // billing_firstname: '',
-      // billing_lastname: '',
+      billing_firstname: '',
+      billing_lastname: '',
       // billing_fullname: '',
-      // billing_postcode: '',
-      // billing_address_1: '',
-      // billing_address_2: '',
-      // billing_town: '',
-      // billing_county: '',
+      billing_postcode: '',
+      billing_address_1: '',
+      billing_address_2: '',
+      billing_town: '',
+      billing_county: '',
     },
   });
   useEffect(() => {
@@ -87,6 +87,7 @@ export default function Home() {
       <Mission />
       <Register />
       <Dialog isLarge isShowing={isShowing} hide={toggle}>
+        {/*
         <h1 className="font-header text-center text-2xl sm:text-3xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
           Launching soon!
         </h1>
@@ -104,7 +105,8 @@ export default function Home() {
             />
             @CharityShopEx
           </a>
-        </p>
+        </p> */}
+        <Checkout formData={formData} onChange={onChange} />
       </Dialog>
     </>
   );
