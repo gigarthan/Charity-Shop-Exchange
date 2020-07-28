@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import Collapsable from '../Collapsable';
-import Combo from '../../Combo';
-import Button from '../../Button';
-import TextFieldWithLabel from '../../TextFieldWithLabel';
-import RadioField from '../../RadioField';
-import CheckboxField from '../../CheckboxField';
+
 import useFormDataValidation, {
   isRequired,
   isEmail,
   isValidPostCode,
   isValidEmail,
 } from '../../../hooks/useFormDataValidation';
+import Button from '../../Button';
+import CheckboxField from '../../CheckboxField';
+import Combo from '../../Combo';
+import RadioField from '../../RadioField';
+import TextFieldWithLabel from '../../TextFieldWithLabel';
+import Collapsable from '../Collapsable';
 
 export default function DeliveryDetails(props) {
   const { formData, handleChange } = props;
@@ -48,7 +49,7 @@ export default function DeliveryDetails(props) {
     fieldValidators,
   );
 
-  const [isOpen, setisOpen] = useState(false);
+  const [isOpen, setisOpen] = useState(true);
 
   const minmum2CharachterRegx = /^.{2,}$/;
 
@@ -94,7 +95,7 @@ export default function DeliveryDetails(props) {
               name="name"
               type="name"
               autocomplete="name"
-              label={'First name'}
+              label="First name"
               title="name"
               keyToUpdate="delivery.firstname"
               value={values.firstname}
@@ -108,7 +109,7 @@ export default function DeliveryDetails(props) {
                 !minmum2CharachterRegx.test(values.firstname) &&
                 'Please enter recipients first name'
               }
-              required={true}
+              required
               onblur={(event) => fieldChange(event, 'firstname')}
             />
           </div>
@@ -117,13 +118,13 @@ export default function DeliveryDetails(props) {
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="name"
-              label={'Last name'}
+              label="Last name"
               type="name"
               name="name"
               keyToUpdate="delivery.lastname"
               value={values.lastname}
               pattern=".{2,}"
-              required={true}
+              required
               error={
                 values.lastname &&
                 values.lastname.length > 0 &&
@@ -141,12 +142,12 @@ export default function DeliveryDetails(props) {
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="postal-code"
-              label={'UK Postcode'}
+              label="UK Postcode"
               type="postal-code"
               name="postal-code"
               max={8}
               keyToUpdate="delivery.postcode"
-              required={true}
+              required
               pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$"
               value={values.postcode}
               error={
@@ -169,11 +170,11 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel
               autocomplete="address-line1"
               type="address-line1"
-              label={'Address line 1'}
+              label="Address line 1"
               name="address-line1"
               max={255}
               keyToUpdate="delivery.address_1"
-              required={true}
+              required
               pattern=".{1,}"
               value={values.address_1}
               error={
@@ -194,7 +195,7 @@ export default function DeliveryDetails(props) {
             <TextFieldWithLabel
               autocomplete="address-line2"
               type="address-line2"
-              label={'Address line 2'}
+              label="Address line 2"
               max={255}
               name="address-line2"
               keyToUpdate="delivery.address_2"
@@ -210,12 +211,12 @@ export default function DeliveryDetails(props) {
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="address-level1"
-              label={'Town / City'}
+              label="Town / City"
               type="address-level1"
               name="address-level1"
               keyToUpdate="delivery.town"
               max={35}
-              required={true}
+              required
               value={values.town}
               pattern=".{2,}"
               error={
@@ -239,9 +240,9 @@ export default function DeliveryDetails(props) {
               type="address-level1"
               autocomplete="address-level1"
               max={35}
-              label={'County'}
+              label="County"
               keyToUpdate="delivery.county"
-              required={true}
+              required
               value={values.county}
               onblur={(event) => fieldChange(event, 'county')}
               onChange={(value) => {
