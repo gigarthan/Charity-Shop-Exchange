@@ -11,7 +11,7 @@ export default function useFormData(
   const onChange = (target) => {
     if (!target) return;
     const { value } = target;
-    console.log(target);
+    // console.log(target);
     const path = target.keyToUpdate.split('.');
 
     setFormData((data) => ({

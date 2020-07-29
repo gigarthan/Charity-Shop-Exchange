@@ -89,8 +89,8 @@ export default function Register() {
               </p>
               <p className="text-xs sm:text-xl font-medium sm:font-semibold mt-4 text-gray-600 leading-normal">
                 There is no cost to join, just a commitment to delighting a new
-                channel of customers! Enquire below and we&apos;ll get back to you
-                right away.
+                channel of customers! Enquire below and we&apos;ll get back to
+                you right away.
               </p>
               <div className="bg-gray-400 h-px mt-8 mb-10"> </div>
 

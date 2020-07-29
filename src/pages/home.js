@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import twitter from '~/assets/img/twitter.svg';
+// import twitter from '~/assets/img/twitter.svg';
 import Dialog from '~/components/Dialog';
 import useDialog from '~/components/Dialog/useDialog';
 import Checkout from '~/components/Home/Checkout/index';
@@ -67,6 +67,7 @@ export default function Home() {
     },
   });
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log(formData);
   }, [formData]);
 
