@@ -30,11 +30,12 @@ export default function Faq() {
             Yes we’re open for subscriptions! Some of the charities we have
             listed on our homepage right now are to demonstrate regionality,
             we’ll soon update this as we onboard more charity shops across the
-            UK. If you’re a charity shop please enquire <a
-                className="italic text-md text-gray-600"
-                href="https://charityshopexchange.com/register/">
-                here.
-              </a>
+            UK. If you’re a charity shop please enquire{' '}
+            <a
+              className="italic text-md text-gray-600"
+              href="https://charityshopexchange.com/register/">
+              here.
+            </a>
           </p>
           <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Is Charity Shop Exchange available in my region of the UK?
@@ -67,7 +68,7 @@ export default function Faq() {
             than not. And by delegating us responsibility to find you
             interesting and entertaining material you can sit back and enjoy the
             serendipity! If you’re unhappy with a selection we’ve made we’ll
-            happily replace it but please consider gifting it to someone else 
+            happily replace it but please consider gifting it to someone else
             who may appreciate it or donating it back to a charity shop.
           </p>
           <p className="mb-4">
@@ -189,9 +190,10 @@ export default function Faq() {
             Who are you and why did you start this?
           </h2>
           <p className="mb-4">
-            We are a new business that came together during the coronavirus lockdown.
-            Our business is committed to creating a material positive impact on society and the
-            environment through our operations. We explain our beginnings{' '}
+            We are a new business that came together during the coronavirus
+            lockdown. Our business is committed to creating a material positive
+            impact on society and the environment through our operations. We
+            explain our beginnings{' '}
             <Link className="italic text-md text-gray-600" to="/about">
               here.
             </Link>
@@ -200,14 +202,14 @@ export default function Faq() {
             Where does my money go??
           </h2>
           <p className="mb-4">
-            When you buy items on Charity Shop Exchange you pay a fee directly to us
-            which is included in your subscription cost. The remaining balance goes
-            directly to the charity your items come from.
+            When you buy items on Charity Shop Exchange you pay a fee directly
+            to us which is included in your subscription cost. The remaining
+            balance goes directly to the charity your items come from.
           </p>
           <p className="mb-4">
-            For each order - be it a weekly, bi-weekly or monthly delivery - Charity
-            Shop Exchange recieves between £1 and £1.40, plus 20% of the remaining
-            order value.
+            For each order - be it a weekly, bi-weekly or monthly delivery -
+            Charity Shop Exchange recieves between £1 and £1.40, plus 20% of the
+            remaining order value.
           </p>
           <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Why do you ask for a favourite charity?

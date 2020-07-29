@@ -29,12 +29,11 @@ export default function Payment(props) {
 
   useLayoutEffect(() => {
     try {
-    window.billsbyTokens.init("billsby-number", "billsby-cvv");
+      window.billsbyTokens.init('billsby-number', 'billsby-cvv');
     } catch (err) {
       console.error(err);
     }
-  }, [])
-
+  }, []);
 
   const fieldValidators = {
     phone: [isRequiredPayment, validNumber],
@@ -67,7 +66,6 @@ export default function Payment(props) {
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}>
       <form id="payment-form" action="https://www.billsby.com/">
-        
         <div className="flex flex-col">
           <div className="payment-textbox-inner-width" autoCorrect="off">
             <div className="relative">
@@ -414,7 +412,6 @@ export default function Payment(props) {
         Place Order
       </Button>
     </div> */}
-
     </Collapsable>
   );
 }
@@ -438,8 +435,8 @@ const Card = ({
           className=""
           src={
             cardValidator.card &&
-              cardValidator.card.type &&
-              cardValidator.card.type === 'mastercard'
+            cardValidator.card.type &&
+            cardValidator.card.type === 'mastercard'
               ? MasterCard
               : Card1
           }
@@ -449,8 +446,8 @@ const Card = ({
           className=""
           src={
             cardValidator.card &&
-              cardValidator.card.type &&
-              cardValidator.card.type === 'discover'
+            cardValidator.card.type &&
+            cardValidator.card.type === 'discover'
               ? Discover
               : Card2
           }
@@ -460,8 +457,8 @@ const Card = ({
           className=""
           src={
             cardValidator.card &&
-              cardValidator.card.type &&
-              cardValidator.card.type === 'visa'
+            cardValidator.card.type &&
+            cardValidator.card.type === 'visa'
               ? Visa
               : Card3
           }
@@ -500,18 +497,18 @@ const CVVIMG = ({
           className=""
           src={
             cardValidator.card &&
-              cardValidator.card.type &&
-              cardValidator.card.type === 'mastercard'
+            cardValidator.card.type &&
+            cardValidator.card.type === 'mastercard'
               ? MasterCard
               : cardValidator.card &&
                 cardValidator.card.type &&
                 cardValidator.card.type === 'visa'
-                ? Visa
-                : cardValidator.card &&
-                  cardValidator.card.type &&
-                  cardValidator.card.type === 'discover'
-                  ? Discover
-                  : Card1
+              ? Visa
+              : cardValidator.card &&
+                cardValidator.card.type &&
+                cardValidator.card.type === 'discover'
+              ? Discover
+              : Card1
           }
           alt="cvv"
         />

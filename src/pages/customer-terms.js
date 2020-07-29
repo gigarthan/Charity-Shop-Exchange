@@ -247,11 +247,11 @@ export default function CustomerTerms() {
             If your box does not fit through your letterbox and you are out when
             it is delivered, your postal carrier should leave a card at the
             address with information about collection or re-delivery. It is your
-            responsibility to contact them to arrange receipt of the box as soon as
-            you can. The postage provider will hold the box for a reasonable period
-            of time before returning it to the sender. We cannot be held responsible
-            for refunding or replacing the box if this process has not been
-            followed.
+            responsibility to contact them to arrange receipt of the box as soon
+            as you can. The postage provider will hold the box for a reasonable
+            period of time before returning it to the sender. We cannot be held
+            responsible for refunding or replacing the box if this process has
+            not been followed.
           </p>
           <p className="mb-4">
             If you change address, you must update your address details in the
@@ -308,13 +308,13 @@ export default function CustomerTerms() {
           </h3>
           <p className="mb-4">
             If you wish to change your subscription, please do so via the
-            &quot;Manage account&quot; area of the Charity Shop Exchange website.
-            You can pause or cancel a subscription at any time by providing 5
-            days notice before any intended delivery within your subscription
-            plan. In such circumstances the pause or cancellation will take
-            effect without charge. Where notice is provided after that time,
-            please note you will still receive and be charged for your next
-            delivery, but your pause or cancellation instruction will take
+            &quot;Manage account&quot; area of the Charity Shop Exchange
+            website. You can pause or cancel a subscription at any time by
+            providing 5 days notice before any intended delivery within your
+            subscription plan. In such circumstances the pause or cancellation
+            will take effect without charge. Where notice is provided after that
+            time, please note you will still receive and be charged for your
+            next delivery, but your pause or cancellation instruction will take
             effect after that delivery.
           </p>
           <p className="mb-4">

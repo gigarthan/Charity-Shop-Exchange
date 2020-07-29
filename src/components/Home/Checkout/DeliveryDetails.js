@@ -14,7 +14,6 @@ import useFormDataValidation, {
 
 export default function DeliveryDetails(props) {
   const { formData, handleChange } = props;
-  
 
   const [formInitialValues, setFormInitialValues] = useState({
     ...formData.delivery,

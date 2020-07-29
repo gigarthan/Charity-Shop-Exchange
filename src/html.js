@@ -5,7 +5,9 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <script preload src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
+        <script
+          preload
+          src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
         <meta http-equiv="Access-Control-Allow-Origin" content="*" />
         <meta
           http-equiv="Access-Control-Allow-Headers"
