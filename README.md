@@ -13,5 +13,6 @@ To run the project in dev mode:
 ```bash
 git clone git@github.com:Charity-Shop-Exchange/Charity-Shop-Exchange.git
 yarn
-yarn run develop
+yarn start
 ```
+
