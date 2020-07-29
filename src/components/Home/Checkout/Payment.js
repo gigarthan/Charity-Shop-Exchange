@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import Collapsable from '../Collapsable';
-import TextFieldWithLabel from '../../TextFieldWithLabel';
-import Visa from '../../../assets/img/icons8-visa.svg';
-import MasterCard from '../../../assets/img/icons8-mastercard.svg';
-import Discover from '../../../assets/img/icons8-discover.svg';
+
 import Card1 from '../../../assets/img/card1.png';
 import Card2 from '../../../assets/img/card2.png';
 import Card3 from '../../../assets/img/card3.png';
-import EmailMeWhenSubscribed from './EmailMeWhenSubscribed';
+import Discover from '../../../assets/img/icons8-discover.svg';
+import MasterCard from '../../../assets/img/icons8-mastercard.svg';
+import Visa from '../../../assets/img/icons8-visa.svg';
 
 import useFormDataValidation, {
   isRequiredPayment,
@@ -19,13 +17,16 @@ import useFormDataValidation, {
   validDate,
   phoneNumber,
 } from '../../../hooks/useFormDataValidation';
+import TextFieldWithLabel from '../../TextFieldWithLabel';
+import Collapsable from '../Collapsable';
+import EmailMeWhenSubscribed from './EmailMeWhenSubscribed';
 
 const valid = require('card-validator');
 
 export default function Payment(props) {
   const { formData, handleChange } = props;
   const { payment, delivery } = formData;
-  const [isOpen, setisOpen] = useState(false);
+  const [isOpen, setisOpen] = useState(true);
 
   useLayoutEffect(() => {
     try {
@@ -84,7 +85,7 @@ export default function Payment(props) {
                 onChange={(value) => {
                   handleChange(value);
                 }}
-                required={true}
+                required
                 onblur={(event) => fieldChange(event, 'card_number')}
               />
               <Card
@@ -109,7 +110,7 @@ export default function Payment(props) {
                 type="cc-exp"
                 placeholder="MM/YY"
                 name="cc-exp"
-                mask={'00/0000'}
+                mask="00/0000"
                 keyToUpdate="payment.expiry_at"
                 // className="w-6/12"
                 title="MM/YY"
@@ -117,7 +118,7 @@ export default function Payment(props) {
                 pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)"
                 s
                 max={5}
-                required={true}
+                required
                 onChange={(value) => {
                   handleChange(value);
                 }}
@@ -135,7 +136,7 @@ export default function Payment(props) {
                 // className="w-6/12"
                 title="CVV"
                 value={payment.cvv}
-                required={true}
+                required
                 onChange={(value) => {
                   handleChange(value);
                 }}
@@ -217,7 +218,7 @@ export default function Payment(props) {
                 keyToUpdate="payment.email"
                 value={payment.email}
                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                required={true}
+                required
                 error={
                   payment.email &&
                   payment.email.length > 0 &&
@@ -262,13 +263,13 @@ export default function Payment(props) {
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="name"
-                    label={'First name'}
+                    label="First name"
                     name="name"
                     type="name"
                     keyToUpdate="payment.billing_firstname"
                     value={payment.billing_firstname}
                     pattern=".{2,}"
-                    required={true}
+                    required
                     error={
                       values.billing_firstname &&
                       values.billing_firstname.length > 0 &&
@@ -284,13 +285,13 @@ export default function Payment(props) {
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="name"
-                    label={'Last name'}
+                    label="Last name"
                     type="name"
                     name="name"
                     keyToUpdate="payment.billing_lastname"
                     value={payment.billing_lastname}
                     pattern=".{2,}"
-                    required={true}
+                    required
                     error={
                       values.billing_lastname &&
                       values.billing_lastname.length > 0 &&
@@ -311,7 +312,7 @@ export default function Payment(props) {
                     type="postal-code"
                     max={8}
                     keyToUpdate="payment.billing_postcode"
-                    required={true}
+                    required
                     value={payment.billing_postcode}
                     pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$"
                     error={
@@ -335,7 +336,7 @@ export default function Payment(props) {
                     name="address-line1"
                     type="address-line1"
                     keyToUpdate="payment.billing_address_1"
-                    required={true}
+                    required
                     max={255}
                     pattern=".{1,}"
                     error={
@@ -375,7 +376,7 @@ export default function Payment(props) {
                     keyToUpdate="payment.billing_town"
                     max={35}
                     pattern=".{2,}"
-                    required={true}
+                    required
                     error={
                       values.billing_town &&
                       values.billing_town.length > 0 &&
@@ -395,7 +396,7 @@ export default function Payment(props) {
                     type="county"
                     label="County"
                     max={35}
-                    required={true}
+                    required
                     keyToUpdate="payment.billing_county"
                     value={payment.billing_county}
                     onblur={(event) => fieldChange(event, 'billing_county')}
@@ -425,7 +426,7 @@ const Card = ({
   Card2,
   Card3,
 }) => {
-  const cardValidator = valid.number(formData.payment['card_number'], {
+  const cardValidator = valid.number(formData.payment.card_number, {
     luhnValidateVisaCard: false,
   });
   if (cardValidator.card) {
@@ -487,7 +488,7 @@ const CVVIMG = ({
   Card2,
   Card3,
 }) => {
-  const cardValidator = valid.number(formData.payment['card_number'], {
+  const cardValidator = valid.number(formData.payment.card_number, {
     luhnValidateVisaCard: false,
   });
   if (cardValidator.card) {
