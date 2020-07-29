@@ -5,7 +5,6 @@ import billsbyConfig from '../../../import/billsby';
 
 export default function Footer(props) {
   const { formData, handleChange } = props;
-  const { payment, delivery } = formData;
 
   const billsbyData = {
     productId: billsbyConfig.standardProduct,
@@ -67,28 +66,7 @@ export default function Footer(props) {
   let [button, changeButton] = useState('modal-button');
 
   const [quantity, setQuantity] = useState(true);
-
-  //Card Tokenizer...
-  // useEffect(() => {
-  //     window.billsbyTokens.on('ready', function() {
-  //       setIsReady(true);
-  //     });
-  //     window?.billsbyTokens.on("paymentMethod", function (token, pmData) {
-
-  //       console.log('make axios here');
-  //     });
-  // }, []);
-  // const handleSubmit = useCallback(() => {
-  //   const requiredFields = {
-  //     full_name: formData.payment.name,
-  //     month: formData.payment.expiry_at.split('/')[0],
-  //     year: formData.payment.expiry_at.split('/')[1],
-  //   };
-
-
-  //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
-
-  const handleSubmit = (formData) => {
+  const handleSubmit = () => {
     //setClassName('loader')//
     console.log('Submit', formData);
     console.log(billsbyData);
@@ -96,25 +74,25 @@ export default function Footer(props) {
     //if (phone.startsWith('0')) phone = phone.slice(1);
 
     window.billsbyData = {
-      firstName: delivery.firstname,
-      lastName: delivery.lastname,
-      email: payment.email,
-      billingAddressLine1: delivery.address_1,
-      billingAddressLine2: delivery.address_2,
-      billingAddressCity: delivery.town,
+      firstName: formData.delivery.firstname,
+      lastName: formData.delivery.lastname,
+      email: formData.payment.email,
+      billingAddressLine1: formData.delivery.address_1,
+      billingAddressLine2: formData.delivery.address_2,
+      billingAddressCity: formData.delivery.town,
       billingAddressState: 'Free Text',
-      billingAddressZip: delivery.postcode,
+      billingAddressZip: formData.delivery.postcode,
       billingAddressCountry: 'GBR',
-      shippingAddressLine1: delivery.address_1,
-      shippingAddressLine2: delivery.address_2,
-      shippingAddressCity: delivery.town,
+      shippingAddressLine1: formData.delivery.address_1,
+      shippingAddressLine2: formData.delivery.address_2,
+      shippingAddressCity: formData.delivery.town,
       shippingAddressState: 'Free Text',
-      shippingAddressZip: delivery.postcode,
+      shippingAddressZip: formData.delivery.postcode,
       shippingAddressCountry: 'GBR',
       phoneNumberDialCode: '44',
       phoneNumberDialCountry: 'GB',
-      phoneNumber: payment.phone,
-      marketingConsent: payment.isEmailedMe,
+      phoneNumber: formData.payment.phone,
+      marketingConsent: formData.payment.isEmailedMe,
       customFields: [
         {
           customFieldId: 94,
@@ -175,13 +153,13 @@ export default function Footer(props) {
     'lastname',
     'postcode',
     'town',
+    'email',
   ];
-  const keysToLook2 = ['phone', 'email']
-  
+  //const keysToLook2 = ['phone', 'email'];
   //['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
   const showToolTip = keysToLook.some((key) => formData.delivery[key] === '');
-  const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
+  //const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
 
   return (
     <div className="modal-footer" id="footer">
@@ -201,7 +179,7 @@ export default function Footer(props) {
         formData={formData}
         button={button}
         showToolTip={showToolTip}
-        showToolTip2={showToolTip2}
+        /* showToolTip2={showToolTip2} */
         quantity={quantity}
         orderSummary={orderSummary}
         handleSubmit={handleSubmit}
@@ -307,11 +285,11 @@ const Subscription = ({
           ) : (
             <span className="subscribe">Subscribed</span>
           )}
-           {showToolTip2 ? (
+          {/* {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (
             ''
-          )} 
+          )} */}
           {showToolTip ? (
             <span className="tooltiptext">Enter Delivery Details</span>
           ) : (

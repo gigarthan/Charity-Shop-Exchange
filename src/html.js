@@ -5,7 +5,6 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <script preload src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
         <meta http-equiv="Access-Control-Allow-Origin" content="*" />
         <meta
           http-equiv="Access-Control-Allow-Headers"
@@ -153,15 +152,7 @@ export default function HTML(props) {
           <input type="text" name="number" />
           <input type="text" name="message" />
         </form>
-        <script>{`
 
-          window.billsbyTokens.on("errors", function (errors) {
-            for (var i = 0; i < errors.length; i++) {
-            var error = errors[i];
-            console.log(error);
-            };
-          });
-        `}</script>
         <script
           src="https://checkoutlib.billsby.com/checkout.min.js"
           data-billsby-company="charityshopexchange"

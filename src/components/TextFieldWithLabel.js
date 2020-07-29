@@ -27,8 +27,8 @@ export default function TextFieldWithLabel(props) {
     require('@vaadin/vaadin-text-field');
     // Handle changes to the combo box
     function handleChange(e) {
-      const { value } = e.target;
-      onChange({ keyToUpdate, value });
+      const { value: targetValue } = e.target;
+      onChange({ keyToUpdate, targetValue });
     }
 
     function handleOnBlue(e) {
