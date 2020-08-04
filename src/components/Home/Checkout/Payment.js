@@ -26,15 +26,23 @@ export default function Payment(props) {
   const { formData, handleChange } = props;
   const { payment, delivery } = formData;
   const [isOpen, setisOpen] = useState(false);
-
-  useLayoutEffect(() => {
+  
+  useEffect(() => {
+  
     try {
-    window.billsbyTokens.init("billsby-number", "billsby-cvv");
-    } catch (err) {
+      window.billsbyTokens.init("billsby-number", "billsby-cvv");
+  } catch (err) {
       console.error(err);
-    }
-  }, [])
+    }  
+    window.billsbyTokens.on('ready',  () => {
+      console.log('Event Happened');
 
+    });
+    window.billsbyTokens.on("paymentMethod", function (token, pmData) {
+
+      console.log('make axios here');
+    });
+  }, []);
 
   const fieldValidators = {
     phone: [isRequiredPayment, validNumber],

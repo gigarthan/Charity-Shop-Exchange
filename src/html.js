@@ -5,7 +5,7 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <script preload src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
+        
         <meta http-equiv="Access-Control-Allow-Origin" content="*" />
         <meta
           http-equiv="Access-Control-Allow-Headers"
@@ -175,6 +175,7 @@ export default function HTML(props) {
       _gs('GSN-976982-Z');
       _gs('set', 'anonymizeIP', true);
       `}</script>
+      <script preload src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
 
         <noscript>You need to enable JavaScript to view this site.</noscript>
         {props.postBodyComponents}

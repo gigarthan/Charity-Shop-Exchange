@@ -1,138 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ModalButton from './ModalButton';
 import Logo from '../../../assets/img/cse_logo.png';
 import billsbyConfig from '../../../import/billsby';
 
 export default function Footer(props) {
   const { formData, handleChange } = props;
-  const { payment, delivery } = formData;
-
-  const billsbyData = {
-    productId: billsbyConfig.standardProduct,
-    planId: billsbyConfig.standardPlan,
-    cycleId: billsbyConfig.cycles.monthly,
-    itemDetails: null,
-    itemCount: 0,
-  };
-
-  React.useEffect(() => {
-    let localItemDetails = '';
-    let localCycleId = billsbyConfig.cycles.monthly;
-    let localItemCount = 0;
-
-    if (formData) {
-      if (formData && formData.checkoutItems) {
-        const keys = ['books', 'dvd'];
-        // eslint-disable-next-line no-restricted-syntax
-        for (const key of keys) {
-          if (formData.checkoutItems[key]) {
-            // eslint-disable-next-line no-restricted-syntax
-            for (const item of formData.checkoutItems[key]) {
-              localItemDetails += `${item.id}:${item.quantity}|`;
-              localItemCount += item.quantity;
-            }
-          }
-        }
-      }
-      const cycleValue =
-        formData.delivery && formData.delivery.subscription
-          ? formData.delivery.subscription
-          : null;
-      if (cycleValue === 'week') {
-        localCycleId = billsbyConfig.cycles.weekly;
-      } else if (cycleValue === 'month') {
-        localCycleId = billsbyConfig.cycles.monthly;
-      } else if (cycleValue === 'other week') {
-        localCycleId = billsbyConfig.cycles.biweekly;
-      }
-    }
-    if (localItemDetails) {
-      localItemDetails = localItemDetails.slice(0, localItemDetails.length - 1);
-    }
-
-    if (localItemDetails !== billsbyData.itemDetails) {
-      billsbyData.itemDetails = localItemDetails;
-    }
-
-    if (billsbyData.cycleId !== localCycleId) {
-      billsbyData.cycleId = localCycleId;
-    }
-
-    if (billsbyData.itemCount !== localItemCount) {
-      billsbyData.itemCount = localItemCount;
-    }
-  }, [formData]);
+  const { payment, delivery, charity } = formData;
+  const [ isReady, setIsReady ] = useState(false)
 
   let [newClass, setClassName] = useState('');
   let [button, changeButton] = useState('modal-button');
 
   const [quantity, setQuantity] = useState(true);
 
-  //Card Tokenizer...
-  // useEffect(() => {
-  //     window.billsbyTokens.on('ready', function() {
-  //       setIsReady(true);
-  //     });
-  //     window?.billsbyTokens.on("paymentMethod", function (token, pmData) {
 
-  //       console.log('make axios here');
-  //     });
-  // }, []);
-  // const handleSubmit = useCallback(() => {
-  //   const requiredFields = {
-  //     full_name: formData.payment.name,
-  //     month: formData.payment.expiry_at.split('/')[0],
-  //     year: formData.payment.expiry_at.split('/')[1],
-  //   };
-
-
-  //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
-
-  const handleSubmit = (formData) => {
-    //setClassName('loader')//
-    console.log('Submit', formData);
-    console.log(billsbyData);
-    //let phone = formData.payment.phone;
-    //if (phone.startsWith('0')) phone = phone.slice(1);
-
-    window.billsbyData = {
-      firstName: delivery.firstname,
-      lastName: delivery.lastname,
-      email: payment.email,
-      billingAddressLine1: delivery.address_1,
-      billingAddressLine2: delivery.address_2,
-      billingAddressCity: delivery.town,
-      billingAddressState: 'Free Text',
-      billingAddressZip: delivery.postcode,
-      billingAddressCountry: 'GBR',
-      shippingAddressLine1: delivery.address_1,
-      shippingAddressLine2: delivery.address_2,
-      shippingAddressCity: delivery.town,
-      shippingAddressState: 'Free Text',
-      shippingAddressZip: delivery.postcode,
-      shippingAddressCountry: 'GBR',
-      phoneNumberDialCode: '44',
-      phoneNumberDialCountry: 'GB',
-      phoneNumber: payment.phone,
-      marketingConsent: payment.isEmailedMe,
-      customFields: [
-        {
-          customFieldId: 94,
-          value: formData.charity.countryId,
-        },
-        {
-          customFieldId: 95,
-          value: formData.charity.charityId,
-        },
-        {
-          customFieldId: 135,
-          value: billsbyData.itemDetails,
-        },
-      ],
+  const handleSubmit = useCallback(() => {
+    const requiredFields = {
+      full_name: payment.name,
+      month: payment.expiry_at.split('/')[0],
+      year: payment.expiry_at.split('/')[1],
     };
+    try {
+      window.billsbyTokens.tokenizeCreditCard(requiredFields);
+    } catch (err) {
+      console.log(err)
+    }
+
+    // //setClassName('loader')//
+    // console.log('Submit', formData);
+    // console.log(billsbyData);
+    // //let phone = formData.payment.phone;
+    // //if (phone.startsWith('0')) phone = phone.slice(1);
+
+    // window.billsbyData = {
+    //   firstName: delivery.firstname,
+    //   lastName: delivery.lastname,
+    //   email: payment.email,
+    //   billingAddressLine1: delivery.address_1,
+    //   billingAddressLine2: delivery.address_2,
+    //   billingAddressCity: delivery.town,
+    //   billingAddressState: 'Free Text',
+    //   billingAddressZip: delivery.postcode,
+    //   billingAddressCountry: 'GBR',
+    //   shippingAddressLine1: delivery.address_1,
+    //   shippingAddressLine2: delivery.address_2,
+    //   shippingAddressCity: delivery.town,
+    //   shippingAddressState: 'Free Text',
+    //   shippingAddressZip: delivery.postcode,
+    //   shippingAddressCountry: 'GBR',
+    //   phoneNumberDialCode: '44',
+    //   phoneNumberDialCountry: 'GB',
+    //   phoneNumber: payment.phone,
+    //   marketingConsent: payment.isEmailedMe,
+    //   customFields: [
+    //     {
+    //       customFieldId: 94,
+    //       value: charity.countryId,
+    //     },
+    //     {
+    //       customFieldId: 95,
+    //       value: charity.charityId,
+    //     },
+    //     {
+    //       customFieldId: 135,
+    //       value: billsbyData.itemDetails,
+    //     },
+    //   ],
+    // };
     setTimeout(() => {
       console.log('Trigger scan');
-      window.scanDomBillsby();
+      // window.scanDomBillsby();
       setTimeout(() => {
         const elem = document.getElementById('billsbyTriggerAnchor');
         console.log(elem);
@@ -149,7 +86,7 @@ export default function Footer(props) {
         // }
       }, 500);
     }, 500);
-  };
+  });
   const books = formData.checkoutItems.books.filter(
     (item) => item.quantity !== 0,
   );
@@ -177,7 +114,7 @@ export default function Footer(props) {
     'town',
   ];
   const keysToLook2 = ['phone', 'email']
-  
+
   //['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
   const showToolTip = keysToLook.some((key) => formData.delivery[key] === '');
@@ -206,11 +143,12 @@ export default function Footer(props) {
         orderSummary={orderSummary}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        isReady={isReady}
         newClass={newClass}
-        billsbyData={billsbyData}
+        // billsbyData={billsbyData}
         totalDecimalSum={totalDecimalSum}
       />
-      <a
+      {/* <a
         style={{ display: 'none' }}
         id="billsbyTriggerAnchor"
         data-billsby-type="checkout"
@@ -219,11 +157,11 @@ export default function Footer(props) {
         data-billsby-cycle={billsbyData.cycleId}
         data-billsby-units={orderSummary.quantity}>
         Subscribe
-      </a>
+      </a> */}
     </div>
   );
 }
-const Selection = ({ orderSummary, handleSubmit, handleChange }) => {
+const Selection = ({ orderSummary, handleSubmit, handleChange,isReady }) => {
   if (orderSummary.quantity >= 2) {
     return null;
   }
@@ -239,6 +177,7 @@ const Selection = ({ orderSummary, handleSubmit, handleChange }) => {
           }
           onClick={handleSubmit}
           handleChange={handleChange}
+          isReady={isReady}
           text="Select 1 more item"
         />
       </>
@@ -255,6 +194,7 @@ const Selection = ({ orderSummary, handleSubmit, handleChange }) => {
         }
         onClick={handleSubmit}
         handleChange={handleChange}
+        isReady={isReady}
         text="Select 2 more items"
       />
     </>
@@ -271,10 +211,11 @@ const Subscription = ({
   showToolTip,
   showToolTip2,
   totalDecimalSum,
+  isReady,
 }) => {
   const modalButtonClassName = `${
     showToolTip2 || showToolTip ? 'modal-button-disabled' : button
-  } `;
+    } `;
   const isEnabled = !showToolTip && !showToolTip2;
   if (
     typeof orderSummary.quantity !== 'undefined'
@@ -291,32 +232,33 @@ const Subscription = ({
           <a className="s2">{formData.delivery.subscription}</a>
         </span>
       ) : (
-        <div className="fade-in">
-          <span>Thank You! An email confirmation has been sent.</span>
-        </div>
-      )}
+          <div className="fade-in">
+            <span>Thank You! An email confirmation has been sent.</span>
+          </div>
+        )}
       <ModalButton
+
         className={modalButtonClassName}
         type="button"
-        disabled={!isEnabled}
+        disabled={!isEnabled || !isReady}
         onClick={handleSubmit}
         handleChange={handleChange}>
         <>
           {quantity ? (
             <span className="sum">£{totalDecimalSum} Subscribe</span>
           ) : (
-            <span className="subscribe">Subscribed</span>
-          )}
-           {showToolTip2 ? (
+              <span className="subscribe">Subscribed</span>
+            )}
+          {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (
-            ''
-          )} 
+              ''
+            )}
           {showToolTip ? (
             <span className="tooltiptext">Enter Delivery Details</span>
           ) : (
-            ''
-          )}
+              ''
+            )}
           <div className={newClass}></div>
         </>
       </ModalButton>
