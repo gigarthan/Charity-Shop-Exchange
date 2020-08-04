@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import twitter from '~/assets/img/twitter.svg';
+// import twitter from '~/assets/img/twitter.svg';
 import Dialog from '~/components/Dialog';
 import useDialog from '~/components/Dialog/useDialog';
 import Checkout from '~/components/Home/Checkout/index';
@@ -58,7 +58,7 @@ export default function Home() {
 
       billing_firstname: '',
       billing_lastname: '',
-      //billing_fullname: '',
+      // billing_fullname: '',
       billing_postcode: '',
       billing_address_1: '',
       billing_address_2: '',
@@ -67,6 +67,7 @@ export default function Home() {
     },
   });
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log(formData);
   }, [formData]);
 
@@ -87,7 +88,7 @@ export default function Home() {
       <Mission />
       <Register />
       <Dialog isLarge isShowing={isShowing} hide={toggle}>
-       {/*
+        {/*
         <h1 className="font-header text-center text-2xl sm:text-3xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
           Launching soon!
         </h1>
@@ -106,7 +107,7 @@ export default function Home() {
             @CharityShopEx
           </a>
         </p> */}
-        <Checkout formData={formData} onChange={onChange}/>
+        <Checkout formData={formData} onChange={onChange} />
       </Dialog>
     </>
   );

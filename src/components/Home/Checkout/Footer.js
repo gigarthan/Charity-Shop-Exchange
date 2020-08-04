@@ -13,18 +13,24 @@ export default function Footer(props) {
 
   const [quantity, setQuantity] = useState(true);
 
+  //Card Tokenizer...
+  // useEffect(() => {
+  //     window.billsbyTokens.on('ready', function() {
+  //       setIsReady(true);
+  //     });
+  //     window?.billsbyTokens.on("paymentMethod", function (token, pmData) {
 
-  const handleSubmit = useCallback(() => {
-    const requiredFields = {
-      full_name: payment.name,
-      month: payment.expiry_at.split('/')[0],
-      year: payment.expiry_at.split('/')[1],
-    };
-    try {
-      window.billsbyTokens.tokenizeCreditCard(requiredFields);
-    } catch (err) {
-      console.log(err)
-    }
+  //       console.log('make axios here');
+  //     });
+  // }, []);
+  // const handleSubmit = useCallback(() => {
+  //   const requiredFields = {
+  //     full_name: formData.payment.name,
+  //     month: formData.payment.expiry_at.split('/')[0],
+  //     year: formData.payment.expiry_at.split('/')[1],
+  //   };
+
+  //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
 
     // //setClassName('loader')//
     // console.log('Submit', formData);

@@ -71,6 +71,7 @@ export default function useFormDataValidation(
           ? [...checkboxValues, value]
           : checkboxValues.filter((e) => e !== value);
       } else {
+        // eslint-disable-next-line no-console
         console.warn(
           `[violation] Initial value for checkbox field ${name} should be array.`,
           checked,

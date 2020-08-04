@@ -98,7 +98,7 @@ export default function GetStartedForm({ toggle, onChange }) {
       </div>
       <div className="pb-20 px-10">
         <div className="max-w-screen-md mx-auto">
-          <div className="flex flex-col sm:flex-row w-full sm:space-x-8 justify-center items-center md:items-end ">
+          <div className="flex flex-col sm:flex-row w-full sm:space-x-8 justify-center items-center">
             <div className="w-full md:w-1/2 mb-2 md:mb-0">
               <div className="relative">
                 <Combo
@@ -142,7 +142,7 @@ export default function GetStartedForm({ toggle, onChange }) {
                 />
               </div>
             </div>
-            <div className="mt-8 sm:mt-4">
+            <div className="md:mt-8 mt-6">
               <Button
                 className="px-8"
                 onClick={handleSubmit}
