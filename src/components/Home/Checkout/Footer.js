@@ -24,7 +24,8 @@ export default function Footer(props) {
   //       console.log('make axios here');
   //     });
   // }, []);
-  const handleSubmit = useCallback(() => {
+  function handleSubmit() {
+    console.log('HELLO MY NAME IS JEFF!');
     const requiredFields = {
       full_name: formData.payment.name,
       month: formData.payment.expiry_at.split('/')[0],
@@ -33,11 +34,11 @@ export default function Footer(props) {
 
     window.billsbyTokens.tokenizeCreditCard(requiredFields);
 
-    //setClassName('loader')//
+    // setClassName('loader')//
     console.log('Submit', formData);
     console.log(billsbyData);
-    //let phone = formData.payment.phone;
-    //if (phone.startsWith('0')) phone = phone.slice(1);
+    // let phone = formData.payment.phone;
+    // if (phone.startsWith('0')) phone = phone.slice(1);
 
     window.billsbyData = {
       firstName: delivery.firstname,
@@ -93,7 +94,7 @@ export default function Footer(props) {
         // }
       }, 500);
     }, 500);
-  });
+  }
 
   const books = formData.checkoutItems.books.filter(
     (item) => item.quantity !== 0,
