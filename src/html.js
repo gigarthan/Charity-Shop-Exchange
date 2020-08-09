@@ -5,20 +5,20 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-<<<<<<< HEAD
-        
-=======
+        <meta httpEquiv="Access-Control-Allow-Origin" content="*" />
         <script
-          preload
-          src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
->>>>>>> 40320557ca1533632efc4c8f09e828a9b3d8ab47
-        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+          async
+          src="https://checkoutlib.billsby.com/checkout.min.js"
+          data-billsby-company="charityshopexchange"
+        />
+
+        <script async src="https://tokenlib.billsby.com/tokenizer.min.js" />
         <meta
-          http-equiv="Access-Control-Allow-Headers"
+          httpEquiv="Access-Control-Allow-Headers"
           content="X-Requested-With"
         />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width,user-scalable=no" />
         <style>{`
         .font-header {
@@ -38,6 +38,7 @@ export default function HTML(props) {
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
+
         <dom-module id="custom-combo-box" theme-for="vaadin-combo-box">
           <template>
             <style>{`
@@ -160,19 +161,6 @@ export default function HTML(props) {
           <input type="text" name="message" />
         </form>
         <script>{`
-
-          window.billsbyTokens.on("errors", function (errors) {
-            for (var i = 0; i < errors.length; i++) {
-            var error = errors[i];
-            console.log(error);
-            };
-          });
-        `}</script>
-        <script
-          src="https://checkoutlib.billsby.com/checkout.min.js"
-          data-billsby-company="charityshopexchange"
-          crossOrigin="anonymous"></script>
-        <script>{`
       !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
       arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
       d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
@@ -181,7 +169,6 @@ export default function HTML(props) {
       _gs('GSN-976982-Z');
       _gs('set', 'anonymizeIP', true);
       `}</script>
-      <script preload src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
 
         <noscript>You need to enable JavaScript to view this site.</noscript>
         {props.postBodyComponents}

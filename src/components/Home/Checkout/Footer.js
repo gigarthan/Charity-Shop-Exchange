@@ -1,19 +1,20 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import ModalButton from './ModalButton';
+
 import Logo from '../../../assets/img/cse_logo.png';
 import billsbyConfig from '../../../import/billsby';
+import ModalButton from './ModalButton';
 
 export default function Footer(props) {
   const { formData, handleChange } = props;
   const { payment, delivery, charity } = formData;
-  const [ isReady, setIsReady ] = useState(false)
+  const [isReady, setIsReady] = useState(false);
 
-  let [newClass, setClassName] = useState('');
-  let [button, changeButton] = useState('modal-button');
+  const [newClass, setClassName] = useState('');
+  const [button, changeButton] = useState('modal-button');
 
   const [quantity, setQuantity] = useState(true);
 
-  //Card Tokenizer...
+  // Card Tokenizer...
   // useEffect(() => {
   //     window.billsbyTokens.on('ready', function() {
   //       setIsReady(true);
@@ -23,56 +24,56 @@ export default function Footer(props) {
   //       console.log('make axios here');
   //     });
   // }, []);
-  // const handleSubmit = useCallback(() => {
-  //   const requiredFields = {
-  //     full_name: formData.payment.name,
-  //     month: formData.payment.expiry_at.split('/')[0],
-  //     year: formData.payment.expiry_at.split('/')[1],
-  //   };
+  const handleSubmit = useCallback(() => {
+    const requiredFields = {
+      full_name: formData.payment.name,
+      month: formData.payment.expiry_at.split('/')[0],
+      year: formData.payment.expiry_at.split('/')[1],
+    };
 
-  //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
+    window.billsbyTokens.tokenizeCreditCard(requiredFields);
 
-    // //setClassName('loader')//
-    // console.log('Submit', formData);
-    // console.log(billsbyData);
-    // //let phone = formData.payment.phone;
-    // //if (phone.startsWith('0')) phone = phone.slice(1);
+    //setClassName('loader')//
+    console.log('Submit', formData);
+    console.log(billsbyData);
+    //let phone = formData.payment.phone;
+    //if (phone.startsWith('0')) phone = phone.slice(1);
 
-    // window.billsbyData = {
-    //   firstName: delivery.firstname,
-    //   lastName: delivery.lastname,
-    //   email: payment.email,
-    //   billingAddressLine1: delivery.address_1,
-    //   billingAddressLine2: delivery.address_2,
-    //   billingAddressCity: delivery.town,
-    //   billingAddressState: 'Free Text',
-    //   billingAddressZip: delivery.postcode,
-    //   billingAddressCountry: 'GBR',
-    //   shippingAddressLine1: delivery.address_1,
-    //   shippingAddressLine2: delivery.address_2,
-    //   shippingAddressCity: delivery.town,
-    //   shippingAddressState: 'Free Text',
-    //   shippingAddressZip: delivery.postcode,
-    //   shippingAddressCountry: 'GBR',
-    //   phoneNumberDialCode: '44',
-    //   phoneNumberDialCountry: 'GB',
-    //   phoneNumber: payment.phone,
-    //   marketingConsent: payment.isEmailedMe,
-    //   customFields: [
-    //     {
-    //       customFieldId: 94,
-    //       value: charity.countryId,
-    //     },
-    //     {
-    //       customFieldId: 95,
-    //       value: charity.charityId,
-    //     },
-    //     {
-    //       customFieldId: 135,
-    //       value: billsbyData.itemDetails,
-    //     },
-    //   ],
-    // };
+    window.billsbyData = {
+      firstName: delivery.firstname,
+      lastName: delivery.lastname,
+      email: payment.email,
+      billingAddressLine1: delivery.address_1,
+      billingAddressLine2: delivery.address_2,
+      billingAddressCity: delivery.town,
+      billingAddressState: 'Free Text',
+      billingAddressZip: delivery.postcode,
+      billingAddressCountry: 'GBR',
+      shippingAddressLine1: delivery.address_1,
+      shippingAddressLine2: delivery.address_2,
+      shippingAddressCity: delivery.town,
+      shippingAddressState: 'Free Text',
+      shippingAddressZip: delivery.postcode,
+      shippingAddressCountry: 'GBR',
+      phoneNumberDialCode: '44',
+      phoneNumberDialCountry: 'GB',
+      phoneNumber: payment.phone,
+      marketingConsent: payment.isEmailedMe,
+      customFields: [
+        {
+          customFieldId: 94,
+          value: charity.countryId,
+        },
+        {
+          customFieldId: 95,
+          value: charity.charityId,
+        },
+        {
+          customFieldId: 135,
+          value: billsbyData.itemDetails,
+        },
+      ],
+    };
     setTimeout(() => {
       console.log('Trigger scan');
       // window.scanDomBillsby();
@@ -93,6 +94,7 @@ export default function Footer(props) {
       }, 500);
     }, 500);
   });
+
   const books = formData.checkoutItems.books.filter(
     (item) => item.quantity !== 0,
   );
@@ -112,16 +114,10 @@ export default function Footer(props) {
   const totalSum = total.reduce((sum, i) => (sum += i.quantity * 2.0), 3.5);
   const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
 
-  const keysToLook = [
-    'address_1',
-    'firstname',
-    'lastname',
-    'postcode',
-    'town',
-  ];
-  const keysToLook2 = ['phone', 'email']
+  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
+  const keysToLook2 = ['phone', 'email'];
 
-  //['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
+  // ['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
   const showToolTip = keysToLook.some((key) => formData.delivery[key] === '');
   const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
@@ -167,7 +163,7 @@ export default function Footer(props) {
     </div>
   );
 }
-const Selection = ({ orderSummary, handleSubmit, handleChange,isReady }) => {
+const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
   if (orderSummary.quantity >= 2) {
     return null;
   }
@@ -221,7 +217,7 @@ const Subscription = ({
 }) => {
   const modalButtonClassName = `${
     showToolTip2 || showToolTip ? 'modal-button-disabled' : button
-    } `;
+  } `;
   const isEnabled = !showToolTip && !showToolTip2;
   if (
     typeof orderSummary.quantity !== 'undefined'
@@ -238,12 +234,11 @@ const Subscription = ({
           <a className="s2">{formData.delivery.subscription}</a>
         </span>
       ) : (
-          <div className="fade-in">
-            <span>Thank You! An email confirmation has been sent.</span>
-          </div>
-        )}
+        <div className="fade-in">
+          <span>Thank You! An email confirmation has been sent.</span>
+        </div>
+      )}
       <ModalButton
-
         className={modalButtonClassName}
         type="button"
         disabled={!isEnabled || !isReady}
@@ -253,19 +248,19 @@ const Subscription = ({
           {quantity ? (
             <span className="sum">£{totalDecimalSum} Subscribe</span>
           ) : (
-              <span className="subscribe">Subscribed</span>
-            )}
+            <span className="subscribe">Subscribed</span>
+          )}
           {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (
-              ''
-            )}
+            ''
+          )}
           {showToolTip ? (
             <span className="tooltiptext">Enter Delivery Details</span>
           ) : (
-              ''
-            )}
-          <div className={newClass}></div>
+            ''
+          )}
+          <div className={newClass} />
         </>
       </ModalButton>
     </div>
