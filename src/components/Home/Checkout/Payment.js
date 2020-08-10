@@ -41,7 +41,15 @@ export default function Payment(props) {
       console.log('Event Happened');
     });
     window.billsbyTokens.on('paymentMethod', function (token, pmData) {
+      console.log(token, 'ABC', pmData);
       console.log('make axios here');
+    });
+
+    window.billsbyTokens.on('errors', function (errors) {
+      for (let i = 0; i < errors.length; i++) {
+        const error = errors[i];
+        console.log('BIG ERR', error);
+      }
     });
   }, [isOpen]);
 

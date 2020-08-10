@@ -25,7 +25,6 @@ export default function Footer(props) {
   //     });
   // }, []);
   function handleSubmit() {
-    console.log('HELLO MY NAME IS JEFF!');
     const requiredFields = {
       full_name: formData.payment.name,
       month: formData.payment.expiry_at.split('/')[0],
@@ -36,7 +35,6 @@ export default function Footer(props) {
 
     // setClassName('loader')//
     console.log('Submit', formData);
-    console.log(billsbyData);
     // let phone = formData.payment.phone;
     // if (phone.startsWith('0')) phone = phone.slice(1);
 
@@ -69,17 +67,16 @@ export default function Footer(props) {
           customFieldId: 95,
           value: charity.charityId,
         },
-        {
-          customFieldId: 135,
-          value: billsbyData.itemDetails,
-        },
+        // {
+        //   customFieldId: 135,
+        //   value: billsbyData.itemDetails,
+        // },
       ],
     };
     setTimeout(() => {
-      console.log('Trigger scan');
       // window.scanDomBillsby();
       setTimeout(() => {
-        const elem = document.getElementById('billsbyTriggerAnchor');
+        const elem = document.getElementById('payment_method_token');
         console.log(elem);
         if (elem) {
           console.log('Click elem');
@@ -92,8 +89,8 @@ export default function Footer(props) {
         // document.getElementById("footer").classList.add('footer');
         // document.getElementById("modal").classList.add('completed');
         // }
-      }, 500);
-    }, 500);
+      }, 1500);
+    }, 1500);
   }
 
   const books = formData.checkoutItems.books.filter(
@@ -242,7 +239,7 @@ const Subscription = ({
       <ModalButton
         className={modalButtonClassName}
         type="button"
-        disabled={!isEnabled || !isReady}
+        disabled={!isEnabled}
         onClick={handleSubmit}
         handleChange={handleChange}>
         <>
