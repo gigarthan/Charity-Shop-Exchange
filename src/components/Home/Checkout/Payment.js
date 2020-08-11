@@ -32,7 +32,7 @@ export default function Payment(props) {
     try {
       console.log('isOPen', isOpen);
       if (isOpen) {
-        window.billsbyTokens.init('billsby-number', 'billsby-cvv');
+        window.billsbyTokens.init('bill', 'bill2');
       }
     } catch (err) {
       console.error('ERR', err);
@@ -84,6 +84,8 @@ export default function Payment(props) {
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}>
       <form id="payment-form" action="https://www.billsby.com/">
+        <div id="bill">5355220211973429</div>
+        <div id="bill2">902</div>
         <div className="flex flex-col">
           <div className="payment-textbox-inner-width" autoCorrect="off">
             <div className="relative">

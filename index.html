@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <form
+      id="payment-form"
+      action="https://www.billsby.com/"
+      onsubmit="submitPaymentForm(); return false;"
+    >
+      <input
+        type="hidden"
+        name="payment_method_token"
+        id="payment_method_token"
+      />
+
+      <label for="full_name">Name</label>
+      <input type="text" id="full_name" name="full_name" /><br />
+
+      <label>Credit Card Number</label>
+      <div
+        id="billsby-number"
+        style="width: 225px; height: 35px; border: 2px solid;"
+      >
+        NUMBER
+      </div>
+      <br />
+
+      <label for="month">Expiration Date</label>
+      <input type="text" id="month" name="month" maxlength="2" />
+      <input type="text" id="year" name="year" maxlength="4" /><br />
+
+      <label>CVV</label>
+      <div
+        id="billsby-cvv"
+        style="width: 60px; height: 35px; border: 2px solid;"
+      >
+        CVV
+      </div>
+      <br />
+
+      <input id="submit-button" type="submit" value="Pay Now" disabled />
+    </form>
+
+    <script src="https://tokenlib.billsby.com/tokenizer.min.js"></script>
+    <script>
+      billsbyTokens.init('billsby-number', 'billsby-cvv');
+
+      billsbyTokens.on('ready', function () {
+        var submitButton = document.getElementById('submit-button');
+        submitButton.disabled = false;
+      });
+    </script>
+    <script>
+      function submitPaymentForm() {
+        var requiredFields = {};
+
+        // Get required, non-sensitive, values from host page
+        requiredFields['full_name'] = document.getElementById(
+          'full_name',
+        ).value;
+        requiredFields['month'] = document.getElementById('month').value;
+        requiredFields['year'] = document.getElementById('year').value;
+
+        billsbyTokens.tokenizeCreditCard(requiredFields);
+      }
+    </script>
+    <script>
+      billsbyTokens.on('paymentMethod', function (token, pmData) {
+        // Set the token in the hidden form field
+        var tokenField = document.getElementById('payment_method_token');
+        tokenField.setAttribute('value', token);
+
+        // Submit the form
+        var masterForm = document.getElementById('payment-form');
+        masterForm.submit();
+      });
+    </script>
+    <script>
+      billsbyTokens.on('errors', function (errors) {
+        for (var i = 0; i < errors.length; i++) {
+          var error = errors[i];
+          console.log(error);
+        }
+      });
+    </script>
+  </body>
+</html>
