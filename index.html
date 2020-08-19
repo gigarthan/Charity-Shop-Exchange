@@ -12,7 +12,6 @@
     <p>Hello world! This is HTML5 Boilerplate.</p>
     <form
       id="payment-form"
-      action="https://www.billsby.com/"
       onsubmit="submitPaymentForm(); return false;"
     >
       <input
@@ -24,13 +23,11 @@
       <label for="full_name">Name</label>
       <input type="text" id="full_name" name="full_name" /><br />
 
-      <label>Credit Card Number</label>
+      <label>Number</label>
       <div
         id="billsby-number"
         style="width: 225px; height: 35px; border: 2px solid;"
-      >
-        NUMBER
-      </div>
+      ></div>
       <br />
 
       <label for="month">Expiration Date</label>
@@ -41,9 +38,7 @@
       <div
         id="billsby-cvv"
         style="width: 60px; height: 35px; border: 2px solid;"
-      >
-        CVV
-      </div>
+      ></div>
       <br />
 
       <input id="submit-button" type="submit" value="Pay Now" disabled />

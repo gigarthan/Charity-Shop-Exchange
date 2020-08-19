@@ -24,73 +24,15 @@ export default function Footer(props) {
   //       console.log('make axios here');
   //     });
   // }, []);
+
   function handleSubmit() {
     const requiredFields = {
       full_name: formData.payment.name,
       month: formData.payment.expiry_at.split('/')[0],
-      year: formData.payment.expiry_at.split('/')[1],
+      year: `20${formData.payment.expiry_at.split('/')[1]}`,
     };
-
+    console.log(formData.payment);
     window.billsbyTokens.tokenizeCreditCard(requiredFields);
-
-    // setClassName('loader')//
-    console.log('Submit', formData);
-    // let phone = formData.payment.phone;
-    // if (phone.startsWith('0')) phone = phone.slice(1);
-
-    window.billsbyData = {
-      firstName: delivery.firstname,
-      lastName: delivery.lastname,
-      email: payment.email,
-      billingAddressLine1: delivery.address_1,
-      billingAddressLine2: delivery.address_2,
-      billingAddressCity: delivery.town,
-      billingAddressState: 'Free Text',
-      billingAddressZip: delivery.postcode,
-      billingAddressCountry: 'GBR',
-      shippingAddressLine1: delivery.address_1,
-      shippingAddressLine2: delivery.address_2,
-      shippingAddressCity: delivery.town,
-      shippingAddressState: 'Free Text',
-      shippingAddressZip: delivery.postcode,
-      shippingAddressCountry: 'GBR',
-      phoneNumberDialCode: '44',
-      phoneNumberDialCountry: 'GB',
-      phoneNumber: payment.phone,
-      marketingConsent: payment.isEmailedMe,
-      customFields: [
-        {
-          customFieldId: 94,
-          value: charity.countryId,
-        },
-        {
-          customFieldId: 95,
-          value: charity.charityId,
-        },
-        // {
-        //   customFieldId: 135,
-        //   value: billsbyData.itemDetails,
-        // },
-      ],
-    };
-    setTimeout(() => {
-      // window.scanDomBillsby();
-      setTimeout(() => {
-        const elem = document.getElementById('payment_method_token');
-        console.log(elem);
-        if (elem) {
-          console.log('Click elem');
-          elem.click();
-        } // else {
-        //  setClassName('')
-        // setQuantity(false)
-        // setClassName('checkmark draw')
-        // changeButton('modal-button d')
-        // document.getElementById("footer").classList.add('footer');
-        // document.getElementById("modal").classList.add('completed');
-        // }
-      }, 1500);
-    }, 1500);
   }
 
   const books = formData.checkoutItems.books.filter(
@@ -239,7 +181,7 @@ const Subscription = ({
       <ModalButton
         className={modalButtonClassName}
         type="button"
-        disabled={!isEnabled}
+        disabled={false}
         onClick={handleSubmit}
         handleChange={handleChange}>
         <>
