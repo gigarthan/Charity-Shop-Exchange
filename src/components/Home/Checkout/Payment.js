@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 
 import useFormDataValidation, {
@@ -18,7 +19,7 @@ const valid = require('card-validator');
 
 export default function Payment(props) {
   const { formData, handleChange } = props;
-  const { payment, delivery } = formData;
+  const { charity, payment, delivery } = formData;
   const [isOpen, setisOpen] = useState(false);
 
   useEffect(() => {
@@ -37,6 +38,50 @@ export default function Payment(props) {
     window.billsbyTokens.on('paymentMethod', function (token, pmData) {
       console.log(token, 'ABC', pmData);
       console.log('make axios here');
+      console.log(formData);
+      const data = {
+        firstName: delivery.firstname,
+        lastName: delivery.lastname,
+        email: payment.email,
+        address: {
+          addressLine1: delivery.address_1,
+          addressLine2: delivery.address_2,
+          state: '',
+          city: delivery.town,
+          county: delivery.county,
+          postCode: delivery.postcode,
+        },
+        shippingAddress: {
+          addressLine1: delivery.address_1,
+          addressLine2: delivery.address_2,
+          state: '',
+          city: delivery.town,
+          county: delivery.county,
+          postCode: delivery.postcode,
+        },
+        cardDetails: {
+          fullName: payment.name,
+          paymentCardToken: token,
+          cardType: pmData.card_type,
+          expiryMonth: pmData.month,
+          expiryYear: pmData.year,
+          last4Digits: pmData.last_four_digits,
+        },
+        phoneNumberDialCountry: 'United Kingdom',
+        phoneNumberDialCode: '44',
+        phoneNumber: payment.phone,
+      };
+      console.log(data);
+      // axios
+      //   .post('/.netlify/functions/createOrder', data)
+      //   .then(function (response) {
+      //     // handle success
+      //     // console.log('HELLO', response);
+      //   })
+      //   .catch(function (error) {
+      //     // handle error
+      //     // console.log('ERR', error);
+      //   });
     });
 
     window.billsbyTokens.on('errors', function (errors) {

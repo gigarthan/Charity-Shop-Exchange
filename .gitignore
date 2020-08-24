@@ -166,3 +166,5 @@ sketch
 
 # End of https://www.gitignore.io/api/node,react,linux,macos
 .history/
+# Local Netlify folder
+.netlify

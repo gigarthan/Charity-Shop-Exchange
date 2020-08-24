@@ -3,6 +3,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 exports.handler = async (event, _) => {
+  console.log('HELLo');
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
@@ -17,6 +18,7 @@ exports.handler = async (event, _) => {
       {
         headers: {
           ApiKey: BILLSBY_API_KEY,
+          'content-type': 'application/json',
         },
       },
     )
@@ -27,6 +29,9 @@ exports.handler = async (event, _) => {
       };
     })
     .catch((error) => {
-      console.log(error);
+      console.log('ERR');
+      console.log(error.response.data);
+      console.log(error.response.status);
+      // console.log(error);
     });
 };
