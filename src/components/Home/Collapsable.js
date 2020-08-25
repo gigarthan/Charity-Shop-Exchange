@@ -24,7 +24,10 @@ export default function Collapsable({ children, title, open, toggle }) {
 
   return (
     <div>
-      <button onClick={triggerToggle} className="flex mb-2 collapsable-btn">
+      <button
+        type="button"
+        onClick={triggerToggle}
+        className="flex mb-2 collapsable-btn">
         <div
           className={
             open

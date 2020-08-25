@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Collapsable from '../Collapsable';
-import Combo from '../../Combo';
+
 import Button from '../../Button';
+import Combo from '../../Combo';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
+import Collapsable from '../Collapsable';
 
 export default function ContactDetails(props) {
   const {
@@ -21,7 +22,7 @@ export default function ContactDetails(props) {
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <TextFieldWithLabel
-              label={'Phone number'}
+              label="Phone number"
               name="contact.phone"
               value={contact.phone}
               onChange={handleChange}
@@ -31,7 +32,7 @@ export default function ContactDetails(props) {
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <TextFieldWithLabel
-              label={'Email address'}
+              label="Email address"
               name="contact.email"
               value={contact.email}
               onChange={handleChange}

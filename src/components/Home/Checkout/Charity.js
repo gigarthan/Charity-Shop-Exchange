@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Collapsable from '../Collapsable';
-import Combo from '../../Combo';
-import Button from '../../Button';
 
 import { charities } from '../../../import/charities.json';
 import locations from '../../../import/locations.json';
+import Button from '../../Button';
+import Combo from '../../Combo';
+import Collapsable from '../Collapsable';
 
 export default function Charity(props) {
   const {
@@ -29,15 +29,14 @@ export default function Charity(props) {
   // }, [countyId]);
 
   const counties = locations.counties.filter((county) => {
-    let numCharitiesForCounty = charities.reduce(function (count, charity) {
+    const numCharitiesForCounty = charities.reduce(function (count, charity) {
       return count + (charity.countyIds.includes(county.id) ? 1 : 0);
     }, 0);
 
     if (numCharitiesForCounty > 0) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   });
 
   const handleSubmit = () => {
@@ -49,7 +48,7 @@ export default function Charity(props) {
       title="Pick charity"
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}>
-      <div className="flex flex-col sm:flex-row w-full">
+      <div className="flex flex-col w-full sm:flex-row">
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <Combo
