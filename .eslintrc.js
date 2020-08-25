@@ -1,6 +1,13 @@
 module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    jasmine: true,
+  },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   plugins: ['react', 'prettier'],
+
+  // Only Rules
   rules: {
     'global-require': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
@@ -9,10 +16,12 @@ module.exports = {
     'no-console': 'warn',
     'global-require': 'off',
     'no-param-reassign': ['error', { props: false }],
+
     'no-unused-vars': [
       'error',
       { varsIgnorePattern: '_', argsIgnorePattern: '_' },
     ],
+
     'import/order': [
       'error',
       {
@@ -24,6 +33,7 @@ module.exports = {
         'newlines-between': 'always-and-inside-groups',
       },
     ],
+
     'jsx-a11y/label-has-associated-control': [
       2,
       {
@@ -33,6 +43,7 @@ module.exports = {
         depth: 3,
       },
     ],
+
     'react/jsx-filename-extension': [
       1,
       {
@@ -40,10 +51,7 @@ module.exports = {
       },
     ],
   },
-  env: {
-    browser: true,
-    jasmine: true,
-  },
+
   settings: {
     'import/resolver': {
       'babel-module': {},
