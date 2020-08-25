@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
+    node: true,
     jasmine: true,
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
