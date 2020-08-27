@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import starttext from '~/assets/img/start text.png';
 import Button from '~/components/Button';
 import Combo from '~/components/Combo';
-//  NOT SUCH FILE === for now i commented out
-// import config from '~/config';
+import config from '~/config.json';
 import { charities } from '~/import/charities.json';
 import locations from '~/import/locations.json';
 import { products } from '~/import/subbly-products.json';
@@ -85,7 +84,7 @@ export default function GetStartedForm({ toggle, onChange }) {
 
       if (subblyProduct) {
         // Redirect to the Subbly product
-        // window.location.href = `${config.subblyCheckoutUrl}/${subblyProduct.id}`;
+        window.location.href = `${config.subblyCheckoutUrl}/${subblyProduct.id}`;
       } else {
         // Product not found in the products JSON, so display the Launching Soon modal instead
         toggle();

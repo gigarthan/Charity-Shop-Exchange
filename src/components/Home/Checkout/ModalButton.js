@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
 export default function modalButton(props) {
   const {
@@ -11,7 +11,7 @@ export default function modalButton(props) {
     text,
     className,
     type,
-  } = props;
+  children} = props;
 
   return (
     <>
@@ -23,9 +23,10 @@ export default function modalButton(props) {
         style={style}
         className={className}
         theme={theme}
+        // eslint-disable-next-line react/button-has-type
         type={type}>
         {text}
-        {props.children}
+        {children}
       </button>
     </>
   );

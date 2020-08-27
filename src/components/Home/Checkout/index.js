@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import Charity from './Charity';
-import Selection from './Selection';
-import ContactDetails from './ContactDetails';
-import DeliveryDetails from './DeliveryDetails';
-import Payment from './Payment';
+import React  from 'react';
+
 import genres from '../../../import/planList';
+import Charity from './Charity';
+import DeliveryDetails from './DeliveryDetails';
 import Footer from './Footer';
+import Payment from './Payment';
+// eslint-disable-next-line import/no-named-as-default-member
+import Selection from './Selection';
 
 export default function PlanSelection(props) {
-  const { formData, onChange, handleClassChange } = props;
+  const { formData, onChange, } = props;
 
   return (
     <>

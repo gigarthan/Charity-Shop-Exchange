@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Card1 from '../../../assets/img/card1.png';
 import Card2 from '../../../assets/img/card2.png';
@@ -15,7 +15,6 @@ import useFormDataValidation, {
   validCreditCard,
   validCvv,
   validDate,
-  phoneNumber,
 } from '../../../hooks/useFormDataValidation';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 import Collapsable from '../Collapsable';
@@ -39,8 +38,7 @@ export default function Payment(props) {
       console.log('Event Happened');
 
     });
-    window.billsbyTokens.on("paymentMethod", function (token, pmData) {
-
+    window.billsbyTokens.on("paymentMethod", (token, pmData) => {
       console.log('make axios here');
     });
   }, []);
@@ -66,9 +64,6 @@ export default function Payment(props) {
     fieldValidators,
   );
 
-  const handleSubmit = () => {
-    console.log('Submit', formData);
-  };
 
   return (
     <Collapsable
@@ -258,7 +253,7 @@ export default function Payment(props) {
               <div className="delivery-frequency">Billing address:</div>
             </div>
             <div className="flex flex-col flex-wrap">
-              {/* <div className="md:w-1/2 pr-1">
+              {/* <div className="pr-1 md:w-1/2">
               <div className="relative">
                 <TextFieldWithLabel
                   label="Full name"
@@ -268,7 +263,7 @@ export default function Payment(props) {
                 />
               </div>
             </div> */}
-              <div className="md:w-1/2 pr-1">
+              <div className="pr-1 md:w-1/2">
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="name"
@@ -290,7 +285,7 @@ export default function Payment(props) {
                   />
                 </div>
               </div>
-              <div className="md:w-1/2 pr-1">
+              <div className="pr-1 md:w-1/2">
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="name"
@@ -312,7 +307,7 @@ export default function Payment(props) {
                   />
                 </div>
               </div>
-              <div className="md:w-1/2 pr-1">
+              <div className="pr-1 md:w-1/2">
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="postal-code"
@@ -337,7 +332,7 @@ export default function Payment(props) {
                   />
                 </div>
               </div>
-              <div className="md:w-1/2 pr-1">
+              <div className="pr-1 md:w-1/2">
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="address-line1"
@@ -360,7 +355,7 @@ export default function Payment(props) {
                   />
                 </div>
               </div>
-              <div className="md:w-1/2 pr-1">
+              <div className="pr-1 md:w-1/2">
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="address-line2"
@@ -375,7 +370,7 @@ export default function Payment(props) {
                   />
                 </div>
               </div>
-              <div className="md:w-1/2 pr-1">
+              <div className="pr-1 md:w-1/2">
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete="address-level1"
@@ -398,7 +393,7 @@ export default function Payment(props) {
                   />
                 </div>
               </div>
-              <div className="md:w-1/2 pr-1">
+              <div className="pr-1 md:w-1/2">
                 <div className="relative">
                   <TextFieldWithLabel
                     autocomplete=""

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { charities } from '../../../import/charities.json';
 import locations from '../../../import/locations.json';
-import Button from '../../Button';
 import Combo from '../../Combo';
 import Collapsable from '../Collapsable';
 
@@ -29,19 +28,20 @@ export default function Charity(props) {
   // }, [countyId]);
 
   const counties = locations.counties.filter((county) => {
-    const numCharitiesForCounty = charities.reduce(function (count, charity) {
-      return count + (charity.countyIds.includes(county.id) ? 1 : 0);
+    const numCharitiesForCounty = charities.reduce((count, charityInfo) => {
+      return count + (charityInfo.countyIds.includes(county.id) ? 1 : 0);
     }, 0);
 
     if (numCharitiesForCounty > 0) {
       return true;
     }
+
     return false;
   });
 
-  const handleSubmit = () => {
-    console.log('Submit');
-  };
+  //   const handleSubmit = () => {
+  //     console.log('Submit');
+  //   };
 
   return (
     <Collapsable

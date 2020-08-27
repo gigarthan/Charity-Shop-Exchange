@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
 import { Card, Tabs } from '@shopify/polaris';
-import Collapsable from '../Collapsable';
-import Button from '../../Button';
+import React, { Component } from 'react';
+
 import NumberFieldWithLabel from '../../NumberFieldWithLabel';
-
-import shopping from '../../../assets/img/shopping.png';
-
-import RadioField from '../../RadioField';
+import Collapsable from '../Collapsable';
 
 export default class Selection extends Component {
   constructor(props) {
@@ -24,8 +20,9 @@ export default class Selection extends Component {
   }
 
   componentDidMount() {
-    const genreItems = this.props.genres;
-    const checkoutItems = this.props.formData.checkoutItems;
+      const { genres, formData} = this.props
+    const genreItems = genres;
+    const {checkoutItems} = formData;
 
     const keys = ['dvd', 'books'];
 
@@ -49,32 +46,35 @@ export default class Selection extends Component {
     });
   }
 
-  handleTabChange = (selectedTabIndex) =>
+  handleTabChange (selectedTabIndex){ 
     this.setState({ selected: selectedTabIndex });
+  }
 
-  handleOnChange = (selectedId, value, tabSelected) => {
-    let tempCheckoutObj = { ...this.state.checkOutItems };
+  handleOnChange  (selectedId, value, tabSelected) {
+    const { checkOutItems, genresItems} = this.state
+    const { handleChange} = this.props
+    const tempCheckoutObj = { ...checkOutItems };
 
-    let index = tempCheckoutObj[tabSelected].findIndex((x) => {
+    const index = tempCheckoutObj[tabSelected].findIndex((x) => {
       return x.id === selectedId;
     });
 
     if (index === -1) {
-      let temp = {
+      const temp = {
         id: selectedId,
         quantity: parseInt(value),
       };
 
       tempCheckoutObj[tabSelected].push(temp);
     } else {
-      tempCheckoutObj[tabSelected][index]['quantity'] = value;
+      tempCheckoutObj[tabSelected][index].quantity = value;
     }
 
-    let tempGenresObj = { ...this.state.genresItems };
+    const tempGenresObj = { ...genresItems };
     const elementIndex = tempGenresObj[tabSelected].findIndex(
-      (element) => element.id == selectedId,
+      (element) => element.id === selectedId,
     );
-    let updateGenreArray = [...tempGenresObj[tabSelected]];
+    const updateGenreArray = [...tempGenresObj[tabSelected]];
     updateGenreArray[elementIndex] = {
       ...updateGenreArray[elementIndex],
       value: parseInt(value),
@@ -92,16 +92,17 @@ export default class Selection extends Component {
         };
       },
       () => {
-        this.props.handleChange({
+        handleChange({
           keyToUpdate: 'checkoutItems.dvd',
-          value: this.state.checkOutItems && this.state.checkOutItems.dvd,
+          value: checkOutItems && checkOutItems.dvd,
         });
-        this.props.handleChange({
+        handleChange({
           keyToUpdate: 'checkoutItems.books',
-          value: this.state.checkOutItems && this.state.checkOutItems.books,
+          value: checkOutItems && checkOutItems.books,
         });
       },
     );
+    
   };
 
   render() {
@@ -141,18 +142,18 @@ export default class Selection extends Component {
             onSelect={this.handleTabChange}
             fitted>
             <Card.Section>
-              <div className="-ml-10 flex flex-row flex-wrap items-center justify-space-between">
-                {genresItems[tabs[selected].id].map((genre, index) => {
+              <div className="flex flex-row flex-wrap items-center -ml-10 justify-space-between">
+                {genresItems[tabs[selected].id].map((genre) => {
                   return (
                     <div className="numberfild-width" key={genre.id}>
-                      <div className="p-2 w-full">
+                      <div className="w-full p-2">
                         <NumberFieldWithLabel
                           selectedTab={tabs[selected].id}
                           id={genre.id}
                           label={genre.name}
                           value={genre.value}
                           onChange={this.handleOnChange}
-                          isFull={true}
+                          isFull
                         />
                       </div>
                     </div>

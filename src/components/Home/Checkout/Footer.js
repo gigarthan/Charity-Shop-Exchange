@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import ModalButton from './ModalButton';
+import React, { useState } from 'react';
+
 import Logo from '../../../assets/img/cse_logo.png';
-import billsbyConfig from '../../../import/billsby';
+import ModalButton from './ModalButton';
 
 export default function Footer(props) {
   const { formData, handleChange } = props;
-  const { payment, delivery, charity } = formData;
-  const [ isReady, setIsReady ] = useState(false)
+  //   const { payment, delivery, charity } = formData;
+  const [isReady] = useState(false);
 
-  let [newClass, setClassName] = useState('');
-  let [button, changeButton] = useState('modal-button');
+  const [newClass] = useState('');
+  const [button] = useState('modal-button');
 
-  const [quantity, setQuantity] = useState(true);
+  const [quantity] = useState(true);
 
-  //Card Tokenizer...
+  // Card Tokenizer...
   // useEffect(() => {
   //     window.billsbyTokens.on('ready', function() {
   //       setIsReady(true);
@@ -32,102 +32,100 @@ export default function Footer(props) {
 
   //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
 
-    // //setClassName('loader')//
-    // console.log('Submit', formData);
-    // console.log(billsbyData);
-    // //let phone = formData.payment.phone;
-    // //if (phone.startsWith('0')) phone = phone.slice(1);
+  // //setClassName('loader')//
+  // console.log('Submit', formData);
+  // console.log(billsbyData);
+  // //let phone = formData.payment.phone;
+  // //if (phone.startsWith('0')) phone = phone.slice(1);
 
-    // window.billsbyData = {
-    //   firstName: delivery.firstname,
-    //   lastName: delivery.lastname,
-    //   email: payment.email,
-    //   billingAddressLine1: delivery.address_1,
-    //   billingAddressLine2: delivery.address_2,
-    //   billingAddressCity: delivery.town,
-    //   billingAddressState: 'Free Text',
-    //   billingAddressZip: delivery.postcode,
-    //   billingAddressCountry: 'GBR',
-    //   shippingAddressLine1: delivery.address_1,
-    //   shippingAddressLine2: delivery.address_2,
-    //   shippingAddressCity: delivery.town,
-    //   shippingAddressState: 'Free Text',
-    //   shippingAddressZip: delivery.postcode,
-    //   shippingAddressCountry: 'GBR',
-    //   phoneNumberDialCode: '44',
-    //   phoneNumberDialCountry: 'GB',
-    //   phoneNumber: payment.phone,
-    //   marketingConsent: payment.isEmailedMe,
-    //   customFields: [
-    //     {
-    //       customFieldId: 94,
-    //       value: charity.countryId,
-    //     },
-    //     {
-    //       customFieldId: 95,
-    //       value: charity.charityId,
-    //     },
-    //     {
-    //       customFieldId: 135,
-    //       value: billsbyData.itemDetails,
-    //     },
-    //   ],
-    // };
+  // window.billsbyData = {
+  //   firstName: delivery.firstname,
+  //   lastName: delivery.lastname,
+  //   email: payment.email,
+  //   billingAddressLine1: delivery.address_1,
+  //   billingAddressLine2: delivery.address_2,
+  //   billingAddressCity: delivery.town,
+  //   billingAddressState: 'Free Text',
+  //   billingAddressZip: delivery.postcode,
+  //   billingAddressCountry: 'GBR',
+  //   shippingAddressLine1: delivery.address_1,
+  //   shippingAddressLine2: delivery.address_2,
+  //   shippingAddressCity: delivery.town,
+  //   shippingAddressState: 'Free Text',
+  //   shippingAddressZip: delivery.postcode,
+  //   shippingAddressCountry: 'GBR',
+  //   phoneNumberDialCode: '44',
+  //   phoneNumberDialCountry: 'GB',
+  //   phoneNumber: payment.phone,
+  //   marketingConsent: payment.isEmailedMe,
+  //   customFields: [
+  //     {
+  //       customFieldId: 94,
+  //       value: charity.countryId,
+  //     },
+  //     {
+  //       customFieldId: 95,
+  //       value: charity.charityId,
+  //     },
+  //     {
+  //       customFieldId: 135,
+  //       value: billsbyData.itemDetails,
+  //     },
+  //   ],
+  // };
+  setTimeout(() => {
+    console.log('Trigger scan');
+    // window.scanDomBillsby();
     setTimeout(() => {
-      console.log('Trigger scan');
-      // window.scanDomBillsby();
-      setTimeout(() => {
-        const elem = document.getElementById('billsbyTriggerAnchor');
-        console.log(elem);
-        if (elem) {
-          console.log('Click elem');
-          elem.click();
-        } // else {
-        //  setClassName('')
-        // setQuantity(false)
-        // setClassName('checkmark draw')
-        // changeButton('modal-button d')
-        // document.getElementById("footer").classList.add('footer');
-        // document.getElementById("modal").classList.add('completed');
-        // }
-      }, 500);
+      const elem = document.getElementById('billsbyTriggerAnchor');
+      console.log(elem);
+      if (elem) {
+        console.log('Click elem');
+        elem.click();
+      } // else {
+      //  setClassName('')
+      // setQuantity(false)
+      // setClassName('checkmark draw')
+      // changeButton('modal-button d')
+      // document.getElementById("footer").classList.add('footer');
+      // document.getElementById("modal").classList.add('completed');
+      // }
     }, 500);
-  });
+  }, 500);
+
   const books = formData.checkoutItems.books.filter(
     (item) => item.quantity !== 0,
   );
   const dvd = formData.checkoutItems.dvd.filter((item) => item.quantity !== 0);
   const total = books.concat(dvd);
-  const orderSummary = total.reduce((quantity, item) => {
+  const orderSummary = total.reduce((itemQuantity, item) => {
     for (const [orderName, orderCount] of Object.entries(item)) {
-      if (!quantity[orderName]) {
-        quantity[orderName] = 0;
+      if (!itemQuantity[orderName]) {
+        itemQuantity[orderName] = 0;
       }
 
-      quantity[orderName] += orderCount;
+      itemQuantity[orderName] += orderCount;
     }
-    return quantity;
+    return itemQuantity;
   }, {});
 
-  const totalSum = total.reduce((sum, i) => (sum += i.quantity * 2.0), 3.5);
+  const totalSum = total.reduce((sum, i) => {
+    const totalSum = (sum += i.quantity * 2.0);
+    return totalSum;
+  }, 3.5);
+
   const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
 
-  const keysToLook = [
-    'address_1',
-    'firstname',
-    'lastname',
-    'postcode',
-    'town',
-  ];
-  const keysToLook2 = ['phone', 'email']
+  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
+  const keysToLook2 = ['phone', 'email'];
 
-  //['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
+  // ['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
   const showToolTip = keysToLook.some((key) => formData.delivery[key] === '');
   const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
 
   return (
-    <div className="modal-footer" id="footer">
+    <div id="footer">
       <img
         className="h-10 md:h-12 img-logo"
         src={Logo}
@@ -136,7 +134,6 @@ export default function Footer(props) {
       <Selection
         orderSummary={orderSummary}
         formData={formData}
-        handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
       <Subscription
@@ -147,7 +144,6 @@ export default function Footer(props) {
         showToolTip2={showToolTip2}
         quantity={quantity}
         orderSummary={orderSummary}
-        handleSubmit={handleSubmit}
         handleChange={handleChange}
         isReady={isReady}
         newClass={newClass}
@@ -167,7 +163,7 @@ export default function Footer(props) {
     </div>
   );
 }
-const Selection = ({ orderSummary, handleSubmit, handleChange,isReady }) => {
+const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
   if (orderSummary.quantity >= 2) {
     return null;
   }
@@ -221,7 +217,7 @@ const Subscription = ({
 }) => {
   const modalButtonClassName = `${
     showToolTip2 || showToolTip ? 'modal-button-disabled' : button
-    } `;
+  } `;
   const isEnabled = !showToolTip && !showToolTip2;
   if (
     typeof orderSummary.quantity !== 'undefined'
@@ -231,19 +227,23 @@ const Subscription = ({
     return null;
   }
   return (
-    <div className="w-full flex justify-center flex-wrap">
+    <div className="flex flex-wrap justify-center w-full">
       {quantity ? (
-        <span className="p text-lg justify-center text-center flex-grow">
-          <a className="s">{orderSummary.quantity} items</a>delivered every
-          <a className="s2">{formData.delivery.subscription}</a>
+        <span className="justify-center flex-grow text-lg text-center p">
+          <a href="#1" className="s">
+            {orderSummary.quantity} items
+          </a>
+          delivered every
+          <a href="#2" className="s2">
+            {formData.delivery.subscription}
+          </a>
         </span>
       ) : (
-          <div className="fade-in">
-            <span>Thank You! An email confirmation has been sent.</span>
-          </div>
-        )}
+        <div className="fade-in">
+          <span>Thank You! An email confirmation has been sent.</span>
+        </div>
+      )}
       <ModalButton
-
         className={modalButtonClassName}
         type="button"
         disabled={!isEnabled || !isReady}
@@ -253,19 +253,19 @@ const Subscription = ({
           {quantity ? (
             <span className="sum">£{totalDecimalSum} Subscribe</span>
           ) : (
-              <span className="subscribe">Subscribed</span>
-            )}
+            <span className="subscribe">Subscribed</span>
+          )}
           {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (
-              ''
-            )}
+            ''
+          )}
           {showToolTip ? (
             <span className="tooltiptext">Enter Delivery Details</span>
           ) : (
-              ''
-            )}
-          <div className={newClass}></div>
+            ''
+          )}
+          <div className={newClass} />
         </>
       </ModalButton>
     </div>

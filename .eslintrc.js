@@ -15,6 +15,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-named-as-default': 'off',
     'no-alert': 'warn',
+    'radix': 'off',
     'no-console': 'off',
     'global-require': 'off',
     'no-param-reassign': ['error', { props: false }],
