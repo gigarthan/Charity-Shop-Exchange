@@ -21,6 +21,7 @@
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sitemap": "^2.4.5",
     "gatsby-plugin-web-font-loader": "^1.0.4",
+    "lodash": "^4.17.20",
     "netlify-cli": "^2.58.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
