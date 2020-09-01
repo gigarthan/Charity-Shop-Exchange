@@ -20,9 +20,9 @@ export default class Selection extends Component {
   }
 
   componentDidMount() {
-      const { genres, formData} = this.props
+    const { genres, formData } = this.props;
     const genreItems = genres;
-    const {checkoutItems} = formData;
+    const { checkoutItems } = formData;
 
     const keys = ['dvd', 'books'];
 
@@ -46,13 +46,13 @@ export default class Selection extends Component {
     });
   }
 
-  handleTabChange (selectedTabIndex){ 
+  handleTabChange(selectedTabIndex) {
     this.setState({ selected: selectedTabIndex });
   }
 
-  handleOnChange  (selectedId, value, tabSelected) {
-    const { checkOutItems, genresItems} = this.state
-    const { handleChange} = this.props
+  handleOnChange(selectedId, value, tabSelected) {
+    const { checkOutItems, genresItems } = this.state;
+    const { handleChange } = this.props;
     const tempCheckoutObj = { ...checkOutItems };
 
     const index = tempCheckoutObj[tabSelected].findIndex((x) => {
@@ -102,8 +102,7 @@ export default class Selection extends Component {
         });
       },
     );
-    
-  };
+  }
 
   render() {
     const { isOpen, genresItems, selected } = this.state;

@@ -67,8 +67,7 @@ export default function Home() {
     },
   });
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(formData);
+    
   }, [formData]);
 
   useEffect(() => {

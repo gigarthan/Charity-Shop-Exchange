@@ -53,9 +53,9 @@ export default function PlanList({
   );
 
   const onPlanSelect = (id) => {
-    console.log(`Plan ${id} is slected`);
+    
     const elem = document.getElementById(`plan:${id}`);
-    console.log(elem);
+    
     elem.click();
   };
 

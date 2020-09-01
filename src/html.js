@@ -160,7 +160,7 @@ export default function HTML(props) {
           window.billsbyTokens.on("errors", function (errors) {
             for (var i = 0; i < errors.length; i++) {
             var error = errors[i];
-            console.log(error);
+            
             };
           });
         `}</script>

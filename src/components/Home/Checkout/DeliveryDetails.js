@@ -31,16 +31,15 @@ export default function DeliveryDetails(props) {
     county: [],
   };
 
-  const formSubmitAction = (values) => {
-    // console.log(values);
-  };
+//   const formSubmitAction = (values) => {
+//     // 
+//   };
 
-  const [initErrors, setInitErrors] = useState({});
+  const [initErrors, ] = useState({});
 
-  const { values, errors, fieldChange } = useFormDataValidation(
+  const { values, fieldChange } = useFormDataValidation(
     formInitialValues,
     initErrors,
-    formSubmitAction,
     fieldValidators,
   );
 

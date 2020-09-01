@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 
 import Card1 from '../../../assets/img/card1.png';
@@ -35,11 +37,11 @@ export default function Payment(props) {
       console.error(err);
     }  
     window.billsbyTokens.on('ready',  () => {
-      console.log('Event Happened');
+      
 
     });
-    window.billsbyTokens.on("paymentMethod", (token, pmData) => {
-      console.log('make axios here');
+    window.billsbyTokens.on("paymentMethod", () => {
+      
     });
   }, []);
 
@@ -51,13 +53,13 @@ export default function Payment(props) {
     cvv: [isRequiredPayment, validCvv],
     name: [isRequiredPayment, isValidCardName],
   };
-  const [initErrors, setInitErrors] = useState({});
+  const [initErrors, ] = useState({});
 
-  const formSubmitAction = (values) => {
-    console.log(values);
+  const formSubmitAction = () => {
+    
   };
 
-  const { values, errors, fieldChange } = useFormDataValidation(
+  const { values, fieldChange } = useFormDataValidation(
     formData,
     initErrors,
     formSubmitAction,
@@ -489,8 +491,6 @@ const CVVIMG = ({
   MasterCard,
   Discover,
   Card1,
-  Card2,
-  Card3,
 }) => {
   const cardValidator = valid.number(formData.payment.card_number, {
     luhnValidateVisaCard: false,

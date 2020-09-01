@@ -20,7 +20,7 @@ export default function Footer(props) {
   //     });
   //     window?.billsbyTokens.on("paymentMethod", function (token, pmData) {
 
-  //       console.log('make axios here');
+  //       
   //     });
   // }, []);
   // const handleSubmit = useCallback(() => {
@@ -33,8 +33,8 @@ export default function Footer(props) {
   //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
 
   // //setClassName('loader')//
-  // console.log('Submit', formData);
-  // console.log(billsbyData);
+  // 
+  // 
   // //let phone = formData.payment.phone;
   // //if (phone.startsWith('0')) phone = phone.slice(1);
 
@@ -74,13 +74,12 @@ export default function Footer(props) {
   //   ],
   // };
   setTimeout(() => {
-    console.log('Trigger scan');
+    
     // window.scanDomBillsby();
     setTimeout(() => {
       const elem = document.getElementById('billsbyTriggerAnchor');
-      console.log(elem);
+      
       if (elem) {
-        console.log('Click elem');
         elem.click();
       } // else {
       //  setClassName('')
@@ -98,6 +97,7 @@ export default function Footer(props) {
   );
   const dvd = formData.checkoutItems.dvd.filter((item) => item.quantity !== 0);
   const total = books.concat(dvd);
+  
   const orderSummary = total.reduce((itemQuantity, item) => {
     for (const [orderName, orderCount] of Object.entries(item)) {
       if (!itemQuantity[orderName]) {
@@ -108,11 +108,16 @@ export default function Footer(props) {
     }
     return itemQuantity;
   }, {});
-
+  
+  //   const orderSummary2 = total.reduce((totalItems, item)=>{
+    
+    //   })
+    
   const totalSum = total.reduce((sum, i) => {
     const totalSum = (sum += i.quantity * 2.0);
     return totalSum;
   }, 3.5);
+  
 
   const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
 

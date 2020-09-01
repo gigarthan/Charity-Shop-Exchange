@@ -40,7 +40,7 @@ export default function Charity(props) {
   });
 
   //   const handleSubmit = () => {
-  //     console.log('Submit');
+  //     
   //   };
 
   return (
