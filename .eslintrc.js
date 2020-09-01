@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     jasmine: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'prettier', 'prettier/react', "plugin:prettier/recommended"],
   plugins: ['react', 'prettier'],
 
   // Only Rules
