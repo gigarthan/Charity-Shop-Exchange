@@ -1,16 +1,19 @@
 import { Card, Tabs } from '@shopify/polaris';
-
-import '@vaadin/vaadin-radio-button';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Collapsable from '../Collapsable';
 
 import NumberFieldWithLabel from '~/components/NumberFieldWithLabel';
 
-export default function SelectionFP({ genres }) {
+export default function Selection({ genres }) {
   const [isOpen, setOpen] = useState(true);
   const [selectedTab, setSelectedTab] = useState(0);
   const [genreItems, setGenres] = useState(genres);
+
+  useEffect(() => {
+    require('@vaadin/vaadin-radio-button');
+    return () => {};
+  }, []);
 
   const handleOnChange = (purchasedItem) => {
     console.log(purchasedItem);
