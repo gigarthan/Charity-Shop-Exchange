@@ -1,22 +1,23 @@
-import React  from 'react';
+import React from 'react';
 
-import genres from '../../../import/planList';
 import Charity from './Charity';
 import DeliveryDetails from './DeliveryDetails';
 import Footer from './Footer';
 import Payment from './Payment';
-// eslint-disable-next-line import/no-named-as-default-member
+
 import Selection from './Selection';
 
+import plansList from '~/import/plans-list.json';
+
 export default function PlanSelection(props) {
-  const { formData, onChange, } = props;
+  const { formData, onChange } = props;
 
   return (
     <>
       <div className="model-child-main">
         <Charity handleChange={onChange} formData={formData} />
         <Selection
-          genres={genres}
+          genres={plansList}
           handleChange={onChange}
           formData={formData}
         />
