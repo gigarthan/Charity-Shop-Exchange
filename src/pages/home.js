@@ -11,25 +11,20 @@ import Mission from '~/components/Home/Mission';
 import Register from '~/components/Home/Register';
 import Subscribe from '~/components/Home/Subscribe';
 import useFormData from '~/hooks/useFormData';
-import items from '~/import/planList';
+// import items from '~/import/planList';
 
 export default function Home() {
   const { isShowing, toggle } = useDialog();
 
-  let planList = [];
-  Object.values(items).forEach((list) => {
-    planList = planList.concat(list.map((elem) => elem.id));
-  });
+  //   let planList = [];
+  //   Object.values(items).forEach((list) => {
+  //     planList = planList.concat(list.map((elem) => elem.id));
+  //   });
 
   const [formData, onChange] = useFormData({
-    charity: {
-      countryId: null,
-      charityId: null,
-    },
-    checkoutItems: {
-      dvd: [],
-      books: [],
-    },
+    countyId: null,
+    charityId: null,
+    checkoutItems: [],
     delivery: {
       subscription: 'week',
       firstname: '',
@@ -66,9 +61,8 @@ export default function Home() {
       billing_county: '',
     },
   });
-  useEffect(() => {
-    
-  }, [formData]);
+
+  useEffect(() => {}, [formData]);
 
   useEffect(() => {
     if (isShowing) {
