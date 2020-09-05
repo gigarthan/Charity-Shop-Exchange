@@ -6,21 +6,26 @@ import Combo from '../../Combo';
 import Collapsable from '../Collapsable';
 
 export default function Charity(props) {
-  const {
-    handleChange,
-    formData: { charity },
-  } = props;
+  const { handleChange, formData } = props;
   const [isOpen, setisOpen] = useState(false);
-  const [countyId, setCountyId] = useState(charity.countryId);
-  const [charityId, setCharityId] = useState(charity.charityId);
+  const [countyId, setCountyId] = useState(formData.countryId);
+  const [charityId, setCharityId] = useState(formData.charityId);
 
-  useEffect(() => {
-    setCountyId(charity.countryId);
-  }, [charity.countryId]);
+  const onSelectCounty = (value) => {
+    setCountyId(value);
+    setCharityId(0);
+    handleChange({ countyId, charityId });
+  };
 
-  useEffect(() => {
-    setCharityId(charity.charityId);
-  }, [charity.charityId]);
+  const onSelectCharity = (value) => {
+    setCharityId(value);
+    handleChange({});
+  };
+
+  //   useEffect(() => {
+  //     setCountyId(formData.countryId);
+  //     setCharityId(formData.charityId);
+  //   }, [charityId, countyId]);
 
   // useEffect(() => {
   //   setCharityId(0);
@@ -40,7 +45,7 @@ export default function Charity(props) {
   });
 
   //   const handleSubmit = () => {
-  //     
+  //
   //   };
 
   return (
@@ -54,12 +59,7 @@ export default function Charity(props) {
             <Combo
               name="countyId"
               value={countyId}
-              setValue={(value) => {
-                setCountyId(value);
-                setCharityId(0);
-                handleChange({ keyToUpdate: 'charity.countryId', value });
-                handleChange({ keyToUpdate: 'charity.charityId', value: 0 });
-              }}
+              setValue={onSelectCounty}
               items={counties}
               placeholder="select"
               // style={{ background: '#c7c7c7'}}
@@ -75,10 +75,7 @@ export default function Charity(props) {
             <Combo
               name="charityId"
               value={charityId}
-              setValue={(value) => {
-                setCharityId(value);
-                handleChange({ keyToUpdate: 'charity.charityId', value });
-              }}
+              setValue={onSelectCharity}
               items={charities.filter((c) => c.countyIds.includes(countyId))}
               disabled={
                 !countyId || counties.find((c) => c.id === countyId).disabled

@@ -5,18 +5,28 @@ import Collapsable from '../Collapsable';
 
 import NumberFieldWithLabel from '~/components/NumberFieldWithLabel';
 
-export default function Selection({ genres }) {
+export default function Selection({ genres, handleChange }) {
   const [isOpen, setOpen] = useState(true);
   const [selectedTab, setSelectedTab] = useState(0);
   const [genreItems, setGenres] = useState(genres);
 
   useEffect(() => {
+    /**
+     * ! DO NOT CHANGE THE REQUIRE TO ES6 IMPORT
+     */
     require('@vaadin/vaadin-radio-button');
     return () => {};
   }, []);
 
+  const updateFormCheckout = () => {
+    const checkoutItems = genreItems.filter((item) => item.value > 0);
+
+    return handleChange({ checkoutItems });
+  };
+
   const handleOnChange = (purchasedItem) => {
-    console.log(purchasedItem);
+    updateFormCheckout();
+
     return setGenres((prevState) => {
       const temp = [...prevState];
       Object.assign(temp[purchasedItem.index], purchasedItem);
@@ -24,9 +34,11 @@ export default function Selection({ genres }) {
       return [...temp];
     });
   };
+
   const handleTabChange = (tabIndex) => {
     return setSelectedTab(tabIndex);
   };
+
   const tabs = [
     {
       id: 'books',

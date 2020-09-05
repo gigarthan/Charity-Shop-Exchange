@@ -61,6 +61,14 @@ export default function GetStartedForm({ toggle, onChange }) {
     }
   }
 
+  const onSelectCounty = (value) => {
+    setCountyId(value);
+  };
+
+  const onSelectCharity = (value) => {
+    setCharityId(value);
+  };
+
   useEffect(() => {
     autoSelectCounty();
   }, []);
@@ -68,8 +76,13 @@ export default function GetStartedForm({ toggle, onChange }) {
   // Clear out the 'Charity' combo if 'County' is changed
   useEffect(() => {
     setCharityId(0);
-    onChange({ keyToUpdate: 'charity.charityId', value: 0 });
+    onChange({ countyId, charityId });
   }, [countyId]);
+
+  useEffect(() => {
+    onChange({ countyId, charityId });
+    return () => {};
+  }, [countyId, charityId]);
 
   // Redirect the user to Subbly
   function handleSubmit() {
@@ -108,10 +121,7 @@ export default function GetStartedForm({ toggle, onChange }) {
                 <Combo
                   name="countyId"
                   value={countyId}
-                  setValue={(value) => {
-                    setCountyId(value);
-                    onChange({ keyToUpdate: 'charity.countryId', value });
-                  }}
+                  setValue={onSelectCounty}
                   items={counties}
                   placeholder="select"
                   // style={{ background: '#c7c7c7'}}
@@ -127,10 +137,7 @@ export default function GetStartedForm({ toggle, onChange }) {
                 <Combo
                   name="charityId"
                   value={charityId}
-                  setValue={(value) => {
-                    setCharityId(value);
-                    onChange({ keyToUpdate: 'charity.charityId', value });
-                  }}
+                  setValue={onSelectCharity}
                   items={charities.filter((c) =>
                     c.countyIds.includes(countyId),
                   )}
