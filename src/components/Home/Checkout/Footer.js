@@ -1,17 +1,18 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
 import React, { useState } from 'react';
 
 import Logo from '../../../assets/img/cse_logo.png';
 import ModalButton from './ModalButton';
 
 export default function Footer(props) {
-  const { formData, handleChange } = props;
-  //   const { payment, delivery, charity } = formData;
   const [isReady] = useState(false);
-
   const [newClass] = useState('');
   const [button] = useState('modal-button');
-
   const [quantity] = useState(true);
+
+  const { formData, handleChange } = props;
+  const { checkoutItems } = formData;
 
   // Card Tokenizer...
   // useEffect(() => {
@@ -20,7 +21,7 @@ export default function Footer(props) {
   //     });
   //     window?.billsbyTokens.on("paymentMethod", function (token, pmData) {
 
-  //       
+  //
   //     });
   // }, []);
   // const handleSubmit = useCallback(() => {
@@ -33,8 +34,8 @@ export default function Footer(props) {
   //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
 
   // //setClassName('loader')//
-  // 
-  // 
+  //
+  //
   // //let phone = formData.payment.phone;
   // //if (phone.startsWith('0')) phone = phone.slice(1);
 
@@ -74,11 +75,10 @@ export default function Footer(props) {
   //   ],
   // };
   setTimeout(() => {
-    
     // window.scanDomBillsby();
     setTimeout(() => {
       const elem = document.getElementById('billsbyTriggerAnchor');
-      
+
       if (elem) {
         elem.click();
       } // else {
@@ -92,35 +92,16 @@ export default function Footer(props) {
     }, 500);
   }, 500);
 
-  const books = formData.checkoutItems.books.filter(
-    (item) => item.quantity !== 0,
+  const totalQuantity = checkoutItems.reduce(
+    (acc, current) => acc + current.value,
+    0,
   );
-  const dvd = formData.checkoutItems.dvd.filter((item) => item.quantity !== 0);
-  const total = books.concat(dvd);
-  
-  const orderSummary = total.reduce((itemQuantity, item) => {
-    for (const [orderName, orderCount] of Object.entries(item)) {
-      if (!itemQuantity[orderName]) {
-        itemQuantity[orderName] = 0;
-      }
+  const sumOfOrders = checkoutItems.reduce(
+    (acc, { value }) => (acc += value * 2.0),
+    3.5,
+  );
 
-      itemQuantity[orderName] += orderCount;
-    }
-    return itemQuantity;
-  }, {});
-  
-  //   const orderSummary2 = total.reduce((totalItems, item)=>{
-    
-    //   })
-    
-  const totalSum = total.reduce((sum, i) => {
-    const totalSum = (sum += i.quantity * 2.0);
-    return totalSum;
-  }, 3.5);
-  
-
-  const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
-
+  const totalDecimalSum = (Math.round(sumOfOrders * 100) / 100).toFixed(2);
   const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
   const keysToLook2 = ['phone', 'email'];
 
@@ -137,7 +118,7 @@ export default function Footer(props) {
         alt="Charity Shop Exchange"
       />
       <Selection
-        orderSummary={orderSummary}
+        orderSummary={totalQuantity}
         formData={formData}
         handleChange={handleChange}
       />
@@ -148,7 +129,7 @@ export default function Footer(props) {
         showToolTip={showToolTip}
         showToolTip2={showToolTip2}
         quantity={quantity}
-        orderSummary={orderSummary}
+        orderSummary={totalQuantity}
         handleChange={handleChange}
         isReady={isReady}
         newClass={newClass}
@@ -169,18 +150,16 @@ export default function Footer(props) {
   );
 }
 const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
-  if (orderSummary.quantity >= 2) {
+  if (orderSummary >= 2) {
     return null;
   }
-  if (orderSummary.quantity >= 1) {
+  if (orderSummary >= 1) {
     return (
       <>
         <ModalButton
           className="modal-button-disabled"
           disabled={
-            typeof orderSummary.quantity !== 'undefined'
-              ? orderSummary.quantity < 2
-              : true
+            typeof orderSummary !== 'undefined' ? orderSummary < 2 : true
           }
           onClick={handleSubmit}
           handleChange={handleChange}
@@ -194,11 +173,7 @@ const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
     <>
       <ModalButton
         className="modal-button-disabled-2"
-        disabled={
-          typeof orderSummary.quantity !== 'undefined'
-            ? orderSummary.quantity < 2
-            : true
-        }
+        disabled={typeof orderSummary !== 'undefined' ? orderSummary < 2 : true}
         onClick={handleSubmit}
         handleChange={handleChange}
         isReady={isReady}
@@ -224,11 +199,7 @@ const Subscription = ({
     showToolTip2 || showToolTip ? 'modal-button-disabled' : button
   } `;
   const isEnabled = !showToolTip && !showToolTip2;
-  if (
-    typeof orderSummary.quantity !== 'undefined'
-      ? orderSummary.quantity < 2
-      : true
-  ) {
+  if (typeof orderSummary !== 'undefined' ? orderSummary < 2 : true) {
     return null;
   }
   return (
@@ -236,7 +207,7 @@ const Subscription = ({
       {quantity ? (
         <span className="justify-center flex-grow text-lg text-center p">
           <a href="#1" className="s">
-            {orderSummary.quantity} items
+            {orderSummary} items
           </a>
           delivered every
           <a href="#2" className="s2">

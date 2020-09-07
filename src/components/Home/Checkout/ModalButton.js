@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 
 export default function modalButton(props) {
   const {
@@ -11,7 +11,8 @@ export default function modalButton(props) {
     text,
     className,
     type,
-  children} = props;
+    children,
+  } = props;
 
   return (
     <>
