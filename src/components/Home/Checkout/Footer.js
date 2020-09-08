@@ -13,6 +13,8 @@ export default function Footer(props) {
 
   const { formData, handleChange } = props;
   const { checkoutItems } = formData;
+  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
+  const keysToLook2 = ['phone', 'email'];
 
   // Card Tokenizer...
   // useEffect(() => {
@@ -92,33 +94,30 @@ export default function Footer(props) {
     }, 500);
   }, 500);
 
-  const totalQuantity = checkoutItems.reduce(
-    (acc, current) => acc + current.value,
-    0,
-  );
-  const sumOfOrders = checkoutItems.reduce(
-    (acc, { value }) => (acc += value * 2.0),
-    3.5,
-  );
-
-  const totalDecimalSum = (Math.round(sumOfOrders * 100) / 100).toFixed(2);
-  const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
-  const keysToLook2 = ['phone', 'email'];
-
   // ['card_number', 'cvv', 'email', 'expiry_at', 'name', 'phone']
 
   const showToolTip = keysToLook.some((key) => formData.delivery[key] === '');
   const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
 
+  const totalQuantity = checkoutItems.reduce((acc, { value }) => {
+    return acc + value;
+  }, 0);
+
+  const totalDecimalSum = checkoutItems.reduce(
+    (acc, { value }) =>
+      (Math.round((acc + value * 2.0) * 100) / 100).toFixed(2),
+    3.5,
+  );
+
   return (
-    <div id="footer">
+    <div className="modal-footer" id="footer">
       <img
         className="h-10 md:h-12 img-logo"
         src={Logo}
         alt="Charity Shop Exchange"
       />
       <Selection
-        orderSummary={totalQuantity}
+        totalQuantity={totalQuantity}
         formData={formData}
         handleChange={handleChange}
       />
@@ -129,7 +128,7 @@ export default function Footer(props) {
         showToolTip={showToolTip}
         showToolTip2={showToolTip2}
         quantity={quantity}
-        orderSummary={totalQuantity}
+        totalQuantity={totalQuantity}
         handleChange={handleChange}
         isReady={isReady}
         newClass={newClass}
@@ -149,18 +148,16 @@ export default function Footer(props) {
     </div>
   );
 }
-const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
-  if (orderSummary >= 2) {
+const Selection = ({ totalQuantity, handleSubmit, handleChange, isReady }) => {
+  if (totalQuantity >= 2) {
     return null;
   }
-  if (orderSummary >= 1) {
+  if (totalQuantity >= 1) {
     return (
       <>
         <ModalButton
           className="modal-button-disabled"
-          disabled={
-            typeof orderSummary !== 'undefined' ? orderSummary < 2 : true
-          }
+          disabled={totalQuantity < 2 && true}
           onClick={handleSubmit}
           handleChange={handleChange}
           isReady={isReady}
@@ -173,7 +170,7 @@ const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
     <>
       <ModalButton
         className="modal-button-disabled-2"
-        disabled={typeof orderSummary !== 'undefined' ? orderSummary < 2 : true}
+        disabled={totalQuantity < 2 && true}
         onClick={handleSubmit}
         handleChange={handleChange}
         isReady={isReady}
@@ -184,7 +181,7 @@ const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
 };
 const Subscription = ({
   formData,
-  orderSummary,
+  totalQuantity,
   newClass,
   button,
   handleSubmit,
@@ -199,7 +196,7 @@ const Subscription = ({
     showToolTip2 || showToolTip ? 'modal-button-disabled' : button
   } `;
   const isEnabled = !showToolTip && !showToolTip2;
-  if (typeof orderSummary !== 'undefined' ? orderSummary < 2 : true) {
+  if (totalQuantity < 2 && true) {
     return null;
   }
   return (
@@ -207,7 +204,7 @@ const Subscription = ({
       {quantity ? (
         <span className="justify-center flex-grow text-lg text-center p">
           <a href="#1" className="s">
-            {orderSummary} items
+            {totalQuantity} items
           </a>
           delivered every
           <a href="#2" className="s2">
