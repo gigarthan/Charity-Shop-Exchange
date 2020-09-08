@@ -101,16 +101,13 @@ export default function Footer(props) {
     return acc + value;
   }, 0);
 
-  const totalDecimalSum = checkoutItems.reduce((acc, { value }) => {
+  const totalDecimalSum = checkoutItems.reduce(
     /**
-     * ? £7.50 for the first two items and then £2 per item
+     * ? £7.5 for the first two items and then £2 per item
      */
-    // eslint-disable-next-line no-param-reassign
-    Math.round((acc += value * 2.0));
-    const cents = (acc * 100) / 100;
-
-    return cents.toFixed(2);
-  }, 3.5);
+    (acc, { value }) => Math.round((acc + value * 2.0) * 100) / 100,
+    3.5,
+  );
 
   return (
     <div className="modal-footer" id="footer">
@@ -227,7 +224,7 @@ const Subscription = ({
         handleChange={handleChange}>
         <>
           {quantity ? (
-            <span className="sum">£{totalDecimalSum} Subscribe</span>
+            <span className="sum">£{totalDecimalSum.toFixed(2)} Subscribe</span>
           ) : (
             <span className="subscribe">Subscribed</span>
           )}
