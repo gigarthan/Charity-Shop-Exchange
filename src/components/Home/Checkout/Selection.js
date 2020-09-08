@@ -25,14 +25,14 @@ export default function Selection({ genres, handleChange }) {
   };
 
   const handleOnChange = (purchasedItem) => {
-    updateFormCheckout();
-
-    return setGenres((prevState) => {
+    setGenres((prevState) => {
       const temp = [...prevState];
       Object.assign(temp[purchasedItem.index], purchasedItem);
 
       return [...temp];
     });
+
+    return updateFormCheckout();
   };
 
   const handleTabChange = (tabIndex) => {
