@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-return-assign */
 import React, { useState } from 'react';
 
 import Logo from '../../../assets/img/cse_logo.png';
@@ -103,11 +101,16 @@ export default function Footer(props) {
     return acc + value;
   }, 0);
 
-  const totalDecimalSum = checkoutItems.reduce(
-    (acc, { value }) =>
-      (Math.round((acc + value * 2.0) * 100) / 100).toFixed(2),
-    3.5,
-  );
+  const totalDecimalSum = checkoutItems.reduce((acc, { value }) => {
+    /**
+     * ? £7.50 for the first two items and then £2 per item
+     */
+    // eslint-disable-next-line no-param-reassign
+    Math.round((acc += value * 2.0));
+    const cents = (acc * 100) / 100;
+
+    return cents.toFixed(2);
+  }, 3.5);
 
   return (
     <div className="modal-footer" id="footer">
@@ -140,8 +143,8 @@ export default function Footer(props) {
         id="billsbyTriggerAnchor"
         data-billsby-type="checkout"
         data-billsby-product={billsbyData.productId}
-        data-billsby-plan={billsbyData.planId}
         data-billsby-cycle={billsbyData.cycleId}
+        data-billsby-plan={billsbyData.planId}
         data-billsby-units={orderSummary.quantity}>
         Subscribe
       </a> */}
