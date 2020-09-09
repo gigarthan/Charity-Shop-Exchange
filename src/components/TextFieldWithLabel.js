@@ -30,7 +30,6 @@ export default function TextFieldWithLabel(props) {
       // eslint-disable-next-line no-shadow
       const { value } = e.target;
       onChange({ keyToUpdate, value });
-      console.log('BEINF CALLED');
     }
 
     function handleOnBlue(e) {
