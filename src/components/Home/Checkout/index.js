@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import Charity from './Charity';
-import Selection from './Selection';
-import ContactDetails from './ContactDetails';
 import DeliveryDetails from './DeliveryDetails';
-import Payment from './Payment';
-import genres from '../../../import/planList';
 import Footer from './Footer';
+import Payment from './Payment';
+
+import Selection from './Selection';
+
+import plansList from '~/import/plans-list.json';
 
 export default function PlanSelection(props) {
-  const { formData, onChange, handleClassChange } = props;
+  const { formData, onChange } = props;
 
   return (
     <>
       <div className="model-child-main">
         <Charity handleChange={onChange} formData={formData} />
         <Selection
-          genres={genres}
+          genres={plansList}
           handleChange={onChange}
           formData={formData}
         />

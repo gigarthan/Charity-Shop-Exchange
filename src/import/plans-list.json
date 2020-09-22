@@ -1,0 +1,314 @@
+[
+  {
+    "id": "5f4e31726ec83bb262a26cfc",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "action",
+    "detail": "action-movies",
+    "value": 0,
+    "index": 0
+  },
+  {
+    "id": "5f4e3172af577048a817c89f",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "adventure",
+    "detail": "adventure-movies",
+    "value": 0,
+    "index": 1
+  },
+  {
+    "id": "5f4e31726448d3f6388bf143",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Animation",
+    "detail": "animation-movies",
+    "value": 0,
+    "index": 2
+  },
+  {
+    "id": "5f4e317279e1bc01890dd522",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Comedy",
+    "detail": "comedy-movies",
+    "value": 0,
+    "index": 3
+  },
+  {
+    "id": "5f4e3172eba544b9d4df8e5b",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Crime",
+    "detail": "crime-movies",
+    "value": 0,
+    "index": 4
+  },
+  {
+    "id": "5f4e317233c55923e4e8887e",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Documentary",
+    "detail": "documentary-movies",
+    "value": 0,
+    "index": 5
+  },
+  {
+    "id": "5f4e3172dac06bd9cddf14e0",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Drama",
+    "detail": "drama-movies",
+    "value": 0,
+    "index": 6
+  },
+  {
+    "id": "5f4e317226f8ac24cbf5ec4d",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Family",
+    "detail": "family-movies",
+    "value": 0,
+    "index": 7
+  },
+  {
+    "id": "5f4e3172f1a24d89efdc1cd1",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Fantasy",
+    "detail": "fantasy-movies",
+    "value": 0,
+    "index": 8
+  },
+  {
+    "id": "5f4e3172bb82e8407ef57790",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "History",
+    "detail": "history-movies",
+    "value": 0,
+    "index": 9
+  },
+  {
+    "id": "5f4e3172f034dd8b3978969b",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Horror",
+    "detail": "horror-movies",
+    "value": 0,
+    "index": 10
+  },
+  {
+    "id": "5f4e3172d4f8f6116013a1f1",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Music",
+    "detail": "music-movies",
+    "value": 0,
+    "index": 11
+  },
+  {
+    "id": "5f4e317230e35b08c67f4205",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Mystary",
+    "detail": "mystary-movies",
+    "value": 0,
+    "index": 12
+  },
+  {
+    "id": "5f4e3172e6bb1e9f0efe2c41",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Romance",
+    "detail": "romance-movies",
+    "value": 0,
+    "index": 13
+  },
+  {
+    "id": "5f4e317247dbba8c9d1ed8b9",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Science Fiction",
+    "detail": "science-fiction-movies",
+    "value": 0,
+    "index": 14
+  },
+  {
+    "id": "5f4e3172471c52b6dacaa74e",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Thriller",
+    "detail": "thriller-movies",
+    "value": 0,
+    "index": 15
+  },
+  {
+    "id": "5f4e3172116cdeeeb7347e7e",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "War",
+    "detail": "war-movies",
+    "value": 0,
+    "index": 16
+  },
+  {
+    "id": "5f4e3172b41d7f639ed897ce",
+    "genre": { "id": 1, "name": "dvd" },
+    "name": "Western",
+    "detail": "western-movies",
+    "value": 0,
+    "index": 17
+  },
+  {
+    "id": "5f4e3172900f26003456a387",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Arts & Photography",
+    "detail": "arts-photography-books",
+    "value": 0,
+    "index": 18
+  },
+  {
+    "id": "5f4e3172b7af121e2bd89f1a",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Biography & Memoir",
+    "detail": "biography-memoir-books",
+    "value": 0,
+    "index": 19
+  },
+  {
+    "id": "5f4e31722e8202f68abac5a7",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Business & Money",
+    "detail": "business-money-books",
+    "value": 0,
+    "index": 20
+  },
+  {
+    "id": "5f4e3172b8ecdd5ec7ed84d5",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Children's",
+    "detail": "children's-books",
+    "value": 0,
+    "index": 21
+  },
+  {
+    "id": "5f4e3172de522d43f7ba944c",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Cooking, Food & Drink",
+    "detail": "cook-food-drink-books",
+    "value": 0,
+    "index": 22
+  },
+  {
+    "id": "5f4e3172ea06c58cab74ce2a",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Health, Fitness & Diet",
+    "detail": "health-fitness-diet-books",
+    "value": 0,
+    "index": 23
+  },
+  {
+    "id": "5f4e31723b685b99c0b45910",
+    "genre": { "id": 0, "name": "books" },
+    "name": "History",
+    "detail": "history-books",
+    "value": 0,
+    "index": 24
+  },
+  {
+    "id": "5f4e31728d2dc46f4adb96e1",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Hobbies & Crafts",
+    "detail": "crafts-hobbies-home-books",
+    "value": 0,
+    "index": 25
+  },
+  {
+    "id": "5f4e317225480e26668b18d2",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Humour & Entertainment",
+    "detail": "humour-entertailment-books",
+    "value": 0,
+    "index": 26
+  },
+  {
+    "id": "5f4e31723db4255796b96588",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Mystery & Suspense",
+    "detail": "mystery-thriller-suspense-books",
+    "value": 0,
+    "index": 27
+  },
+  {
+    "id": "5f4e31725aacf9b3ebb9fa15",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Poetry & Short Stories",
+    "detail": "poetry-short-stories-books",
+    "value": 0,
+    "index": 28
+  },
+  {
+    "id": "5f4e3172eeeedbe202765657",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Politics & Social Sciences",
+    "detail": "politics-social-sciences-books",
+    "value": 0,
+    "index": 29
+  },
+  {
+    "id": "5f4e31722c7b072d0d4f479a",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Romance",
+    "detail": "romance-books",
+    "value": 0,
+    "index": 30
+  },
+  {
+    "id": "5f4e317258f5b8831a38bdd7",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Science Engineering",
+    "detail": "scinece-engineering-books",
+    "value": 0,
+    "index": 31
+  },
+  {
+    "id": "5f4e31722c280f1df7cbe4dd",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Sci-Fi & Fantasy",
+    "detail": "science-fiction-fantasy-books",
+    "value": 0,
+    "index": 32
+  },
+  {
+    "id": "5f4e3172b91ee35542b3755d",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Self Development",
+    "detail": "self-development-books",
+    "value": 0,
+    "index": 33
+  },
+  {
+    "id": "5f4e3172e999002af88eb6c1",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Spirituality",
+    "detail": "spirituality-books",
+    "value": 0,
+    "index": 34
+  },
+  {
+    "id": "5f4e3172f76030c170a2e184",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Sports",
+    "detail": "sports-books",
+    "value": 0,
+    "index": 35
+  },
+  {
+    "id": "5f4e31729b104511b17b422b",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Technology",
+    "detail": "technology-books",
+    "value": 0,
+    "index": 36
+  },
+  {
+    "id": "5f4e3172219702b978539d20",
+    "genre": { "id": 0, "name": "books" },
+    "name": "Travel",
+    "detail": "travel-books",
+    "value": 0,
+    "index": 37
+  },
+  {
+    "id": "5f4e3172685a101ec972831a",
+    "genre": { "id": 0, "name": "books" },
+    "name": "True Crime",
+    "detail": "true-crime-books",
+    "value": 0,
+    "index": 38
+  }
+]

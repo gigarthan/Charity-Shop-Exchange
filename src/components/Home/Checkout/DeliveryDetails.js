@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import useFormDataValidation, {
   isRequired,
-  isEmail,
   isValidPostCode,
-  isValidEmail,
 } from '../../../hooks/useFormDataValidation';
-import Button from '../../Button';
 import CheckboxField from '../../CheckboxField';
-import Combo from '../../Combo';
 import RadioField from '../../RadioField';
 import TextFieldWithLabel from '../../TextFieldWithLabel';
 import Collapsable from '../Collapsable';
@@ -35,16 +31,15 @@ export default function DeliveryDetails(props) {
     county: [],
   };
 
-  const formSubmitAction = (values) => {
-    // console.log(values);
-  };
+//   const formSubmitAction = (values) => {
+//     // 
+//   };
 
-  const [initErrors, setInitErrors] = useState({});
+  const [initErrors, ] = useState({});
 
-  const { values, errors, fieldChange } = useFormDataValidation(
+  const { values, fieldChange } = useFormDataValidation(
     formInitialValues,
     initErrors,
-    formSubmitAction,
     fieldValidators,
   );
 
@@ -71,7 +66,7 @@ export default function DeliveryDetails(props) {
         <div className="delivery-frequency">Deliver to:</div>
       </div>
       <div className="flex flex-col flex-wrap">
-        {/* <div className="md:w-1/2 pr-1">
+        {/* <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel 
               autoselect
@@ -88,7 +83,7 @@ export default function DeliveryDetails(props) {
             <p className="error">{errors.fullname}</p>
           </div>
         </div> */}
-        <div className="md:w-1/2 pr-1">
+        <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel
               name="name"
@@ -113,7 +108,7 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
-        <div className="md:w-1/2 pr-1">
+        <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="name"
@@ -137,7 +132,7 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
-        <div className="md:w-1/2 pr-1">
+        <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="postal-code"
@@ -164,7 +159,7 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
-        <div className="md:w-1/2 pr-1">
+        <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="address-line1"
@@ -189,7 +184,7 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
-        <div className="md:w-1/2 pr-1">
+        <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="address-line2"
@@ -206,7 +201,7 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
-        <div className="md:w-1/2 pr-1">
+        <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel
               autocomplete="address-level1"
@@ -231,10 +226,9 @@ export default function DeliveryDetails(props) {
             />
           </div>
         </div>
-        <div className="md:w-1/2 pr-1">
+        <div className="pr-1 md:w-1/2">
           <div className="relative">
             <TextFieldWithLabel
-              autocomplete="on"
               name="address-level1"
               type="address-level1"
               autocomplete="address-level1"

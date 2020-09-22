@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import Collapsable from '../Collapsable';
-import Combo from '../../Combo';
-import Button from '../../Button';
 
 import { charities } from '../../../import/charities.json';
 import locations from '../../../import/locations.json';
+import Combo from '../../Combo';
+import Collapsable from '../Collapsable';
 
 export default function Charity(props) {
-  const {
-    handleChange,
-    formData: { charity },
-  } = props;
+  const { handleChange, formData } = props;
   const [isOpen, setisOpen] = useState(false);
-  const [countyId, setCountyId] = useState(charity.countryId);
-  const [charityId, setCharityId] = useState(charity.charityId);
+  const [countyId, setCountyId] = useState(formData.countryId);
+  const [charityId, setCharityId] = useState(formData.charityId);
 
-  useEffect(() => {
-    setCountyId(charity.countryId);
-  }, [charity.countryId]);
+  const onSelectCounty = (value) => {
+    setCountyId(value);
+    setCharityId(0);
+    handleChange({ countyId, charityId });
+  };
 
-  useEffect(() => {
-    setCharityId(charity.charityId);
-  }, [charity.charityId]);
+  const onSelectCharity = (value) => {
+    setCharityId(value);
+    handleChange({});
+  };
+
+  //   useEffect(() => {
+  //     setCountyId(formData.countryId);
+  //     setCharityId(formData.charityId);
+  //   }, [charityId, countyId]);
 
   // useEffect(() => {
   //   setCharityId(0);
@@ -29,38 +33,33 @@ export default function Charity(props) {
   // }, [countyId]);
 
   const counties = locations.counties.filter((county) => {
-    let numCharitiesForCounty = charities.reduce(function (count, charity) {
-      return count + (charity.countyIds.includes(county.id) ? 1 : 0);
+    const numCharitiesForCounty = charities.reduce((count, charityInfo) => {
+      return count + (charityInfo.countyIds.includes(county.id) ? 1 : 0);
     }, 0);
 
     if (numCharitiesForCounty > 0) {
       return true;
-    } else {
-      return false;
     }
+
+    return false;
   });
 
-  const handleSubmit = () => {
-    console.log('Submit');
-  };
+  //   const handleSubmit = () => {
+  //
+  //   };
 
   return (
     <Collapsable
       title="Pick charity"
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}>
-      <div className="flex flex-col sm:flex-row w-full">
+      <div className="flex flex-col w-full sm:flex-row">
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <Combo
               name="countyId"
               value={countyId}
-              setValue={(value) => {
-                setCountyId(value);
-                setCharityId(0);
-                handleChange({ keyToUpdate: 'charity.countryId', value });
-                handleChange({ keyToUpdate: 'charity.charityId', value: 0 });
-              }}
+              setValue={onSelectCounty}
               items={counties}
               placeholder="select"
               // style={{ background: '#c7c7c7'}}
@@ -76,10 +75,7 @@ export default function Charity(props) {
             <Combo
               name="charityId"
               value={charityId}
-              setValue={(value) => {
-                setCharityId(value);
-                handleChange({ keyToUpdate: 'charity.charityId', value });
-              }}
+              setValue={onSelectCharity}
               items={charities.filter((c) => c.countyIds.includes(countyId))}
               disabled={
                 !countyId || counties.find((c) => c.id === countyId).disabled

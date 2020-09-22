@@ -76,37 +76,37 @@ export default function Register() {
   return (
     <Layout>
       <div className="bg-new-navy">
-        <div className="font-header text-lg leading-normal sm:text-2xl sm:text-4xl px-8 sm:px-0 text-center font-medium max-w-screen-sm sm:max-w-screen-md mx-auto tracking-wide text-white mb-2 sm:mb-4 pt-12 sm:pt-20 pb-20 sm:pb-32">
+        <div className="max-w-screen-sm px-8 pt-12 pb-20 mx-auto mb-2 text-lg font-medium leading-normal tracking-wide text-center text-white font-header sm:text-4xl sm:px-0 sm:max-w-screen-md sm:mb-4 sm:pt-20 sm:pb-32">
           By selling books & DVDs on a subscription basis we give charity shops
           a simple way to earn recurring revenue.
         </div>
         <div className="flex flex-col items-center bg-gray-100">
-          <div className="-mt-10 sm:-mt-20 mx-auto w-11/12 max-w-4xl bg-white py-12 px-4 sm:px-20 mb-40 rounded-lg shadow-2xl">
+          <div className="w-11/12 max-w-4xl px-4 py-12 mx-auto mb-40 -mt-10 bg-white rounded-lg shadow-2xl sm:-mt-20 sm:px-20">
             <div>
-              <p className="text-xs sm:text-xl font-medium sm:font-semibold mt-4 text-gray-600 leading-normal">
+              <p className="mt-4 text-xs font-medium leading-normal text-gray-600 sm:text-xl sm:font-semibold">
                 Our website takes the orders, we collect the payments, and then
                 we pay you every time you send items to subscribers.
               </p>
-              <p className="text-xs sm:text-xl font-medium sm:font-semibold mt-4 text-gray-600 leading-normal">
+              <p className="mt-4 text-xs font-medium leading-normal text-gray-600 sm:text-xl sm:font-semibold">
                 There is no cost to join, just a commitment to delighting a new
                 channel of customers! Enquire below and we&apos;ll get back to
                 you right away.
               </p>
-              <div className="bg-gray-400 h-px mt-8 mb-10"> </div>
+              <div className="h-px mt-8 mb-10 bg-gray-400"> </div>
 
               <div>
                 <form
                   onSubmit={handleSubmit}
-                  className=" w-11/12 mx-auto pt-6 pb-8 mb-4">
+                  className="w-11/12 pt-6 pb-8 mx-auto mb-4 ">
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="mb-12">
                     <label
-                      className="block text-gray-600 text-sm sm:text-base font-medium sm:font-semibold mb-4"
+                      className="block mb-4 text-sm font-medium text-gray-600 sm:text-base sm:font-semibold"
                       htmlFor="name">
                       Your name:
                     </label>
                     <input
-                      className="appearance-none border text-sm sm:text-base tracking-loose border-gray-300 rounded w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded appearance-none sm:text-base tracking-loose sm:py-4 focus:outline-none focus:shadow-outline"
                       id="name"
                       name="name"
                       type="text"
@@ -118,12 +118,12 @@ export default function Register() {
 
                   <div className="mb-12">
                     <label
-                      className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
+                      className="block mb-4 text-sm font-semibold text-gray-600 sm:text-base"
                       htmlFor="cname">
                       Your charity:
                     </label>
                     <input
-                      className="appearance-none border text-sm sm:text-base tracking-loose border-gray-300 rounded w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded appearance-none sm:text-base tracking-loose sm:py-4 focus:outline-none focus:shadow-outline"
                       id="cname"
                       name="cname"
                       type="text"
@@ -135,12 +135,12 @@ export default function Register() {
 
                   <div className="mb-12">
                     <label
-                      className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
+                      className="block mb-4 text-sm font-semibold text-gray-600 sm:text-base"
                       htmlFor="position">
                       Your responsibilities at the charity:
                     </label>
                     <input
-                      className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded appearance-none sm:text-base tracking-loose sm:py-4 focus:outline-none focus:shadow-outline"
                       id="position"
                       name="position"
                       type="text"
@@ -152,12 +152,12 @@ export default function Register() {
 
                   <div className="mb-12">
                     <label
-                      className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
+                      className="block mb-4 text-sm font-semibold text-gray-600 sm:text-base"
                       htmlFor="email">
                       Email:
                     </label>
                     <input
-                      className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded appearance-none sm:text-base tracking-loose sm:py-4 focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
                       type="text"
@@ -169,12 +169,12 @@ export default function Register() {
 
                   <div className="mb-12">
                     <label
-                      className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
+                      className="block mb-4 text-sm font-semibold text-gray-600 sm:text-base"
                       htmlFor="number">
                       Mobile number:
                     </label>
                     <input
-                      className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded appearance-none sm:text-base tracking-loose sm:py-4 focus:outline-none focus:shadow-outline"
                       id="number"
                       name="number"
                       type="text"
@@ -186,12 +186,12 @@ export default function Register() {
 
                   <div className="mb-12">
                     <label
-                      className="block text-gray-600 text-sm sm:text-base font-semibold mb-4"
+                      className="block mb-4 text-sm font-semibold text-gray-600 sm:text-base"
                       htmlFor="message">
                       Anything else we should know
                     </label>
                     <textarea
-                      className="appearance-none border text-sm sm:text-base tracking-loose rounded border-gray-300 w-full py-3 sm:py-4 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded appearance-none sm:text-base tracking-loose sm:py-4 focus:outline-none focus:shadow-outline"
                       id="message"
                       name="message"
                       type="text"
@@ -202,9 +202,9 @@ export default function Register() {
                   </div>
                   <div className="flex flex-col items-center">
                     {error ? (
-                      <p className="text-red-500 font-semibold">{error}</p>
+                      <p className="font-semibold text-red-500">{error}</p>
                     ) : (
-                      <p className="text-transparent font-semibold cursor-default">
+                      <p className="font-semibold text-transparent cursor-default">
                         &nbsp;
                       </p>
                     )}
@@ -212,14 +212,14 @@ export default function Register() {
                   <div className="flex flex-col items-center">
                     {success ? (
                       <button
-                        className="bg-green-700 rounded-full hover:bg-green-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
+                        className="px-20 py-3 mt-6 font-medium text-white bg-green-700 rounded-full hover:bg-green-800 text-md sm:mt-8 focus:outline-none focus:shadow-outline"
                         type="submit"
                         disabled>
                         Thank you
                       </button>
                     ) : (
                       <button
-                        className="bg-red-700 rounded-full hover:bg-red-800 text-white text-md font-medium py-3 px-20 mt-6 sm:mt-8 focus:outline-none focus:shadow-outline"
+                        className="px-20 py-3 mt-6 font-medium text-white bg-red-700 rounded-full hover:bg-red-800 text-md sm:mt-8 focus:outline-none focus:shadow-outline"
                         type="submit">
                         Submit
                       </button>

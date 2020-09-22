@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Collapsable from '../Collapsable';
-import Combo from '../../Combo';
-import Button from '../../Button';
+import React, { useState } from 'react';
+
 import TextFieldWithLabel from '../../TextFieldWithLabel';
+import Collapsable from '../Collapsable';
 
 export default function ContactDetails(props) {
   const {
@@ -17,11 +16,11 @@ export default function ContactDetails(props) {
       title="Contact"
       open={isOpen}
       toggle={() => setisOpen(!isOpen)}>
-      <div className="flex flex-col sm:flex-row w-full">
+      <div className="flex flex-col w-full sm:flex-row">
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <TextFieldWithLabel
-              label={'Phone number'}
+              label="Phone number"
               name="contact.phone"
               value={contact.phone}
               onChange={handleChange}
@@ -31,7 +30,7 @@ export default function ContactDetails(props) {
         <div className="payment-textbox-inner-width ">
           <div className="relative">
             <TextFieldWithLabel
-              label={'Email address'}
+              label="Email address"
               name="contact.email"
               value={contact.email}
               onChange={handleChange}

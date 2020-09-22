@@ -6,8 +6,8 @@ import Layout from '~/components/Layout';
 export default function Privacy() {
   return (
     <Layout>
-      <div className="flex flex-col sm:flex-none sm:max-w-screen-md mx-auto px-3 sm:px-0 ">
-        <blockquote className="w-4/5 px-3 py-3 text-lg mx-auto bg-gray-300 text-gray-700 mb-8 mt-4">
+      <div className="flex flex-col px-3 mx-auto sm:flex-none sm:max-w-screen-md sm:px-0 ">
+        <blockquote className="w-4/5 px-3 py-3 mx-auto mt-4 mb-8 text-lg text-gray-700 bg-gray-300">
           <p className="mb-4">
             <strong>
               Your privacy is important to us. We only ask for personal
@@ -25,8 +25,8 @@ export default function Privacy() {
             </strong>
           </p>
         </blockquote>
-        <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+        <div className="w-4/5 mx-auto mb-8 text-base font-normal leading-relaxed text-gray-700 sm:text-lg sm:mb-12 sm:leading-relax">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             1. About this policy
           </h3>
           <p className="mb-4">
@@ -49,7 +49,7 @@ export default function Privacy() {
             in this Privacy Policy.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             1. About this policy
           </h3>
           <p className="mb-4">
@@ -72,7 +72,7 @@ export default function Privacy() {
             in this Privacy Policy.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             2. Your rights
           </h3>
           <p className="mb-4">
@@ -91,7 +91,7 @@ export default function Privacy() {
             exceptions or qualifications.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             3. Information we collect
           </h3>
           <p className="mb-4">
@@ -102,10 +102,10 @@ export default function Privacy() {
             browser.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             3.1 Information that you may provide to us
           </h3>
-          <ul className="m-4 pl-4 list-roman">
+          <ul className="pl-4 m-4 list-roman">
             <li className="mb-4">
               Contact information, including name, email address, postal address
               (including postcode) and telephone number.
@@ -147,7 +147,7 @@ export default function Privacy() {
             may not be able to provide you with certain services.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             3.2 Information we collect from other sources
           </h3>
           <p className="mb-4">
@@ -158,14 +158,14 @@ export default function Privacy() {
             as personal information in accordance with this policy.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             3.3 Information from your use of our website
           </h3>
           <p className="mb-4">
             We collect information about your use of our website and the devices
             you use. We collect information on:
           </p>
-          <ul className="m-4 pl-4 list-roman">
+          <ul className="pl-4 m-4 list-roman">
             <li className="mb-4">how often you access our website;</li>
             <li className="mb-4">the way in which you navigate around it;</li>
             <li className="mb-4">how long you spend on particular pages;</li>
@@ -184,12 +184,12 @@ export default function Privacy() {
           <p className="mb-4">
             We also use cookies to log your website behavioural information. For
             more information on our use of cookies, please refer to our{' '}
-            <Link className="italic text-md text-gray-500" to="/cookies">
+            <Link className="italic text-gray-500 text-md" to="/cookies">
               cookie statement
             </Link>
             .
           </p>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             4. How we use the information we collect
           </h3>
           <p className="mb-4">
@@ -197,7 +197,7 @@ export default function Privacy() {
             know about new products that we think you&apos;ll like. Some other
             examples of how we may use your Information include to:
           </p>
-          <ul className="m-4 pl-4 list-roman">
+          <ul className="pl-4 m-4 list-roman">
             <li className="mb-4">
               process your orders and provide you with the services (such as
               sending you your order);
@@ -279,14 +279,14 @@ export default function Privacy() {
             with marketing communications.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             5. Our bases for collecting and using the information
           </h3>
           <p className="mb-4">
             We are entitled to use your personal data in the ways set out in
             this policy on the following bases:
           </p>
-          <ul className="m-4 pl-4 list-roman">
+          <ul className="pl-4 m-4 list-roman">
             <li className="mb-4">
               the use of personal data in this way is necessary for the
               performance of a contract with you for provision of our products
@@ -320,7 +320,7 @@ export default function Privacy() {
             time by contacting us (see section 3).
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             6. Sharing your information
           </h3>
           <p className="mb-4">
@@ -331,7 +331,7 @@ export default function Privacy() {
             Where necessary, we may share your personal data with the following
             third parties:
           </p>
-          <ul className="m-4 pl-4 list-roman">
+          <ul className="pl-4 m-4 list-roman">
             <li className="mb-4">software providers;</li>
             <li className="mb-4">web analytics providers;</li>
             <li className="mb-4">cloud computing providers;</li>
@@ -358,7 +358,7 @@ export default function Privacy() {
             time by contacting us (see section 3).
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             7. Where we store your information
           </h3>
           <p className="mb-4">
@@ -387,7 +387,7 @@ export default function Privacy() {
             if you wish to obtain a copy of these safeguards.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             8. Keeping your information
           </h3>
           <p className="mb-4">
@@ -396,7 +396,7 @@ export default function Privacy() {
             the relevant retention periods, we will take into account factors
             including:
           </p>
-          <ul className="m-4 pl-4 list-roman">
+          <ul className="pl-4 m-4 list-roman">
             <li className="mb-4">
               our contractual and business relationships with you;
             </li>
@@ -412,7 +412,7 @@ export default function Privacy() {
             </li>
           </ul>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             9. Security
           </h3>
           <p className="mb-4">
@@ -441,7 +441,7 @@ export default function Privacy() {
             security features to try to prevent unauthorised access.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             10. Links to other websites
           </h3>
           <p className="mb-4">
@@ -453,7 +453,7 @@ export default function Privacy() {
             linked websites. We are not responsible for any linked websites.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="mt-12 mb-4 text-xl font-bold leading-snug text-left text-gray-700 sm:text-2xl sm:mb-6">
             11. Changes to our Privacy Policy
           </h3>
           <p className="mb-4">
@@ -467,7 +467,7 @@ export default function Privacy() {
             us by email at together@charityshopexchange.com
           </p>
 
-          <blockquote className="w-4/5 py-3 px-3 text-lg mx-auto bg-gray-300 text-gray-700 mb-8 mt-4">
+          <blockquote className="w-4/5 px-3 py-3 mx-auto mt-4 mb-8 text-lg text-gray-700 bg-gray-300">
             <p>
               <strong>
                 Your continued use of our website will be regarded as acceptance

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import starttext from '~/assets/img/start text.png';
 import Button from '~/components/Button';
 import Combo from '~/components/Combo';
-import config from '~/config';
+import config from '~/config.json';
 import { charities } from '~/import/charities.json';
 import locations from '~/import/locations.json';
 import { products } from '~/import/subbly-products.json';
@@ -39,25 +39,19 @@ export default function GetStartedForm({ toggle, onChange }) {
   // (TODO: This is for launch. Remove later when re-adding "Coming soon!" above)
 
   const counties = locations.counties.filter((county) => {
-    const numCharitiesForCounty = charities.reduce(function (count, charity) {
+    const numCharitiesForCounty = charities.reduce(function filterCountries(
+      count,
+      charity,
+    ) {
       return count + (charity.countyIds.includes(county.id) ? 1 : 0);
-    }, 0);
+    },
+    0);
 
     if (numCharitiesForCounty > 0) {
       return true;
     }
     return false;
   });
-
-  useEffect(() => {
-    autoSelectCounty();
-  }, []);
-
-  // Clear out the 'Charity' combo if 'County' is changed
-  useEffect(() => {
-    setCharityId(0);
-    onChange({ keyToUpdate: 'charity.charityId', value: 0 });
-  }, [countyId]);
 
   // If user arrives on subdomain and it is a valid county auto populate region
   function autoSelectCounty() {
@@ -66,6 +60,29 @@ export default function GetStartedForm({ toggle, onChange }) {
       setCountyId(countyIdFromURL);
     }
   }
+
+  const onSelectCounty = (value) => {
+    setCountyId(value);
+  };
+
+  const onSelectCharity = (value) => {
+    setCharityId(value);
+  };
+
+  useEffect(() => {
+    autoSelectCounty();
+  }, []);
+
+  // Clear out the 'Charity' combo if 'County' is changed
+  useEffect(() => {
+    setCharityId(0);
+    onChange({ countyId, charityId });
+  }, [countyId]);
+
+  useEffect(() => {
+    onChange({ countyId, charityId });
+    return () => {};
+  }, [countyId, charityId]);
 
   // Redirect the user to Subbly
   function handleSubmit() {
@@ -93,40 +110,34 @@ export default function GetStartedForm({ toggle, onChange }) {
 
   return (
     <>
-      <div className="max-w-screen-md mx-auto pl-20 sm:pl-12 transition duration-500 ease-in-out transform hover:-translate-y-1">
+      <div className="max-w-screen-md pl-20 mx-auto transition duration-500 ease-in-out transform sm:pl-12 hover:-translate-y-1">
         <img className="w-3/4 sm:w-auto" src={starttext} alt="text" />
       </div>
-      <div className="pb-20 px-10">
+      <div className="px-10 pb-20">
         <div className="max-w-screen-md mx-auto">
-          <div className="flex flex-col sm:flex-row w-full sm:space-x-8 justify-center items-center">
-            <div className="w-full md:w-1/2 mb-2 md:mb-0">
+          <div className="flex flex-col items-center justify-center w-full sm:flex-row sm:space-x-8">
+            <div className="w-full mb-2 md:w-1/2 md:mb-0">
               <div className="relative">
                 <Combo
                   name="countyId"
                   value={countyId}
-                  setValue={(value) => {
-                    setCountyId(value);
-                    onChange({ keyToUpdate: 'charity.countryId', value });
-                  }}
+                  setValue={onSelectCounty}
                   items={counties}
                   placeholder="select"
                   // style={{ background: '#c7c7c7'}}
                   theme=""
                   label="Select a region"
-                  className="block appearance-none w-full border border-none text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block w-full leading-tight text-gray-700 border border-none rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>
             </div>
-            <div className="w-full md:w-1/2 mb-2 md:mb-0">
+            <div className="w-full mb-2 md:w-1/2 md:mb-0">
               <div className="relative">
                 <Combo
                   name="charityId"
                   value={charityId}
-                  setValue={(value) => {
-                    setCharityId(value);
-                    onChange({ keyToUpdate: 'charity.charityId', value });
-                  }}
+                  setValue={onSelectCharity}
                   items={charities.filter((c) =>
                     c.countyIds.includes(countyId),
                   )}
@@ -137,12 +148,12 @@ export default function GetStartedForm({ toggle, onChange }) {
                   placeholder="select"
                   theme=""
                   label="Pick a charity"
-                  className="block appearance-none w-full border border-none text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="block w-full leading-tight text-gray-700 border border-none rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                 />
               </div>
             </div>
-            <div className="md:mt-8 mt-6">
+            <div className="mt-6 md:mt-8">
               <Button
                 className="px-8"
                 onClick={handleSubmit}
@@ -151,7 +162,7 @@ export default function GetStartedForm({ toggle, onChange }) {
               </Button>
             </div>
           </div>
-          <div className="text-center text-sm sm:text-sm font-normal text-gray-400 mt-4">
+          <div className="mt-4 text-sm font-normal text-center text-gray-400 sm:text-sm">
             Our charities send boxes to doorsteps across the UK. More charities
             coming soon.
           </div>
