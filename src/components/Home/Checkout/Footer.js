@@ -32,6 +32,8 @@ export default function Footer(props) {
       year: `20${formData.payment.expiry_at.split('/')[1]}`,
     };
     console.log(formData.payment);
+    console.log(requiredFields);
+    window.billsbyFormData = formData;
     window.billsbyTokens.tokenizeCreditCard(requiredFields);
   }
 

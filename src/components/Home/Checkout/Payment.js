@@ -38,50 +38,63 @@ export default function Payment(props) {
     window.billsbyTokens.on('paymentMethod', function (token, pmData) {
       console.log(token, 'ABC', pmData);
       console.log('make axios here');
-      console.log(formData);
+      console.log(window.billsbyFormData);
+      const { delivery, payment, checkoutItems } = window.billsbyFormData;
       const data = {
         firstName: delivery.firstname,
         lastName: delivery.lastname,
         email: payment.email,
+        cycleId:
+          delivery.subscription == 'week'
+            ? 423
+            : delivery.subscription == 'other week'
+            ? 422
+            : 421,
+        Units: checkoutItems.books.length + checkoutItems.dvd.length,
+        couponCodes: [
+          {
+            planId: 296,
+          },
+        ],
         address: {
           addressLine1: delivery.address_1,
           addressLine2: delivery.address_2,
-          state: '',
+          state: 'London',
           city: delivery.town,
-          county: delivery.county,
+          country: 'GBR',
           postCode: delivery.postcode,
         },
         shippingAddress: {
           addressLine1: delivery.address_1,
           addressLine2: delivery.address_2,
-          state: '',
+          state: 'London',
           city: delivery.town,
-          county: delivery.county,
+          country: 'GBR',
           postCode: delivery.postcode,
         },
         cardDetails: {
-          fullName: payment.name,
+          fullName: pmData.full_name,
           paymentCardToken: token,
           cardType: pmData.card_type,
           expiryMonth: pmData.month,
           expiryYear: pmData.year,
           last4Digits: pmData.last_four_digits,
         },
-        phoneNumberDialCountry: 'United Kingdom',
-        phoneNumberDialCode: '44',
-        phoneNumber: payment.phone,
+        phoneNumberDialCountry: 'UK',
+        phoneNumberDialCode: 44,
+        phoneNumber: Number(payment.phone),
       };
       console.log(data);
-      // axios
-      //   .post('/.netlify/functions/createOrder', data)
-      //   .then(function (response) {
-      //     // handle success
-      //     // console.log('HELLO', response);
-      //   })
-      //   .catch(function (error) {
-      //     // handle error
-      //     // console.log('ERR', error);
-      //   });
+      axios
+        .post('/.netlify/functions/createOrder', data)
+        .then(function (response) {
+          // handle success
+          console.log('HELLO', response);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log('ERR', error);
+        });
     });
 
     window.billsbyTokens.on('errors', function (errors) {

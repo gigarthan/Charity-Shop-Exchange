@@ -3,35 +3,37 @@ const axios = require('axios');
 require('dotenv').config();
 
 exports.handler = async (event, _) => {
-  console.log('HELLo');
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
+  try {
+    console.log('HELLo');
+    if (event.httpMethod !== 'POST') {
+      return { statusCode: 405, body: 'Method Not Allowed' };
+    }
 
-  const { BILLSBY_API_KEY } = process.env;
-  const { body } = event;
+    const { BILLSBY_API_KEY } = process.env;
+    const { body: rawBody } = event;
+    const body = JSON.parse(rawBody);
 
-  axios
-    .post(
+    const resp = await axios.post(
       'https://public.billsby.com/api/v1/rest/core/charityshopexchange/subscriptions',
       body,
       {
         headers: {
-          ApiKey: BILLSBY_API_KEY,
+          apikey: BILLSBY_API_KEY,
           'content-type': 'application/json',
         },
       },
-    )
-    .then((res) => {
-      return {
-        statusCode: res.statusCode,
-        body: res,
-      };
-    })
-    .catch((error) => {
-      console.log('ERR');
-      console.log(error.response.data);
-      console.log(error.response.status);
-      // console.log(error);
-    });
+    );
+    return {
+      statusCode: resp.status,
+      body: resp.data,
+    };
+  } catch (error) {
+    console.log('ERR');
+    console.log(error.response.data);
+    console.log(error.response.status);
+    return {
+      statusCode: 500,
+      body: error.response.data,
+    };
+  }
 };
