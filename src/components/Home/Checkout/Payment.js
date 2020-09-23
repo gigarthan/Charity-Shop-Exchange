@@ -40,10 +40,27 @@ export default function Payment(props) {
       console.log('make axios here');
       console.log(window.billsbyFormData);
       const { delivery, payment, checkoutItems } = window.billsbyFormData;
+
+      let itemDetails = "";
+
+      const keys = ["dvd", "books"];
+
+      for(const key of keys) {
+        for(const elem of checkoutItems[key]) {
+          itemDetails += `${elem.id}:${elem.quantity}|`
+        }
+      }
+
       const data = {
         firstName: delivery.firstname,
         lastName: delivery.lastname,
         email: payment.email,
+        customFieldResponse: [
+          {
+            customFieldId: 135,
+            value: itemDetails,
+          }
+        ],
         cycleId:
           delivery.subscription == 'week'
             ? 423
