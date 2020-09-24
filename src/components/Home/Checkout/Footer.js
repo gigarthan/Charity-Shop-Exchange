@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 import Logo from '../../../assets/img/cse_logo.png';
-import billsbyConfig from '../../../import/billsby';
 import ModalButton from './ModalButton';
 
 export default function Footer(props) {
@@ -14,6 +13,8 @@ export default function Footer(props) {
 
   const [quantity, setQuantity] = useState(true);
 
+  const { checkoutItems } = formData;
+
   // Card Tokenizer...
   // useEffect(() => {
   //     window.billsbyTokens.on('ready', function() {
@@ -21,7 +22,7 @@ export default function Footer(props) {
   //     });
   //     window?.billsbyTokens.on("paymentMethod", function (token, pmData) {
 
-  //       console.log('make axios here');
+  //
   //     });
   // }, []);
 
@@ -53,9 +54,6 @@ export default function Footer(props) {
     return quantity;
   }, {});
 
-  const totalSum = total.reduce((sum, i) => (sum += i.quantity * 2.0), 3.5);
-  const totalDecimalSum = (Math.round(totalSum * 100) / 100).toFixed(2);
-
   const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
   const keysToLook2 = ['phone', 'email'];
 
@@ -63,6 +61,18 @@ export default function Footer(props) {
 
   const showToolTip = keysToLook.some((key) => formData.delivery[key] === '');
   const showToolTip2 = keysToLook2.some((key) => formData.payment[key] === '');
+
+  const totalQuantity = checkoutItems.reduce((acc, { value }) => {
+    return acc + value;
+  }, 0);
+
+  const totalDecimalSum = checkoutItems.reduce(
+    /**
+     * ? £7.5 for the first two items and then £2 per item
+     */
+    (acc, { value }) => Math.round((acc + value * 2.0) * 100) / 100,
+    3.5,
+  );
 
   return (
     <div className="modal-footer" id="footer">
@@ -72,9 +82,8 @@ export default function Footer(props) {
         alt="Charity Shop Exchange"
       />
       <Selection
-        orderSummary={orderSummary}
+        totalQuantity={totalQuantity}
         formData={formData}
-        handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
       <Subscription
@@ -84,8 +93,7 @@ export default function Footer(props) {
         showToolTip={showToolTip}
         showToolTip2={showToolTip2}
         quantity={quantity}
-        orderSummary={orderSummary}
-        handleSubmit={handleSubmit}
+        totalQuantity={totalQuantity}
         handleChange={handleChange}
         isReady={isReady}
         newClass={newClass}
@@ -97,28 +105,24 @@ export default function Footer(props) {
         id="billsbyTriggerAnchor"
         data-billsby-type="checkout"
         data-billsby-product={billsbyData.productId}
-        data-billsby-plan={billsbyData.planId}
         data-billsby-cycle={billsbyData.cycleId}
+        data-billsby-plan={billsbyData.planId}
         data-billsby-units={orderSummary.quantity}>
         Subscribe
       </a> */}
     </div>
   );
 }
-const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
-  if (orderSummary.quantity >= 2) {
+const Selection = ({ totalQuantity, handleSubmit, handleChange, isReady }) => {
+  if (totalQuantity >= 2) {
     return null;
   }
-  if (orderSummary.quantity >= 1) {
+  if (totalQuantity >= 1) {
     return (
       <>
         <ModalButton
           className="modal-button-disabled"
-          disabled={
-            typeof orderSummary.quantity !== 'undefined'
-              ? orderSummary.quantity < 2
-              : true
-          }
+          disabled={totalQuantity < 2 && true}
           onClick={handleSubmit}
           handleChange={handleChange}
           isReady={isReady}
@@ -131,11 +135,7 @@ const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
     <>
       <ModalButton
         className="modal-button-disabled-2"
-        disabled={
-          typeof orderSummary.quantity !== 'undefined'
-            ? orderSummary.quantity < 2
-            : true
-        }
+        disabled={totalQuantity < 2 && true}
         onClick={handleSubmit}
         handleChange={handleChange}
         isReady={isReady}
@@ -146,7 +146,7 @@ const Selection = ({ orderSummary, handleSubmit, handleChange, isReady }) => {
 };
 const Subscription = ({
   formData,
-  orderSummary,
+  totalQuantity,
   newClass,
   button,
   handleSubmit,
@@ -161,19 +161,20 @@ const Subscription = ({
     showToolTip2 || showToolTip ? 'modal-button-disabled' : button
   } `;
   const isEnabled = !showToolTip && !showToolTip2;
-  if (
-    typeof orderSummary.quantity !== 'undefined'
-      ? orderSummary.quantity < 2
-      : true
-  ) {
+  if (totalQuantity < 2 && true) {
     return null;
   }
   return (
-    <div className="w-full flex justify-center flex-wrap">
+    <div className="flex flex-wrap justify-center w-full">
       {quantity ? (
-        <span className="p text-lg justify-center text-center flex-grow">
-          <a className="s">{orderSummary.quantity} items</a>delivered every
-          <a className="s2">{formData.delivery.subscription}</a>
+        <span className="justify-center flex-grow text-lg text-center p">
+          <a href="#1" className="s">
+            {totalQuantity} items
+          </a>
+          delivered every
+          <a href="#2" className="s2">
+            {formData.delivery.subscription}
+          </a>
         </span>
       ) : (
         <div className="fade-in">
@@ -188,7 +189,7 @@ const Subscription = ({
         handleChange={handleChange}>
         <>
           {quantity ? (
-            <span className="sum">£{totalDecimalSum} Subscribe</span>
+            <span className="sum">£{totalDecimalSum.toFixed(2)} Subscribe</span>
           ) : (
             <span className="subscribe">Subscribed</span>
           )}

@@ -16,7 +16,7 @@ export default function Terms() {
           </p>
         </blockquote>
         <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
-          <h2 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Website Terms of Use
           </h2>
           <p className="mb-4">
@@ -70,7 +70,7 @@ export default function Terms() {
               </strong>
             </p>
           </blockquote>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Privacy
           </h3>
           <p className="mb-4">
@@ -82,7 +82,7 @@ export default function Terms() {
             </Link>
             .
           </p>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Intellectual Property
           </h3>
           <p className="mb-4">
@@ -109,7 +109,7 @@ export default function Terms() {
             the address provided below.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Limitations of warranties and disclaimer
           </h3>
           <p className="mb-4">
@@ -141,7 +141,7 @@ export default function Terms() {
             use or inability to use the materials on Charity Shop
             Exchange&apos;s website.
           </p>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Accuracy of materials
           </h3>
           <p className="mb-4">
@@ -159,7 +159,7 @@ export default function Terms() {
             website at any time without notice, but we have no obligation to
             update any information on our website.
           </p>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Links to other websites
           </h3>
           <p className="mb-4">
@@ -170,7 +170,7 @@ export default function Terms() {
             about operators of these websites, or about the information,
             products, or services provided by them.
           </p>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Modifications
           </h3>
           <p className="mb-4">
@@ -182,7 +182,7 @@ export default function Terms() {
             any third-party for any modification, price change, suspension or
             discontinuance of the service or website.
           </p>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Governing law and jurisdiction
           </h3>
           <p className="mb-4">
@@ -192,7 +192,7 @@ export default function Terms() {
             and you irrevocably submit to the exclusive jurisdiction of the
             courts in England and Wales.
           </p>
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             Entire agreement
           </h3>
           <p className="mb-4">

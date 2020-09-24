@@ -40,7 +40,7 @@ export default function CustomerTerms() {
           </p>
         </blockquote>
         <div className="w-4/5 mx-auto text-base sm:text-lg text-gray-700 font-normal mb-8 sm:mb-12 leading-relaxed sm:leading-relax">
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             1. Agreement to Terms and Conditions
           </h3>
           <p className="mb-4">
@@ -72,7 +72,7 @@ export default function CustomerTerms() {
             the website.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             2. The Charity Shop Exchange Subscription Service
           </h3>
           <p className="mb-4">
@@ -104,7 +104,7 @@ export default function CustomerTerms() {
             or other security breach.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             3. Purchase of goods
           </h3>
           <p className="mb-4">
@@ -143,7 +143,7 @@ export default function CustomerTerms() {
             received and is being processed.&nbsp;
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             4. Item selection
           </h3>
           <p>Our charity shop partners:</p>
@@ -167,7 +167,7 @@ export default function CustomerTerms() {
             </li>
           </ul>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             5. Payments
           </h3>
           <p className="mb-4">
@@ -206,7 +206,7 @@ export default function CustomerTerms() {
             change in fees. Please note that you can cancel at any time.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             6. Delivery of boxes
           </h3>
           <p className="mb-4">
@@ -266,7 +266,7 @@ export default function CustomerTerms() {
             is too unreliable.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             7. Return Policy
           </h3>
           <p className="mb-4">
@@ -303,7 +303,7 @@ export default function CustomerTerms() {
             Bureau.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             8. Pausing or cancelling your subscription
           </h3>
           <p className="mb-4">
@@ -324,7 +324,7 @@ export default function CustomerTerms() {
             this is being abused.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             9. Personal Information
           </h3>
           <p className="mb-4">
@@ -373,7 +373,7 @@ export default function CustomerTerms() {
             private information.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             10. Discounted offers
           </h3>
           <p className="mb-4">
@@ -403,7 +403,7 @@ export default function CustomerTerms() {
             redeemed against books &amp; DVDs.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             11. Availability of website
           </h3>
           <p className="mb-4">
@@ -419,7 +419,7 @@ export default function CustomerTerms() {
             services. We will restore the service as soon as we reasonably can.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             12. Limitations on liability
           </h3>
           <p className="mb-4">
@@ -485,7 +485,7 @@ export default function CustomerTerms() {
             .
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             13. Applicable law
           </h3>
           <p className="mb-4">
@@ -496,7 +496,7 @@ export default function CustomerTerms() {
             jurisdiction of the courts of England and Wales.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             14. Assignment by us
           </h3>
           <p className="mb-4">
@@ -509,7 +509,7 @@ export default function CustomerTerms() {
             of your obligations under these Terms and Conditions.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             15. No waiver
           </h3>
           <p>
@@ -522,7 +522,7 @@ export default function CustomerTerms() {
             waive any right related to any later default by you.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             16. Confidentiality
           </h3>
           <p className="mb-4">
@@ -531,7 +531,7 @@ export default function CustomerTerms() {
             fulfilling our respective obligations under the contract.&nbsp;
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             17. Force majeure
           </h3>
           <p className="mb-4">
@@ -542,7 +542,7 @@ export default function CustomerTerms() {
             reasonably beyond our control.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             18. Third party rights
           </h3>
           <p className="mb-4">
@@ -551,7 +551,7 @@ export default function CustomerTerms() {
             Parties) Act 1999.
           </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
+          <h3 className="text-xl sm:text-2xl font-bold text-left mt-12 mb-4 sm:mb-6 text-gray-700 leading-snug">
             19. Termination
           </h3>
           <p className="mb-4">

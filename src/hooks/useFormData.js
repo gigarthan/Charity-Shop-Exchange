@@ -8,18 +8,20 @@ export default function useFormData(
 
   const initialFormData = useRef(initialData).current;
 
-  const onChange = (target) => {
-    if (!target) return;
-    const { value } = target;
-    // console.log(target);
-    const path = target.keyToUpdate.split('.');
-
-    setFormData((data) => ({
-      ...data,
-      [path[0]]: {
-        ...data[path[0]],
-        [path[1]]: value,
-      },
+  /**
+   * ! DO NOT CHANGE THE DEFAULT
+   * ? each property is set to formData so if any property gets update, the others value remain the same.
+   */
+  const onChange = ({
+    countyId = formData.countyId,
+    charityId = formData.charityId,
+    checkoutItems = formData.checkoutItems,
+  }) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      countyId,
+      charityId,
+      checkoutItems,
     }));
   };
 

@@ -11,25 +11,20 @@ import Mission from '~/components/Home/Mission';
 import Register from '~/components/Home/Register';
 import Subscribe from '~/components/Home/Subscribe';
 import useFormData from '~/hooks/useFormData';
-import items from '~/import/planList';
+// import items from '~/import/planList';
 
 export default function Home() {
   const { isShowing, toggle } = useDialog();
 
-  let planList = [];
-  Object.values(items).forEach((list) => {
-    planList = planList.concat(list.map((elem) => elem.id));
-  });
+  //   let planList = [];
+  //   Object.values(items).forEach((list) => {
+  //     planList = planList.concat(list.map((elem) => elem.id));
+  //   });
 
   const [formData, onChange] = useFormData({
-    charity: {
-      countryId: null,
-      charityId: null,
-    },
-    checkoutItems: {
-      dvd: [],
-      books: [],
-    },
+    countyId: null,
+    charityId: null,
+    checkoutItems: [],
     delivery: {
       subscription: 'week',
       firstname: '',
@@ -66,10 +61,8 @@ export default function Home() {
       billing_county: '',
     },
   });
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(formData);
-  }, [formData]);
+
+  useEffect(() => {}, [formData]);
 
   useEffect(() => {
     if (isShowing) {
@@ -89,14 +82,14 @@ export default function Home() {
       <Register />
       <Dialog isLarge isShowing={isShowing} hide={toggle}>
         {/*
-        <h1 className="font-header text-center text-2xl sm:text-3xl font-bold text-new-red leading-tight mb-2 sm:mb-4">
+        <h1 className="mb-2 text-2xl font-bold leading-tight text-center font-header sm:text-3xl text-new-red sm:mb-4">
           Launching soon!
         </h1>
-        <h3 className="text-center text-base sm:text-l text-gray-600 font-medium mb-6 sm:mb-6">
+        <h3 className="mb-6 text-base font-medium text-center text-gray-600 sm:text-l sm:mb-6">
           We’ll be launching Charity Shop Exchange in the next few days. Please
           follow us on Twitter for updates:
         </h3>
-        <p className="font-header text-base text-center sm:text-l font-bold text-new-red">
+        <p className="text-base font-bold text-center font-header sm:text-l text-new-red">
           <a href="https://twitter.com/CharityShopEx">
             <img
               className="inline pr-1 transition duration-500 ease-in-out transform hover:-translate-y-1"
