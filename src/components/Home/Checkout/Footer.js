@@ -5,7 +5,6 @@ import ModalButton from './ModalButton';
 
 export default function Footer(props) {
   const { formData, handleChange } = props;
-  const { payment, delivery, charity } = formData;
   const [isReady, setIsReady] = useState(false);
 
   const [newClass, setClassName] = useState('');
@@ -38,21 +37,7 @@ export default function Footer(props) {
     window.billsbyTokens.tokenizeCreditCard(requiredFields);
   }
 
-  const books = formData.checkoutItems.books.filter(
-    (item) => item.quantity !== 0,
-  );
-  const dvd = formData.checkoutItems.dvd.filter((item) => item.quantity !== 0);
-  const total = books.concat(dvd);
-  const orderSummary = total.reduce((quantity, item) => {
-    for (const [orderName, orderCount] of Object.entries(item)) {
-      if (!quantity[orderName]) {
-        quantity[orderName] = 0;
-      }
-
-      quantity[orderName] += orderCount;
-    }
-    return quantity;
-  }, {});
+  console.log(formData);
 
   const keysToLook = ['address_1', 'firstname', 'lastname', 'postcode', 'town'];
   const keysToLook2 = ['phone', 'email'];
@@ -184,15 +169,14 @@ const Subscription = ({
       <ModalButton
         className={modalButtonClassName}
         type="button"
-        disabled={false}
+        disabled={!isEnabled || !isReady}
         onClick={handleSubmit}
         handleChange={handleChange}>
         <>
           {quantity ? (
             <span className="sum">£{totalDecimalSum.toFixed(2)} Subscribe</span>
           ) : (
-            <span className="subscribe">Subscribed</span>
-          )}
+            <span className="subscribe">Subscribed</span>)}
           {showToolTip2 ? (
             <span className="tooltiptext">Enter Payment Details</span>
           ) : (

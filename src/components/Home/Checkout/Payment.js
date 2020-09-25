@@ -40,14 +40,10 @@ export default function Payment(props) {
       console.log(window.billsbyFormData);
       const { delivery, payment, checkoutItems } = window.billsbyFormData;
 
-      let itemDetails = "";
+      let itemDetails = '';
 
-      const keys = ["dvd", "books"];
-
-      for(const key of keys) {
-        for(const elem of checkoutItems[key]) {
-          itemDetails += `${elem.id}:${elem.quantity}|`
-        }
+      for (const elem of checkoutItems) {
+        itemDetails += `${elem.id}:${elem.value}|`;
       }
 
       const data = {
@@ -58,7 +54,7 @@ export default function Payment(props) {
           {
             customFieldId: 135,
             value: itemDetails,
-          }
+          },
         ],
         cycleId:
           delivery.subscription == 'week'
@@ -129,11 +125,9 @@ export default function Payment(props) {
     cvv: [isRequiredPayment, validCvv],
     name: [isRequiredPayment, isValidCardName],
   };
-  const [initErrors, ] = useState({});
+  const [initErrors] = useState({});
 
-  const formSubmitAction = () => {
-    
-  };
+  const formSubmitAction = () => {};
 
   const { values, fieldChange } = useFormDataValidation(
     formData,
