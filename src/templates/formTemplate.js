@@ -101,8 +101,8 @@ export default function FormpageTemplate() {
       (county) => countyName === change(county.name),
     );
 
-    formData.charityId = ch.id;
-    formData.countyId = count.id;
+    formData.charityId = (ch || {}).id;
+    formData.countyId = (count || {}).id;
 
     setInit({ init: 1 });
   };
