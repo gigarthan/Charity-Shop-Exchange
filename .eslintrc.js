@@ -5,7 +5,12 @@ module.exports = {
     node: true,
     jasmine: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react', "plugin:prettier/recommended"],
+  extends: [
+    'airbnb',
+    'prettier',
+    'prettier/react',
+    'plugin:prettier/recommended',
+  ],
   plugins: ['react', 'prettier'],
 
   // Only Rules
@@ -15,7 +20,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-named-as-default': 'off',
     'no-alert': 'warn',
-    'radix': 'off',
+    radix: 'off',
     'no-console': 'off',
     'global-require': 'off',
     'no-param-reassign': ['error', { props: false }],
@@ -57,7 +62,11 @@ module.exports = {
 
   settings: {
     'import/resolver': {
-      'babel-module': {},
+      'babel-module': {
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
     },
   },
 };

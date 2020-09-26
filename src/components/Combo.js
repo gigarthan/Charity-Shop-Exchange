@@ -19,6 +19,8 @@ export default function Combo(props) {
     className,
   } = props;
 
+  console.log(value);
+
   const combo = useRef(null);
 
   useEffect(() => {

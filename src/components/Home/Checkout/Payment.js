@@ -28,21 +28,17 @@ export default function Payment(props) {
   const { formData, handleChange } = props;
   const { payment, delivery } = formData;
   const [isOpen, setisOpen] = useState(false);
-  
-  useEffect(() => {
-  
-    try {
-      window.billsbyTokens.init("billsby-number", "billsby-cvv");
-  } catch (err) {
-      console.error(err);
-    }  
-    window.billsbyTokens.on('ready',  () => {
-      
 
-    });
-    window.billsbyTokens.on("paymentMethod", () => {
-      
-    });
+  useEffect(() => {
+    //   try {
+    //     window.billsbyTokens.init("billsby-number", "billsby-cvv");
+    // } catch (err) {
+    //     console.error(err);
+    //   }
+    //   window.billsbyTokens.on('ready',  () => {
+    //   });
+    //   window.billsbyTokens.on("paymentMethod", () => {
+    //   });
   }, []);
 
   const fieldValidators = {
@@ -53,11 +49,9 @@ export default function Payment(props) {
     cvv: [isRequiredPayment, validCvv],
     name: [isRequiredPayment, isValidCardName],
   };
-  const [initErrors, ] = useState({});
+  const [initErrors] = useState({});
 
-  const formSubmitAction = () => {
-    
-  };
+  const formSubmitAction = () => {};
 
   const { values, fieldChange } = useFormDataValidation(
     formData,
@@ -65,7 +59,6 @@ export default function Payment(props) {
     formSubmitAction,
     fieldValidators,
   );
-
 
   return (
     <Collapsable
@@ -484,14 +477,7 @@ const Card = ({
     </>
   );
 };
-const CVVIMG = ({
-  formData,
-  valid,
-  Visa,
-  MasterCard,
-  Discover,
-  Card1,
-}) => {
+const CVVIMG = ({ formData, valid, Visa, MasterCard, Discover, Card1 }) => {
   const cardValidator = valid.number(formData.payment.card_number, {
     luhnValidateVisaCard: false,
   });

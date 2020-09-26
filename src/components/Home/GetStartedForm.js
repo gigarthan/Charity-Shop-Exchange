@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import slug from 'slug';
+
 import starttext from '~/assets/img/start text.png';
 import Button from '~/components/Button';
 import Combo from '~/components/Combo';
@@ -86,6 +88,15 @@ export default function GetStartedForm({ toggle, onChange }) {
 
   // Redirect the user to Subbly
   function handleSubmit() {
+    const ch = charities.find((charity) => charity.id === charityId);
+
+    const count = locations.counties.find((county) => county.id === countyId);
+
+    window.history.pushState(
+      {},
+      window.title,
+      `/${slug(count.name)}/${slug(ch.name)}`,
+    );
     const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has('testMode') === true) {
       // We are in test mode; act as if we are launched

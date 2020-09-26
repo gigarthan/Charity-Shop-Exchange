@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+// import FormpageTemplate from '../../templates/getStartedForm';
+
 // import twitter from '~/assets/img/twitter.svg';
 import Dialog from '~/components/Dialog';
 import useDialog from '~/components/Dialog/useDialog';
@@ -11,6 +13,7 @@ import Mission from '~/components/Home/Mission';
 import Register from '~/components/Home/Register';
 import Subscribe from '~/components/Home/Subscribe';
 import useFormData from '~/hooks/useFormData';
+
 // import items from '~/import/planList';
 
 export default function Home() {
@@ -66,9 +69,11 @@ export default function Home() {
 
   useEffect(() => {
     if (isShowing) {
+      // console.log(formData);
       document.body.classList.add('modal-open');
     } else {
       document.body.classList.remove('modal-open');
+      window.history.pushState({}, window.title, `/`);
     }
   }, [isShowing]);
 
@@ -76,6 +81,7 @@ export default function Home() {
     <>
       <Hero />
       <GetStartedForm onChange={onChange} toggle={toggle} />
+
       <HowItWorks />
       <Subscribe toggle={toggle} />
       <Mission />
@@ -100,6 +106,7 @@ export default function Home() {
             @CharityShopEx
           </a>
         </p> */}
+
         <Checkout formData={formData} onChange={onChange} />
       </Dialog>
     </>

@@ -29,6 +29,7 @@ export default function TextFieldWithLabel(props) {
     function handleChange(e) {
       // eslint-disable-next-line no-shadow
       const { value } = e.target;
+      clsc;
       onChange({ keyToUpdate, value });
     }
 
