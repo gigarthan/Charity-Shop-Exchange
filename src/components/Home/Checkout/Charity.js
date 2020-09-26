@@ -29,11 +29,14 @@ export default function Charity(props) {
     const ch = charities.find((charity) => charity.id === value);
 
     const count = locations.counties.find((county) => county.id === countyId);
-    window.history.pushState(
-      {},
-      window.title,
-      `/${slug(count.name)}/${slug(ch.name)}`,
-    );
+
+    if (typeof window !== 'undefined') {
+      window.history.pushState(
+        {},
+        window.title,
+        `/${slug(count.name)}/${slug(ch.name)}`,
+      );
+    }
   };
 
   useEffect(() => {

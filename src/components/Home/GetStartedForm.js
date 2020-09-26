@@ -92,30 +92,33 @@ export default function GetStartedForm({ toggle, onChange }) {
 
     const count = locations.counties.find((county) => county.id === countyId);
 
-    window.history.pushState(
-      {},
-      window.title,
-      `/${slug(count.name)}/${slug(ch.name)}`,
-    );
-    const searchParams = new URLSearchParams(window.location.search);
-    if (searchParams.has('testMode') === true) {
-      // We are in test mode; act as if we are launched
-
-      // Find the Subbly product that represents this county
-      const subblyProduct = products.find((product) =>
-        product.countyIds.includes(countyId),
+    if (typeof window !== 'undefined') {
+      window.history.pushState(
+        {},
+        window.title,
+        `/${slug(count.name)}/${slug(ch.name)}`,
       );
 
-      if (subblyProduct) {
-        // Redirect to the Subbly product
-        window.location.href = `${config.subblyCheckoutUrl}/${subblyProduct.id}`;
+      const searchParams = new URLSearchParams(window.location.search);
+      if (searchParams.has('testMode') === true) {
+        // We are in test mode; act as if we are launched
+
+        // Find the Subbly product that represents this county
+        const subblyProduct = products.find((product) =>
+          product.countyIds.includes(countyId),
+        );
+
+        if (subblyProduct) {
+          // Redirect to the Subbly product
+          window.location.href = `${config.subblyCheckoutUrl}/${subblyProduct.id}`;
+        } else {
+          // Product not found in the products JSON, so display the Launching Soon modal instead
+          toggle();
+        }
       } else {
-        // Product not found in the products JSON, so display the Launching Soon modal instead
+        // Before launch, display a Launching Soon modal instead
         toggle();
       }
-    } else {
-      // Before launch, display a Launching Soon modal instead
-      toggle();
     }
   }
 

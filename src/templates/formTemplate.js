@@ -21,10 +21,14 @@ import useFormData from '~/hooks/useFormData';
 export default function FormpageTemplate() {
   // const {isShowing, toggle}=useDialog();
   const [init, setInit] = useState(0);
+  let countyName = '';
+  let charityName = '';
 
-  const path = window.location.href.split('/');
-  let countyName = path[3];
-  let charityName = path[4];
+  if (typeof window !== 'undefined') {
+    const path = window.location.href.split('/');
+    countyName = path[3];
+    charityName = path[4];
+  }
 
   // charity
   const [formData, onChange] = useFormData({
@@ -88,24 +92,14 @@ export default function FormpageTemplate() {
     const ch = charities.find(
       (charity) => charityName === change(charity.name),
     );
-    console.log(charityName);
-    // console.log(charityName, charity.name.toLowercase);
-    // console.log(charity.name);
 
     // county
     if (countyName.indexOf('-') != null) {
       countyName = countyName.replace(/-/g, ' ').toLowerCase();
     }
     const count = locations.counties.find(
-      (county) =>
-        // countyName.toLowerCase() === county.name.toLowerCase();}
-        countyName === change(county.name),
+      (county) => countyName === change(county.name),
     );
-
-    // const charityId = ch.id;
-    // console.log(charityId);
-    // const countyId = count.id;
-    // console.log(countyId);
 
     formData.charityId = ch.id;
     formData.countyId = count.id;
@@ -120,14 +114,6 @@ export default function FormpageTemplate() {
   useEffect(() => {
     setInit({ init: 1 });
   }, [formData]);
-
-  console.log(` formDara${formData.charityId}`);
-  useEffect(() => {
-    // const path = window.location.href.split('/');
-    // console.log(path[3] + path[4]);
-  }, [formData]);
-
-  // const { formData, onChange } = props;
 
   return (
     <AppProvider i18n={enTranslations}>

@@ -73,7 +73,9 @@ export default function Home() {
       document.body.classList.add('modal-open');
     } else {
       document.body.classList.remove('modal-open');
-      window.history.pushState({}, window.title, `/`);
+      if (typeof window !== 'undefined') {
+        window.history.pushState({}, window.title, `/`);
+      }
     }
   }, [isShowing]);
 
