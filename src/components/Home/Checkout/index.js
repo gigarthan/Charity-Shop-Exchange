@@ -11,9 +11,6 @@ import plansList from '~/import/plans-list.json';
 
 export default function PlanSelection(props) {
   const { formData, onChange, className = '', readOnly, isHide } = props;
-  // const [county, setCounty] = useState('');
-  // const [charity, setCharity] = useState('');
-  console.log(`hide: ${isHide}`);
 
   return (
     <div className={className}>

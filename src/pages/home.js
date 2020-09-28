@@ -109,7 +109,7 @@ export default function Home() {
           </a>
         </p> */}
 
-        <Checkout formData={formData} onChange={onChange} />
+        <Checkout formData={formData} onChange={onChange} readOnly={false} />
       </Dialog>
     </>
   );

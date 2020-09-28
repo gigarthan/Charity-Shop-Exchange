@@ -9,6 +9,7 @@ import Collapsable from '../Collapsable';
 
 export default function Charity(props) {
   const { handleChange, formData, readOnly } = props;
+  console.log('Charity -> readOnly', readOnly);
   const [isOpen, setisOpen] = useState(false);
   const [countyId, setCountyId] = useState(formData.countyId);
   const [charityId, setCharityId] = useState(formData.charityId);
@@ -38,12 +39,16 @@ export default function Charity(props) {
     const count = locations.counties.find((county) => county.id === countyId);
 
     if (typeof window !== 'undefined') {
-      window.history.pushState({}, window.title, `/${slug(ch.name)}`);
       formData.charityId = ch.id;
+      let url = `/${slug(ch.name)}`;
+
       if (count) {
-        window.location.href = `#${slug(count.name)}`;
+        // window.location.href = `#${slug(count.name)}`;
+        url += `#${slug(count.name)}`;
         formData.countyId = count.id;
       }
+
+      window.history.pushState({}, window.title, url);
     }
   };
 
@@ -58,6 +63,8 @@ export default function Charity(props) {
 
     return false;
   });
+
+  const disableInput = readOnly ? { readOnly: true } : {};
 
   return (
     <Collapsable
@@ -75,7 +82,7 @@ export default function Charity(props) {
               placeholder="select"
               // style={{ background: '#c7c7c7'}}
               // disabled="disabled"
-              readOnly={!!readOnly}
+              {...disableInput}
               theme=""
               label="Select a region"
               className="charity_select_box"
@@ -93,7 +100,8 @@ export default function Charity(props) {
               // disabled={
               //   !countyId || counties.find((c) => c.id === countyId).disabled
               // }
-              readOnly={!!readOnly}
+
+              {...disableInput}
               placeholder="select"
               theme=""
               label="Pick a charity"

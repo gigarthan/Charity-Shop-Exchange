@@ -78,12 +78,6 @@ export default function FormpageTemplate() {
   });
 
   useEffect(() => {
-    // if (charityName.includes('-')) {
-    //   charityName = charityName.replace(/-/g, ' ').toLowerCase();
-    //   console.log('=============/');
-    //   console.log(charityName);
-    // }
-
     let count;
 
     const change = (value) => {
@@ -104,22 +98,17 @@ export default function FormpageTemplate() {
     const ch = charities.find(
       (charity) => change(charityName) === change(charity.name),
     );
-    console.log('=============/');
-    console.log(charityName);
-
     // county
     if (typeof countyName !== 'undefined') {
       // if (countyName.includes('-')) {
       //   countyName = countyName.replace(/-/g, ' ').toLowerCase();
       // }
 
-      console.log(countyName);
       count = locations.counties.find(
         (county) => change(countyName) === change(county.name),
       );
 
       formData.countyId = (count || {}).id;
-      console.log(count.name);
     }
 
     // formData.charityId = (ch || {}).id;
@@ -132,12 +121,10 @@ export default function FormpageTemplate() {
         onChange({ charityId: ch.id, countyId: count.id });
       }
     }
-    setReadOnly({ readOnly: true });
+    setReadOnly(true);
     setIsHide(!isHide);
-    // setSelected({ selected: true });
   }, []);
 
-  console.log('form =>', formData);
   return (
     <AppProvider i18n={enTranslations}>
       <Layout isHide={isHide}>
