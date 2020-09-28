@@ -23,7 +23,6 @@ export default function FormpageTemplate() {
   let allPath;
 
   const [readOnly, setReadOnly] = useState(false);
-  const [isHide, setIsHide] = useState(false);
 
   if (typeof window !== 'undefined') {
     let path = window.location.href.split('/');
@@ -31,8 +30,6 @@ export default function FormpageTemplate() {
     [, , , path] = path;
     allPath = path.split('#');
     [charityName, countyName] = allPath;
-    console.log(allPath);
-    console.log(charityName, countyName);
   }
   // setSelected({ selected: true });
   // charity
@@ -122,12 +119,11 @@ export default function FormpageTemplate() {
       }
     }
     setReadOnly(true);
-    setIsHide(!isHide);
   }, []);
 
   return (
     <AppProvider i18n={enTranslations}>
-      <Layout isHide={isHide}>
+      <Layout isHide>
         <Checkout
           formData={formData}
           onChange={onChange}
