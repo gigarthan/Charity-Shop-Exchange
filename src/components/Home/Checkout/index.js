@@ -10,14 +10,20 @@ import Selection from './Selection';
 import plansList from '~/import/plans-list.json';
 
 export default function PlanSelection(props) {
-  const { formData, onChange, className = '' } = props;
+  const { formData, onChange, className = '', readOnly, isHide } = props;
   // const [county, setCounty] = useState('');
   // const [charity, setCharity] = useState('');
+  console.log(`hide: ${isHide}`);
 
   return (
     <div className={className}>
       <div className="model-child-main">
-        <Charity handleChange={onChange} formData={formData} />
+        <Charity
+          handleChange={onChange}
+          formData={formData}
+          readOnly={readOnly}
+          isHide={isHide}
+        />
         <Selection
           genres={plansList}
           handleChange={onChange}

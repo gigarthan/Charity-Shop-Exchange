@@ -17,6 +17,7 @@ export default function Combo(props) {
     theme = '',
     label = '',
     className,
+    readOnly,
   } = props;
 
   console.log(value);
@@ -45,6 +46,7 @@ export default function Combo(props) {
     combo.current.value = value;
     combo.current.disabled = disabled;
     combo.current.addEventListener('change', handleChange);
+    combo.current.readOnly = readOnly;
 
     // If the item is disabled, add an overlay to the item in the pop-up list
     // that can't be clicked on, and grey out the text.
@@ -77,6 +79,7 @@ export default function Combo(props) {
     itemValuePath,
     itemLabelPath,
     disabled,
+    readOnly,
   ]);
 
   return (
@@ -88,6 +91,7 @@ export default function Combo(props) {
       class={className}
       theme={theme}
       label={label}
+      readOnly={readOnly}
     />
   );
 }
@@ -106,6 +110,7 @@ Combo.propTypes = {
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   setValue: PropTypes.func.isRequired,
+  readOnly: PropTypes.bool,
 };
 
 Combo.defaultProps = {
@@ -116,4 +121,5 @@ Combo.defaultProps = {
   label: '',
   style: {},
   theme: '',
+  readOnly: null,
 };

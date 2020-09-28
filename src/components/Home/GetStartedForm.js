@@ -96,7 +96,7 @@ export default function GetStartedForm({ toggle, onChange }) {
       window.history.pushState(
         {},
         window.title,
-        `/${slug(count.name)}/${slug(ch.name)}`,
+        `/${slug(ch.name)}#${slug(count.name)}`,
       );
 
       const searchParams = new URLSearchParams(window.location.search);

@@ -8,10 +8,20 @@ import Combo from '../../Combo';
 import Collapsable from '../Collapsable';
 
 export default function Charity(props) {
-  const { handleChange, formData } = props;
+  const { handleChange, formData, readOnly } = props;
   const [isOpen, setisOpen] = useState(false);
   const [countyId, setCountyId] = useState(formData.countyId);
   const [charityId, setCharityId] = useState(formData.charityId);
+  // const [intialize, setInitilaize] = useState(1);
+
+  useEffect(() => {
+    if (!formData.charityId) return;
+    setCharityId(formData.charityId);
+  }, [formData.charityId]);
+
+  useEffect(() => {
+    if (formData.countyId) setCountyId(formData.countyId);
+  }, [formData.countyId]);
 
   const onSelectCounty = (value) => {
     setCountyId(value);
@@ -29,9 +39,10 @@ export default function Charity(props) {
 
     if (typeof window !== 'undefined') {
       window.history.pushState({}, window.title, `/${slug(ch.name)}`);
-
+      formData.charityId = ch.id;
       if (count) {
         window.location.href = `#${slug(count.name)}`;
+        formData.countyId = count.id;
       }
     }
   };
@@ -63,6 +74,8 @@ export default function Charity(props) {
               items={counties}
               placeholder="select"
               // style={{ background: '#c7c7c7'}}
+              // disabled="disabled"
+              readOnly={!!readOnly}
               theme=""
               label="Select a region"
               className="charity_select_box"
@@ -80,6 +93,7 @@ export default function Charity(props) {
               // disabled={
               //   !countyId || counties.find((c) => c.id === countyId).disabled
               // }
+              readOnly={!!readOnly}
               placeholder="select"
               theme=""
               label="Pick a charity"

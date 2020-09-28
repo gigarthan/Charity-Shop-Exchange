@@ -11,22 +11,30 @@ import Checkout from '../components/Home/Checkout/index';
 // import GetStartedForm from '../src/components/Home/GetStartedForm';
 import Layout from '../components/Layout';
 
+import useFormData from '../hooks/useFormData';
 import { charities } from '../import/charities.json';
 import locations from '../import/locations.json';
-
-import useFormData from '~/hooks/useFormData';
 
 // import useDialog from '~/components/Dialog/useDialog';
 
 export default function FormpageTemplate() {
-  let countyName = '';
-  let charityName = '';
+  let countyName;
+  let charityName;
+  let allPath;
+
+  const [readOnly, setReadOnly] = useState(false);
+  const [isHide, setIsHide] = useState(false);
 
   if (typeof window !== 'undefined') {
-    const path = window.location.href.split('/');
-    charityName = path[3];
-  }
+    let path = window.location.href.split('/');
 
+    [, , , path] = path;
+    allPath = path.split('#');
+    [charityName, countyName] = allPath;
+    console.log(allPath);
+    console.log(charityName, countyName);
+  }
+  // setSelected({ selected: true });
   // charity
   const [formData, onChange] = useFormData({
     countyId: null,
@@ -70,45 +78,74 @@ export default function FormpageTemplate() {
   });
 
   useEffect(() => {
-    if (charityName.indexOf('-') != null) {
-      charityName = charityName.replace(/-/g, ' ').toLowerCase();
-    }
+    // if (charityName.includes('-')) {
+    //   charityName = charityName.replace(/-/g, ' ').toLowerCase();
+    //   console.log('=============/');
+    //   console.log(charityName);
+    // }
+
+    let count;
 
     const change = (value) => {
       // eslint-disable-next-line no-param-reassign
-      let name = '';
+      let name = value;
 
-      if (value.indexOf('-') != null)
-        name = value.replace(/-/g, ' ').toLowerCase();
+      if (!value) return name;
 
-      name = value.toLowerCase();
+      if (value.includes('-')) {
+        name = value.replace(/-/g, ' ');
+      }
+      name = name.toLowerCase();
 
+      // console.log(`name: ${name}`);
       return name;
     };
 
     const ch = charities.find(
-      (charity) => charityName === change(charity.name),
+      (charity) => change(charityName) === change(charity.name),
     );
+    console.log('=============/');
+    console.log(charityName);
 
     // county
-    if (countyName.indexOf('-') != null) {
-      countyName = countyName.replace(/-/g, ' ').toLowerCase();
-    }
-    // const count = locations.counties.find(
-    //   (county) => countyName === change(county.name),
-    // );
+    if (typeof countyName !== 'undefined') {
+      // if (countyName.includes('-')) {
+      //   countyName = countyName.replace(/-/g, ' ').toLowerCase();
+      // }
 
-    formData.charityId = (ch || {}).id;
-    // formData.countyId = (count || {}).id;
+      console.log(countyName);
+      count = locations.counties.find(
+        (county) => change(countyName) === change(county.name),
+      );
+
+      formData.countyId = (count || {}).id;
+      console.log(count.name);
+    }
+
+    // formData.charityId = (ch || {}).id;
+
+    if (ch && ch.id) {
+      // console.log('=====>', ch);
+      if (typeof count === 'undefined') {
+        onChange({ charityId: ch.id });
+      } else {
+        onChange({ charityId: ch.id, countyId: count.id });
+      }
+    }
+    setReadOnly({ readOnly: true });
+    setIsHide(!isHide);
+    // setSelected({ selected: true });
   }, []);
 
+  console.log('form =>', formData);
   return (
     <AppProvider i18n={enTranslations}>
-      <Layout>
+      <Layout isHide={isHide}>
         <Checkout
           formData={formData}
           onChange={onChange}
           className="template my-8"
+          readOnly={readOnly}
         />
       </Layout>
     </AppProvider>
