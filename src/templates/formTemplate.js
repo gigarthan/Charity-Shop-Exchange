@@ -131,7 +131,7 @@ export default function FormpageTemplate() {
         <Checkout
           formData={formData}
           onChange={onChange}
-          className="template my-8"
+          className="template bg-white pt-8 shadow-lg my-8"
           readOnly={readOnly}
         />
       </Layout>

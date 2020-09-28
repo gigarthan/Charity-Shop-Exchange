@@ -11,6 +11,7 @@ module.exports = {
         'new-lightnavy': '#004969',
         'new-red': '#E33936',
         'new-cream': '#FFF9E3',
+        'new-lightgray': '#f4f6f8',
       },
     },
     variants: {},

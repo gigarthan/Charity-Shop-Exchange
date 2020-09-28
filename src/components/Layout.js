@@ -10,8 +10,7 @@ import Header from './Header';
 const Layout = ({ children, isHide }) => (
   <div className="App overflow-x-hidden">
     <Head />
-    <Header />
-    {isHide ? <TemplateHeader /> : null}
+    <Header isHide={isHide} />
     {children}
     <Footer isHide={isHide} />
   </div>
