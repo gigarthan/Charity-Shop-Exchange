@@ -14,12 +14,9 @@ export default function Charity(props) {
   const [charityId, setCharityId] = useState(formData.charityId);
 
   const onSelectCounty = (value) => {
-    // console.log(`Charity: ${formData.countyId}`);
     setCountyId(value);
     setCharityId(0);
     handleChange({ countyId, charityId });
-    // const count = locations.counties.find((county) => county.id === value);
-    // window.history.pushState({}, window.title, `/${slug(count.name)}/`);
   };
 
   const onSelectCharity = (value) => {
@@ -31,30 +28,13 @@ export default function Charity(props) {
     const count = locations.counties.find((county) => county.id === countyId);
 
     if (typeof window !== 'undefined') {
-      window.history.pushState(
-        {},
-        window.title,
-        `/${slug(count.name)}/${slug(ch.name)}`,
-      );
+      window.history.pushState({}, window.title, `/${slug(ch.name)}`);
+
+      if (count) {
+        window.location.href = `#${slug(count.name)}`;
+      }
     }
   };
-
-  useEffect(() => {
-    // const ch = charities.filter((charity) => charity.id === charityId);
-    // setCharity(ch[0].name);
-    // const count = locations.counties.filter((county) => county.id === countyId);
-    // setCounty(count[0].name);
-  }, []);
-
-  //   useEffect(() => {
-  //     setCountyId(formData.countryId);
-  //     setCharityId(formData.charityId);
-  //   }, [charityId, countyId]);
-
-  // useEffect(() => {
-  //   setCharityId(0);
-  //   handleChange({ name: "charity.charityId", value: 0 });
-  // }, [countyId]);
 
   const counties = locations.counties.filter((county) => {
     const numCharitiesForCounty = charities.reduce((count, charityInfo) => {
@@ -67,10 +47,6 @@ export default function Charity(props) {
 
     return false;
   });
-
-  //   const handleSubmit = () => {
-  //
-  //   };
 
   return (
     <Collapsable
@@ -100,7 +76,7 @@ export default function Charity(props) {
               name="charityId"
               value={charityId}
               setValue={onSelectCharity}
-              items={charities.filter((c) => c.countyIds.includes(countyId))}
+              items={charities}
               // disabled={
               //   !countyId || counties.find((c) => c.id === countyId).disabled
               // }

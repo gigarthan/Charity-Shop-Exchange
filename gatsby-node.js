@@ -26,28 +26,36 @@ exports.createPages = async ({ actions }) => {
 
   const postTemplate = path.resolve('./src/templates/formTemplate.js');
   charities.charities.forEach((charity) => {
-    // let len = charity.countyIds.length;
-    charity.countyIds.forEach((id) => {
-      locations.counties.forEach((county) => {
-        if (id === county.id) {
-          let name = charity.name.replace(' ', '-');
-          name = name.replace(' ', '-');
-
-          console.log(name);
-
-          createPage({
-            path: `/${slug(county.name)}/${slug(charity.name)}/`,
-            component: slash(postTemplate),
-            context: {
-              county_name: county.name,
-              charity_name: charity.name,
-              county_id: county.id,
-              charity_id: charity.id,
-            },
-          });
-        }
-      });
+    createPage({
+      path: `/${slug(charity.name)}/`,
+      component: slash(postTemplate),
+      context: {
+        charity_name: charity.name,
+        charity_id: charity.id,
+      },
     });
+
+    // charity.countyIds.forEach((id) => {
+    //   locations.counties.forEach((county) => {
+    //     if (id === county.id) {
+    //       let name = charity.name.replace(' ', '-');
+    //       name = name.replace(' ', '-');
+
+    //       console.log(name);
+
+    //       createPage({
+    //         path: `/${slug(county.name)}/${slug(charity.name)}/`,
+    //         component: slash(postTemplate),
+    //         context: {
+    //           county_name: county.name,
+    //           charity_name: charity.name,
+    //           county_id: county.id,
+    //           charity_id: charity.id,
+    //         },
+    //       });
+    //     }
+    //   });
+    // });
   });
 };
 

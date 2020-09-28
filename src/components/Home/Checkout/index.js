@@ -16,8 +16,7 @@ export default function PlanSelection(props) {
 
   return (
     <div className={className}>
-      {' '}
-      <div className={` model-child-main `}>
+      <div className="model-child-main">
         <Charity handleChange={onChange} formData={formData} />
         <Selection
           genres={plansList}
@@ -28,7 +27,7 @@ export default function PlanSelection(props) {
         <DeliveryDetails handleChange={onChange} formData={formData} />
         {/* <ContactDetails handleChange={onChange} formData={formData} /> */}
         <Payment handleChange={onChange} formData={formData} />
-      </div>{' '}
+      </div>
       <Footer handleChange={onChange} formData={formData} />
     </div>
   );

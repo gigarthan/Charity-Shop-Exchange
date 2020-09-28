@@ -19,15 +19,12 @@ import useFormData from '~/hooks/useFormData';
 // import useDialog from '~/components/Dialog/useDialog';
 
 export default function FormpageTemplate() {
-  // const {isShowing, toggle}=useDialog();
-  const [init, setInit] = useState(0);
   let countyName = '';
   let charityName = '';
 
   if (typeof window !== 'undefined') {
     const path = window.location.href.split('/');
-    countyName = path[3];
-    charityName = path[4];
+    charityName = path[3];
   }
 
   // charity
@@ -72,7 +69,7 @@ export default function FormpageTemplate() {
     },
   });
 
-  const once = () => {
+  useEffect(() => {
     if (charityName.indexOf('-') != null) {
       charityName = charityName.replace(/-/g, ' ').toLowerCase();
     }
@@ -97,23 +94,13 @@ export default function FormpageTemplate() {
     if (countyName.indexOf('-') != null) {
       countyName = countyName.replace(/-/g, ' ').toLowerCase();
     }
-    const count = locations.counties.find(
-      (county) => countyName === change(county.name),
-    );
+    // const count = locations.counties.find(
+    //   (county) => countyName === change(county.name),
+    // );
 
     formData.charityId = (ch || {}).id;
-    formData.countyId = (count || {}).id;
-
-    setInit({ init: 1 });
-  };
-
-  if (init === 0) {
-    once();
-  }
-
-  useEffect(() => {
-    setInit({ init: 1 });
-  }, [formData]);
+    // formData.countyId = (count || {}).id;
+  }, []);
 
   return (
     <AppProvider i18n={enTranslations}>
@@ -121,7 +108,7 @@ export default function FormpageTemplate() {
         <Checkout
           formData={formData}
           onChange={onChange}
-          className="template"
+          className="template my-8"
         />
       </Layout>
     </AppProvider>

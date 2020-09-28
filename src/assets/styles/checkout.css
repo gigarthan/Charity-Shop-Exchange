@@ -22,9 +22,16 @@
   padding: 0rem 0rem 0rem 2rem;
 }
 
-/* .template .model-child-main {
+.template .model-child-main {
+  max-height: none;
   overflow-y: auto;
-} */
+}
+
+.template {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
 .vaadin-number {
   display: flex;
   flex-wrap: wrap;
