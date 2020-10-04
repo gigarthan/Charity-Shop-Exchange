@@ -9,7 +9,6 @@ import Collapsable from '../Collapsable';
 
 export default function Charity(props) {
   const { handleChange, formData, readOnly } = props;
-  console.log('Charity -> readOnly', readOnly);
   const [isOpen, setisOpen] = useState(false);
   const [countyId, setCountyId] = useState(formData.countyId);
   const [charityId, setCharityId] = useState(formData.charityId);

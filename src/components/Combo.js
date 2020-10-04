@@ -20,8 +20,6 @@ export default function Combo(props) {
     readOnly,
   } = props;
 
-  console.log(value);
-
   const combo = useRef(null);
 
   useEffect(() => {

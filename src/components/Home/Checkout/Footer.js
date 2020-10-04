@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Logo from '../../../assets/img/cse_logo.png';
 import ModalButton from './ModalButton';
 
 export default function Footer(props) {
-  const [isReady] = useState(false);
-  const [newClass] = useState('');
+  const [isReady, setIsReady] = useState(false);
+  const [newClass, setClassName] = useState('');
   const [button] = useState('modal-button');
   const [quantity] = useState(true);
 
@@ -15,65 +15,69 @@ export default function Footer(props) {
   const keysToLook2 = ['phone', 'email'];
 
   // Card Tokenizer...
-  // useEffect(() => {
-  //     window.billsbyTokens.on('ready', function() {
-  //       setIsReady(true);
-  //     });
-  //     window?.billsbyTokens.on("paymentMethod", function (token, pmData) {
+  useEffect(() => {
+    window.billsbyTokens.on('ready', function () {
+      setIsReady(true);
+    });
 
-  //
-  //     });
-  // }, []);
-  // const handleSubmit = useCallback(() => {
-  //   const requiredFields = {
-  //     full_name: formData.payment.name,
-  //     month: formData.payment.expiry_at.split('/')[0],
-  //     year: formData.payment.expiry_at.split('/')[1],
-  //   };
+    window.billsbyTokens.on('paymentMethod', function (token, pmData) {});
+  }, []);
 
-  //   window?.billsbyTokens.tokenizeCreditCard(requiredFields);
+  const handleSubmit = useCallback(() => {
+    console.log('handleSubmit -> handleSubmit', handleSubmit);
 
-  // //setClassName('loader')//
-  //
-  //
-  // //let phone = formData.payment.phone;
-  // //if (phone.startsWith('0')) phone = phone.slice(1);
+    const requiredFields = {
+      full_name: formData.payment.name,
+      month: formData.payment.expiry_at.split('/')[0],
+      year: formData.payment.expiry_at.split('/')[1],
+    };
 
-  // window.billsbyData = {
-  //   firstName: delivery.firstname,
-  //   lastName: delivery.lastname,
-  //   email: payment.email,
-  //   billingAddressLine1: delivery.address_1,
-  //   billingAddressLine2: delivery.address_2,
-  //   billingAddressCity: delivery.town,
-  //   billingAddressState: 'Free Text',
-  //   billingAddressZip: delivery.postcode,
-  //   billingAddressCountry: 'GBR',
-  //   shippingAddressLine1: delivery.address_1,
-  //   shippingAddressLine2: delivery.address_2,
-  //   shippingAddressCity: delivery.town,
-  //   shippingAddressState: 'Free Text',
-  //   shippingAddressZip: delivery.postcode,
-  //   shippingAddressCountry: 'GBR',
-  //   phoneNumberDialCode: '44',
-  //   phoneNumberDialCountry: 'GB',
-  //   phoneNumber: payment.phone,
-  //   marketingConsent: payment.isEmailedMe,
-  //   customFields: [
-  //     {
-  //       customFieldId: 94,
-  //       value: charity.countryId,
-  //     },
-  //     {
-  //       customFieldId: 95,
-  //       value: charity.charityId,
-  //     },
-  //     {
-  //       customFieldId: 135,
-  //       value: billsbyData.itemDetails,
-  //     },
-  //   ],
-  // };
+    window.billsbyTokens.tokenizeCreditCard(requiredFields);
+
+    setClassName('loader');
+
+    let phone = formData.payment.phone;
+    if (phone.startsWith('0')) phone = phone.slice(1);
+
+    const { delivery, payment, charity } = formData;
+
+    window.billsbyData = {
+      firstName: delivery.firstname,
+      lastName: delivery.lastname,
+      email: payment.email,
+      billingAddressLine1: delivery.address_1,
+      billingAddressLine2: delivery.address_2,
+      billingAddressCity: delivery.town,
+      billingAddressState: 'Free Text',
+      billingAddressZip: delivery.postcode,
+      billingAddressCountry: 'GBR',
+      shippingAddressLine1: delivery.address_1,
+      shippingAddressLine2: delivery.address_2,
+      shippingAddressCity: delivery.town,
+      shippingAddressState: 'Free Text',
+      shippingAddressZip: delivery.postcode,
+      shippingAddressCountry: 'GBR',
+      phoneNumberDialCode: '44',
+      phoneNumberDialCountry: 'GB',
+      phoneNumber: payment.phone,
+      marketingConsent: payment.isEmailedMe,
+      customFields: [
+        {
+          customFieldId: 94,
+          value: charity.countryId,
+        },
+        {
+          customFieldId: 95,
+          value: charity.charityId,
+        },
+        {
+          customFieldId: 135,
+          value: window.billsbyData.itemDetails,
+        },
+      ],
+    };
+  }, []);
+
   setTimeout(() => {
     // window.scanDomBillsby();
     setTimeout(() => {
@@ -134,6 +138,7 @@ export default function Footer(props) {
         newClass={newClass}
         // billsbyData={billsbyData}
         totalDecimalSum={totalDecimalSum}
+        handleSubmit={handleSubmit}
       />
       {/* <a
         style={{ display: 'none' }}

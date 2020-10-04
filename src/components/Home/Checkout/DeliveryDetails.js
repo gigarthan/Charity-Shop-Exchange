@@ -179,6 +179,7 @@ export default function DeliveryDetails(props) {
               }
               onblur={(event) => fieldChange(event, 'address_1')}
               onChange={(value) => {
+                console.log('DeliveryDetails -> value', value);
                 handleChange(value);
               }}
             />
